@@ -8,4 +8,6 @@
 
 struct GlobalDefinitions {
     static let domain = ""
+    
+    static let googleApiKey = "AIzaSyBdakvJp7Zv1ZDDLTpWReGBgQNZ6H0tOOQ"
 }

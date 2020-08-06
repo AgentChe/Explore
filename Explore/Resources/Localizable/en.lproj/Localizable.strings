@@ -13,3 +13,7 @@
 "ImagePicker.TakePhoto" = "TakePhoto";
 "ImagePicker.CameraRoll" = "CameraRoll";
 "ImagePicker.PhotoLibrary" = "PhotoLibrary";
+
+// MARK: Map
+"Map.Randomize" = "Randomize";
+"Map.FinePlace.Failure" = "Place not found";

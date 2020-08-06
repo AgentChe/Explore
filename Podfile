@@ -11,4 +11,6 @@ target 'Explore' do
   pod 'Kingfisher'
   
   pod 'NotificationBannerSwift'
+  
+  pod 'GoogleMaps'
 end
