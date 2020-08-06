@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Explore
+
+  Created by Andrey Chernyshev on 05.08.2020.
+  Copyright © 2020 Andrey Chernyshev. All rights reserved.
+*/
+
+// MARK: General
+"Cancel" = "Cancel";
+
+// MARK: Image Picker
+"ImagePicker.TakePhoto" = "TakePhoto";
+"ImagePicker.CameraRoll" = "CameraRoll";
+"ImagePicker.PhotoLibrary" = "PhotoLibrary";
