@@ -47,7 +47,7 @@ final class MapViewModel {
                 }
                 
                 return GeoLocationUtils
-                    .findCoordinate(from: currentCoordinate, on: 20)
+                    .findCoordinate(from: currentCoordinate, on: 20000)
                     .flatMap { coordinate in
                         PlaceManager.shared
                             .retrieve(with: coordinate)

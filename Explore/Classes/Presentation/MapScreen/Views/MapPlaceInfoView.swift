@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class MapPlaceInfoView: UIView {
     lazy var separator = makeSeparator()
-    lazy var imageView = makeImageView()
     lazy var label = makeLabel()
     
     override init(frame: CGRect) {
@@ -25,13 +23,6 @@ final class MapPlaceInfoView: UIView {
     }
     
     func setup(place: Place) {
-        imageView.kf.cancelDownloadTask()
-        imageView.image = nil
-        
-        if let url = URL(string: place.imageUrl) {
-            imageView.kf.setImage(with: url)
-        }
-        
         label.text = place.about
     }
 }
@@ -48,14 +39,7 @@ private extension MapPlaceInfoView {
         ])
         
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 24.scale),
-            imageView.widthAnchor.constraint(equalToConstant: 64.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 64.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8.scale),
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             label.topAnchor.constraint(equalTo: topAnchor, constant: 24.scale),
             label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -32.scale : -16.scale)
@@ -70,17 +54,6 @@ private extension MapPlaceInfoView {
         let view = UIView()
         view.backgroundColor = UIColor.darkGray
         view.layer.cornerRadius = 1.scale
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeImageView() -> UIImageView {
-        let view = UIImageView()
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 8.scale
-        view.layer.masksToBounds = true
-        view.contentMode = .scaleAspectFill
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

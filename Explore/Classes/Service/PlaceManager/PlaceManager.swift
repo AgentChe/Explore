@@ -59,7 +59,6 @@ private extension PlaceManager {
         RestAPITransport()
             .callServerApi(requestBody: GetPlaceRequest(coordinate: coordinate))
             .map { GetPlaceResponseMapper.from(response: $0, with: coordinate) }
-//            .catchErrorJustReturn(GetPlaceResponseMapper.from(response: 1, with: coordinate)) TODO
             .do(onSuccess: { place in
                 guard let place = place else {
                     return

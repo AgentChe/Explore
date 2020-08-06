@@ -7,8 +7,6 @@ target 'Explore' do
   
   pod 'RxSwift'
   pod 'RxCocoa'
-
-  pod 'Kingfisher'
   
   pod 'NotificationBannerSwift'
   
