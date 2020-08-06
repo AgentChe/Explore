@@ -16,4 +16,5 @@
 
 // MARK: Map
 "Map.Randomize" = "Randomize";
-"Map.FinePlace.Failure" = "Place not found";
+"Map.FindPlace.Failure" = "Place not found";
+"Map.FindPlace.HourNotPassed" = "You can use the search one hour after the last search";

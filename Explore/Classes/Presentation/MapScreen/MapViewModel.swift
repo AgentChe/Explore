@@ -38,15 +38,21 @@ final class MapViewModel {
             .asDriver(onErrorJustReturn: nil)
     }
     
-    func place() -> Driver<Place?> {
+    // Bool - true, if place from cache
+    func place() -> Driver<(Place?, Bool)?> {
         findPlace
-            .flatMapLatest { [activityIndicator] currentCoordinate -> Observable<Place?> in
-                GeoLocationUtils
+            .flatMapLatest { [activityIndicator] currentCoordinate -> Observable<(Place?, Bool)?> in
+                if PlaceManager.shared.hasActualPlace() {
+                    return .deferred { .just((PlaceManager.shared.get(), true)) }
+                }
+                
+                return GeoLocationUtils
                     .findCoordinate(from: currentCoordinate, on: 20)
                     .flatMap { coordinate in
-                        PlaceService
-                            .getPlace(for: coordinate)
+                        PlaceManager.shared
+                            .retrieve(with: coordinate)
                             .catchErrorJustReturn(nil)
+                            .map { ($0, false) }
                     }
                     .trackActivity(activityIndicator)
             }

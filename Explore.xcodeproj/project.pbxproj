@@ -48,8 +48,10 @@
 		96EB730524DBFABD008A32BC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730424DBFABD008A32BC /* Model.swift */; };
 		96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */; };
 		96EB730924DBFED7008A32BC /* GetPlaceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730824DBFED7008A32BC /* GetPlaceRequest.swift */; };
-		96EB730F24DBFF95008A32BC /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730E24DBFF95008A32BC /* PlaceService.swift */; };
+		96EB730F24DBFF95008A32BC /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730E24DBFF95008A32BC /* PlaceManager.swift */; };
 		96EB731124DC26B9008A32BC /* MapPlaceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB731024DC26B9008A32BC /* MapPlaceInfoView.swift */; };
+		96EB731C24DC5C00008A32BC /* GetPlaceResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB731B24DC5C00008A32BC /* GetPlaceResponseMapper.swift */; };
+		96EB731E24DC6090008A32BC /* PlaceManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB731D24DC6090008A32BC /* PlaceManagerDelegate.swift */; };
 		B079481B8193E9B57466D3CC /* Pods_Explore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207A5AA6F728371399EBE652 /* Pods_Explore.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,8 +100,10 @@
 		96EB730424DBFABD008A32BC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationUtils.swift; sourceTree = "<group>"; };
 		96EB730824DBFED7008A32BC /* GetPlaceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaceRequest.swift; sourceTree = "<group>"; };
-		96EB730E24DBFF95008A32BC /* PlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
+		96EB730E24DBFF95008A32BC /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
 		96EB731024DC26B9008A32BC /* MapPlaceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlaceInfoView.swift; sourceTree = "<group>"; };
+		96EB731B24DC5C00008A32BC /* GetPlaceResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaceResponseMapper.swift; sourceTree = "<group>"; };
+		96EB731D24DC6090008A32BC /* PlaceManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManagerDelegate.swift; sourceTree = "<group>"; };
 		B22F64F4A27F9D92296D9874 /* Pods-Explore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Explore.debug.xcconfig"; path = "Target Support Files/Pods-Explore/Pods-Explore.debug.xcconfig"; sourceTree = "<group>"; };
 		EA359854945A0243058EA051 /* Pods-Explore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Explore.release.xcconfig"; path = "Target Support Files/Pods-Explore/Pods-Explore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,8 +162,8 @@
 		9604B07124DBE68C00649DA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9604B07224DBE76F00649DA7 /* GoogleMapView.swift */,
 				96EB731024DC26B9008A32BC /* MapPlaceInfoView.swift */,
+				9604B07224DBE76F00649DA7 /* GoogleMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,8 +220,8 @@
 		960F029A24DAC5D3008267FA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				96EB731924DC5BDA008A32BC /* PlaceManager */,
 				9604B07024DBE1A800649DA7 /* GeoLocation */,
-				96EB730E24DBFF95008A32BC /* PlaceService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -351,6 +355,24 @@
 				960F028F24DAC13B008267FA /* Resources */,
 			);
 			path = Explore;
+			sourceTree = "<group>";
+		};
+		96EB731924DC5BDA008A32BC /* PlaceManager */ = {
+			isa = PBXGroup;
+			children = (
+				96EB731A24DC5BF2008A32BC /* Mapper */,
+				96EB730E24DBFF95008A32BC /* PlaceManager.swift */,
+				96EB731D24DC6090008A32BC /* PlaceManagerDelegate.swift */,
+			);
+			path = PlaceManager;
+			sourceTree = "<group>";
+		};
+		96EB731A24DC5BF2008A32BC /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				96EB731B24DC5C00008A32BC /* GetPlaceResponseMapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		AB0A19C4267249BB598D332C /* Pods */ = {
@@ -499,7 +521,7 @@
 				960F031924DAC686008267FA /* UIViewExtension.swift in Sources */,
 				9604B06B24DB471F00649DA7 /* Coordinate.swift in Sources */,
 				9604B06F24DB497F00649DA7 /* GeoLocationManagerDelegate.swift in Sources */,
-				96EB730F24DBFF95008A32BC /* PlaceService.swift in Sources */,
+				96EB730F24DBFF95008A32BC /* PlaceManager.swift in Sources */,
 				960F032224DAC686008267FA /* Weak.swift in Sources */,
 				960F032424DAC686008267FA /* RxActivityIndicator.swift in Sources */,
 				960F02F824DAC5E3008267FA /* SignError.swift in Sources */,
@@ -520,10 +542,12 @@
 				96EB730324DBFA81008A32BC /* Place.swift in Sources */,
 				960F02F724DAC5E3008267FA /* ApiError.swift in Sources */,
 				9604B07324DBE76F00649DA7 /* GoogleMapView.swift in Sources */,
+				96EB731E24DC6090008A32BC /* PlaceManagerDelegate.swift in Sources */,
 				960F031A24DAC686008267FA /* UIDeviceExtension.swift in Sources */,
 				960F02DF24DAC5E3008267FA /* APIRequestBody.swift in Sources */,
 				960F031B24DAC686008267FA /* StringExtension.swift in Sources */,
 				960F031E24DAC686008267FA /* TextAttributes.swift in Sources */,
+				96EB731C24DC5C00008A32BC /* GetPlaceResponseMapper.swift in Sources */,
 				960F02FA24DAC5E3008267FA /* PaymentError.swift in Sources */,
 				96EB730524DBFABD008A32BC /* Model.swift in Sources */,
 				960F032A24DAC686008267FA /* PaddingTextField.swift in Sources */,

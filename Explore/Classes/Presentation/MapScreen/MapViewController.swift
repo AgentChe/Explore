@@ -44,9 +44,7 @@ final class MapViewController: UIViewController {
                     return
                 }
                 
-                self?.mapView.mapView.camera = GMSCameraPosition(latitude: coordinate.latitude,
-                                                                 longitude: coordinate.longitude,
-                                                                 zoom: 15)
+                self?.moveCamera(on: coordinate)
             })
             .disposed(by: disposeBag)
         
@@ -60,13 +58,26 @@ final class MapViewController: UIViewController {
         
         viewModel
             .place()
-            .drive(onNext: { [weak self] place in
-                guard let place = place else {
-                    Toast.notify(with: "Map.FinePlace.Failure".localized, style: .danger)
+            .drive(onNext: { [weak self] stub in
+                guard let stub = stub else {
+                    Toast.notify(with: "Map.FindPlace.Failure".localized, style: .danger)
                     return
                 }
                 
+                let (placeOptional, fromCache) = stub
+                
+                guard let place = placeOptional else {
+                    Toast.notify(with: "Map.FindPlace.Failure".localized, style: .danger)
+                    return
+                }
+                
+                if fromCache {
+                    Toast.notify(with: "Map.FindPlace.HourNotPassed".localized, style: .warning)
+                }
+                
                 self?.showPlaceInfo(place: place)
+                self?.moveCamera(on: place.coordinate)
+                self?.mapView.mapView.addPlaceMarker(with: place.coordinate)
             })
             .disposed(by: disposeBag)
     }
@@ -102,6 +113,8 @@ private extension MapViewController {
         mapView.randomizeButton.isHidden = false
         
         mapView.placeInfoView.isHidden = true
+        
+        mapView.mapView.removePlaceMarker()
     }
     
     func preloader(isActivity: Bool) {
@@ -109,5 +122,11 @@ private extension MapViewController {
         mapView.randomizeButton.isEnabled = !isActivity
         
         isActivity ? mapView.activityIndicator.startAnimating() : mapView.activityIndicator.stopAnimating()
+    }
+    
+    func moveCamera(on coordinate: Coordinate) {
+        mapView.mapView.camera = GMSCameraPosition(latitude: coordinate.latitude,
+                                                   longitude: coordinate.longitude,
+                                                   zoom: 15)
     }
 }
