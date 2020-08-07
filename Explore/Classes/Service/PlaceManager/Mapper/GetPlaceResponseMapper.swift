@@ -7,9 +7,14 @@
 //
 
 final class GetPlaceResponseMapper {
-    // TODO
     static func from(response: Any, with coordinate: Coordinate) -> Place? {
-        Place(about: "no need to normalize a heading in degrees to be within -179.999999° to 180.00000°",
-              coordinate: coordinate)
+        guard
+            let json = response as? [String: Any],
+            let about = json["data"] as? String
+        else {
+            return nil
+        }
+        
+        return Place(about: about, coordinate: coordinate)
     }
 }

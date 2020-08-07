@@ -14,4 +14,12 @@ struct GetPlaceRequest: APIRequestBody {
     init(coordinate: Coordinate) {
         self.coordinate = coordinate
     }
+    
+    var url: String {
+        GlobalDefinitions.domain + "/api/description"
+    }
+    
+    var method: HTTPMethod {
+        .get
+    }
 }
