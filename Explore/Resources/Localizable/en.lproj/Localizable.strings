@@ -8,13 +8,18 @@
 
 // MARK: General
 "Cancel" = "Cancel";
+"OK" = "OK";
 
 // MARK: Image Picker
 "ImagePicker.TakePhoto" = "TakePhoto";
 "ImagePicker.CameraRoll" = "CameraRoll";
 "ImagePicker.PhotoLibrary" = "PhotoLibrary";
 
+// MARK: Onboarding
+"Onboarding.Title" = "EXPLORE,\nthe randonaut app";
+"Onboarding.SibTitle" = "This is app is used for finding random and mysterious places around you. Please be careful on your exploring journey, respect private property and take a spare bag for trash just in case you'll find some along the way.";
+
 // MARK: Map
 "Map.Randomize" = "Randomize";
 "Map.FindPlace.Failure" = "Place not found";
-"Map.FindPlace.HourNotPassed" = "You can use the search one hour after the last search";
+"Map.FindPlace.HourNotPassed" = "We have a search limit of one place per hour. Try a bit later please.";

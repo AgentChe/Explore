@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(GlobalDefinitions.googleApiKey)
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = MapViewController.make()
+        window?.rootViewController = SplashViewController.make()
         window?.makeKeyAndVisible()
         
         return true

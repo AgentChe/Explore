@@ -52,6 +52,10 @@
 		96EB731124DC26B9008A32BC /* MapPlaceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB731024DC26B9008A32BC /* MapPlaceInfoView.swift */; };
 		96EB731C24DC5C00008A32BC /* GetPlaceResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB731B24DC5C00008A32BC /* GetPlaceResponseMapper.swift */; };
 		96EB731E24DC6090008A32BC /* PlaceManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB731D24DC6090008A32BC /* PlaceManagerDelegate.swift */; };
+		96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732124DD3103008A32BC /* SplashViewController.swift */; };
+		96EB732424DD3139008A32BC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732324DD3139008A32BC /* SplashView.swift */; };
+		96EB732624DD32F3008A32BC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732524DD32F3008A32BC /* OnboardingViewController.swift */; };
+		96EB732824DD3320008A32BC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732724DD3320008A32BC /* OnboardingView.swift */; };
 		B079481B8193E9B57466D3CC /* Pods_Explore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207A5AA6F728371399EBE652 /* Pods_Explore.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +108,10 @@
 		96EB731024DC26B9008A32BC /* MapPlaceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlaceInfoView.swift; sourceTree = "<group>"; };
 		96EB731B24DC5C00008A32BC /* GetPlaceResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaceResponseMapper.swift; sourceTree = "<group>"; };
 		96EB731D24DC6090008A32BC /* PlaceManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManagerDelegate.swift; sourceTree = "<group>"; };
+		96EB732124DD3103008A32BC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		96EB732324DD3139008A32BC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		96EB732524DD32F3008A32BC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		96EB732724DD3320008A32BC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		B22F64F4A27F9D92296D9874 /* Pods-Explore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Explore.debug.xcconfig"; path = "Target Support Files/Pods-Explore/Pods-Explore.debug.xcconfig"; sourceTree = "<group>"; };
 		EA359854945A0243058EA051 /* Pods-Explore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Explore.release.xcconfig"; path = "Target Support Files/Pods-Explore/Pods-Explore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +220,8 @@
 		960F029924DAC5C9008267FA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				96EB732024DD30F2008A32BC /* OnboardingScreen */,
+				96EB731F24DD308F008A32BC /* SplashScreen */,
 				9604B05F24DB44E800649DA7 /* MapScreen */,
 			);
 			path = Presentation;
@@ -375,6 +385,24 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
+		96EB731F24DD308F008A32BC /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				96EB732124DD3103008A32BC /* SplashViewController.swift */,
+				96EB732324DD3139008A32BC /* SplashView.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		96EB732024DD30F2008A32BC /* OnboardingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				96EB732524DD32F3008A32BC /* OnboardingViewController.swift */,
+				96EB732724DD3320008A32BC /* OnboardingView.swift */,
+			);
+			path = OnboardingScreen;
+			sourceTree = "<group>";
+		};
 		AB0A19C4267249BB598D332C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,11 +546,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				960F031D24DAC686008267FA /* Scalable.swift in Sources */,
+				96EB732424DD3139008A32BC /* SplashView.swift in Sources */,
 				960F031924DAC686008267FA /* UIViewExtension.swift in Sources */,
 				9604B06B24DB471F00649DA7 /* Coordinate.swift in Sources */,
 				9604B06F24DB497F00649DA7 /* GeoLocationManagerDelegate.swift in Sources */,
 				96EB730F24DBFF95008A32BC /* PlaceManager.swift in Sources */,
 				960F032224DAC686008267FA /* Weak.swift in Sources */,
+				96EB732624DD32F3008A32BC /* OnboardingViewController.swift in Sources */,
 				960F032424DAC686008267FA /* RxActivityIndicator.swift in Sources */,
 				960F02F824DAC5E3008267FA /* SignError.swift in Sources */,
 				960F032B24DAC686008267FA /* PaddingLabel.swift in Sources */,
@@ -535,6 +565,8 @@
 				9604B06324DB45AF00649DA7 /* MapViewModel.swift in Sources */,
 				960F032724DAC686008267FA /* InterceptingEventsView.swift in Sources */,
 				960F02F924DAC5E3008267FA /* PurchaseError.swift in Sources */,
+				96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */,
+				96EB732824DD3320008A32BC /* OnboardingView.swift in Sources */,
 				96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */,
 				9604B06624DB461000649DA7 /* MapView.swift in Sources */,
 				960F032C24DAC686008267FA /* CircleView.swift in Sources */,
@@ -695,16 +727,18 @@
 			baseConfigurationReference = B22F64F4A27F9D92296D9874 /* Pods-Explore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UDD4QZUY96;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 84M2AR9RYC;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = akonst.Explore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Explore Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -715,16 +749,18 @@
 			baseConfigurationReference = EA359854945A0243058EA051 /* Pods-Explore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UDD4QZUY96;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 84M2AR9RYC;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = akonst.Explore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Explore AppStore";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
