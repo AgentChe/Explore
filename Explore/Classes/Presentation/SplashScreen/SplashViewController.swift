@@ -38,18 +38,6 @@ extension SplashViewController {
 
 private extension SplashViewController {
     func navigate() {
-        if OnboardingViewController.isOpened {
-            goToMapScreen()
-        } else {
-            goToOnboardingScreen()
-        }
-    }
-    
-    func goToMapScreen() {
-        UIApplication.shared.keyWindow?.rootViewController = MapViewController.make()
-    }
-    
-    func goToOnboardingScreen() {
-        UIApplication.shared.keyWindow?.rootViewController = OnboardingViewController.make()
+        
     }
 }

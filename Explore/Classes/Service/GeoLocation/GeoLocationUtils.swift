@@ -15,7 +15,7 @@ final class GeoLocationUtils {}
 
 extension GeoLocationUtils {
     // radius - metr
-    static func findCoordinate(from current: Coordinate, on radius: Double) -> Single<Coordinate> {
+    static func findCoordinate(from current: Coordinate, on radius: Double) -> Coordinate {
         let distance = Double.random(in: 10...radius)
         let radius_radians = distance / 6372797.6
         
@@ -31,6 +31,18 @@ extension GeoLocationUtils {
         let latitude3 = latitude2 * 180 / .pi
         let longitude3 = longitude2 * 180 / .pi
         
-        return .deferred { .just(Coordinate(latitude: latitude3, longitude: longitude3)) }
+        return Coordinate(latitude: latitude3, longitude: longitude3)
     }
 }
+
+// MARK: Find random coordinate - Rx
+
+extension Reactive where Base: GeoLocationUtils {
+    static func findCoordinate(from current: Coordinate, on radius: Double) -> Single<Coordinate> {
+        .deferred { .just(GeoLocationUtils.findCoordinate(from: current, on: radius)) }
+    }
+}
+
+// MARK: Rx
+
+extension GeoLocationUtils: ReactiveCompatible {}

@@ -9,7 +9,7 @@
 import RxSwift
 import Alamofire
 
-class RestAPITransport {
+final class RestAPITransport {
     func callServerApi(requestBody: APIRequestBody) -> Single<Any> {
         Single.create { single in
             let manager = Alamofire.Session.default
