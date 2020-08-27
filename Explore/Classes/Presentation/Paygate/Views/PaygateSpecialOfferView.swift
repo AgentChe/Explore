@@ -9,6 +9,7 @@
 import UIKit
 
 final class PaygateSpecialOfferView: UIView {
+    lazy var backgroundImageView = makeBackgroundImageView()
     lazy var restoreButton = makeRestoreButton()
     lazy var titleLabel = makeTitleLabel()
     lazy var subTitleLabel = makeSubTitleLabel()
@@ -139,6 +140,13 @@ private extension PaygateSpecialOfferView {
 private extension PaygateSpecialOfferView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
+            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             restoreButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 41.scale : 31.scale),
             restoreButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32.scale),
             restoreButton.heightAnchor.constraint(equalToConstant: 30.scale)
@@ -212,6 +220,15 @@ private extension PaygateSpecialOfferView {
 // MARK: Lazy initialization
 
 private extension PaygateSpecialOfferView {
+    func makeBackgroundImageView() -> UIImageView {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.image = UIImage(named: "Paygate.MainOffer.Background")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
     func makeRestoreButton() -> UIButton {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false

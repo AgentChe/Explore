@@ -16,10 +16,25 @@ final class FindPlaceViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    private let tripManager = TripManager()
+    
     override func loadView() {
         super.loadView()
         
         view = findPlaceView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        findPlaceView
+            .button.rx.tap
+            .subscribe(onNext: {
+                self.tripManager.rx.createTrip(with: Coordinate(latitude: 55.8176, longitude: 49.1351)).subscribe()
+                
+//                self.present(PaygateViewController.make(), animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

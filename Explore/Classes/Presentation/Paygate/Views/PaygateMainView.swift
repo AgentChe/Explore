@@ -12,7 +12,6 @@ final class PaygateMainView: UIView {
     lazy var backgroundImageView = makeBackgroundImageView()
     lazy var restoreButton = makeRestoreButton()
     lazy var titleLabel = makeTitleLabel()
-    lazy var iconView = makeIconView()
     lazy var subTitleLabel = makeSubTitleLabel()
     lazy var leftOptionView = makeOptionView()
     lazy var rightOptionView = makeOptionView()
@@ -76,15 +75,8 @@ private extension PaygateMainView {
         
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.scale),
-            titleLabel.trailingAnchor.constraint(equalTo: iconView.leadingAnchor, constant: -16.scale),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 159.scale : 114.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            iconView.widthAnchor.constraint(equalToConstant: 64.scale),
-            iconView.heightAnchor.constraint(equalToConstant: 64.scale),
-            iconView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.scale),
-            iconView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -157,16 +149,6 @@ private extension PaygateMainView {
         let view = UILabel()
         view.alpha = 0
         view.numberOfLines = 1
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeIconView() -> UIImageView {
-        let view = UIImageView()
-        view.alpha = 0
-        view.image = UIImage(named: "Paygate.MainOffer.Icon")
-        view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

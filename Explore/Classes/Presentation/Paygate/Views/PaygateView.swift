@@ -56,7 +56,6 @@ private extension PaygateView {
 private extension PaygateView {
     func makeCloseButton() -> UIButton {
         let view = UIButton()
-        view.isHidden = true
         view.setImage(UIImage(named: "Paygate.MainOffer.Close"), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

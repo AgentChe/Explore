@@ -45,13 +45,13 @@ private extension PaygateMapper {
         let title = (main["header"] as? String ?? "")
             .attributed(with: TextAttributes()
                 .font(Font.OpenSans.bold(size: 34.scale))
-                .textColor(UIColor.black)
+                .textColor(UIColor.white)
                 .lineHeight(38.scale))
         
         let subTitle = (main["subTitle"] as? String ?? "")
             .attributed(with: TextAttributes()
                 .font(Font.OpenSans.regular(size: 14.scale))
-                .textColor(UIColor.black)
+                .textColor(UIColor.white)
                 .lineHeight(16.scale)
                 .textAlignment(.left))
         
@@ -72,7 +72,7 @@ private extension PaygateMapper {
             .attributed(with: TextAttributes()
                 .font(Font.OpenSans.semibold(size: 17.scale))
                 .lineHeight(27.scale)
-                .textColor(UIColor.black.withAlphaComponent(0.3)))
+                .textColor(UIColor.white.withAlphaComponent(0.3)))
         
         return PaygateMainOffer(title: title,
                                 subTitle: subTitle,
@@ -190,18 +190,18 @@ private extension PaygateMapper {
             .uppercased()
             .replacingOccurrences(of: "@price", with: productPrice.priceLocalized)
             .attributed(with: TextAttributes()
-                .font(Font.Poppins.semibold(size: 15.scale))
-                .textColor(UIColor.black)
-                .lineHeight(17.scale)
+                .font(Font.Poppins.bold(size: 52.scale))
+                .textColor(UIColor.white)
+                .lineHeight(54.scale)
                 .textAlignment(.center))
         
         let subTitle = (specialOffer["title"] as? String)?
             .replacingOccurrences(of: "@price", with: productPrice.priceLocalized)
             .uppercased()
             .attributed(with: TextAttributes()
-                .font(Font.Poppins.bold(size: 52.scale))
-                .textColor(UIColor.black)
-                .lineHeight(54.scale)
+                .font(Font.Poppins.semibold(size: 15.scale))
+                .textColor(UIColor.white)
+                .lineHeight(17.scale)
                 .textAlignment(.center))
         
         let text1 = (specialOffer["text_1"] as? String ?? "")
@@ -216,7 +216,7 @@ private extension PaygateMapper {
             .replacingOccurrences(of: "@price", with: productPrice.priceLocalized)
             .attributed(with: TextAttributes()
                 .font(Font.OpenSans.bold(size: 22.scale))
-                .textColor(UIColor.black)
+                .textColor(UIColor.white)
                 .lineHeight(26.scale)
                 .textAlignment(.center))
         
@@ -236,7 +236,7 @@ private extension PaygateMapper {
             .replacingOccurrences(of: "@price", with: productPrice.priceLocalized)
             .attributed(with: TextAttributes()
                     .font(Font.OpenSans.semibold(size: 13.scale))
-                .textColor(UIColor.black.withAlphaComponent(0.5))
+                    .textColor(UIColor.white.withAlphaComponent(0.5))
                     .letterSpacing(-0.06.scale)
                     .lineHeight(15.scale))
         
@@ -244,7 +244,7 @@ private extension PaygateMapper {
             .attributed(with: TextAttributes()
                 .font(Font.OpenSans.semibold(size: 17.scale))
                 .lineHeight(27.scale)
-                .textColor(UIColor.black.withAlphaComponent(0.3)))
+                .textColor(UIColor.white.withAlphaComponent(0.3)))
         
         let multiplicator = specialOffer["special_offer_multiplicator"] as? Int ?? 1
         let oldPrice = productPrice.priceValue * Double(multiplicator)

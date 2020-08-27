@@ -20,7 +20,7 @@ final class PaygateViewModel {
     let restoreProcessing = RxActivityIndicator()
     let retrieveCompleted = BehaviorRelay<Bool>(value: false)
     
-    private let paygateManager = PaygateManager()
+    private let paygateManager = PaygateManagerMock()
     private let purchaseManager = PurchaseManager()
 }
 
@@ -33,12 +33,12 @@ extension PaygateViewModel {
             .asDriver(onErrorJustReturn: nil)
         
         let prices = paygate
-            .flatMapLatest { response -> Driver<PaygateMapper.PaygateResponse?> in
+            .flatMapLatest { [paygateManager] response -> Driver<PaygateMapper.PaygateResponse?> in
                 guard let response = response else {
                     return .deferred { .just(nil) }
                 }
                 
-                return PaygateManager
+                return paygateManager
                     .prepareProductsPrices(for: response)
                     .asDriver(onErrorJustReturn: nil)
             }

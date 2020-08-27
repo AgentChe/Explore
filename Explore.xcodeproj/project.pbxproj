@@ -96,6 +96,8 @@
 		966F47A724F7BAA60025FD5F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47A624F7BAA60025FD5F /* OnboardingSlide.swift */; };
 		966F47A924F7BDFE0025FD5F /* OnboardingSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47A824F7BDFE0025FD5F /* OnboardingSlider.swift */; };
 		966F47AB24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AA24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift */; };
+		966F47AD24F80D9A0025FD5F /* PaygateManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AC24F80D9A0025FD5F /* PaygateManagerCore.swift */; };
+		966F47AF24F80E610025FD5F /* PaygateManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */; };
 		96EB730524DBFABD008A32BC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730424DBFABD008A32BC /* Model.swift */; };
 		96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */; };
 		96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732124DD3103008A32BC /* SplashViewController.swift */; };
@@ -196,6 +198,8 @@
 		966F47A624F7BAA60025FD5F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		966F47A824F7BDFE0025FD5F /* OnboardingSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlider.swift; sourceTree = "<group>"; };
 		966F47AA24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSliderDelegate.swift; sourceTree = "<group>"; };
+		966F47AC24F80D9A0025FD5F /* PaygateManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerCore.swift; sourceTree = "<group>"; };
+		966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerMock.swift; sourceTree = "<group>"; };
 		96EB730424DBFABD008A32BC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationUtils.swift; sourceTree = "<group>"; };
 		96EB732124DD3103008A32BC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -517,6 +521,8 @@
 				966F475924F6A4880025FD5F /* Mapper */,
 				966F472924F6962D0025FD5F /* Models */,
 				966F476924F6AF890025FD5F /* PaygateManager.swift */,
+				966F47AC24F80D9A0025FD5F /* PaygateManagerCore.swift */,
+				966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */,
 			);
 			path = Paygate;
 			sourceTree = "<group>";
@@ -846,6 +852,7 @@
 				9604B06B24DB471F00649DA7 /* Coordinate.swift in Sources */,
 				9604B06F24DB497F00649DA7 /* GeoLocationManagerDelegate.swift in Sources */,
 				966F470F24F666170025FD5F /* Trip.swift in Sources */,
+				966F47AD24F80D9A0025FD5F /* PaygateManagerCore.swift in Sources */,
 				960F032224DAC686008267FA /* Weak.swift in Sources */,
 				960F032424DAC686008267FA /* RxActivityIndicator.swift in Sources */,
 				966F478B24F6DCF80025FD5F /* PaygateViewControllerDelegate.swift in Sources */,
@@ -911,6 +918,7 @@
 				960F02FB24DAC5E3008267FA /* DataBaseError.swift in Sources */,
 				966F476524F6A6410025FD5F /* PurchaseValidateRequest.swift in Sources */,
 				966F479E24F7B14F0025FD5F /* FindPlaceViewModel.swift in Sources */,
+				966F47AF24F80E610025FD5F /* PaygateManagerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
