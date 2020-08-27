@@ -11,4 +11,6 @@ target 'Explore' do
   pod 'NotificationBannerSwift'
   
   pod 'GoogleMaps'
+  
+  pod 'SwiftyStoreKit'
 end

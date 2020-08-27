@@ -8,6 +8,7 @@
 
 struct GlobalDefinitions {
     static let domain = "https://explore.korrekted.com"
+    static let apiKey = ""
     
     static let googleApiKey = "AIzaSyBdakvJp7Zv1ZDDLTpWReGBgQNZ6H0tOOQ"
 }

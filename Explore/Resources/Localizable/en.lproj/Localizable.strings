@@ -14,3 +14,11 @@
 "ImagePicker.TakePhoto" = "TakePhoto";
 "ImagePicker.CameraRoll" = "CameraRoll";
 "ImagePicker.PhotoLibrary" = "PhotoLibrary";
+
+// MARK: Paygate
+"Paygate.Purchase.Failed" = "Failed to purchase";
+
+// MARK: Onboarding
+"Onboarding.Slide1.Title" = "Welcome to Randonautica";
+"Onboarding.Slide2.Title" = "Let's search";
+"Onboarding.Slide2.SubTitle" = "The view attracts the presented. The preconscious, despite external influences, chooses, automatism.";

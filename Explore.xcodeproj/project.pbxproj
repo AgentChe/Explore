@@ -40,6 +40,62 @@
 		960F032C24DAC686008267FA /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F031824DAC686008267FA /* CircleView.swift */; };
 		961A08B824D99D79001F23E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961A08B724D99D79001F23E6 /* AppDelegate.swift */; };
 		961A08C124D99D7B001F23E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 961A08C024D99D7B001F23E6 /* Assets.xcassets */; };
+		966F470F24F666170025FD5F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F470E24F666170025FD5F /* Trip.swift */; };
+		966F471224F66CE40025FD5F /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471124F66CE40025FD5F /* TripManager.swift */; };
+		966F471424F66CFD0025FD5F /* TripManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */; };
+		966F471624F6761F0025FD5F /* CreateTripRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471524F6761F0025FD5F /* CreateTripRequest.swift */; };
+		966F471A24F676720025FD5F /* TripFeedbackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471924F676720025FD5F /* TripFeedbackRequest.swift */; };
+		966F471E24F688F20025FD5F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471D24F688F20025FD5F /* Session.swift */; };
+		966F472024F68A540025FD5F /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471F24F68A540025FD5F /* SessionManager.swift */; };
+		966F472424F68F520025FD5F /* ErrorChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F472324F68F520025FD5F /* ErrorChecker.swift */; };
+		966F472B24F696490025FD5F /* PaygateSpecialOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F472A24F696490025FD5F /* PaygateSpecialOffer.swift */; };
+		966F472D24F6965B0025FD5F /* PaygateOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F472C24F6965B0025FD5F /* PaygateOption.swift */; };
+		966F472F24F6966C0025FD5F /* PaygateMainOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F472E24F6966C0025FD5F /* PaygateMainOffer.swift */; };
+		966F473124F698C60025FD5F /* Paygate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F473024F698C60025FD5F /* Paygate.swift */; };
+		966F474924F6A2D40025FD5F /* SF-Compact-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 966F474824F69B780025FD5F /* SF-Compact-Text-Bold.otf */; };
+		966F474A24F6A2D40025FD5F /* SF-Compact-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 966F474724F69B780025FD5F /* SF-Compact-Text-Regular.otf */; };
+		966F474B24F6A2D40025FD5F /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 966F474424F69A300025FD5F /* SF-Pro-Text-Semibold.otf */; };
+		966F474C24F6A2D40025FD5F /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 966F474324F69A2B0025FD5F /* SF-Pro-Text-Regular.otf */; };
+		966F474D24F6A2D40025FD5F /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 966F474224F69A270025FD5F /* SF-Pro-Text-Medium.otf */; };
+		966F474E24F6A2D40025FD5F /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 966F474124F69A220025FD5F /* SF-Pro-Text-Light.otf */; };
+		966F474F24F6A2D40025FD5F /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 966F473F24F69A1A0025FD5F /* SF-Pro-Text-Bold.otf */; };
+		966F475024F6A2D40025FD5F /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966F473C24F699CA0025FD5F /* Poppins-Bold.ttf */; };
+		966F475124F6A2D40025FD5F /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966F473D24F699CA0025FD5F /* Poppins-Light.ttf */; };
+		966F475224F6A2D40025FD5F /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966F473B24F699CA0025FD5F /* Poppins-Medium.ttf */; };
+		966F475324F6A2D40025FD5F /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966F473924F699C90025FD5F /* Poppins-Regular.ttf */; };
+		966F475424F6A2D40025FD5F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966F473A24F699C90025FD5F /* Poppins-SemiBold.ttf */; };
+		966F475524F6A2D40025FD5F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966F473424F699B70025FD5F /* OpenSans-Bold.ttf */; };
+		966F475624F6A2D40025FD5F /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966F473524F699B70025FD5F /* OpenSans-Light.ttf */; };
+		966F475724F6A2D40025FD5F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966F473724F699B70025FD5F /* OpenSans-Regular.ttf */; };
+		966F475824F6A2D40025FD5F /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966F473624F699B70025FD5F /* OpenSans-SemiBold.ttf */; };
+		966F475B24F6A4A20025FD5F /* PaygateMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F475A24F6A4A20025FD5F /* PaygateMapper.swift */; };
+		966F475F24F6A4FE0025FD5F /* ProductPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F475E24F6A4FE0025FD5F /* ProductPrice.swift */; };
+		966F476124F6A58A0025FD5F /* RetrievedProductsPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F476024F6A58A0025FD5F /* RetrievedProductsPrices.swift */; };
+		966F476324F6A5B30025FD5F /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F476224F6A5B30025FD5F /* PurchaseManager.swift */; };
+		966F476524F6A6410025FD5F /* PurchaseValidateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F476424F6A6410025FD5F /* PurchaseValidateRequest.swift */; };
+		966F476724F6A94B0025FD5F /* GetPaygateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F476624F6A94B0025FD5F /* GetPaygateRequest.swift */; };
+		966F476A24F6AF890025FD5F /* PaygateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F476924F6AF890025FD5F /* PaygateManager.swift */; };
+		966F476D24F6B0620025FD5F /* IDFAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F476C24F6B0620025FD5F /* IDFAService.swift */; };
+		966F478424F6DCBE0025FD5F /* PaygateMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F478024F6DCBE0025FD5F /* PaygateMainView.swift */; };
+		966F478524F6DCBE0025FD5F /* PaygateOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F478124F6DCBE0025FD5F /* PaygateOptionView.swift */; };
+		966F478624F6DCBE0025FD5F /* PaygateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F478224F6DCBE0025FD5F /* PaygateView.swift */; };
+		966F478724F6DCBE0025FD5F /* PaygateSpecialOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F478324F6DCBE0025FD5F /* PaygateSpecialOfferView.swift */; };
+		966F478B24F6DCF80025FD5F /* PaygateViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F478824F6DCF80025FD5F /* PaygateViewControllerDelegate.swift */; };
+		966F478C24F6DCF80025FD5F /* PaygateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F478924F6DCF80025FD5F /* PaygateViewController.swift */; };
+		966F478D24F6DCF80025FD5F /* PaygateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F478A24F6DCF80025FD5F /* PaygateViewModel.swift */; };
+		966F478F24F7A3480025FD5F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F478E24F7A3480025FD5F /* OnboardingViewController.swift */; };
+		966F479124F7A3740025FD5F /* FindPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F479024F7A3740025FD5F /* FindPlaceViewController.swift */; };
+		966F479324F7A57B0025FD5F /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F479224F7A57B0025FD5F /* SplashViewModel.swift */; };
+		966F479624F7A5C10025FD5F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F479524F7A5C10025FD5F /* MapViewController.swift */; };
+		966F479824F7AFB50025FD5F /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F479724F7AFB50025FD5F /* MapViewModel.swift */; };
+		966F479A24F7AFCC0025FD5F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F479924F7AFCC0025FD5F /* MapView.swift */; };
+		966F479C24F7B0600025FD5F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F479B24F7B0600025FD5F /* OnboardingView.swift */; };
+		966F479E24F7B14F0025FD5F /* FindPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F479D24F7B14F0025FD5F /* FindPlaceViewModel.swift */; };
+		966F47A024F7B1650025FD5F /* FindPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F479F24F7B1650025FD5F /* FindPlaceView.swift */; };
+		966F47A324F7B7110025FD5F /* OnboardingSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47A224F7B7110025FD5F /* OnboardingSlideView.swift */; };
+		966F47A724F7BAA60025FD5F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47A624F7BAA60025FD5F /* OnboardingSlide.swift */; };
+		966F47A924F7BDFE0025FD5F /* OnboardingSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47A824F7BDFE0025FD5F /* OnboardingSlider.swift */; };
+		966F47AB24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AA24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift */; };
 		96EB730524DBFABD008A32BC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730424DBFABD008A32BC /* Model.swift */; };
 		96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */; };
 		96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732124DD3103008A32BC /* SplashViewController.swift */; };
@@ -84,6 +140,62 @@
 		961A08B724D99D79001F23E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		961A08C024D99D7B001F23E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		961A08C524D99D7B001F23E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		966F470E24F666170025FD5F /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		966F471124F66CE40025FD5F /* TripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
+		966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerDelegate.swift; sourceTree = "<group>"; };
+		966F471524F6761F0025FD5F /* CreateTripRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripRequest.swift; sourceTree = "<group>"; };
+		966F471924F676720025FD5F /* TripFeedbackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackRequest.swift; sourceTree = "<group>"; };
+		966F471D24F688F20025FD5F /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		966F471F24F68A540025FD5F /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		966F472324F68F520025FD5F /* ErrorChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorChecker.swift; sourceTree = "<group>"; };
+		966F472A24F696490025FD5F /* PaygateSpecialOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateSpecialOffer.swift; sourceTree = "<group>"; };
+		966F472C24F6965B0025FD5F /* PaygateOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateOption.swift; sourceTree = "<group>"; };
+		966F472E24F6966C0025FD5F /* PaygateMainOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateMainOffer.swift; sourceTree = "<group>"; };
+		966F473024F698C60025FD5F /* Paygate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paygate.swift; sourceTree = "<group>"; };
+		966F473424F699B70025FD5F /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		966F473524F699B70025FD5F /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		966F473624F699B70025FD5F /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		966F473724F699B70025FD5F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		966F473924F699C90025FD5F /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		966F473A24F699C90025FD5F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		966F473B24F699CA0025FD5F /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		966F473C24F699CA0025FD5F /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		966F473D24F699CA0025FD5F /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		966F473F24F69A1A0025FD5F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		966F474124F69A220025FD5F /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
+		966F474224F69A270025FD5F /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		966F474324F69A2B0025FD5F /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		966F474424F69A300025FD5F /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		966F474724F69B780025FD5F /* SF-Compact-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Regular.otf"; sourceTree = "<group>"; };
+		966F474824F69B780025FD5F /* SF-Compact-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Bold.otf"; sourceTree = "<group>"; };
+		966F475A24F6A4A20025FD5F /* PaygateMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateMapper.swift; sourceTree = "<group>"; };
+		966F475E24F6A4FE0025FD5F /* ProductPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPrice.swift; sourceTree = "<group>"; };
+		966F476024F6A58A0025FD5F /* RetrievedProductsPrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievedProductsPrices.swift; sourceTree = "<group>"; };
+		966F476224F6A5B30025FD5F /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
+		966F476424F6A6410025FD5F /* PurchaseValidateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseValidateRequest.swift; sourceTree = "<group>"; };
+		966F476624F6A94B0025FD5F /* GetPaygateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaygateRequest.swift; sourceTree = "<group>"; };
+		966F476924F6AF890025FD5F /* PaygateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManager.swift; sourceTree = "<group>"; };
+		966F476C24F6B0620025FD5F /* IDFAService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDFAService.swift; sourceTree = "<group>"; };
+		966F478024F6DCBE0025FD5F /* PaygateMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateMainView.swift; sourceTree = "<group>"; };
+		966F478124F6DCBE0025FD5F /* PaygateOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateOptionView.swift; sourceTree = "<group>"; };
+		966F478224F6DCBE0025FD5F /* PaygateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateView.swift; sourceTree = "<group>"; };
+		966F478324F6DCBE0025FD5F /* PaygateSpecialOfferView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateSpecialOfferView.swift; sourceTree = "<group>"; };
+		966F478824F6DCF80025FD5F /* PaygateViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateViewControllerDelegate.swift; sourceTree = "<group>"; };
+		966F478924F6DCF80025FD5F /* PaygateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateViewController.swift; sourceTree = "<group>"; };
+		966F478A24F6DCF80025FD5F /* PaygateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateViewModel.swift; sourceTree = "<group>"; };
+		966F478E24F7A3480025FD5F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		966F479024F7A3740025FD5F /* FindPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewController.swift; sourceTree = "<group>"; };
+		966F479224F7A57B0025FD5F /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		966F479524F7A5C10025FD5F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		966F479724F7AFB50025FD5F /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		966F479924F7AFCC0025FD5F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		966F479B24F7B0600025FD5F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		966F479D24F7B14F0025FD5F /* FindPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewModel.swift; sourceTree = "<group>"; };
+		966F479F24F7B1650025FD5F /* FindPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceView.swift; sourceTree = "<group>"; };
+		966F47A224F7B7110025FD5F /* OnboardingSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlideView.swift; sourceTree = "<group>"; };
+		966F47A624F7BAA60025FD5F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		966F47A824F7BDFE0025FD5F /* OnboardingSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlider.swift; sourceTree = "<group>"; };
+		966F47AA24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSliderDelegate.swift; sourceTree = "<group>"; };
 		96EB730424DBFABD008A32BC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationUtils.swift; sourceTree = "<group>"; };
 		96EB732124DD3103008A32BC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +260,7 @@
 		960F028F24DAC13B008267FA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				966F473224F699A40025FD5F /* Fonts */,
 				960F029024DAC142008267FA /* Localizable */,
 				961A08B724D99D79001F23E6 /* AppDelegate.swift */,
 				961A08C024D99D7B001F23E6 /* Assets.xcassets */,
@@ -176,7 +289,11 @@
 		960F029924DAC5C9008267FA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				96EB731F24DD308F008A32BC /* SplashScreen */,
+				966F479424F7A5A50025FD5F /* Map */,
+				966F472724F695F00025FD5F /* Onboarding */,
+				966F472624F695E30025FD5F /* FindPlace */,
+				966F472524F695DD0025FD5F /* Paygate */,
+				96EB731F24DD308F008A32BC /* Splash */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -184,6 +301,11 @@
 		960F029A24DAC5D3008267FA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				966F476B24F6B0030025FD5F /* Analytics */,
+				966F475C24F6A4DB0025FD5F /* Purchase */,
+				966F472824F696250025FD5F /* Paygate */,
+				966F471B24F688DB0025FD5F /* Session */,
+				966F471024F66CC80025FD5F /* Trip */,
 				9604B07024DBE1A800649DA7 /* GeoLocation */,
 			);
 			path = Service;
@@ -203,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				96EB730424DBFABD008A32BC /* Model.swift */,
+				966F470E24F666170025FD5F /* Trip.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -211,6 +334,10 @@
 			isa = PBXGroup;
 			children = (
 				960F02AE24DAC5E3008267FA /* APIRequestBody.swift */,
+				966F471524F6761F0025FD5F /* CreateTripRequest.swift */,
+				966F471924F676720025FD5F /* TripFeedbackRequest.swift */,
+				966F476424F6A6410025FD5F /* PurchaseValidateRequest.swift */,
+				966F476624F6A94B0025FD5F /* GetPaygateRequest.swift */,
 			);
 			path = RequestBody;
 			sourceTree = "<group>";
@@ -218,6 +345,7 @@
 		960F02CB24DAC5E3008267FA /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				966F472224F68F470025FD5F /* Checker */,
 				960F02CC24DAC5E3008267FA /* ApiError.swift */,
 				960F02CD24DAC5E3008267FA /* SignError.swift */,
 				960F02CE24DAC5E3008267FA /* PurchaseError.swift */,
@@ -318,13 +446,237 @@
 			path = Explore;
 			sourceTree = "<group>";
 		};
-		96EB731F24DD308F008A32BC /* SplashScreen */ = {
+		966F471024F66CC80025FD5F /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				966F471124F66CE40025FD5F /* TripManager.swift */,
+				966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		966F471B24F688DB0025FD5F /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				966F471C24F688E90025FD5F /* Models */,
+				966F471F24F68A540025FD5F /* SessionManager.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		966F471C24F688E90025FD5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				966F471D24F688F20025FD5F /* Session.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		966F472224F68F470025FD5F /* Checker */ = {
+			isa = PBXGroup;
+			children = (
+				966F472324F68F520025FD5F /* ErrorChecker.swift */,
+			);
+			path = Checker;
+			sourceTree = "<group>";
+		};
+		966F472524F695DD0025FD5F /* Paygate */ = {
+			isa = PBXGroup;
+			children = (
+				966F477F24F6DCBE0025FD5F /* Views */,
+				966F478924F6DCF80025FD5F /* PaygateViewController.swift */,
+				966F478824F6DCF80025FD5F /* PaygateViewControllerDelegate.swift */,
+				966F478A24F6DCF80025FD5F /* PaygateViewModel.swift */,
+			);
+			path = Paygate;
+			sourceTree = "<group>";
+		};
+		966F472624F695E30025FD5F /* FindPlace */ = {
+			isa = PBXGroup;
+			children = (
+				966F479024F7A3740025FD5F /* FindPlaceViewController.swift */,
+				966F479D24F7B14F0025FD5F /* FindPlaceViewModel.swift */,
+				966F479F24F7B1650025FD5F /* FindPlaceView.swift */,
+			);
+			path = FindPlace;
+			sourceTree = "<group>";
+		};
+		966F472724F695F00025FD5F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				966F47A124F7B6EA0025FD5F /* Views */,
+				966F478E24F7A3480025FD5F /* OnboardingViewController.swift */,
+				966F479B24F7B0600025FD5F /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		966F472824F696250025FD5F /* Paygate */ = {
+			isa = PBXGroup;
+			children = (
+				966F475924F6A4880025FD5F /* Mapper */,
+				966F472924F6962D0025FD5F /* Models */,
+				966F476924F6AF890025FD5F /* PaygateManager.swift */,
+			);
+			path = Paygate;
+			sourceTree = "<group>";
+		};
+		966F472924F6962D0025FD5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				966F472A24F696490025FD5F /* PaygateSpecialOffer.swift */,
+				966F472C24F6965B0025FD5F /* PaygateOption.swift */,
+				966F472E24F6966C0025FD5F /* PaygateMainOffer.swift */,
+				966F473024F698C60025FD5F /* Paygate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		966F473224F699A40025FD5F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				966F474624F69B6B0025FD5F /* SFCompactText */,
+				966F473E24F69A0A0025FD5F /* SFProText */,
+				966F473824F699BC0025FD5F /* Poppins */,
+				966F473324F699AC0025FD5F /* OpenSans */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		966F473324F699AC0025FD5F /* OpenSans */ = {
+			isa = PBXGroup;
+			children = (
+				966F473424F699B70025FD5F /* OpenSans-Bold.ttf */,
+				966F473524F699B70025FD5F /* OpenSans-Light.ttf */,
+				966F473724F699B70025FD5F /* OpenSans-Regular.ttf */,
+				966F473624F699B70025FD5F /* OpenSans-SemiBold.ttf */,
+			);
+			path = OpenSans;
+			sourceTree = "<group>";
+		};
+		966F473824F699BC0025FD5F /* Poppins */ = {
+			isa = PBXGroup;
+			children = (
+				966F473C24F699CA0025FD5F /* Poppins-Bold.ttf */,
+				966F473D24F699CA0025FD5F /* Poppins-Light.ttf */,
+				966F473B24F699CA0025FD5F /* Poppins-Medium.ttf */,
+				966F473924F699C90025FD5F /* Poppins-Regular.ttf */,
+				966F473A24F699C90025FD5F /* Poppins-SemiBold.ttf */,
+			);
+			path = Poppins;
+			sourceTree = "<group>";
+		};
+		966F473E24F69A0A0025FD5F /* SFProText */ = {
+			isa = PBXGroup;
+			children = (
+				966F474424F69A300025FD5F /* SF-Pro-Text-Semibold.otf */,
+				966F474324F69A2B0025FD5F /* SF-Pro-Text-Regular.otf */,
+				966F474224F69A270025FD5F /* SF-Pro-Text-Medium.otf */,
+				966F474124F69A220025FD5F /* SF-Pro-Text-Light.otf */,
+				966F473F24F69A1A0025FD5F /* SF-Pro-Text-Bold.otf */,
+			);
+			path = SFProText;
+			sourceTree = "<group>";
+		};
+		966F474624F69B6B0025FD5F /* SFCompactText */ = {
+			isa = PBXGroup;
+			children = (
+				966F474824F69B780025FD5F /* SF-Compact-Text-Bold.otf */,
+				966F474724F69B780025FD5F /* SF-Compact-Text-Regular.otf */,
+			);
+			path = SFCompactText;
+			sourceTree = "<group>";
+		};
+		966F475924F6A4880025FD5F /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				966F475A24F6A4A20025FD5F /* PaygateMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		966F475C24F6A4DB0025FD5F /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				966F475D24F6A4E60025FD5F /* Model */,
+				966F476224F6A5B30025FD5F /* PurchaseManager.swift */,
+			);
+			path = Purchase;
+			sourceTree = "<group>";
+		};
+		966F475D24F6A4E60025FD5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				966F475E24F6A4FE0025FD5F /* ProductPrice.swift */,
+				966F476024F6A58A0025FD5F /* RetrievedProductsPrices.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		966F476B24F6B0030025FD5F /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				966F476C24F6B0620025FD5F /* IDFAService.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		966F477F24F6DCBE0025FD5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				966F478024F6DCBE0025FD5F /* PaygateMainView.swift */,
+				966F478124F6DCBE0025FD5F /* PaygateOptionView.swift */,
+				966F478224F6DCBE0025FD5F /* PaygateView.swift */,
+				966F478324F6DCBE0025FD5F /* PaygateSpecialOfferView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		966F479424F7A5A50025FD5F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				966F479524F7A5C10025FD5F /* MapViewController.swift */,
+				966F479724F7AFB50025FD5F /* MapViewModel.swift */,
+				966F479924F7AFCC0025FD5F /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		966F47A124F7B6EA0025FD5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				966F47A424F7BA930025FD5F /* Slider */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		966F47A424F7BA930025FD5F /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				966F47A524F7BA9A0025FD5F /* Models */,
+				966F47A224F7B7110025FD5F /* OnboardingSlideView.swift */,
+				966F47A824F7BDFE0025FD5F /* OnboardingSlider.swift */,
+				966F47AA24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		966F47A524F7BA9A0025FD5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				966F47A624F7BAA60025FD5F /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		96EB731F24DD308F008A32BC /* Splash */ = {
 			isa = PBXGroup;
 			children = (
 				96EB732124DD3103008A32BC /* SplashViewController.swift */,
+				966F479224F7A57B0025FD5F /* SplashViewModel.swift */,
 				96EB732324DD3139008A32BC /* SplashView.swift */,
 			);
-			path = SplashScreen;
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		AB0A19C4267249BB598D332C /* Pods */ = {
@@ -397,6 +749,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966F474924F6A2D40025FD5F /* SF-Compact-Text-Bold.otf in Resources */,
+				966F474A24F6A2D40025FD5F /* SF-Compact-Text-Regular.otf in Resources */,
+				966F474B24F6A2D40025FD5F /* SF-Pro-Text-Semibold.otf in Resources */,
+				966F474C24F6A2D40025FD5F /* SF-Pro-Text-Regular.otf in Resources */,
+				966F474D24F6A2D40025FD5F /* SF-Pro-Text-Medium.otf in Resources */,
+				966F474E24F6A2D40025FD5F /* SF-Pro-Text-Light.otf in Resources */,
+				966F474F24F6A2D40025FD5F /* SF-Pro-Text-Bold.otf in Resources */,
+				966F475024F6A2D40025FD5F /* Poppins-Bold.ttf in Resources */,
+				966F475124F6A2D40025FD5F /* Poppins-Light.ttf in Resources */,
+				966F475224F6A2D40025FD5F /* Poppins-Medium.ttf in Resources */,
+				966F475324F6A2D40025FD5F /* Poppins-Regular.ttf in Resources */,
+				966F475424F6A2D40025FD5F /* Poppins-SemiBold.ttf in Resources */,
+				966F475524F6A2D40025FD5F /* OpenSans-Bold.ttf in Resources */,
+				966F475624F6A2D40025FD5F /* OpenSans-Light.ttf in Resources */,
+				966F475724F6A2D40025FD5F /* OpenSans-Regular.ttf in Resources */,
+				966F475824F6A2D40025FD5F /* OpenSans-SemiBold.ttf in Resources */,
 				9604B05E24DB44A100649DA7 /* LaunchScreen.storyboard in Resources */,
 				960F029324DAC181008267FA /* Localizable.strings in Resources */,
 				961A08C124D99D7B001F23E6 /* Assets.xcassets in Resources */,
@@ -470,39 +838,79 @@
 			buildActionMask = 2147483647;
 			files = (
 				960F031D24DAC686008267FA /* Scalable.swift in Sources */,
+				966F478524F6DCBE0025FD5F /* PaygateOptionView.swift in Sources */,
+				966F47A924F7BDFE0025FD5F /* OnboardingSlider.swift in Sources */,
 				96EB732424DD3139008A32BC /* SplashView.swift in Sources */,
+				966F472D24F6965B0025FD5F /* PaygateOption.swift in Sources */,
 				960F031924DAC686008267FA /* UIViewExtension.swift in Sources */,
 				9604B06B24DB471F00649DA7 /* Coordinate.swift in Sources */,
 				9604B06F24DB497F00649DA7 /* GeoLocationManagerDelegate.swift in Sources */,
+				966F470F24F666170025FD5F /* Trip.swift in Sources */,
 				960F032224DAC686008267FA /* Weak.swift in Sources */,
 				960F032424DAC686008267FA /* RxActivityIndicator.swift in Sources */,
+				966F478B24F6DCF80025FD5F /* PaygateViewControllerDelegate.swift in Sources */,
 				960F02F824DAC5E3008267FA /* SignError.swift in Sources */,
 				960F032B24DAC686008267FA /* PaddingLabel.swift in Sources */,
+				966F478424F6DCBE0025FD5F /* PaygateMainView.swift in Sources */,
 				960F029824DAC586008267FA /* RestAPITransport.swift in Sources */,
 				961A08B824D99D79001F23E6 /* AppDelegate.swift in Sources */,
+				966F472424F68F520025FD5F /* ErrorChecker.swift in Sources */,
+				966F479824F7AFB50025FD5F /* MapViewModel.swift in Sources */,
+				966F476324F6A5B30025FD5F /* PurchaseManager.swift in Sources */,
 				960F031C24DAC686008267FA /* DictionaryExtension.swift in Sources */,
+				966F471424F66CFD0025FD5F /* TripManagerDelegate.swift in Sources */,
+				966F471624F6761F0025FD5F /* CreateTripRequest.swift in Sources */,
+				966F475F24F6A4FE0025FD5F /* ProductPrice.swift in Sources */,
 				960F031F24DAC686008267FA /* ScreenSize.swift in Sources */,
+				966F479124F7A3740025FD5F /* FindPlaceViewController.swift in Sources */,
+				966F478F24F7A3480025FD5F /* OnboardingViewController.swift in Sources */,
 				960F032024DAC686008267FA /* Fonts.swift in Sources */,
 				960F032724DAC686008267FA /* InterceptingEventsView.swift in Sources */,
 				960F02F924DAC5E3008267FA /* PurchaseError.swift in Sources */,
 				96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */,
+				966F471E24F688F20025FD5F /* Session.swift in Sources */,
+				966F471A24F676720025FD5F /* TripFeedbackRequest.swift in Sources */,
+				966F478624F6DCBE0025FD5F /* PaygateView.swift in Sources */,
+				966F476724F6A94B0025FD5F /* GetPaygateRequest.swift in Sources */,
 				96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */,
 				960F032C24DAC686008267FA /* CircleView.swift in Sources */,
 				960F032524DAC686008267FA /* PaginatedDataLoader.swift in Sources */,
 				960F02F724DAC5E3008267FA /* ApiError.swift in Sources */,
+				966F476124F6A58A0025FD5F /* RetrievedProductsPrices.swift in Sources */,
 				960F031A24DAC686008267FA /* UIDeviceExtension.swift in Sources */,
+				966F479324F7A57B0025FD5F /* SplashViewModel.swift in Sources */,
+				966F473124F698C60025FD5F /* Paygate.swift in Sources */,
 				960F02DF24DAC5E3008267FA /* APIRequestBody.swift in Sources */,
 				960F031B24DAC686008267FA /* StringExtension.swift in Sources */,
+				966F478C24F6DCF80025FD5F /* PaygateViewController.swift in Sources */,
 				960F031E24DAC686008267FA /* TextAttributes.swift in Sources */,
+				966F471224F66CE40025FD5F /* TripManager.swift in Sources */,
+				966F472024F68A540025FD5F /* SessionManager.swift in Sources */,
 				960F02FA24DAC5E3008267FA /* PaymentError.swift in Sources */,
+				966F479C24F7B0600025FD5F /* OnboardingView.swift in Sources */,
+				966F47A324F7B7110025FD5F /* OnboardingSlideView.swift in Sources */,
+				966F47AB24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift in Sources */,
 				96EB730524DBFABD008A32BC /* Model.swift in Sources */,
+				966F47A724F7BAA60025FD5F /* OnboardingSlide.swift in Sources */,
+				966F47A024F7B1650025FD5F /* FindPlaceView.swift in Sources */,
 				960F032A24DAC686008267FA /* PaddingTextField.swift in Sources */,
+				966F478D24F6DCF80025FD5F /* PaygateViewModel.swift in Sources */,
+				966F472B24F696490025FD5F /* PaygateSpecialOffer.swift in Sources */,
 				960F032324DAC686008267FA /* ImagePicker.swift in Sources */,
 				960F02FF24DAC64D008267FA /* GlobalDefinitions.swift in Sources */,
+				966F475B24F6A4A20025FD5F /* PaygateMapper.swift in Sources */,
+				966F476A24F6AF890025FD5F /* PaygateManager.swift in Sources */,
 				960F032624DAC686008267FA /* Toast.swift in Sources */,
 				9604B06824DB46F400649DA7 /* GeoLocationManager.swift in Sources */,
+				966F479624F7A5C10025FD5F /* MapViewController.swift in Sources */,
+				966F479A24F7AFCC0025FD5F /* MapView.swift in Sources */,
+				966F476D24F6B0620025FD5F /* IDFAService.swift in Sources */,
+				966F478724F6DCBE0025FD5F /* PaygateSpecialOfferView.swift in Sources */,
+				966F472F24F6966C0025FD5F /* PaygateMainOffer.swift in Sources */,
 				9604B06D24DB490300649DA7 /* GLAuthorizationStatus.swift in Sources */,
 				960F02FB24DAC5E3008267FA /* DataBaseError.swift in Sources */,
+				966F476524F6A6410025FD5F /* PurchaseValidateRequest.swift in Sources */,
+				966F479E24F7B14F0025FD5F /* FindPlaceViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
