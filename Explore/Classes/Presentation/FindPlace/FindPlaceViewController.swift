@@ -30,9 +30,13 @@ final class FindPlaceViewController: UIViewController {
         findPlaceView
             .button.rx.tap
             .subscribe(onNext: {
-                self.tripManager.rx.createTrip(with: Coordinate(latitude: 55.8176, longitude: 49.1351)).subscribe()
+                let trip = Trip(toCoordinate: Coordinate(latitude: 37.73189401, longitude: -122.42162013))
                 
-//                self.present(PaygateViewController.make(), animated: true)
+                guard let data = try? Trip.encode(object: trip) else {
+                    return
+                }
+                
+                UserDefaults.standard.set(data, forKey: "trip_manager_trip_cache_key")
             })
             .disposed(by: disposeBag)
     }

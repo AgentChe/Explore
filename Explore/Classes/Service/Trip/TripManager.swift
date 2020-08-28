@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 final class TripManager {
     private struct Constants {
@@ -15,6 +16,9 @@ final class TripManager {
     }
     
     private var delegates = [Weak<TripManagerDelegate>]()
+    
+    fileprivate let changedProgressStateTrigger = PublishRelay<Bool>()
+    fileprivate let tripWasRemovedTrigger = PublishRelay<Void>()
 }
 
 // MARK: API - Trip
@@ -31,6 +35,10 @@ extension TripManager {
     func removeTrip() {
         UserDefaults.standard.removeObject(forKey: Constants.tripCacheKey)
         UserDefaults.standard.removeObject(forKey: Constants.tripInProgressKey)
+        
+        delegates.forEach { $0.weak?.tripManagerTripWasRemoved() }
+        
+        tripWasRemovedTrigger.accept(Void())
     }
     
     func hasTrip() -> Bool {
@@ -45,11 +53,19 @@ extension TripManager {
         
         UserDefaults.standard.set(true, forKey: Constants.tripInProgressKey)
         
+        delegates.forEach { $0.weak?.tripManagerChanged(progressState: true) }
+        
+        changedProgressStateTrigger.accept(true)
+        
         return true
     }
     
     func removeTripFromProgress() {
         UserDefaults.standard.set(false, forKey: Constants.tripInProgressKey)
+        
+        delegates.forEach { $0.weak?.tripManagerChanged(progressState: false) }
+        
+        changedProgressStateTrigger.accept(false)
     }
     
     func isTripInProgress() -> Bool {
@@ -113,6 +129,18 @@ extension Reactive where Base: TripManager {
             .callServerApi(requestBody: TripFeedbackRequest(userToken: userToken,
                                                             feedback: text))
             .map { ErrorChecker.hasError(in: $0) }
+    }
+}
+
+// MARK: Trigger(Rx)
+
+extension Reactive where Base: TripManager {
+    var changedProgressState: Signal<Bool> {
+        base.changedProgressStateTrigger.asSignal()
+    }
+    
+    var tripWasRemovedTrigger: Signal<Void> {
+        base.tripWasRemovedTrigger.asSignal()
     }
 }
 

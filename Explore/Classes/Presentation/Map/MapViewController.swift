@@ -21,6 +21,61 @@ final class MapViewController: UIViewController {
         
         view = mapView
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel
+            .activityIndicator
+            .drive(onNext: { [weak self] active in
+                self?.mapView.switchPreloader(in: active)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .monitoringOfCoordinate()
+            .drive(onNext: { [weak self] coordinate in
+                self?.mapView.mapView.moveUserPlacedMarker(at: coordinate)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .trip()
+            .drive(onNext: { [weak self] trip in
+                self?.updateCamera(at: trip)
+            })
+            .disposed(by: disposeBag)
+        
+        let tripInProgress = viewModel.tripInProgress()
+        
+        tripInProgress
+            .drive(onNext: { [weak self] inProgress in
+                self?.updateTripButton(inProgress: inProgress)
+            })
+            .disposed(by: disposeBag)
+        
+        mapView
+            .tripButton.rx.tap
+            .withLatestFrom(tripInProgress)
+            .subscribe(onNext: { [weak self] inProgress in
+                self?.tripButtonTapped(inProgress: inProgress)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .feedbackSended()
+            .drive(onNext: { [weak self] success in
+                if !success {
+                    Toast.notify(with: "Map.SendFeedback.Failure".localized, style: .danger)
+                    return
+                }
+                
+                self?.viewModel.removeTrip()
+                
+                self?.goToFindTrip()
+            })
+            .disposed(by: disposeBag)
+    }
 }
 
 // MARK: Make
@@ -28,5 +83,52 @@ final class MapViewController: UIViewController {
 extension MapViewController {
     static func make() -> MapViewController {
         MapViewController()
+    }
+}
+
+// MARK: TripFeedbackViewControllerDelegate
+
+extension MapViewController: TripFeedbackViewControllerDelegate {
+    func tripFeedbackControllerDidSendTapped(text: String) {
+        viewModel.sendFeedback.accept(text)
+    }
+}
+
+// MARK: Private
+
+private extension MapViewController {
+    func updateCamera(at trip: Trip?) {
+        guard let trip = trip else {
+            return
+        }
+        
+        mapView.mapView.setTripMarker(at: trip.toCoordinate)
+        mapView.mapView.moveCamera(to: trip.toCoordinate)
+    }
+    
+    func updateTripButton(inProgress: Bool) {
+        mapView.tripButton.setTitle(inProgress ? "Map.StopTrip".localized : "Map.Navigate".localized, for: .normal)
+    }
+    
+    func tripButtonTapped(inProgress: Bool) {
+        if inProgress {
+            let vc = TripFeedbackViewController.make()
+            vc.delegate = self 
+            present(vc, animated: true)
+        } else {
+            guard let coordinate = viewModel.getTrip()?.toCoordinate else {
+                return
+            }
+            
+            let mapAppsActionSheet = MapAppsActionSheet().alert(coordinate: coordinate) { [weak self] in
+                self?.viewModel.addTripToProgress() ?? false
+            }
+            
+            present(mapAppsActionSheet, animated: true)
+        }
+    }
+    
+    func goToFindTrip() {
+        UIApplication.shared.keyWindow?.rootViewController = FindPlaceViewController.make()
     }
 }

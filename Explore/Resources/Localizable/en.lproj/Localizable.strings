@@ -9,6 +9,7 @@
 // MARK: General
 "Cancel" = "Cancel";
 "OK" = "OK";
+"Send" = "Send";
 
 // MARK: Image Picker
 "ImagePicker.TakePhoto" = "TakePhoto";
@@ -22,3 +23,15 @@
 "Onboarding.Slide1.Title" = "Welcome to Randonautica";
 "Onboarding.Slide2.Title" = "Let's search";
 "Onboarding.Slide2.SubTitle" = "The view attracts the presented. The preconscious, despite external influences, chooses, automatism.";
+
+// MARK: Map
+"Map.Title" = "Randonautica";
+"Map.Navigate" = "Navigate";
+"Map.StopTrip" = "Stop trip";
+"Map.SendFeedback.Failure" = "Failed to send feedback";
+"Map.MapAppsActionSheet.Message" = "Select application for build route";
+"Map.MapAppsActionSheet.AppleMap" = "Apple Map";
+"Map.MapAppsActionSheet.GoogleMap" = "Google Map";
+"Map.MapAppsActionSheet.DGis" = "2Gis";
+"Map.MapAppsActionSheet.YandexMap" = "Yandex Map";
+"Map.TripFeedbackViewController.Title" = "Send feedback about trip";

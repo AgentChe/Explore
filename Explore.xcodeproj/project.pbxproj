@@ -40,6 +40,14 @@
 		960F032C24DAC686008267FA /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F031824DAC686008267FA /* CircleView.swift */; };
 		961A08B824D99D79001F23E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961A08B724D99D79001F23E6 /* AppDelegate.swift */; };
 		961A08C124D99D7B001F23E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 961A08C024D99D7B001F23E6 /* Assets.xcassets */; };
+		963A440324F8EC190018A8CA /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 963A440224F8EC190018A8CA /* GoogleMapStyle.json */; };
+		963A440724F902450018A8CA /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A440624F902450018A8CA /* GoogleMapView.swift */; };
+		963A440924F91B490018A8CA /* TripGoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A440824F91B490018A8CA /* TripGoogleMapView.swift */; };
+		963A440C24F930BA0018A8CA /* OpenMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A440B24F930BA0018A8CA /* OpenMap.swift */; };
+		963A440E24F9322C0018A8CA /* MapAppsActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A440D24F9322C0018A8CA /* MapAppsActionSheet.swift */; };
+		963A441024F9A5B30018A8CA /* TripFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A440F24F9A5B30018A8CA /* TripFeedbackViewController.swift */; };
+		963A441324F9A87D0018A8CA /* TripFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A441224F9A87D0018A8CA /* TripFeedbackView.swift */; };
+		963A441524F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A441424F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift */; };
 		966F470F24F666170025FD5F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F470E24F666170025FD5F /* Trip.swift */; };
 		966F471224F66CE40025FD5F /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471124F66CE40025FD5F /* TripManager.swift */; };
 		966F471424F66CFD0025FD5F /* TripManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */; };
@@ -142,6 +150,14 @@
 		961A08B724D99D79001F23E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		961A08C024D99D7B001F23E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		961A08C524D99D7B001F23E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		963A440224F8EC190018A8CA /* GoogleMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleMapStyle.json; sourceTree = "<group>"; };
+		963A440624F902450018A8CA /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
+		963A440824F91B490018A8CA /* TripGoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripGoogleMapView.swift; sourceTree = "<group>"; };
+		963A440B24F930BA0018A8CA /* OpenMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMap.swift; sourceTree = "<group>"; };
+		963A440D24F9322C0018A8CA /* MapAppsActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAppsActionSheet.swift; sourceTree = "<group>"; };
+		963A440F24F9A5B30018A8CA /* TripFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackViewController.swift; sourceTree = "<group>"; };
+		963A441224F9A87D0018A8CA /* TripFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackView.swift; sourceTree = "<group>"; };
+		963A441424F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackViewControllerDelegate.swift; sourceTree = "<group>"; };
 		966F470E24F666170025FD5F /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		966F471124F66CE40025FD5F /* TripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
 		966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerDelegate.swift; sourceTree = "<group>"; };
@@ -264,6 +280,7 @@
 		960F028F24DAC13B008267FA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				963A440424F901220018A8CA /* GoogleMapStyle */,
 				966F473224F699A40025FD5F /* Fonts */,
 				960F029024DAC142008267FA /* Localizable */,
 				961A08B724D99D79001F23E6 /* AppDelegate.swift */,
@@ -415,6 +432,7 @@
 		960F031224DAC686008267FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				963A440624F902450018A8CA /* GoogleMapView.swift */,
 				960F031324DAC686008267FA /* InterceptingEventsView.swift */,
 				960F031624DAC686008267FA /* PaddingTextField.swift */,
 				960F031724DAC686008267FA /* PaddingLabel.swift */,
@@ -448,6 +466,42 @@
 				960F028F24DAC13B008267FA /* Resources */,
 			);
 			path = Explore;
+			sourceTree = "<group>";
+		};
+		963A440424F901220018A8CA /* GoogleMapStyle */ = {
+			isa = PBXGroup;
+			children = (
+				963A440224F8EC190018A8CA /* GoogleMapStyle.json */,
+			);
+			path = GoogleMapStyle;
+			sourceTree = "<group>";
+		};
+		963A440524F902370018A8CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				963A441124F9A85F0018A8CA /* TripFeedback */,
+				963A440824F91B490018A8CA /* TripGoogleMapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		963A440A24F930B10018A8CA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				963A440B24F930BA0018A8CA /* OpenMap.swift */,
+				963A440D24F9322C0018A8CA /* MapAppsActionSheet.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		963A441124F9A85F0018A8CA /* TripFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				963A440F24F9A5B30018A8CA /* TripFeedbackViewController.swift */,
+				963A441224F9A87D0018A8CA /* TripFeedbackView.swift */,
+				963A441424F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift */,
+			);
+			path = TripFeedback;
 			sourceTree = "<group>";
 		};
 		966F471024F66CC80025FD5F /* Trip */ = {
@@ -641,6 +695,8 @@
 		966F479424F7A5A50025FD5F /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				963A440A24F930B10018A8CA /* Utils */,
+				963A440524F902370018A8CA /* Views */,
 				966F479524F7A5C10025FD5F /* MapViewController.swift */,
 				966F479724F7AFB50025FD5F /* MapViewModel.swift */,
 				966F479924F7AFCC0025FD5F /* MapView.swift */,
@@ -766,6 +822,7 @@
 				966F475124F6A2D40025FD5F /* Poppins-Light.ttf in Resources */,
 				966F475224F6A2D40025FD5F /* Poppins-Medium.ttf in Resources */,
 				966F475324F6A2D40025FD5F /* Poppins-Regular.ttf in Resources */,
+				963A440324F8EC190018A8CA /* GoogleMapStyle.json in Resources */,
 				966F475424F6A2D40025FD5F /* Poppins-SemiBold.ttf in Resources */,
 				966F475524F6A2D40025FD5F /* OpenSans-Bold.ttf in Resources */,
 				966F475624F6A2D40025FD5F /* OpenSans-Light.ttf in Resources */,
@@ -847,6 +904,8 @@
 				966F478524F6DCBE0025FD5F /* PaygateOptionView.swift in Sources */,
 				966F47A924F7BDFE0025FD5F /* OnboardingSlider.swift in Sources */,
 				96EB732424DD3139008A32BC /* SplashView.swift in Sources */,
+				963A440724F902450018A8CA /* GoogleMapView.swift in Sources */,
+				963A440C24F930BA0018A8CA /* OpenMap.swift in Sources */,
 				966F472D24F6965B0025FD5F /* PaygateOption.swift in Sources */,
 				960F031924DAC686008267FA /* UIViewExtension.swift in Sources */,
 				9604B06B24DB471F00649DA7 /* Coordinate.swift in Sources */,
@@ -869,6 +928,7 @@
 				966F471624F6761F0025FD5F /* CreateTripRequest.swift in Sources */,
 				966F475F24F6A4FE0025FD5F /* ProductPrice.swift in Sources */,
 				960F031F24DAC686008267FA /* ScreenSize.swift in Sources */,
+				963A440E24F9322C0018A8CA /* MapAppsActionSheet.swift in Sources */,
 				966F479124F7A3740025FD5F /* FindPlaceViewController.swift in Sources */,
 				966F478F24F7A3480025FD5F /* OnboardingViewController.swift in Sources */,
 				960F032024DAC686008267FA /* Fonts.swift in Sources */,
@@ -885,12 +945,14 @@
 				960F02F724DAC5E3008267FA /* ApiError.swift in Sources */,
 				966F476124F6A58A0025FD5F /* RetrievedProductsPrices.swift in Sources */,
 				960F031A24DAC686008267FA /* UIDeviceExtension.swift in Sources */,
+				963A441024F9A5B30018A8CA /* TripFeedbackViewController.swift in Sources */,
 				966F479324F7A57B0025FD5F /* SplashViewModel.swift in Sources */,
 				966F473124F698C60025FD5F /* Paygate.swift in Sources */,
 				960F02DF24DAC5E3008267FA /* APIRequestBody.swift in Sources */,
 				960F031B24DAC686008267FA /* StringExtension.swift in Sources */,
 				966F478C24F6DCF80025FD5F /* PaygateViewController.swift in Sources */,
 				960F031E24DAC686008267FA /* TextAttributes.swift in Sources */,
+				963A441324F9A87D0018A8CA /* TripFeedbackView.swift in Sources */,
 				966F471224F66CE40025FD5F /* TripManager.swift in Sources */,
 				966F472024F68A540025FD5F /* SessionManager.swift in Sources */,
 				960F02FA24DAC5E3008267FA /* PaymentError.swift in Sources */,
@@ -909,6 +971,8 @@
 				966F476A24F6AF890025FD5F /* PaygateManager.swift in Sources */,
 				960F032624DAC686008267FA /* Toast.swift in Sources */,
 				9604B06824DB46F400649DA7 /* GeoLocationManager.swift in Sources */,
+				963A441524F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift in Sources */,
+				963A440924F91B490018A8CA /* TripGoogleMapView.swift in Sources */,
 				966F479624F7A5C10025FD5F /* MapViewController.swift in Sources */,
 				966F479A24F7AFCC0025FD5F /* MapView.swift in Sources */,
 				966F476D24F6B0620025FD5F /* IDFAService.swift in Sources */,

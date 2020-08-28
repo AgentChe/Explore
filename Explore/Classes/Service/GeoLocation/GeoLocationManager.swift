@@ -63,7 +63,7 @@ final class GeoLocationManager: NSObject {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.distanceFilter = 10
         
-        manager.requestLocation()
+        manager.startUpdatingLocation()
     }
     
     func requestAuthorization(handler: ((GLAuthorizationStatus) -> ())? = nil) {
