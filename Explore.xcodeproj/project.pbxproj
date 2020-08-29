@@ -48,8 +48,10 @@
 		963A441024F9A5B30018A8CA /* TripFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A440F24F9A5B30018A8CA /* TripFeedbackViewController.swift */; };
 		963A441324F9A87D0018A8CA /* TripFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A441224F9A87D0018A8CA /* TripFeedbackView.swift */; };
 		963A441524F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A441424F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift */; };
+		963A441724FA4EC90018A8CA /* TripManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A441624FA4EC90018A8CA /* TripManagerMock.swift */; };
+		963A441924FA4F240018A8CA /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A441824FA4F240018A8CA /* TripManager.swift */; };
 		966F470F24F666170025FD5F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F470E24F666170025FD5F /* Trip.swift */; };
-		966F471224F66CE40025FD5F /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471124F66CE40025FD5F /* TripManager.swift */; };
+		966F471224F66CE40025FD5F /* TripManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471124F66CE40025FD5F /* TripManagerCore.swift */; };
 		966F471424F66CFD0025FD5F /* TripManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */; };
 		966F471624F6761F0025FD5F /* CreateTripRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471524F6761F0025FD5F /* CreateTripRequest.swift */; };
 		966F471A24F676720025FD5F /* TripFeedbackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471924F676720025FD5F /* TripFeedbackRequest.swift */; };
@@ -158,8 +160,10 @@
 		963A440F24F9A5B30018A8CA /* TripFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackViewController.swift; sourceTree = "<group>"; };
 		963A441224F9A87D0018A8CA /* TripFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackView.swift; sourceTree = "<group>"; };
 		963A441424F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackViewControllerDelegate.swift; sourceTree = "<group>"; };
+		963A441624FA4EC90018A8CA /* TripManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerMock.swift; sourceTree = "<group>"; };
+		963A441824FA4F240018A8CA /* TripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
 		966F470E24F666170025FD5F /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		966F471124F66CE40025FD5F /* TripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
+		966F471124F66CE40025FD5F /* TripManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerCore.swift; sourceTree = "<group>"; };
 		966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerDelegate.swift; sourceTree = "<group>"; };
 		966F471524F6761F0025FD5F /* CreateTripRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripRequest.swift; sourceTree = "<group>"; };
 		966F471924F676720025FD5F /* TripFeedbackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackRequest.swift; sourceTree = "<group>"; };
@@ -507,8 +511,10 @@
 		966F471024F66CC80025FD5F /* Trip */ = {
 			isa = PBXGroup;
 			children = (
-				966F471124F66CE40025FD5F /* TripManager.swift */,
+				966F471124F66CE40025FD5F /* TripManagerCore.swift */,
 				966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */,
+				963A441624FA4EC90018A8CA /* TripManagerMock.swift */,
+				963A441824FA4F240018A8CA /* TripManager.swift */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -936,6 +942,7 @@
 				960F02F924DAC5E3008267FA /* PurchaseError.swift in Sources */,
 				96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */,
 				966F471E24F688F20025FD5F /* Session.swift in Sources */,
+				963A441724FA4EC90018A8CA /* TripManagerMock.swift in Sources */,
 				966F471A24F676720025FD5F /* TripFeedbackRequest.swift in Sources */,
 				966F478624F6DCBE0025FD5F /* PaygateView.swift in Sources */,
 				966F476724F6A94B0025FD5F /* GetPaygateRequest.swift in Sources */,
@@ -945,6 +952,7 @@
 				960F02F724DAC5E3008267FA /* ApiError.swift in Sources */,
 				966F476124F6A58A0025FD5F /* RetrievedProductsPrices.swift in Sources */,
 				960F031A24DAC686008267FA /* UIDeviceExtension.swift in Sources */,
+				963A441924FA4F240018A8CA /* TripManager.swift in Sources */,
 				963A441024F9A5B30018A8CA /* TripFeedbackViewController.swift in Sources */,
 				966F479324F7A57B0025FD5F /* SplashViewModel.swift in Sources */,
 				966F473124F698C60025FD5F /* Paygate.swift in Sources */,
@@ -953,7 +961,7 @@
 				966F478C24F6DCF80025FD5F /* PaygateViewController.swift in Sources */,
 				960F031E24DAC686008267FA /* TextAttributes.swift in Sources */,
 				963A441324F9A87D0018A8CA /* TripFeedbackView.swift in Sources */,
-				966F471224F66CE40025FD5F /* TripManager.swift in Sources */,
+				966F471224F66CE40025FD5F /* TripManagerCore.swift in Sources */,
 				966F472024F68A540025FD5F /* SessionManager.swift in Sources */,
 				960F02FA24DAC5E3008267FA /* PaymentError.swift in Sources */,
 				966F479C24F7B0600025FD5F /* OnboardingView.swift in Sources */,

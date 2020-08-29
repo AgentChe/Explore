@@ -16,7 +16,7 @@ final class FindPlaceViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-    private let tripManager = TripManager()
+    private let tripManager: TripManager = TripManagerMock()
     
     override func loadView() {
         super.loadView()
@@ -29,14 +29,15 @@ final class FindPlaceViewController: UIViewController {
         
         findPlaceView
             .button.rx.tap
-            .subscribe(onNext: {
-                let trip = Trip(toCoordinate: Coordinate(latitude: 37.73189401, longitude: -122.42162013))
-                
-                guard let data = try? Trip.encode(object: trip) else {
-                    return
+            .flatMapLatest { [tripManager] in
+                tripManager.rxCreateTrip(with: Coordinate(latitude: 37.73189401, longitude: -122.42162013))
+            }
+            .subscribe(onNext: { success in
+                if success {
+                    UIApplication.shared.keyWindow?.rootViewController = MapViewController.make()
+                } else {
+                    Toast.notify(with: "Failed", style: .danger)
                 }
-                
-                UserDefaults.standard.set(data, forKey: "trip_manager_trip_cache_key")
             })
             .disposed(by: disposeBag)
     }

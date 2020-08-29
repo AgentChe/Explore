@@ -14,7 +14,7 @@ final class SplashViewModel {
         case onboarding, findPlace, map
     }
     
-    private let tripManager = TripManager()
+    private let tripManager: TripManager = TripManagerMock()
     
     lazy var step = createStep()
 }

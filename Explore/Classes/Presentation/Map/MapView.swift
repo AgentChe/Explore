@@ -27,7 +27,7 @@ final class MapView: UIView {
     
     func switchPreloader(in active: Bool) {
         tripButton.isUserInteractionEnabled = !active
-        tripButton.alpha = active ? 1 : 0.7
+        tripButton.alpha = active ? 0.2 : 1
         active ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
 }
@@ -99,7 +99,7 @@ private extension MapView {
     
     func makeActivityIndicator() -> UIActivityIndicatorView {
         let view = UIActivityIndicatorView()
-        view.style = .gray
+        view.style = .white
         view.stopAnimating()
         view.hidesWhenStopped = true
         view.translatesAutoresizingMaskIntoConstraints = false

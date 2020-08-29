@@ -15,7 +15,7 @@ final class MapViewModel {
     let activityIndicator = RxActivityIndicator()
     
     private let geoLocationManager = GeoLocationManager(mode: .whenInUseAuthorization)
-    private let tripManager = TripManager()
+    private let tripManager: TripManager = TripManagerMock()
     
     func monitoringOfCoordinate() -> Driver<Coordinate> {
         defer { geoLocationManager.continuoslyKeepLocation() }
@@ -26,18 +26,18 @@ final class MapViewModel {
     }
     
     func trip() -> Driver<Trip?> {
-        tripManager.rx
-            .getTrip()
+        tripManager
+            .rxGetTrip()
             .asDriver(onErrorJustReturn: nil)
     }
     
     func tripInProgress() -> Driver<Bool> {
-        let initial = tripManager.rx
-            .isTripInProgress()
+        let initial = tripManager
+            .rxIsTripInProgress()
             .asDriver(onErrorJustReturn: false)
         
-        let updated = tripManager.rx
-            .changedProgressState
+        let updated = tripManager
+            .rxChangedProgressState
             .asDriver(onErrorJustReturn: false)
         
         return Driver.merge(initial, updated)
@@ -46,8 +46,8 @@ final class MapViewModel {
     func feedbackSended() -> Driver<Bool> {
         sendFeedback
             .flatMapLatest { [tripManager, activityIndicator] feedback in
-                tripManager.rx
-                    .createFeedback(text: feedback)
+                tripManager
+                    .rxCreateFeedback(text: feedback)
                     .trackActivity(activityIndicator)
                     .catchErrorJustReturn(false)
             }
