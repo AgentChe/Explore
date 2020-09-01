@@ -10,6 +10,7 @@
 "Cancel" = "Cancel";
 "OK" = "OK";
 "Send" = "Send";
+"Continue" = "Continue";
 
 // MARK: Image Picker
 "ImagePicker.TakePhoto" = "TakePhoto";
@@ -35,3 +36,26 @@
 "Map.MapAppsActionSheet.DGis" = "2Gis";
 "Map.MapAppsActionSheet.YandexMap" = "Yandex Map";
 "Map.TripFeedbackViewController.Title" = "Send feedback about trip";
+
+// MARK: FindPlace
+"FindPlace.Title" = "Randonautica";
+"FindPlace.FPRequireGeoPermissionCell.Title" = "Start by sending\nyour location:";
+"FindPlace.FPRequireGeoPermissionCell.Button" = "Send My Location";
+"FindPlace.FPSearchingCoordinateCell.Title" = "Searching your location...";
+"FindPlace.FPSearchedCoordinateCell.Title" = "Your location is set at coordinates %f, %f";
+"FindPlace.FPSearchedCoordinateCell.MapSubtitle" = "this point will become the center of the search";
+"FindPlace.FPWhatLikeGetCell.Title" = "Lets search! What would you like to get?";
+"FindPlace.FPWhatLikeGetCell.Anomaly" = "Anomaly";
+"FindPlace.FPWhatLikeGetCell.Attractor" = "Attractor";
+"FindPlace.FPWhatLikeGetCell.Void" = "Void";
+"FindPlace.FPWhatLikeGetCell.Pseudo" = "Pseudo";
+"FindPlace.FPWhatLikeGetCell.WhatItIs" = "What it is?";
+"FindPlace.FPSetRadiusCell.Title" = "Set radius";
+"FindPlace.FPSetRadiusCell.Value" = "%i m";
+"FindPlace.FPCompleteCell.Start" = "Start";
+"FindPlace.FPCompleteCell.Reset" = "Reset";
+"FindPlace.FPDenieedGeoPermission.Title" = "Go to settings and enable permission for detect geo";
+"FindPlace.FPDenieedGeoPermission.SettingsButton" = "Settings";
+"FindPlace.FPWhatItIsCell.Message" = "An app that generates coordinates for adventurers claims to turn your thoughts into reality. TikTok and YouTube creators want you to believe it — but you shouldn’t.\n\nandonautica makes a few asks of users — “What would you like to get?” “Choose your entropy source” — before prompting them to “focus on your intent” while it fetches coordinates. This process relies on location settings and a random number generator, which, despite what the company says, cannot be directly affected by human thoughts.";
+"FindPlace.HasCreatingTrip" = "Has creating trip...";
+"FindPlace.CreateTrip.Failure" = "Failure to create trip";

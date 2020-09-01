@@ -16,8 +16,6 @@ final class FindPlaceViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-    private let tripManager: TripManager = TripManagerMock()
-    
     override func loadView() {
         super.loadView()
         
@@ -27,17 +25,40 @@ final class FindPlaceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        findPlaceView
-            .button.rx.tap
-            .flatMapLatest { [tripManager] in
-                tripManager.rxCreateTrip(with: Coordinate(latitude: 37.73189401, longitude: -122.42162013))
-            }
-            .subscribe(onNext: { success in
-                if success {
-                    UIApplication.shared.keyWindow?.rootViewController = MapViewController.make()
-                } else {
-                    Toast.notify(with: "Failed", style: .danger)
-                }
+        findPlaceView.tableView.fpTableDelegate = self
+        
+        viewModel
+            .newSection()
+            .drive(onNext: { [weak self] section in
+                self?.findPlaceView.tableView.add(section: section)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .replaceSection()
+            .drive(onNext: { [weak self] section in
+                self?.findPlaceView.tableView.replace(section: section)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .currentCoordinate()
+            .drive(onNext: { [weak self] coordinate in
+                self?.findPlaceView.mapView.moveCamera(to: coordinate)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .needPaygate()
+            .drive(onNext: { [weak self] in
+                self?.goToPaygateScreen()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .tripCreated()
+            .drive(onNext: { [weak self] in
+                self?.goToMapScreen()
             })
             .disposed(by: disposeBag)
     }
@@ -48,5 +69,53 @@ final class FindPlaceViewController: UIViewController {
 extension FindPlaceViewController {
     static func make() -> FindPlaceViewController {
         FindPlaceViewController()
+    }
+}
+
+// MARK: FindPlaceTableDelegate
+
+extension FindPlaceViewController: FindPlaceTableDelegate {
+    func findPlaceTableDidRequireGeoPermission() {
+        viewModel.requireGeoPermission.accept(Void())
+    }
+    
+    func findPlaceTableDidNavigateToSettings() {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl)
+        }
+    }
+    
+    func findPlaceTableDidSelected(whatLikeGet tag: FPWhatLikeGetCell.Tag) {
+        guard viewModel.selectedWhatLikeGetTag == nil else {
+            return
+        }
+        
+        viewModel.selectWhatLikeGet.accept(tag)
+    }
+    
+    func findPlaceTableDidStart() {
+        viewModel.createTrip.accept(Void())
+    }
+    
+    func findPlaceTableDidReset() {
+        findPlaceView.tableView.removeAll()
+        
+        viewModel.reset.accept(Void())
+    }
+}
+
+// MARK: Private
+
+private extension FindPlaceViewController {
+    func goToPaygateScreen() {
+        present(PaygateViewController.make(), animated: true)
+    }
+    
+    func goToMapScreen() {
+        UIApplication.shared.keyWindow?.rootViewController = MapViewController.make()
     }
 }

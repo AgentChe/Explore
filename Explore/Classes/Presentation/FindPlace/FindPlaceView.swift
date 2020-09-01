@@ -9,12 +9,12 @@
 import UIKit
 
 final class FindPlaceView: UIView {
-    lazy var button = makeButton()
+    lazy var mapView = makeMapView()
+    lazy var tableView = makeTableView()
+    lazy var titleLabel = makeTitleLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .blue
         
         makeConstraints()
     }
@@ -29,10 +29,23 @@ final class FindPlaceView: UIView {
 private extension FindPlaceView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40.scale),
-            button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40.scale),
-            button.heightAnchor.constraint(equalToConstant: 56.scale),
-            button.centerYAnchor.constraint(equalTo: centerYAnchor)
+            mapView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            mapView.topAnchor.constraint(equalTo: topAnchor),
+            mapView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40.scale),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40.scale),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 56.scale)
         ])
     }
 }
@@ -40,12 +53,33 @@ private extension FindPlaceView {
 // MARK: Lazy initialization
 
 private extension FindPlaceView {
-    func makeButton() -> UIButton {
-        let view = UIButton()
-        view.setTitle("Create trip", for: .normal)
-        view.setTitleColor(UIColor.white, for: .normal)
-        view.backgroundColor = UIColor.black
-        view.layer.cornerRadius = 8.scale
+    func makeMapView() -> GoogleMapView {
+        let view = GoogleMapView(frame: .zero)
+        view.isUserInteractionEnabled = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeTitleLabel() -> UILabel {
+        let view = UILabel()
+        view.font = Font.SFProText.semibold(size: 17.scale)
+        view.textAlignment = .center
+        view.textColor = UIColor.white
+        view.text = "FindPlace.Title".localized
+        view.numberOfLines = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeTableView() -> FindPlaceTableView {
+        let view = FindPlaceTableView()
+        view.backgroundColor = .clear
+        view.allowsSelection = false
+        view.separatorStyle = .none
+        view.contentInset = UIEdgeInsets(top: 80.scale, left: 0, bottom: 50.scale, right: 0)
+        view.transform = CGAffineTransform(scaleX: 1, y: -1)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
