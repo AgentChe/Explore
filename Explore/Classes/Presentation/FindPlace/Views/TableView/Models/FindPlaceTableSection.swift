@@ -22,5 +22,6 @@ extension FindPlaceTableSection {
         static let whatLikeGet = "whatLikeGet"
         static let complete = "complete"
         static let whatItis = "whatItis"
+        static let radius = "radius"
     }
 }

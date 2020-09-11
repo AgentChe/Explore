@@ -10,6 +10,7 @@ protocol FindPlaceTableDelegate: class {
     func findPlaceTableDidRequireGeoPermission()
     func findPlaceTableDidNavigateToSettings()
     func findPlaceTableDidSelected(whatLikeGet tag: FPWhatLikeGetCell.Tag)
+    func findPlaceTableDidSetRadius(radiusBundle: FPTableRadiusBundle)
     func findPlaceTableDidStart()
     func findPlaceTableDidReset()
 }
@@ -18,6 +19,7 @@ extension FindPlaceTableDelegate {
     func findPlaceTableDidRequireGeoPermission() {}
     func findPlaceTableDidNavigateToSettings() {}
     func findPlaceTableDidSelected(whatLikeGet tag: FPWhatLikeGetCell.Tag) {}
+    func findPlaceTableDidSetRadius(radiusBundle: FPTableRadiusBundle) {}
     func findPlaceTableDidStart() {}
     func findPlaceTableDidReset() {}
 }

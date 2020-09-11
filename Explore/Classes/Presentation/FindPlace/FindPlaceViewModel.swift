@@ -16,9 +16,11 @@ final class FindPlaceViewModel {
     let findCoordinate = PublishRelay<Void>()
     let whatLikeGet = PublishRelay<Void>()
     let selectWhatLikeGet = PublishRelay<FPWhatLikeGetCell.Tag>()
+    let setRadius = PublishRelay<FPTableRadiusBundle>()
     let createTrip = PublishRelay<Void>()
     
     var selectedWhatLikeGetTag: FPWhatLikeGetCell.Tag?
+    var radiusBundle = FPTableRadiusBundle()
     
     private let geoLocationManager = GeoLocationManager(mode: .whenInUseAuthorization)
     private let tripManager = TripManagerMock()
@@ -35,7 +37,8 @@ final class FindPlaceViewModel {
                 receiveSelectWhatLikeGet(),
                 receiveFindGeoPermissionStatus(),
                 receiveCreateTripForCreatePreloaderSection(),
-                receiveCreateTripForCreateResultSection()
+                receiveCreateTripForCreateResultSection(),
+                receiveSelectRadiusForNextSection()
             ])
         
         let mapLoadDelay = createMapLoadDelay()
@@ -44,7 +47,11 @@ final class FindPlaceViewModel {
     }
     
     func replaceSection() -> Driver<FindPlaceTableSection> {
-        receiveSelectWhatLikeGetForReplace()
+        Driver
+            .merge([
+                receiveSelectWhatLikeGetForReplace(),
+                receiveSelectRadiusForReplace(),
+            ])
     }
     
     func currentCoordinate() -> Driver<Coordinate> {
@@ -72,6 +79,7 @@ private extension FindPlaceViewModel {
         reset
             .do(onNext: { [weak self] in
                 self?.selectedWhatLikeGetTag = nil
+                self?.radiusBundle.setDefault()
             })
             .startWith(Void())
             .flatMapLatest {
@@ -198,14 +206,18 @@ private extension FindPlaceViewModel {
             .flatMap { tag -> Observable<FindPlaceTableSection> in
                 Observable<FindPlaceTableSection>
                     .create { [weak self] event in
+                        guard let this = self else {
+                            return Disposables.create()
+                        }
+                        
                         if tag == .whatItIs {
                             event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.whatItis,
                                                                items: [.whatItis]))
                             event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.whatLikeGet,
-                                                               items: [.whatLikeGet(self?.selectedWhatLikeGetTag)]))
+                                                               items: [.whatLikeGet(this.selectedWhatLikeGetTag)]))
                         } else {
-                            event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.complete,
-                                                               items: [.complete]))
+                            event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.radius,
+                                                               items: [.radius(this.radiusBundle)]))
                         }
                         
                         event.onCompleted()
@@ -215,7 +227,6 @@ private extension FindPlaceViewModel {
             }
             .asDriver(onErrorDriveWith: .empty())
     }
-    
     
     func receiveSelectWhatLikeGetForReplace() -> Driver<FindPlaceTableSection> {
         selectWhatLikeGet
@@ -230,6 +241,25 @@ private extension FindPlaceViewModel {
             .asDriver(onErrorDriveWith: .empty())
     }
     
+    func receiveSelectRadiusForReplace() -> Driver<FindPlaceTableSection> {
+        setRadius
+            .do(onNext: { [weak self] bundle in
+                self?.radiusBundle = bundle
+            })
+            .map { FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.radius,
+                                         items: [.radius($0)]) }
+            .asDriver(onErrorDriveWith: .empty())
+    }
+    
+    func receiveSelectRadiusForNextSection() -> Driver<FindPlaceTableSection> {
+        setRadius
+            .map { _ in
+                FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.complete,
+                                      items: [.complete])
+            }
+            .asDriver(onErrorDriveWith: .empty())
+    }
+    
     func receiveCreateTripForCreatePreloaderSection() -> Driver<FindPlaceTableSection> {
         createTrip
             .map { FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.notification,
@@ -239,23 +269,27 @@ private extension FindPlaceViewModel {
     
     func receiveCreateTripForCreateResultSection() -> Driver<FindPlaceTableSection> {
         createTrip
-            .flatMapLatest { [geoLocationManager, tripManager] _ -> Observable<Bool> in
-                defer { geoLocationManager.justDetermineCurrentLocation() }
+            .flatMapLatest { [weak self] _ -> Observable<Bool> in
+                guard let this = self else {
+                    return .empty()
+                }
                 
-                return geoLocationManager.rx
+                defer { this.geoLocationManager.justDetermineCurrentLocation() }
+                
+                return this.geoLocationManager.rx
                     .justDetermineCurrentLocation
                     .asObservable()
                     .flatMapLatest { coordinate -> Single<Bool> in
-                            tripManager
-                                .rxCreateTrip(with: GeoLocationUtils.findCoordinate(from: coordinate, on: 2000))
-                                .do(onError: { [weak self] error in
-                                    guard let paymentError = error as? PaymentError, paymentError == .needPayment else {
-                                        return
-                                    }
+                        this.tripManager
+                            .rxCreateTrip(with: GeoLocationUtils.findCoordinate(from: coordinate, on: Double(this.radiusBundle.radius)))
+                            .do(onError: { [weak self] error in
+                                guard let paymentError = error as? PaymentError, paymentError == .needPayment else {
+                                    return
+                                }
                                     
-                                    self?.needPaygateTrigger.accept(Void())
-                                })
-                                .catchErrorJustReturn(false)
+                                self?.needPaygateTrigger.accept(Void())
+                            })
+                            .catchErrorJustReturn(false)
                     }
             }
             .do(onNext: { [weak self] success in

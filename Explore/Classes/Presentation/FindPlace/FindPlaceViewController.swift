@@ -97,6 +97,10 @@ extension FindPlaceViewController: FindPlaceTableDelegate {
         viewModel.selectWhatLikeGet.accept(tag)
     }
     
+    func findPlaceTableDidSetRadius(radiusBundle: FPTableRadiusBundle) {
+        viewModel.setRadius.accept(radiusBundle)
+    }
+    
     func findPlaceTableDidStart() {
         viewModel.createTrip.accept(Void())
     }

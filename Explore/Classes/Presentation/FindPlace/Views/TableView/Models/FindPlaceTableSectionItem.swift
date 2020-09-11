@@ -14,4 +14,5 @@ enum FindPlaceTableSectionItem {
     case complete
     case whatItis
     case notification(String)
+    case radius(FPTableRadiusBundle)
 }

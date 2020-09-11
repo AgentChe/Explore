@@ -61,6 +61,8 @@
 		963A443124FCF3850018A8CA /* FindPlaceTableSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A443024FCF3850018A8CA /* FindPlaceTableSectionItem.swift */; };
 		963A443524FD57510018A8CA /* FPDeniedGeoPermissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A443424FD57510018A8CA /* FPDeniedGeoPermissionCell.swift */; };
 		963A443724FE50E40018A8CA /* FPWhatItIsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A443624FE50E40018A8CA /* FPWhatItIsCell.swift */; };
+		963A443924FEE4BF0018A8CA /* FPRadiusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A443824FEE4BF0018A8CA /* FPRadiusCell.swift */; };
+		963A443B24FEEF1B0018A8CA /* FPTableRadiusBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A443A24FEEF1B0018A8CA /* FPTableRadiusBundle.swift */; };
 		966F470F24F666170025FD5F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F470E24F666170025FD5F /* Trip.swift */; };
 		966F471224F66CE40025FD5F /* TripManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471124F66CE40025FD5F /* TripManagerCore.swift */; };
 		966F471424F66CFD0025FD5F /* TripManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */; };
@@ -119,6 +121,7 @@
 		966F47AB24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AA24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift */; };
 		966F47AD24F80D9A0025FD5F /* PaygateManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AC24F80D9A0025FD5F /* PaygateManagerCore.swift */; };
 		966F47AF24F80E610025FD5F /* PaygateManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */; };
+		96B74C29250C250000413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C28250C250000413D81 /* FPRadiusSlider.swift */; };
 		96EB730524DBFABD008A32BC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730424DBFABD008A32BC /* Model.swift */; };
 		96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */; };
 		96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732124DD3103008A32BC /* SplashViewController.swift */; };
@@ -184,6 +187,8 @@
 		963A443024FCF3850018A8CA /* FindPlaceTableSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceTableSectionItem.swift; sourceTree = "<group>"; };
 		963A443424FD57510018A8CA /* FPDeniedGeoPermissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPDeniedGeoPermissionCell.swift; sourceTree = "<group>"; };
 		963A443624FE50E40018A8CA /* FPWhatItIsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPWhatItIsCell.swift; sourceTree = "<group>"; };
+		963A443824FEE4BF0018A8CA /* FPRadiusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusCell.swift; sourceTree = "<group>"; };
+		963A443A24FEEF1B0018A8CA /* FPTableRadiusBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPTableRadiusBundle.swift; sourceTree = "<group>"; };
 		966F470E24F666170025FD5F /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		966F471124F66CE40025FD5F /* TripManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerCore.swift; sourceTree = "<group>"; };
 		966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +247,7 @@
 		966F47AA24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSliderDelegate.swift; sourceTree = "<group>"; };
 		966F47AC24F80D9A0025FD5F /* PaygateManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerCore.swift; sourceTree = "<group>"; };
 		966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerMock.swift; sourceTree = "<group>"; };
+		96B74C28250C250000413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96EB730424DBFABD008A32BC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationUtils.swift; sourceTree = "<group>"; };
 		96EB732124DD3103008A32BC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -534,6 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				963A441D24FB89540018A8CA /* TableView */,
+				96B74C28250C250000413D81 /* FPRadiusSlider.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -559,6 +566,7 @@
 				963A442924FCD5E20018A8CA /* FPCompleteCell.swift */,
 				963A443424FD57510018A8CA /* FPDeniedGeoPermissionCell.swift */,
 				963A443624FE50E40018A8CA /* FPWhatItIsCell.swift */,
+				963A443824FEE4BF0018A8CA /* FPRadiusCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -568,6 +576,7 @@
 			children = (
 				963A442E24FCF3770018A8CA /* FindPlaceTableSection.swift */,
 				963A443024FCF3850018A8CA /* FindPlaceTableSectionItem.swift */,
+				963A443A24FEEF1B0018A8CA /* FPTableRadiusBundle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -975,6 +984,7 @@
 				966F478524F6DCBE0025FD5F /* PaygateOptionView.swift in Sources */,
 				966F47A924F7BDFE0025FD5F /* OnboardingSlider.swift in Sources */,
 				96EB732424DD3139008A32BC /* SplashView.swift in Sources */,
+				96B74C29250C250000413D81 /* FPRadiusSlider.swift in Sources */,
 				963A440724F902450018A8CA /* GoogleMapView.swift in Sources */,
 				963A440C24F930BA0018A8CA /* OpenMap.swift in Sources */,
 				966F472D24F6965B0025FD5F /* PaygateOption.swift in Sources */,
@@ -985,6 +995,7 @@
 				966F47AD24F80D9A0025FD5F /* PaygateManagerCore.swift in Sources */,
 				963A442024FB89D00018A8CA /* FPRequireGeoPermissionCell.swift in Sources */,
 				960F032224DAC686008267FA /* Weak.swift in Sources */,
+				963A443B24FEEF1B0018A8CA /* FPTableRadiusBundle.swift in Sources */,
 				960F032424DAC686008267FA /* RxActivityIndicator.swift in Sources */,
 				966F478B24F6DCF80025FD5F /* PaygateViewControllerDelegate.swift in Sources */,
 				960F02F824DAC5E3008267FA /* SignError.swift in Sources */,
@@ -1029,6 +1040,7 @@
 				963A441024F9A5B30018A8CA /* TripFeedbackViewController.swift in Sources */,
 				966F479324F7A57B0025FD5F /* SplashViewModel.swift in Sources */,
 				966F473124F698C60025FD5F /* Paygate.swift in Sources */,
+				963A443924FEE4BF0018A8CA /* FPRadiusCell.swift in Sources */,
 				960F02DF24DAC5E3008267FA /* APIRequestBody.swift in Sources */,
 				960F031B24DAC686008267FA /* StringExtension.swift in Sources */,
 				966F478C24F6DCF80025FD5F /* PaygateViewController.swift in Sources */,

@@ -110,6 +110,11 @@ extension FindPlaceTableView: UITableViewDataSource {
         case .whatItis:
             let cell = dequeueReusableCell(withIdentifier: String(describing: FPWhatItIsCell.self)) as! FPWhatItIsCell
             returnCell = cell
+        case .radius(let bundle):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: FPRadiusCell.self)) as! FPRadiusCell
+            cell.delegate = fpTableDelegate
+            cell.setup(bundle: bundle)
+            returnCell = cell
         }
         
         returnCell.backgroundColor = UIColor.clear
@@ -144,6 +149,7 @@ private extension FindPlaceTableView {
         register(FPCompleteCell.self, forCellReuseIdentifier: String(describing: FPCompleteCell.self))
         register(FPDeniedGeoPermissionCell.self, forCellReuseIdentifier: String(describing: FPDeniedGeoPermissionCell.self))
         register(FPWhatItIsCell.self, forCellReuseIdentifier: String(describing: FPWhatItIsCell.self))
+        register(FPRadiusCell.self, forCellReuseIdentifier: String(describing: FPRadiusCell.self))
         
         dataSource = self
         delegate = self
