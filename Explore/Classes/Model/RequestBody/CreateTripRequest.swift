@@ -16,4 +16,21 @@ struct CreateTripRequest: APIRequestBody {
         self.userToken = userToken
         self.coordinate = coordinate
     }
+    
+    var url: String {
+        GlobalDefinitions.domain + "/api/users/save_location"
+    }
+    
+    var method: HTTPMethod {
+        .post
+    }
+    
+    var parameters: Parameters? {
+        [
+            "_api_key": GlobalDefinitions.apiKey,
+            "_user_token": userToken,
+            "long": coordinate.longitude,
+            "lat": coordinate.latitude
+        ]
+    }
 }

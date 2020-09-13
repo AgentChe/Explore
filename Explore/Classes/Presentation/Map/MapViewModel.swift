@@ -45,9 +45,13 @@ final class MapViewModel {
     
     func feedbackSended() -> Driver<Bool> {
         sendFeedback
-            .flatMapLatest { [tripManager, activityIndicator] feedback in
-                tripManager
-                    .rxCreateFeedback(text: feedback)
+            .flatMapLatest { [tripManager, activityIndicator] feedback -> Observable<Bool> in
+                guard let tripId = tripManager.getTrip()?.id else {
+                    return .just(false)
+                }
+                
+                return tripManager
+                    .rxCreateFeedback(tripId: tripId, text: feedback)
                     .trackActivity(activityIndicator)
                     .catchErrorJustReturn(false)
             }

@@ -110,8 +110,12 @@ extension TripManagerCore {
             .callServerApi(requestBody: CreateTripRequest(userToken: userToken,
                                                           coordinate: coordinate))
             .map { try ErrorChecker.throwErrorIfHas(from: $0) }
-            .flatMap { [weak self] _ in
-                .deferred { .just(self?.storeTrip(with: coordinate) ?? false) }
+            .flatMap { [weak self] response in
+                guard let this = self, let trip = CreateTripResponseMapper.map(response: response, toCoordinate: coordinate) else {
+                    return .just(false)
+                }
+                
+                return .just(this.storeTrip(trip))
             }
     }
 }
@@ -120,13 +124,14 @@ extension TripManagerCore {
 
 extension TripManagerCore {
     // TODO: Check when API will done
-    func rxCreateFeedback(text: String) -> Single<Bool> {
+    func rxCreateFeedback(tripId: Int, text: String) -> Single<Bool> {
         guard let userToken = SessionManager.shared.getSession()?.userToken else {
             return .deferred { .error(SignError.tokenNotFound) }
         }
         
         return RestAPITransport()
             .callServerApi(requestBody: TripFeedbackRequest(userToken: userToken,
+                                                            tripId: tripId,
                                                             feedback: text))
             .map { ErrorChecker.hasError(in: $0) }
     }
@@ -164,9 +169,7 @@ extension TripManagerCore {
 
 private extension TripManagerCore {
     @discardableResult
-    func storeTrip(with toCoordinate: Coordinate) -> Bool {
-        let trip = Trip(toCoordinate: toCoordinate)
-        
+    func storeTrip(_ trip: Trip) -> Bool {
         guard let data = try? Trip.encode(object: trip) else {
             return false
         }

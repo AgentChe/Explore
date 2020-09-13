@@ -122,6 +122,7 @@
 		966F47AD24F80D9A0025FD5F /* PaygateManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AC24F80D9A0025FD5F /* PaygateManagerCore.swift */; };
 		966F47AF24F80E610025FD5F /* PaygateManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
+		96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */; };
 		96EB730524DBFABD008A32BC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730424DBFABD008A32BC /* Model.swift */; };
 		96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */; };
 		96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732124DD3103008A32BC /* SplashViewController.swift */; };
@@ -248,6 +249,7 @@
 		966F47AC24F80D9A0025FD5F /* PaygateManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerCore.swift; sourceTree = "<group>"; };
 		966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerMock.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
+		96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResponseMapper.swift; sourceTree = "<group>"; };
 		96EB730424DBFABD008A32BC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationUtils.swift; sourceTree = "<group>"; };
 		96EB732124DD3103008A32BC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 		966F471024F66CC80025FD5F /* Trip */ = {
 			isa = PBXGroup;
 			children = (
+				96B74C2D250EC68000413D81 /* Mapper */,
 				966F471124F66CE40025FD5F /* TripManagerCore.swift */,
 				966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */,
 				963A441624FA4EC90018A8CA /* TripManagerMock.swift */,
@@ -811,6 +814,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		96B74C2D250EC68000413D81 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
 		96EB731F24DD308F008A32BC /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -1004,6 +1015,7 @@
 				966F478424F6DCBE0025FD5F /* PaygateMainView.swift in Sources */,
 				960F029824DAC586008267FA /* RestAPITransport.swift in Sources */,
 				961A08B824D99D79001F23E6 /* AppDelegate.swift in Sources */,
+				96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */,
 				966F472424F68F520025FD5F /* ErrorChecker.swift in Sources */,
 				966F479824F7AFB50025FD5F /* MapViewModel.swift in Sources */,
 				966F476324F6A5B30025FD5F /* PurchaseManager.swift in Sources */,

@@ -102,11 +102,15 @@ extension TripManagerMock {
     
     func rxCreateTrip(with coordinate: Coordinate) -> Single<Bool> {
         Single<Bool>
-            .create { event in
+            .create { [weak self] event in
+                guard let this = self else {
+                    return Disposables.create()
+                }
+                
                 DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1) {
                     DispatchQueue.main.async {
-//                        Bool.random() ? event(.success(self.storeTrip(with: coordinate))) : event(.error(PaymentError.needPayment))
-                        event(.error(PaymentError.needPayment))
+                        let trip = Trip(id: Int.random(in: 1...100000), toCoordinate: coordinate)
+                        Bool.random() ? event(.success(this.storeTrip(trip))) : event(.error(PaymentError.needPayment))
                     }
                 }
             
@@ -118,7 +122,7 @@ extension TripManagerMock {
 // MARK: API(Rx) - Feedback
 
 extension TripManagerMock {
-    func rxCreateFeedback(text: String) -> Single<Bool> {
+    func rxCreateFeedback(tripId: Int, text: String) -> Single<Bool> {
         Single<Bool>
             .create { event in
                 DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1) {
@@ -164,9 +168,7 @@ extension TripManagerMock {
 
 private extension TripManagerMock {
     @discardableResult
-    func storeTrip(with toCoordinate: Coordinate) -> Bool {
-        let trip = Trip(toCoordinate: toCoordinate)
-        
+    func storeTrip(_ trip: Trip) -> Bool {
         guard let data = try? Trip.encode(object: trip) else {
             return false
         }

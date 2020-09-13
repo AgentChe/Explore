@@ -31,7 +31,7 @@ protocol TripManager: class {
     
     // MARK: API(Rx) - Feedback
     
-    func rxCreateFeedback(text: String) -> Single<Bool>
+    func rxCreateFeedback(tripId: Int, text: String) -> Single<Bool>
     
     // MARK: Trigger(Rx)
     
