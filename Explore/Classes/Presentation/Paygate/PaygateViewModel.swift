@@ -20,7 +20,7 @@ final class PaygateViewModel {
     let restoreProcessing = RxActivityIndicator()
     let retrieveCompleted = BehaviorRelay<Bool>(value: false)
     
-    private let paygateManager = PaygateManagerMock()
+    private let paygateManager = PaygateManagerCore()
     private let purchaseManager = PurchaseManager()
 }
 

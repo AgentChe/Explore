@@ -76,13 +76,13 @@ private extension PaygateMainView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.scale),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 159.scale : 114.scale)
+            titleLabel.bottomAnchor.constraint(equalTo: subTitleLabel.topAnchor, constant: -24.scale)
         ])
         
         NSLayoutConstraint.activate([
             subTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.scale),
             subTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.scale),
-            subTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 244.scale : 199.scale)
+            subTitleLabel.bottomAnchor.constraint(equalTo: leftOptionView.topAnchor, constant: -32.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -90,27 +90,27 @@ private extension PaygateMainView {
             leftOptionView.heightAnchor.constraint(equalToConstant: 185.scale),
             leftOptionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.scale),
             leftOptionView.trailingAnchor.constraint(equalTo: rightOptionView.leadingAnchor, constant: -13.scale),
-            leftOptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -295.scale : -195.scale)
+            leftOptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -275.scale : -175.scale)
         ])
         
         NSLayoutConstraint.activate([
             rightOptionView.heightAnchor.constraint(equalToConstant: 185.scale),
             rightOptionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.scale),
-            rightOptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -295.scale : -195.scale)
+            rightOptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -275.scale : -175.scale)
         ])
         
         NSLayoutConstraint.activate([
             continueButton.heightAnchor.constraint(equalToConstant: 56.scale),
             continueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.scale),
             continueButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.scale),
-            continueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -146.scale : -76.scale)
+            continueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -126.scale : -56.scale)
         ])
         
         NSLayoutConstraint.activate([
             lockImageView.widthAnchor.constraint(equalToConstant: 12.scale),
             lockImageView.heightAnchor.constraint(equalToConstant: 16.scale),
             lockImageView.trailingAnchor.constraint(equalTo: termsOfferLabel.leadingAnchor, constant: -10.scale),
-            lockImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -108.scale : -38.scale)
+            lockImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -88.scale : -18.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -148,7 +148,7 @@ private extension PaygateMainView {
     func makeTitleLabel() -> UILabel {
         let view = UILabel()
         view.alpha = 0
-        view.numberOfLines = 1
+        view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

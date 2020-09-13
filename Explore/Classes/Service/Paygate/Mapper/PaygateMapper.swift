@@ -42,13 +42,14 @@ private extension PaygateMapper {
             return nil
         }
         
-        let title = (main["header"] as? String ?? "")
+        let title = (main["greeting"] as? String ?? "")
             .attributed(with: TextAttributes()
                 .font(Font.OpenSans.bold(size: 34.scale))
                 .textColor(UIColor.white)
                 .lineHeight(38.scale))
         
-        let subTitle = (main["subTitle"] as? String ?? "")
+        let subTitle = (main["text"] as? [String] ?? [])
+            .joined(separator: "\n")
             .attributed(with: TextAttributes()
                 .font(Font.OpenSans.regular(size: 14.scale))
                 .textColor(UIColor.white)
@@ -143,7 +144,7 @@ private extension PaygateMapper {
             .replacingOccurrences(of: "@price", with: priceLocalized)
         let captionAttrs = NSMutableAttributedString(string: caption ?? "",
                                                      attributes: TextAttributes()
-                                                        .font(Font.Poppins.semibold(size: 15.scale))
+                                                        .font(Font.Poppins.semibold(size: 14.scale))
                                                         .lineHeight(25.scale)
                                                         .letterSpacing(0.06)
                                                         .dictionary)

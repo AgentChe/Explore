@@ -105,7 +105,8 @@ extension TripManagerMock {
             .create { event in
                 DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1) {
                     DispatchQueue.main.async {
-                        Bool.random() ? event(.success(self.storeTrip(with: coordinate))) : event(.error(PaymentError.needPayment))
+//                        Bool.random() ? event(.success(self.storeTrip(with: coordinate))) : event(.error(PaymentError.needPayment))
+                        event(.error(PaymentError.needPayment))
                     }
                 }
             
