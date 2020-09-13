@@ -121,7 +121,7 @@
 		966F47AB24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AA24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift */; };
 		966F47AD24F80D9A0025FD5F /* PaygateManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AC24F80D9A0025FD5F /* PaygateManagerCore.swift */; };
 		966F47AF24F80E610025FD5F /* PaygateManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */; };
-		96B74C29250C250000413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C28250C250000413D81 /* FPRadiusSlider.swift */; };
+		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
 		96EB730524DBFABD008A32BC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730424DBFABD008A32BC /* Model.swift */; };
 		96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */; };
 		96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732124DD3103008A32BC /* SplashViewController.swift */; };
@@ -247,7 +247,7 @@
 		966F47AA24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSliderDelegate.swift; sourceTree = "<group>"; };
 		966F47AC24F80D9A0025FD5F /* PaygateManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerCore.swift; sourceTree = "<group>"; };
 		966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerMock.swift; sourceTree = "<group>"; };
-		96B74C28250C250000413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
+		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96EB730424DBFABD008A32BC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationUtils.swift; sourceTree = "<group>"; };
 		96EB732124DD3103008A32BC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -540,7 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				963A441D24FB89540018A8CA /* TableView */,
-				96B74C28250C250000413D81 /* FPRadiusSlider.swift */,
+				96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -980,11 +980,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */,
 				960F031D24DAC686008267FA /* Scalable.swift in Sources */,
 				966F478524F6DCBE0025FD5F /* PaygateOptionView.swift in Sources */,
 				966F47A924F7BDFE0025FD5F /* OnboardingSlider.swift in Sources */,
 				96EB732424DD3139008A32BC /* SplashView.swift in Sources */,
-				96B74C29250C250000413D81 /* FPRadiusSlider.swift in Sources */,
 				963A440724F902450018A8CA /* GoogleMapView.swift in Sources */,
 				963A440C24F930BA0018A8CA /* OpenMap.swift in Sources */,
 				966F472D24F6965B0025FD5F /* PaygateOption.swift in Sources */,

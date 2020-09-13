@@ -29,6 +29,10 @@ final class FPRadiusCell: UITableViewCell {
     }
     
     func setup(bundle: FPTableRadiusBundle) {
+        guard self.bundle != bundle else {
+            return
+        }
+        
         self.bundle = bundle
         
         radiusLabel.text = String(format: "FindPlace.FPRadiusCell.Value".localized, bundle.radius)
@@ -39,7 +43,8 @@ final class FPRadiusCell: UITableViewCell {
         continueButton.backgroundColor = bundle.applied ? unselectedColor : selectedColor
         continueButton.isUserInteractionEnabled = !bundle.applied
         
-        radiusSlider.selectedMaxValue = CGFloat(bundle.radius)
+        radiusSlider.value = CGFloat(bundle.radius)
+        radiusSlider.layout()
         radiusSlider.isUserInteractionEnabled = !bundle.applied
     }
 }
@@ -53,7 +58,7 @@ private extension FPRadiusCell {
             return
         }
         
-        let radius = Int(radiusSlider.selectedMaxValue)
+        let radius = Int(radiusSlider.value)
         
         bundle.setApplied(true)
         bundle.setRadius(radius)
@@ -114,7 +119,7 @@ private extension FPRadiusCell {
         contentView.addSubview(view)
         
         view.didChangedValue = { [weak self] value in
-            self?.radiusLabel.text = String(format: "FindPlace.FPRadiusCell.Value".localized, value)
+            self?.radiusLabel.text = String(format: "FindPlace.FPRadiusCell.Value".localized, Int(value))
         }
         
         return view

@@ -32,3 +32,7 @@ extension FPTableRadiusBundle {
         applied = false
     }
 }
+
+// MARK: Equatable
+ 
+extension FPTableRadiusBundle: Equatable {}
