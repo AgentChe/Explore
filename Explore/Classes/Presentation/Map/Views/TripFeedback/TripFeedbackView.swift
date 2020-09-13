@@ -110,6 +110,7 @@ private extension TripFeedbackView {
     
     func makeTextView() -> UITextView {
         let view = UITextView()
+        view.backgroundColor = UIColor.clear
         view.textColor = UIColor.black
         view.font = Font.OpenSans.regular(size: 15.scale)
         view.translatesAutoresizingMaskIntoConstraints = false

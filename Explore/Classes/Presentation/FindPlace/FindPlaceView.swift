@@ -38,7 +38,7 @@ private extension FindPlaceView {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         

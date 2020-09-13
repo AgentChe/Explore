@@ -103,7 +103,7 @@ extension TripManagerCore {
     // TODO: Check when API will done
     func rxCreateTrip(with coordinate: Coordinate) -> Single<Bool> {
         guard let userToken = SessionManager.shared.getSession()?.userToken else {
-            return .deferred { .just(false) }
+            return .deferred { .error(SignError.tokenNotFound) }
         }
         
         return RestAPITransport()
@@ -122,7 +122,7 @@ extension TripManagerCore {
     // TODO: Check when API will done
     func rxCreateFeedback(text: String) -> Single<Bool> {
         guard let userToken = SessionManager.shared.getSession()?.userToken else {
-            return .deferred { .just(false) }
+            return .deferred { .error(SignError.tokenNotFound) }
         }
         
         return RestAPITransport()
