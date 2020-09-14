@@ -11,10 +11,8 @@ import RxCocoa
 
 final class SplashViewModel {
     enum Step {
-        case onboarding, findPlace, map
+        case onboarding, direct
     }
-    
-    private let tripManager: TripManager = TripManagerMock()
     
     lazy var step = createStep()
 }
@@ -23,12 +21,8 @@ final class SplashViewModel {
 
 private extension SplashViewModel {
     func createStep() -> Single<Step> {
-        .deferred { [tripManager] in
-            if tripManager.hasTrip() {
-                return .just(Step.map)
-            } else {
-                return .just(OnboardingViewController.wasViewed ? Step.findPlace : Step.onboarding)
-            }
+        .deferred {
+            .just(OnboardingViewController.wasViewed ? Step.direct : Step.onboarding)
         }
     }
 }

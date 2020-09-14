@@ -59,3 +59,11 @@
 "FindPlace.FPWhatItIsCell.Message" = "An app that generates coordinates for adventurers claims to turn your thoughts into reality. TikTok and YouTube creators want you to believe it — but you shouldn’t.\n\nandonautica makes a few asks of users — “What would you like to get?” “Choose your entropy source” — before prompting them to “focus on your intent” while it fetches coordinates. This process relies on location settings and a random number generator, which, despite what the company says, cannot be directly affected by human thoughts.";
 "FindPlace.HasCreatingTrip" = "Has creating trip...";
 "FindPlace.CreateTrip.Failure" = "Failure to create trip";
+
+// MARK: Direct
+"Direct.Explore.Title" = "Explore";
+"Direct.Explore.SubTitle" = "An app that generates coordinates for adventurers claims to turn your thoughts";
+"Direct.Learn.Title" = "Learn";
+"Direct.Learn.SubTitle" = "Driver force comples";
+"Direct.Wallpapers.Title" = "See";
+"Direct.Wallpapers.SubTitle" = "Mathematical horizont is littered";

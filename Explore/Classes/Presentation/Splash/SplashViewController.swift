@@ -32,10 +32,8 @@ final class SplashViewController: UIViewController {
                 switch step {
                 case .onboarding:
                     UIApplication.shared.keyWindow?.rootViewController = OnboardingViewController.make()
-                case .findPlace:
-                    UIApplication.shared.keyWindow?.rootViewController = FindPlaceViewController.make()
-                case .map:
-                    UIApplication.shared.keyWindow?.rootViewController = MapViewController.make()
+                case .direct:
+                    UIApplication.shared.keyWindow?.rootViewController = DirectNavigationController(rootViewController: DirectViewController.make())
                 }
             })
             .disposed(by: disposeBag)

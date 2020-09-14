@@ -56,7 +56,7 @@ extension OnboardingViewController {
 extension OnboardingViewController: OnboardingSliderDelegate {
     func onboardingSlider(changed slideIndex: Int) {
         if slideIndex == slides.count - 1 {
-            goToFindMapScreen()
+            UIApplication.shared.keyWindow?.rootViewController = DirectNavigationController(rootViewController: DirectViewController.make())
         }
     }
 }
@@ -71,9 +71,5 @@ extension OnboardingViewController {
     func setupSlider() {
         onboardingView.slider.setup(models: slides)
         onboardingView.slider.delegate = self
-    }
-    
-    func goToFindMapScreen() {
-        UIApplication.shared.keyWindow?.rootViewController = FindPlaceViewController.make()
     }
 }

@@ -123,10 +123,22 @@
 		966F47AF24F80E610025FD5F /* PaygateManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
 		96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */; };
+		96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C31250ED76500413D81 /* DirectViewController.swift */; };
+		96B74C34250ED7AF00413D81 /* DirectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C33250ED7AF00413D81 /* DirectViewModel.swift */; };
+		96B74C36250ED7C400413D81 /* DirectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C35250ED7C400413D81 /* DirectView.swift */; };
+		96B74C3A250ED80100413D81 /* DirectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C39250ED80100413D81 /* DirectCollectionView.swift */; };
 		96EB730524DBFABD008A32BC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730424DBFABD008A32BC /* Model.swift */; };
 		96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */; };
 		96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732124DD3103008A32BC /* SplashViewController.swift */; };
 		96EB732424DD3139008A32BC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732324DD3139008A32BC /* SplashView.swift */; };
+		96F2F84F25101FAF00F7A58B /* DirectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F84E25101FAF00F7A58B /* DirectCollectionCell.swift */; };
+		96F2F851251024B000F7A58B /* DirectCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F850251024B000F7A58B /* DirectCollectionElement.swift */; };
+		96F2F853251024D900F7A58B /* DirectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F852251024D900F7A58B /* DirectModel.swift */; };
+		96F2F85725102A4E00F7A58B /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F85625102A4E00F7A58B /* LearnViewController.swift */; };
+		96F2F85925102A5700F7A58B /* LearnViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F85825102A5700F7A58B /* LearnViewModel.swift */; };
+		96F2F85B25102A8F00F7A58B /* WallpapersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F85A25102A8F00F7A58B /* WallpapersViewController.swift */; };
+		96F2F85D25102AB600F7A58B /* WallpapersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F85C25102AB600F7A58B /* WallpapersViewModel.swift */; };
+		96F2F86025102CF000F7A58B /* DirectNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F85F25102CF000F7A58B /* DirectNavigationController.swift */; };
 		B079481B8193E9B57466D3CC /* Pods_Explore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207A5AA6F728371399EBE652 /* Pods_Explore.framework */; };
 /* End PBXBuildFile section */
 
@@ -250,10 +262,22 @@
 		966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerMock.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResponseMapper.swift; sourceTree = "<group>"; };
+		96B74C31250ED76500413D81 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
+		96B74C33250ED7AF00413D81 /* DirectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewModel.swift; sourceTree = "<group>"; };
+		96B74C35250ED7C400413D81 /* DirectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectView.swift; sourceTree = "<group>"; };
+		96B74C39250ED80100413D81 /* DirectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCollectionView.swift; sourceTree = "<group>"; };
 		96EB730424DBFABD008A32BC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationUtils.swift; sourceTree = "<group>"; };
 		96EB732124DD3103008A32BC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		96EB732324DD3139008A32BC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		96F2F84E25101FAF00F7A58B /* DirectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCollectionCell.swift; sourceTree = "<group>"; };
+		96F2F850251024B000F7A58B /* DirectCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCollectionElement.swift; sourceTree = "<group>"; };
+		96F2F852251024D900F7A58B /* DirectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectModel.swift; sourceTree = "<group>"; };
+		96F2F85625102A4E00F7A58B /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
+		96F2F85825102A5700F7A58B /* LearnViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewModel.swift; sourceTree = "<group>"; };
+		96F2F85A25102A8F00F7A58B /* WallpapersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewController.swift; sourceTree = "<group>"; };
+		96F2F85C25102AB600F7A58B /* WallpapersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewModel.swift; sourceTree = "<group>"; };
+		96F2F85F25102CF000F7A58B /* DirectNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectNavigationController.swift; sourceTree = "<group>"; };
 		B22F64F4A27F9D92296D9874 /* Pods-Explore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Explore.debug.xcconfig"; path = "Target Support Files/Pods-Explore/Pods-Explore.debug.xcconfig"; sourceTree = "<group>"; };
 		EA359854945A0243058EA051 /* Pods-Explore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Explore.release.xcconfig"; path = "Target Support Files/Pods-Explore/Pods-Explore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -344,6 +368,9 @@
 		960F029924DAC5C9008267FA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				96F2F85525102A3F00F7A58B /* Learn */,
+				96F2F85425102A3600F7A58B /* Wallpapers */,
+				96B74C30250ED75300413D81 /* Direct */,
 				966F479424F7A5A50025FD5F /* Map */,
 				966F472724F695F00025FD5F /* Onboarding */,
 				966F472624F695E30025FD5F /* FindPlace */,
@@ -822,6 +849,53 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
+		96B74C30250ED75300413D81 /* Direct */ = {
+			isa = PBXGroup;
+			children = (
+				96F2F85E25102CC800F7A58B /* NavigationController */,
+				96B74C37250ED7EC00413D81 /* Views */,
+				96B74C31250ED76500413D81 /* DirectViewController.swift */,
+				96B74C33250ED7AF00413D81 /* DirectViewModel.swift */,
+				96B74C35250ED7C400413D81 /* DirectView.swift */,
+			);
+			path = Direct;
+			sourceTree = "<group>";
+		};
+		96B74C37250ED7EC00413D81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96B74C38250ED7F200413D81 /* CollectionView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96B74C38250ED7F200413D81 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				96B74C3C250ED83100413D81 /* Models */,
+				96B74C3B250ED82D00413D81 /* Cells */,
+				96B74C39250ED80100413D81 /* DirectCollectionView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		96B74C3B250ED82D00413D81 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				96F2F84E25101FAF00F7A58B /* DirectCollectionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		96B74C3C250ED83100413D81 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96F2F850251024B000F7A58B /* DirectCollectionElement.swift */,
+				96F2F852251024D900F7A58B /* DirectModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		96EB731F24DD308F008A32BC /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -830,6 +904,32 @@
 				96EB732324DD3139008A32BC /* SplashView.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		96F2F85425102A3600F7A58B /* Wallpapers */ = {
+			isa = PBXGroup;
+			children = (
+				96F2F85A25102A8F00F7A58B /* WallpapersViewController.swift */,
+				96F2F85C25102AB600F7A58B /* WallpapersViewModel.swift */,
+			);
+			path = Wallpapers;
+			sourceTree = "<group>";
+		};
+		96F2F85525102A3F00F7A58B /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				96F2F85625102A4E00F7A58B /* LearnViewController.swift */,
+				96F2F85825102A5700F7A58B /* LearnViewModel.swift */,
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
+		96F2F85E25102CC800F7A58B /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				96F2F85F25102CF000F7A58B /* DirectNavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 		AB0A19C4267249BB598D332C /* Pods */ = {
@@ -993,12 +1093,17 @@
 			files = (
 				96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */,
 				960F031D24DAC686008267FA /* Scalable.swift in Sources */,
+				96F2F85925102A5700F7A58B /* LearnViewModel.swift in Sources */,
 				966F478524F6DCBE0025FD5F /* PaygateOptionView.swift in Sources */,
 				966F47A924F7BDFE0025FD5F /* OnboardingSlider.swift in Sources */,
+				96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */,
 				96EB732424DD3139008A32BC /* SplashView.swift in Sources */,
+				96F2F85B25102A8F00F7A58B /* WallpapersViewController.swift in Sources */,
 				963A440724F902450018A8CA /* GoogleMapView.swift in Sources */,
+				96F2F84F25101FAF00F7A58B /* DirectCollectionCell.swift in Sources */,
 				963A440C24F930BA0018A8CA /* OpenMap.swift in Sources */,
 				966F472D24F6965B0025FD5F /* PaygateOption.swift in Sources */,
+				96B74C36250ED7C400413D81 /* DirectView.swift in Sources */,
 				960F031924DAC686008267FA /* UIViewExtension.swift in Sources */,
 				9604B06B24DB471F00649DA7 /* Coordinate.swift in Sources */,
 				9604B06F24DB497F00649DA7 /* GeoLocationManagerDelegate.swift in Sources */,
@@ -1006,7 +1111,9 @@
 				966F47AD24F80D9A0025FD5F /* PaygateManagerCore.swift in Sources */,
 				963A442024FB89D00018A8CA /* FPRequireGeoPermissionCell.swift in Sources */,
 				960F032224DAC686008267FA /* Weak.swift in Sources */,
+				96F2F86025102CF000F7A58B /* DirectNavigationController.swift in Sources */,
 				963A443B24FEEF1B0018A8CA /* FPTableRadiusBundle.swift in Sources */,
+				96F2F85D25102AB600F7A58B /* WallpapersViewModel.swift in Sources */,
 				960F032424DAC686008267FA /* RxActivityIndicator.swift in Sources */,
 				966F478B24F6DCF80025FD5F /* PaygateViewControllerDelegate.swift in Sources */,
 				960F02F824DAC5E3008267FA /* SignError.swift in Sources */,
@@ -1051,6 +1158,7 @@
 				963A441924FA4F240018A8CA /* TripManager.swift in Sources */,
 				963A441024F9A5B30018A8CA /* TripFeedbackViewController.swift in Sources */,
 				966F479324F7A57B0025FD5F /* SplashViewModel.swift in Sources */,
+				96F2F853251024D900F7A58B /* DirectModel.swift in Sources */,
 				966F473124F698C60025FD5F /* Paygate.swift in Sources */,
 				963A443924FEE4BF0018A8CA /* FPRadiusCell.swift in Sources */,
 				960F02DF24DAC5E3008267FA /* APIRequestBody.swift in Sources */,
@@ -1067,7 +1175,9 @@
 				966F47AB24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift in Sources */,
 				96EB730524DBFABD008A32BC /* Model.swift in Sources */,
 				966F47A724F7BAA60025FD5F /* OnboardingSlide.swift in Sources */,
+				96F2F851251024B000F7A58B /* DirectCollectionElement.swift in Sources */,
 				966F47A024F7B1650025FD5F /* FindPlaceView.swift in Sources */,
+				96B74C3A250ED80100413D81 /* DirectCollectionView.swift in Sources */,
 				960F032A24DAC686008267FA /* PaddingTextField.swift in Sources */,
 				966F478D24F6DCF80025FD5F /* PaygateViewModel.swift in Sources */,
 				966F472B24F696490025FD5F /* PaygateSpecialOffer.swift in Sources */,
@@ -1086,7 +1196,9 @@
 				966F478724F6DCBE0025FD5F /* PaygateSpecialOfferView.swift in Sources */,
 				963A442A24FCD5E20018A8CA /* FPCompleteCell.swift in Sources */,
 				966F472F24F6966C0025FD5F /* PaygateMainOffer.swift in Sources */,
+				96F2F85725102A4E00F7A58B /* LearnViewController.swift in Sources */,
 				9604B06D24DB490300649DA7 /* GLAuthorizationStatus.swift in Sources */,
+				96B74C34250ED7AF00413D81 /* DirectViewModel.swift in Sources */,
 				960F02FB24DAC5E3008267FA /* DataBaseError.swift in Sources */,
 				966F476524F6A6410025FD5F /* PurchaseValidateRequest.swift in Sources */,
 				966F479E24F7B14F0025FD5F /* FindPlaceViewModel.swift in Sources */,

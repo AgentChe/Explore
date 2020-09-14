@@ -120,6 +120,7 @@ private extension FindPlaceViewController {
     }
     
     func goToMapScreen() {
+        // TODO: отправлять сигнал о создании, закрывать экран и пушить карту
         UIApplication.shared.keyWindow?.rootViewController = MapViewController.make()
     }
 }
