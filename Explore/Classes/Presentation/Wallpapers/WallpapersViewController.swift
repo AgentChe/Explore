@@ -10,7 +10,37 @@ import UIKit
 import RxSwift
 
 final class WallpapersViewController: UIViewController {
+    weak var delegate: WallpapersViewControllerDelegate?
     
+    var wallpapersView = WallpapersView()
+    
+    private let viewModel = WallpapersViewModel()
+    
+    private let disposeBag = DisposeBag()
+    
+    override func loadView() {
+        super.loadView()
+        
+        view = wallpapersView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel
+            .needPayment
+            .emit(onNext: { [weak self] in
+                self?.delegate?.wallpapersViewControllerNeedPayment()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .elements
+            .drive(onNext: { [weak self] elements in
+                self?.wallpapersView.collectionView.setup(elements: elements)
+            })
+            .disposed(by: disposeBag)
+    }
 }
 
 // MARK: Make

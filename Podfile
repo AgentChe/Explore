@@ -9,6 +9,7 @@ target 'Explore' do
   pod 'RxCocoa'
   
   pod 'NotificationBannerSwift'
+  pod 'Kingfisher'
   
   pod 'GoogleMaps'
   

@@ -109,7 +109,7 @@ extension TripManagerCore {
         return RestAPITransport()
             .callServerApi(requestBody: CreateTripRequest(userToken: userToken,
                                                           coordinate: coordinate))
-            .map { try ErrorChecker.throwErrorIfHas(from: $0) }
+            .map { try ErrorChecker.throwErrorIfHas(from: $0) } 
             .flatMap { [weak self] response in
                 guard let this = self, let trip = CreateTripResponseMapper.map(response: response, toCoordinate: coordinate) else {
                     return .just(false)

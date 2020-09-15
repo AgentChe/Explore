@@ -283,11 +283,17 @@ private extension FindPlaceViewModel {
                         this.tripManager
                             .rxCreateTrip(with: GeoLocationUtils.findCoordinate(from: coordinate, on: Double(this.radiusBundle.radius)))
                             .do(onError: { [weak self] error in
-                                guard let paymentError = error as? PaymentError, paymentError == .needPayment else {
+                                if let paymentError = error as? PaymentError, paymentError == .needPayment {
+                                    self?.needPaygateTrigger.accept(Void())
+                                    
                                     return
                                 }
+                                
+                                if let signError = error as? SignError, signError == .tokenNotFound {
+                                    self?.needPaygateTrigger.accept(Void())
                                     
-                                self?.needPaygateTrigger.accept(Void())
+                                    return
+                                }
                             })
                             .catchErrorJustReturn(false)
                     }

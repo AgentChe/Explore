@@ -1,0 +1,38 @@
+{
+    "_code": 200,
+    "_msg": "OK",
+    "_need_payment": false,
+    "_data": {
+        "wallpapers": [
+            {
+                "sort": 0,
+                "id": 4,
+                "name": "Earth",
+                "thumb_image_url": "https://s.hi-news.ru/wp-content/uploads/2018/02/wormholecropped-750x422.jpg",
+                "image_url": "https://s9.stc.all.kpcdn.net/share/i/12/11482942/inx960x640.jpg",
+                "hash": "ccb75e6bd7c250af6fbb9e968b6de6b2"
+            },
+            {
+                "sort": 1,
+                "id": 5,
+                "name": "Space Around",
+                "thumb_image_url": "https://icdn.lenta.ru/images/2018/08/16/17/20180816173432817/detail_441e2453a70b2a23f725bde7483421ff.jpg",
+                "image_url": "https://lh3.googleusercontent.com/proxy/8NrCTG7TKyI2Pi7oNvwuvKoQcGh8Ph0NL-KqeY8HlyM8ob4L_h4s2PweLfgJtpfBD6LXHqI5c4bsG4nZhLTE-dSb8SYWBursiOuZ79taoBjHu-l0eK3z7Qv7BiVRAPKtvsP5X9XzP_s",
+                "hash": "9e171010a0a526513cda5d22ad3cdd36"
+            },
+            {
+                "sort": 2,
+                "id": 3,
+                "name": "Space Thing",
+                "thumb_image_url": "https://icdn.lenta.ru/images/2018/04/26/18/20180426182156588/detail_d1de8a06fd568521f2414bcfe5b37a9e.jpg",
+                "image_url": "https://cdn.sm-news.ru/wp-content/uploads/2020/05/09/4446-1.jpg",
+                "hash": "7710a8b4d9ed7d30aa14b9708ae72817"
+            }
+        ],
+        "deleted_wallpapers_ids": [
+            1,
+            2
+        ],
+        "wallpapers_hash": "d7dbf564406fd7d3df1af1dc50b76e93"
+    }
+}
