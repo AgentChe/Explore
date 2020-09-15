@@ -55,6 +55,28 @@ extension DirectViewController {
     }
 }
 
+// MARK: FindPlaceViewControllerDelegate
+
+extension DirectViewController: FindPlaceViewControllerDelegate {
+    func findPlaceViewControllerTripCreated() {
+        navigationController?.popViewController(animated: false)
+        
+        navigate(at: .map)
+    }
+    
+    func findPlaceViewControllerNeedPayment() {
+        showPaygate()
+    }
+}
+
+// MARK: MapViewControllerDelegate
+
+extension DirectViewController: MapViewControllerDelegate {
+    func mapViewControllerTripRemoved() {
+        navigationController?.popViewController(animated: true)
+    }
+}
+
 // MARK: Private
 
 private extension DirectViewController {
@@ -63,9 +85,15 @@ private extension DirectViewController {
         
         switch step {
         case .findPlace:
-            vc = FindPlaceViewController.make()
+            let findPlaceVC = FindPlaceViewController.make()
+            findPlaceVC.delegate = self
+            
+            vc = findPlaceVC
         case .map:
-            vc = MapViewController.make()
+            let mapVC = MapViewController.make()
+            mapVC.delegate = self
+            
+            vc = mapVC
         case .learn:
             vc = LearnViewController.make()
         case .wallpapers:
@@ -73,5 +101,10 @@ private extension DirectViewController {
         }
         
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showPaygate() {
+        let vc = PaygateViewController.make()
+        navigationController?.present(vc, animated: true)
     }
 }

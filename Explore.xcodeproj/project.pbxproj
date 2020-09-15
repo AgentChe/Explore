@@ -139,6 +139,8 @@
 		96F2F85B25102A8F00F7A58B /* WallpapersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F85A25102A8F00F7A58B /* WallpapersViewController.swift */; };
 		96F2F85D25102AB600F7A58B /* WallpapersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F85C25102AB600F7A58B /* WallpapersViewModel.swift */; };
 		96F2F86025102CF000F7A58B /* DirectNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F85F25102CF000F7A58B /* DirectNavigationController.swift */; };
+		96F2F862251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F861251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift */; };
+		96F2F864251133AF00F7A58B /* MapViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F863251133AF00F7A58B /* MapViewControllerDelegate.swift */; };
 		B079481B8193E9B57466D3CC /* Pods_Explore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207A5AA6F728371399EBE652 /* Pods_Explore.framework */; };
 /* End PBXBuildFile section */
 
@@ -278,6 +280,8 @@
 		96F2F85A25102A8F00F7A58B /* WallpapersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewController.swift; sourceTree = "<group>"; };
 		96F2F85C25102AB600F7A58B /* WallpapersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewModel.swift; sourceTree = "<group>"; };
 		96F2F85F25102CF000F7A58B /* DirectNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectNavigationController.swift; sourceTree = "<group>"; };
+		96F2F861251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewControllerDelegate.swift; sourceTree = "<group>"; };
+		96F2F863251133AF00F7A58B /* MapViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerDelegate.swift; sourceTree = "<group>"; };
 		B22F64F4A27F9D92296D9874 /* Pods-Explore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Explore.debug.xcconfig"; path = "Target Support Files/Pods-Explore/Pods-Explore.debug.xcconfig"; sourceTree = "<group>"; };
 		EA359854945A0243058EA051 /* Pods-Explore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Explore.release.xcconfig"; path = "Target Support Files/Pods-Explore/Pods-Explore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -665,6 +669,7 @@
 				966F479024F7A3740025FD5F /* FindPlaceViewController.swift */,
 				966F479D24F7B14F0025FD5F /* FindPlaceViewModel.swift */,
 				966F479F24F7B1650025FD5F /* FindPlaceView.swift */,
+				96F2F861251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift */,
 			);
 			path = FindPlace;
 			sourceTree = "<group>";
@@ -810,6 +815,7 @@
 				966F479524F7A5C10025FD5F /* MapViewController.swift */,
 				966F479724F7AFB50025FD5F /* MapViewModel.swift */,
 				966F479924F7AFCC0025FD5F /* MapView.swift */,
+				96F2F863251133AF00F7A58B /* MapViewControllerDelegate.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -1113,6 +1119,7 @@
 				960F032224DAC686008267FA /* Weak.swift in Sources */,
 				96F2F86025102CF000F7A58B /* DirectNavigationController.swift in Sources */,
 				963A443B24FEEF1B0018A8CA /* FPTableRadiusBundle.swift in Sources */,
+				96F2F862251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift in Sources */,
 				96F2F85D25102AB600F7A58B /* WallpapersViewModel.swift in Sources */,
 				960F032424DAC686008267FA /* RxActivityIndicator.swift in Sources */,
 				966F478B24F6DCF80025FD5F /* PaygateViewControllerDelegate.swift in Sources */,
@@ -1176,6 +1183,7 @@
 				96EB730524DBFABD008A32BC /* Model.swift in Sources */,
 				966F47A724F7BAA60025FD5F /* OnboardingSlide.swift in Sources */,
 				96F2F851251024B000F7A58B /* DirectCollectionElement.swift in Sources */,
+				96F2F864251133AF00F7A58B /* MapViewControllerDelegate.swift in Sources */,
 				966F47A024F7B1650025FD5F /* FindPlaceView.swift in Sources */,
 				96B74C3A250ED80100413D81 /* DirectCollectionView.swift in Sources */,
 				960F032A24DAC686008267FA /* PaddingTextField.swift in Sources */,

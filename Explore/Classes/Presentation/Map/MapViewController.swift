@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 
 final class MapViewController: UIViewController {
+    weak var delegate: MapViewControllerDelegate?
+    
     var mapView = MapView()
     
     private let viewModel = MapViewModel()
@@ -72,7 +74,7 @@ final class MapViewController: UIViewController {
                 
                 self?.viewModel.removeTrip()
                 
-                self?.goToFindTrip()
+                self?.delegate?.mapViewControllerTripRemoved()
             })
             .disposed(by: disposeBag)
     }
@@ -126,9 +128,5 @@ private extension MapViewController {
             
             present(mapAppsActionSheet, animated: true)
         }
-    }
-    
-    func goToFindTrip() {
-        UIApplication.shared.keyWindow?.rootViewController = FindPlaceViewController.make()
     }
 }

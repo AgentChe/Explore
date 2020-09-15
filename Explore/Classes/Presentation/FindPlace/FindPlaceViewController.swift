@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 
 final class FindPlaceViewController: UIViewController {
+    weak var delegate: FindPlaceViewControllerDelegate?
+    
     var findPlaceView = FindPlaceView()
     
     private let viewModel = FindPlaceViewModel()
@@ -51,14 +53,14 @@ final class FindPlaceViewController: UIViewController {
         viewModel
             .needPaygate()
             .drive(onNext: { [weak self] in
-                self?.goToPaygateScreen()
+                self?.delegate?.findPlaceViewControllerNeedPayment()
             })
             .disposed(by: disposeBag)
         
         viewModel
             .tripCreated()
             .drive(onNext: { [weak self] in
-                self?.goToMapScreen()
+                self?.delegate?.findPlaceViewControllerTripCreated()
             })
             .disposed(by: disposeBag)
     }
@@ -109,18 +111,5 @@ extension FindPlaceViewController: FindPlaceTableDelegate {
         findPlaceView.tableView.removeAll()
         
         viewModel.reset.accept(Void())
-    }
-}
-
-// MARK: Private
-
-private extension FindPlaceViewController {
-    func goToPaygateScreen() {
-        present(PaygateViewController.make(), animated: true)
-    }
-    
-    func goToMapScreen() {
-        // TODO: отправлять сигнал о создании, закрывать экран и пушить карту
-        UIApplication.shared.keyWindow?.rootViewController = MapViewController.make()
     }
 }
