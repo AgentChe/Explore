@@ -11,6 +11,7 @@
 "OK" = "OK";
 "Send" = "Send";
 "Continue" = "Continue";
+"Settings" = "Settings";
 
 // MARK: Image Picker
 "ImagePicker.TakePhoto" = "TakePhoto";
@@ -70,3 +71,11 @@
 
 // MARK: Wallpapers
 "Wallpapers.Title" = "Wallpapers";
+
+// MARK: Wallpaper
+"Wallpaper.Save" = "Save";
+"Wallpaper.Preview" = "Preview";
+"Wallpaper.SavedToCameraRoll" = "Saved to Camera Roll";
+"Wallpaper.SavedToCameraRoll.Failure" = "Failure to save image";
+"Wallpaper.NoAccessToPhotoLibrary.Title" = "No Access";
+"Wallpaper.NoAccessToPhotoLibrary.Message" = "Go to settings and give permission";

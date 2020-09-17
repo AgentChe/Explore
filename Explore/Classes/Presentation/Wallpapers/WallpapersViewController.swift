@@ -40,6 +40,14 @@ final class WallpapersViewController: UIViewController {
                 self?.wallpapersView.collectionView.setup(elements: elements)
             })
             .disposed(by: disposeBag)
+        
+        wallpapersView
+            .collectionView.rx
+            .didSelectWallpaper
+            .emit(onNext: { [weak self] wallpaper in
+                self?.showWallpaper(wallpaper)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -48,5 +56,14 @@ final class WallpapersViewController: UIViewController {
 extension WallpapersViewController {
     static func make() -> WallpapersViewController {
         WallpapersViewController()
+    }
+}
+
+// MARK: Private
+
+private extension WallpapersViewController {
+    func showWallpaper(_ wallpaper: Wallpaper) {
+        let vc = WallpaperViewController.make(wallpaper: wallpaper)
+        navigationController?.present(vc, animated: true)
     }
 }

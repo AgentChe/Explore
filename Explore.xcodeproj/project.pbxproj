@@ -15,6 +15,12 @@
 		9609B8232511735A00457FD6 /* WallpaperCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B8222511735A00457FD6 /* WallpaperCollectionElement.swift */; };
 		9609B825251175E100457FD6 /* WallpapersViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B824251175E100457FD6 /* WallpapersViewControllerDelegate.swift */; };
 		9609B828251180AF00457FD6 /* WallpapersCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B827251180AF00457FD6 /* WallpapersCollectionHeader.swift */; };
+		9609B82B2511892000457FD6 /* WallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B82A2511892000457FD6 /* WallpaperViewController.swift */; };
+		9609B82D25118A6900457FD6 /* WallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B82C25118A6900457FD6 /* WallpaperView.swift */; };
+		9609B83025118C6100457FD6 /* WallpaperPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B82F25118C6100457FD6 /* WallpaperPreviewView.swift */; };
+		9609B83225118C9400457FD6 /* WallpaperActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83125118C9400457FD6 /* WallpaperActionsView.swift */; };
+		9609B83525129AF700457FD6 /* WallpaperNotAccessToPhotoLibraryAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83425129AF700457FD6 /* WallpaperNotAccessToPhotoLibraryAlert.swift */; };
+		9609B83825129E2100457FD6 /* PhotoLibraryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83725129E2100457FD6 /* PhotoLibraryWrapper.swift */; };
 		960F029324DAC181008267FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 960F029524DAC181008267FA /* Localizable.strings */; };
 		960F029824DAC586008267FA /* RestAPITransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F029724DAC586008267FA /* RestAPITransport.swift */; };
 		960F02DF24DAC5E3008267FA /* APIRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F02AE24DAC5E3008267FA /* APIRequestBody.swift */; };
@@ -169,6 +175,12 @@
 		9609B8222511735A00457FD6 /* WallpaperCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCollectionElement.swift; sourceTree = "<group>"; };
 		9609B824251175E100457FD6 /* WallpapersViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewControllerDelegate.swift; sourceTree = "<group>"; };
 		9609B827251180AF00457FD6 /* WallpapersCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCollectionHeader.swift; sourceTree = "<group>"; };
+		9609B82A2511892000457FD6 /* WallpaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperViewController.swift; sourceTree = "<group>"; };
+		9609B82C25118A6900457FD6 /* WallpaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperView.swift; sourceTree = "<group>"; };
+		9609B82F25118C6100457FD6 /* WallpaperPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperPreviewView.swift; sourceTree = "<group>"; };
+		9609B83125118C9400457FD6 /* WallpaperActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperActionsView.swift; sourceTree = "<group>"; };
+		9609B83425129AF700457FD6 /* WallpaperNotAccessToPhotoLibraryAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperNotAccessToPhotoLibraryAlert.swift; sourceTree = "<group>"; };
+		9609B83725129E2100457FD6 /* PhotoLibraryWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryWrapper.swift; sourceTree = "<group>"; };
 		960F029424DAC181008267FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		960F029724DAC586008267FA /* RestAPITransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPITransport.swift; sourceTree = "<group>"; };
 		960F02AE24DAC5E3008267FA /* APIRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestBody.swift; sourceTree = "<group>"; };
@@ -364,6 +376,43 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		9609B8292511890F00457FD6 /* Wallpaper */ = {
+			isa = PBXGroup;
+			children = (
+				9609B83625129E0B00457FD6 /* Utils */,
+				9609B83325129AB400457FD6 /* Components */,
+				9609B82E25118C4300457FD6 /* Views */,
+				9609B82A2511892000457FD6 /* WallpaperViewController.swift */,
+				9609B82C25118A6900457FD6 /* WallpaperView.swift */,
+			);
+			path = Wallpaper;
+			sourceTree = "<group>";
+		};
+		9609B82E25118C4300457FD6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9609B82F25118C6100457FD6 /* WallpaperPreviewView.swift */,
+				9609B83125118C9400457FD6 /* WallpaperActionsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9609B83325129AB400457FD6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9609B83425129AF700457FD6 /* WallpaperNotAccessToPhotoLibraryAlert.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9609B83625129E0B00457FD6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9609B83725129E2100457FD6 /* PhotoLibraryWrapper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		960F028E24DAC136008267FA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +460,7 @@
 		960F029924DAC5C9008267FA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9609B8292511890F00457FD6 /* Wallpaper */,
 				96F2F85525102A3F00F7A58B /* Learn */,
 				96F2F85425102A3600F7A58B /* Wallpapers */,
 				96B74C30250ED75300413D81 /* Direct */,
@@ -1227,6 +1277,7 @@
 				960F031D24DAC686008267FA /* Scalable.swift in Sources */,
 				96F2F85925102A5700F7A58B /* LearnViewModel.swift in Sources */,
 				96F2F885251170F400F7A58B /* WallpaperCollectionCell.swift in Sources */,
+				9609B83825129E2100457FD6 /* PhotoLibraryWrapper.swift in Sources */,
 				966F478524F6DCBE0025FD5F /* PaygateOptionView.swift in Sources */,
 				966F47A924F7BDFE0025FD5F /* OnboardingSlider.swift in Sources */,
 				96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */,
@@ -1257,6 +1308,7 @@
 				966F478424F6DCBE0025FD5F /* PaygateMainView.swift in Sources */,
 				960F029824DAC586008267FA /* RestAPITransport.swift in Sources */,
 				961A08B824D99D79001F23E6 /* AppDelegate.swift in Sources */,
+				9609B83525129AF700457FD6 /* WallpaperNotAccessToPhotoLibraryAlert.swift in Sources */,
 				96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */,
 				966F472424F68F520025FD5F /* ErrorChecker.swift in Sources */,
 				966F479824F7AFB50025FD5F /* MapViewModel.swift in Sources */,
@@ -1268,6 +1320,7 @@
 				966F475F24F6A4FE0025FD5F /* ProductPrice.swift in Sources */,
 				963A442424FB921B0018A8CA /* FPNotificationCell.swift in Sources */,
 				960F031F24DAC686008267FA /* ScreenSize.swift in Sources */,
+				9609B82B2511892000457FD6 /* WallpaperViewController.swift in Sources */,
 				963A440E24F9322C0018A8CA /* MapAppsActionSheet.swift in Sources */,
 				96F2F87425115EC800F7A58B /* WallpapersManagerCore.swift in Sources */,
 				963A442824FCCC720018A8CA /* FPWhatLikeGetCell.swift in Sources */,
@@ -1275,6 +1328,7 @@
 				966F478F24F7A3480025FD5F /* OnboardingViewController.swift in Sources */,
 				960F032024DAC686008267FA /* Fonts.swift in Sources */,
 				960F032724DAC686008267FA /* InterceptingEventsView.swift in Sources */,
+				9609B83225118C9400457FD6 /* WallpaperActionsView.swift in Sources */,
 				960F02F924DAC5E3008267FA /* PurchaseError.swift in Sources */,
 				96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */,
 				966F471E24F688F20025FD5F /* Session.swift in Sources */,
@@ -1299,6 +1353,7 @@
 				96F2F853251024D900F7A58B /* DirectModel.swift in Sources */,
 				966F473124F698C60025FD5F /* Paygate.swift in Sources */,
 				963A443924FEE4BF0018A8CA /* FPRadiusCell.swift in Sources */,
+				9609B83025118C6100457FD6 /* WallpaperPreviewView.swift in Sources */,
 				96F2F86E25114B2600F7A58B /* WallpapersResponseMapper.swift in Sources */,
 				960F02DF24DAC5E3008267FA /* APIRequestBody.swift in Sources */,
 				960F031B24DAC686008267FA /* StringExtension.swift in Sources */,
@@ -1339,6 +1394,7 @@
 				963A440924F91B490018A8CA /* TripGoogleMapView.swift in Sources */,
 				96F2F87625115EFC00F7A58B /* GetWallpapersRequest.swift in Sources */,
 				966F479624F7A5C10025FD5F /* MapViewController.swift in Sources */,
+				9609B82D25118A6900457FD6 /* WallpaperView.swift in Sources */,
 				966F479A24F7AFCC0025FD5F /* MapView.swift in Sources */,
 				966F476D24F6B0620025FD5F /* IDFAService.swift in Sources */,
 				966F478724F6DCBE0025FD5F /* PaygateSpecialOfferView.swift in Sources */,

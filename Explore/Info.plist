@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow access to save photo in your photo library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow access to save photo in your photo library</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -30,11 +34,11 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We'll use your location to propose points of interest close to you</string>
+	<string>We&apos;ll use your location to propose points of interest close to you</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We'll use your location to propose points of interest close to you</string>
+	<string>We&apos;ll use your location to propose points of interest close to you</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We'll use your location to propose points of interest close to you</string>
+	<string>We&apos;ll use your location to propose points of interest close to you</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Compact-Text-Bold.otf</string>
