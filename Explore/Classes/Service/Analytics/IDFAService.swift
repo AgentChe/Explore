@@ -19,7 +19,7 @@ final class IDFAService {
     private init() {}
 }
 
-// MARK: App key
+// MARK: API
 
 extension IDFAService {
     func getAppKey() -> String {
@@ -31,5 +31,13 @@ extension IDFAService {
             UserDefaults.standard.set(randomKey, forKey: Constants.appKey)
             return randomKey
         }
+    }
+    
+    func getIDFA() -> String {
+        ASIdentifierManager.shared().advertisingIdentifier.uuidString
+    }
+    
+    func isAdvertisingTrackingEnabled() -> Bool {
+        ASIdentifierManager.shared().isAdvertisingTrackingEnabled
     }
 }

@@ -21,6 +21,8 @@
 		9609B83225118C9400457FD6 /* WallpaperActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83125118C9400457FD6 /* WallpaperActionsView.swift */; };
 		9609B83525129AF700457FD6 /* WallpaperNotAccessToPhotoLibraryAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83425129AF700457FD6 /* WallpaperNotAccessToPhotoLibraryAlert.swift */; };
 		9609B83825129E2100457FD6 /* PhotoLibraryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83725129E2100457FD6 /* PhotoLibraryWrapper.swift */; };
+		9609B83B2515572B00457FD6 /* AppRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83A2515572B00457FD6 /* AppRegisterRequest.swift */; };
+		9609B83D251559E800457FD6 /* AppRegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83C251559E800457FD6 /* AppRegisterManager.swift */; };
 		960F029324DAC181008267FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 960F029524DAC181008267FA /* Localizable.strings */; };
 		960F029824DAC586008267FA /* RestAPITransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F029724DAC586008267FA /* RestAPITransport.swift */; };
 		960F02DF24DAC5E3008267FA /* APIRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F02AE24DAC5E3008267FA /* APIRequestBody.swift */; };
@@ -181,6 +183,8 @@
 		9609B83125118C9400457FD6 /* WallpaperActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperActionsView.swift; sourceTree = "<group>"; };
 		9609B83425129AF700457FD6 /* WallpaperNotAccessToPhotoLibraryAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperNotAccessToPhotoLibraryAlert.swift; sourceTree = "<group>"; };
 		9609B83725129E2100457FD6 /* PhotoLibraryWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryWrapper.swift; sourceTree = "<group>"; };
+		9609B83A2515572B00457FD6 /* AppRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRegisterRequest.swift; sourceTree = "<group>"; };
+		9609B83C251559E800457FD6 /* AppRegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRegisterManager.swift; sourceTree = "<group>"; };
 		960F029424DAC181008267FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		960F029724DAC586008267FA /* RestAPITransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPITransport.swift; sourceTree = "<group>"; };
 		960F02AE24DAC5E3008267FA /* APIRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestBody.swift; sourceTree = "<group>"; };
@@ -411,6 +415,14 @@
 				9609B83725129E2100457FD6 /* PhotoLibraryWrapper.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		9609B8392515570C00457FD6 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				9609B83A2515572B00457FD6 /* AppRegisterRequest.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		960F028E24DAC136008267FA /* Classes */ = {
@@ -882,7 +894,9 @@
 		966F476B24F6B0030025FD5F /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				9609B8392515570C00457FD6 /* Request */,
 				966F476C24F6B0620025FD5F /* IDFAService.swift */,
+				9609B83C251559E800457FD6 /* AppRegisterManager.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -1349,6 +1363,7 @@
 				960F031A24DAC686008267FA /* UIDeviceExtension.swift in Sources */,
 				963A441924FA4F240018A8CA /* TripManager.swift in Sources */,
 				963A441024F9A5B30018A8CA /* TripFeedbackViewController.swift in Sources */,
+				9609B83D251559E800457FD6 /* AppRegisterManager.swift in Sources */,
 				966F479324F7A57B0025FD5F /* SplashViewModel.swift in Sources */,
 				96F2F853251024D900F7A58B /* DirectModel.swift in Sources */,
 				966F473124F698C60025FD5F /* Paygate.swift in Sources */,
@@ -1380,6 +1395,7 @@
 				966F47A024F7B1650025FD5F /* FindPlaceView.swift in Sources */,
 				96B74C3A250ED80100413D81 /* DirectCollectionView.swift in Sources */,
 				960F032A24DAC686008267FA /* PaddingTextField.swift in Sources */,
+				9609B83B2515572B00457FD6 /* AppRegisterRequest.swift in Sources */,
 				966F478D24F6DCF80025FD5F /* PaygateViewModel.swift in Sources */,
 				966F472B24F696490025FD5F /* PaygateSpecialOffer.swift in Sources */,
 				960F032324DAC686008267FA /* ImagePicker.swift in Sources */,

@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(GlobalDefinitions.googleApiKey)
         PurchaseManager.register()
         
+        AppRegisterManager.shared.configure()
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = SplashViewController.make()
         window?.makeKeyAndVisible()
