@@ -11,6 +11,17 @@ import RxSwift
 
 final class GeoLocationUtils {}
 
+// MARK: Calculate
+
+extension GeoLocationUtils {
+    static func distance(from: Coordinate, to: Coordinate) -> Double {
+        let fromLocation = CLLocation(latitude: from.latitude, longitude: from.longitude)
+        let toLocation = CLLocation(latitude: to.latitude, longitude: to.longitude)
+        
+        return fromLocation.distance(from: toLocation)
+    }
+}
+
 // MARK: Find random coordinate
 
 extension GeoLocationUtils {

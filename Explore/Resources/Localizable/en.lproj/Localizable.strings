@@ -37,6 +37,7 @@
 "Map.MapAppsActionSheet.DGis" = "2Gis";
 "Map.MapAppsActionSheet.YandexMap" = "Yandex Map";
 "Map.TripFeedbackViewController.Title" = "Send feedback about trip";
+"Map.RadiusToTrip" = "r = %im";
 
 // MARK: FindPlace
 "FindPlace.Title" = "Randonautica";

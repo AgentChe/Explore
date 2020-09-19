@@ -16,6 +16,12 @@ final class DirectNavigationController: UINavigationController {
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = true
         navigationBar.tintColor = UIColor.white
+        
+        navigationBar.titleTextAttributes = TextAttributes()
+            .textColor(UIColor.white)
+            .font(Font.SFProText.semibold(size: 17.scale))
+            .textAlignment(.center)
+            .dictionary
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

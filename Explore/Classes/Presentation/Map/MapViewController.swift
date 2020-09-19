@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 final class MapViewController: UIViewController {
     weak var delegate: MapViewControllerDelegate?
@@ -27,6 +28,14 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Map.Title".localized
+        
+        let lifeUpdatingCoordinate = viewModel
+            .monitoringOfCoordinate()
+        
+        let trip = viewModel
+            .trip()
+        
         viewModel
             .activityIndicator
             .drive(onNext: { [weak self] active in
@@ -34,15 +43,13 @@ final class MapViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel
-            .monitoringOfCoordinate()
+        lifeUpdatingCoordinate
             .drive(onNext: { [weak self] coordinate in
                 self?.mapView.mapView.moveUserPlacedMarker(at: coordinate)
             })
             .disposed(by: disposeBag)
         
-        viewModel
-            .trip()
+        trip
             .drive(onNext: { [weak self] trip in
                 self?.updateCamera(at: trip)
             })
@@ -53,6 +60,19 @@ final class MapViewController: UIViewController {
         tripInProgress
             .drive(onNext: { [weak self] inProgress in
                 self?.updateTripButton(inProgress: inProgress)
+            })
+            .disposed(by: disposeBag)
+        
+        Driver
+            .combineLatest(trip, lifeUpdatingCoordinate)
+            .drive(onNext: { [weak self] stub in
+                let (trip, coordinate) = stub
+                
+                guard let this = self, let toTrip = trip else {
+                    return
+                }
+                
+                this.updateRadius(from: coordinate, to: toTrip)
             })
             .disposed(by: disposeBag)
         
@@ -99,6 +119,12 @@ extension MapViewController: TripFeedbackViewControllerDelegate {
 // MARK: Private
 
 private extension MapViewController {
+    func updateRadius(from location: Coordinate, to trip: Trip) {
+        let distance = GeoLocationUtils.distance(from: location, to: trip.toCoordinate)
+        
+        mapView.radiusLabel.text = String(format: "Map.RadiusToTrip".localized, Int(distance))
+    }
+    
     func updateCamera(at trip: Trip?) {
         guard let trip = trip else {
             return

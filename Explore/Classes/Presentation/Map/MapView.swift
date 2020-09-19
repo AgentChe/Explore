@@ -11,7 +11,7 @@ import GoogleMaps
 
 final class MapView: UIView {
     lazy var mapView = makeMapView()
-    lazy var titleLabel = makeTitleLabel()
+    lazy var radiusLabel = makeRadiusLabel()
     lazy var tripButton = makeTripButton()
     lazy var activityIndicator = makeActivityIndicator()
     
@@ -44,9 +44,8 @@ private extension MapView {
         ])
         
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40.scale),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40.scale),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 56.scale)
+            radiusLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            radiusLabel.bottomAnchor.constraint(equalTo: tripButton.topAnchor, constant: ScreenSize.isIphoneXFamily ? -77.scale : -50.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -73,13 +72,18 @@ private extension MapView {
         return view
     }
     
-    func makeTitleLabel() -> UILabel {
-        let view = UILabel()
-        view.font = Font.SFProText.semibold(size: 17.scale)
-        view.textAlignment = .center
+    func makeRadiusLabel() -> PaddingLabel {
+        let view = PaddingLabel()
+        view.leftInset = 12.scale
+        view.rightInset = 12.scale
+        view.topInset = 6.scale
+        view.bottomInset = 6.scale
+        view.backgroundColor = UIColor.black
+        view.layer.cornerRadius = 8.scale
+        view.layer.masksToBounds = true
+        view.font = Font.SFProText.regular(size: 17.scale)
         view.textColor = UIColor.white
-        view.text = "Map.Title".localized
-        view.numberOfLines = 0
+        view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
