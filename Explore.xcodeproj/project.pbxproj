@@ -23,6 +23,7 @@
 		9609B83825129E2100457FD6 /* PhotoLibraryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83725129E2100457FD6 /* PhotoLibraryWrapper.swift */; };
 		9609B83B2515572B00457FD6 /* AppRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83A2515572B00457FD6 /* AppRegisterRequest.swift */; };
 		9609B83D251559E800457FD6 /* AppRegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83C251559E800457FD6 /* AppRegisterManager.swift */; };
+		9609B83F25169BDC00457FD6 /* CircleMarkerIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B83E25169BDC00457FD6 /* CircleMarkerIconView.swift */; };
 		960F029324DAC181008267FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 960F029524DAC181008267FA /* Localizable.strings */; };
 		960F029824DAC586008267FA /* RestAPITransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F029724DAC586008267FA /* RestAPITransport.swift */; };
 		960F02DF24DAC5E3008267FA /* APIRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F02AE24DAC5E3008267FA /* APIRequestBody.swift */; };
@@ -185,6 +186,7 @@
 		9609B83725129E2100457FD6 /* PhotoLibraryWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryWrapper.swift; sourceTree = "<group>"; };
 		9609B83A2515572B00457FD6 /* AppRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRegisterRequest.swift; sourceTree = "<group>"; };
 		9609B83C251559E800457FD6 /* AppRegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRegisterManager.swift; sourceTree = "<group>"; };
+		9609B83E25169BDC00457FD6 /* CircleMarkerIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMarkerIconView.swift; sourceTree = "<group>"; };
 		960F029424DAC181008267FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		960F029724DAC586008267FA /* RestAPITransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPITransport.swift; sourceTree = "<group>"; };
 		960F02AE24DAC5E3008267FA /* APIRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestBody.swift; sourceTree = "<group>"; };
@@ -648,6 +650,7 @@
 			children = (
 				963A441124F9A85F0018A8CA /* TripFeedback */,
 				963A440824F91B490018A8CA /* TripGoogleMapView.swift */,
+				9609B83E25169BDC00457FD6 /* CircleMarkerIconView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1399,6 +1402,7 @@
 				966F478D24F6DCF80025FD5F /* PaygateViewModel.swift in Sources */,
 				966F472B24F696490025FD5F /* PaygateSpecialOffer.swift in Sources */,
 				960F032324DAC686008267FA /* ImagePicker.swift in Sources */,
+				9609B83F25169BDC00457FD6 /* CircleMarkerIconView.swift in Sources */,
 				963A442624FB936A0018A8CA /* FPSearchedCoordinateCell.swift in Sources */,
 				960F02FF24DAC64D008267FA /* GlobalDefinitions.swift in Sources */,
 				966F475B24F6A4A20025FD5F /* PaygateMapper.swift in Sources */,

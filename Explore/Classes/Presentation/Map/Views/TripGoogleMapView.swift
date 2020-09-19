@@ -16,6 +16,8 @@ final class TripGoogleMapView: GoogleMapView {
     func setTripMarker(at coordinate: Coordinate) {
         if tripMarker == nil {
             tripMarker = GMSMarker()
+            tripMarker?.iconView = CircleMarkerIconView(frame: CGRect(origin: .zero, size: CGSize(width: 153.scale, height: 153.scale)))
+            tripMarker?.groundAnchor = CGPoint(x: 0.5, y: 0.5)
             tripMarker?.map = self
         }
         
