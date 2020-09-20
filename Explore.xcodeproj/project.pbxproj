@@ -427,13 +427,53 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		9609B840251733C000457FD6 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				966F471924F676720025FD5F /* TripFeedbackRequest.swift */,
+				966F471524F6761F0025FD5F /* CreateTripRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		9609B841251733D300457FD6 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				96F2F87525115EFC00F7A58B /* GetWallpapersRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		9609B842251733E600457FD6 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				966F476424F6A6410025FD5F /* PurchaseValidateRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		9609B8432517340B00457FD6 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				966F476624F6A94B0025FD5F /* GetPaygateRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		9609B8442517342000457FD6 /* RestAPITransport */ = {
+			isa = PBXGroup;
+			children = (
+				960F02AE24DAC5E3008267FA /* APIRequestBody.swift */,
+				960F029724DAC586008267FA /* RestAPITransport.swift */,
+			);
+			path = RestAPITransport;
+			sourceTree = "<group>";
+		};
 		960F028E24DAC136008267FA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				960F030024DAC686008267FA /* Misc */,
-				960F02FD24DAC63E008267FA /* GlobalDefinitions */,
 				960F029624DAC586008267FA /* Transport */,
-				960F029C24DAC5E3008267FA /* Model */,
 				960F029A24DAC5D3008267FA /* Service */,
 				960F029924DAC5C9008267FA /* Presentation */,
 			);
@@ -466,7 +506,7 @@
 		960F029624DAC586008267FA /* Transport */ = {
 			isa = PBXGroup;
 			children = (
-				960F029724DAC586008267FA /* RestAPITransport.swift */,
+				9609B8442517342000457FD6 /* RestAPITransport */,
 			);
 			path = Transport;
 			sourceTree = "<group>";
@@ -501,37 +541,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		960F029C24DAC5E3008267FA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				960F029D24DAC5E3008267FA /* Entity */,
-				960F02A924DAC5E3008267FA /* RequestBody */,
-				960F02CB24DAC5E3008267FA /* Error */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		960F029D24DAC5E3008267FA /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				96EB730424DBFABD008A32BC /* Model.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		960F02A924DAC5E3008267FA /* RequestBody */ = {
-			isa = PBXGroup;
-			children = (
-				960F02AE24DAC5E3008267FA /* APIRequestBody.swift */,
-				966F471524F6761F0025FD5F /* CreateTripRequest.swift */,
-				966F471924F676720025FD5F /* TripFeedbackRequest.swift */,
-				966F476424F6A6410025FD5F /* PurchaseValidateRequest.swift */,
-				966F476624F6A94B0025FD5F /* GetPaygateRequest.swift */,
-				96F2F87525115EFC00F7A58B /* GetWallpapersRequest.swift */,
-			);
-			path = RequestBody;
-			sourceTree = "<group>";
-		};
 		960F02CB24DAC5E3008267FA /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +565,7 @@
 		960F030024DAC686008267FA /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				960F02FD24DAC63E008267FA /* GlobalDefinitions */,
 				960F030124DAC686008267FA /* Extension */,
 				960F030624DAC686008267FA /* Utils */,
 				960F030D24DAC686008267FA /* Components */,
@@ -578,6 +588,8 @@
 		960F030624DAC686008267FA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				960F02CB24DAC5E3008267FA /* Error */,
+				96EB730424DBFABD008A32BC /* Model.swift */,
 				960F030724DAC686008267FA /* Scalable.swift */,
 				960F030824DAC686008267FA /* TextAttributes.swift */,
 				960F030924DAC686008267FA /* ScreenSize.swift */,
@@ -722,6 +734,7 @@
 		966F471024F66CC80025FD5F /* Trip */ = {
 			isa = PBXGroup;
 			children = (
+				9609B840251733C000457FD6 /* Requests */,
 				96F2F8662511455400F7A58B /* Models */,
 				96B74C2D250EC68000413D81 /* Mapper */,
 				966F471124F66CE40025FD5F /* TripManagerCore.swift */,
@@ -793,6 +806,7 @@
 		966F472824F696250025FD5F /* Paygate */ = {
 			isa = PBXGroup;
 			children = (
+				9609B8432517340B00457FD6 /* Requests */,
 				966F475924F6A4880025FD5F /* Mapper */,
 				966F472924F6962D0025FD5F /* Models */,
 				966F476924F6AF890025FD5F /* PaygateManager.swift */,
@@ -879,6 +893,7 @@
 		966F475C24F6A4DB0025FD5F /* Purchase */ = {
 			isa = PBXGroup;
 			children = (
+				9609B842251733E600457FD6 /* Requests */,
 				966F475D24F6A4E60025FD5F /* Model */,
 				966F476224F6A5B30025FD5F /* PurchaseManager.swift */,
 			);
@@ -1052,6 +1067,7 @@
 		96F2F8652511453000F7A58B /* Wallpapers */ = {
 			isa = PBXGroup;
 			children = (
+				9609B841251733D300457FD6 /* Requests */,
 				96F2F86C25114B1000F7A58B /* Mappers */,
 				96F2F8672511458600F7A58B /* Models */,
 				96F2F86F25115A5B00F7A58B /* WallpapersManager.swift */,
