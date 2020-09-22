@@ -23,7 +23,7 @@ final class FindPlaceViewModel {
     var radiusBundle = FPTableRadiusBundle()
     
     private let geoLocationManager = GeoLocationManager(mode: .whenInUseAuthorization)
-    private let tripManager = TripManagerMock()
+    private let tripManager = TripManagerCore()
     
     private let needPaygateTrigger = PublishRelay<Void>()
     private let tripCreatedTrigger = PublishRelay<Void>()

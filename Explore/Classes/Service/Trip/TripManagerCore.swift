@@ -100,7 +100,6 @@ extension TripManagerCore {
         .deferred { [weak self] in .just(self?.isTripInProgress() ?? false) }
     }
     
-    // TODO: Check when API will done
     func rxCreateTrip(with coordinate: Coordinate) -> Single<Bool> {
         guard let userToken = SessionManager.shared.getSession()?.userToken else {
             return .deferred { .error(SignError.tokenNotFound) }
@@ -133,7 +132,7 @@ extension TripManagerCore {
             .callServerApi(requestBody: TripFeedbackRequest(userToken: userToken,
                                                             tripId: tripId,
                                                             feedback: text))
-            .map { ErrorChecker.hasError(in: $0) }
+            .map { !ErrorChecker.hasError(in: $0) }
     }
 }
 

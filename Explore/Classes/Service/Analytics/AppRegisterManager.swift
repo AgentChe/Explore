@@ -29,7 +29,6 @@ extension AppRegisterManager {
 // MARK: Private
 
 private extension AppRegisterManager {
-    // TODO: Check when API will done
     func appRegister() {
         guard !UserDefaults.standard.bool(forKey: Constants.appWasRegisteredKey) else {
             return

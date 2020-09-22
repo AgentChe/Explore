@@ -15,7 +15,7 @@ final class MapViewModel {
     let activityIndicator = RxActivityIndicator()
     
     private let geoLocationManager = GeoLocationManager(mode: .whenInUseAuthorization)
-    private let tripManager: TripManager = TripManagerMock()
+    private let tripManager: TripManager = TripManagerCore()
     
     func monitoringOfCoordinate() -> Driver<Coordinate> {
         defer { geoLocationManager.continuoslyKeepLocation() }

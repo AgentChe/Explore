@@ -17,7 +17,6 @@ final class CreateTripResponseMapper {
     }
 }
 
-// TODO: Apply realy mapper for response when API will done
 private struct CreateTripResponse: Model {
     let id: Int
     
@@ -29,6 +28,8 @@ private struct CreateTripResponse: Model {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Keys.self)
         
-        id = try container.decode(Int.self, forKey: .id)
+        let data = try container.nestedContainer(keyedBy: Keys.self, forKey: .data)
+        
+        id = try data.decode(Int.self, forKey: .id)
     }
 }
