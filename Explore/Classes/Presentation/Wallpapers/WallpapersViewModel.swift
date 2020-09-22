@@ -13,7 +13,7 @@ final class WallpapersViewModel {
     lazy var elements = createElements()
     lazy var needPayment = createNeedPaymentSignal()
     
-    private let wallpapersManager = WallpapersManagerMock()
+    private let wallpapersManager = WallpapersManagerCore()
     
     private let needPaymentTrigger = PublishRelay<Void>()
 }

@@ -105,7 +105,7 @@ private extension DirectViewController {
             
             vc = mapVC
         case .learn:
-            vc = LearnViewController.make()
+            vc = LearnCategoriesViewController.make()
         case .wallpapers:
             let wallpapersVC = WallpapersViewController.make()
             wallpapersVC.delegate = self

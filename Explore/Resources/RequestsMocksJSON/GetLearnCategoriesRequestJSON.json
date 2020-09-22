@@ -1,0 +1,29 @@
+{
+    "_code": 200,
+    "_msg": "OK",
+    "_need_payment": false,
+    "_data": {
+        "categories": [
+            {
+                "id": "Hiking",
+                "thumb": "https://406515.selcdn.ru/APPS/EXPLORE/80/1600729040Gottalocal-Hiking-Shepherd_10_640x480.png",
+                "articles": []
+            },
+            {
+                "id": "Mountains",
+                "thumb": "https://406515.selcdn.ru/APPS/EXPLORE/02/1600729396A-Alamy-BXWK5E_vvmkuf.jpg",
+                "articles": []
+            },
+            {
+                "id": "Adandoned Buildings",
+                "thumb": "https://406515.selcdn.ru/APPS/EXPLORE/98/1600729445unnamed.jpg",
+                "articles": []
+            },
+            {
+                "id": "Urgent medical help",
+                "thumb": "https://406515.selcdn.ru/APPS/EXPLORE/64/1600729587dog-hiking-350.jpg",
+                "articles": []
+            }
+        ]
+    }
+}

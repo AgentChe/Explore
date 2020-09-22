@@ -80,3 +80,10 @@
 "Wallpaper.SavedToCameraRoll.Failure" = "Failure to save image";
 "Wallpaper.NoAccessToPhotoLibrary.Title" = "No Access";
 "Wallpaper.NoAccessToPhotoLibrary.Message" = "Go to settings and give permission";
+
+// MARK: LearnCategories
+"LearnCategories.Title" = "Learn";
+"LearnCategories.SubTitle" = "Themes";
+
+// MARK: LearnContent
+"LearnContent.Title" = "Learn";

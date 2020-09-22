@@ -12,19 +12,22 @@ final class DirectNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.shadowImage = UIImage()
-        navigationBar.isTranslucent = true
-        navigationBar.tintColor = UIColor.white
-        
-        navigationBar.titleTextAttributes = TextAttributes()
-            .textColor(UIColor.white)
-            .font(Font.SFProText.semibold(size: 17.scale))
-            .textAlignment(.center)
-            .dictionary
+        apply(settings: .default())
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .default
+    }
+}
+
+// MARK: API
+
+extension DirectNavigationController {
+    func apply(settings: DirectNavigationControllerSettings) {
+        navigationBar.setBackgroundImage(settings.backgroundImage, for: .default)
+        navigationBar.shadowImage = settings.shadowImage
+        navigationBar.isTranslucent = settings.isTranslucent
+        navigationBar.tintColor = settings.tintColor
+        navigationBar.titleTextAttributes = settings.titleTextAttrributes
     }
 }
