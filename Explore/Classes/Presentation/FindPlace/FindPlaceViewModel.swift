@@ -161,22 +161,23 @@ private extension FindPlaceViewModel {
     
     func receiveFindCoordinate() -> Driver<FindPlaceTableSection> {
         findCoordinate
-            .flatMap { [geoLocationManager] in
-                Observable<FindPlaceTableSection>.create { event in
-                    geoLocationManager.justDetermineCurrentLocation { [weak self] coordinate in
-                        let section = FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.searchedCoordinate,
-                                                            items: [.searchedCoordinate(coordinate)])
-                        
-                        event.onNext(section)
-                        event.onCompleted()
-                        
-                        self?.whatLikeGet.accept(Void())
-                    }
-                    
-                    return Disposables.create {
-                        geoLocationManager.stopUpdatingLocation()
-                    }
+            .flatMap { [geoLocationManager] _ -> Single<FindPlaceTableSection> in
+                defer {
+                    geoLocationManager.justDetermineCurrentLocation()
                 }
+                
+                return geoLocationManager
+                    .rx.justDetermineCurrentLocation
+                    .asObservable()
+                    .take(1)
+                    .map {
+                        FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.searchedCoordinate,
+                                              items: [.searchedCoordinate($0)])
+                    }
+                    .asSingle()
+                    .do(onSuccess: { [weak self] _ in
+                        self?.whatLikeGet.accept(Void())
+                    })
             }
             .asDriver(onErrorDriveWith: .empty())
     }
