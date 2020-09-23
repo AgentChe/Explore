@@ -56,8 +56,12 @@ extension LearnManagerCore {
 
 private extension LearnManagerCore {
     func retrieveCategories() -> Single<[LearnCategory]> {
-        RestAPITransport()
-            .callServerApi(requestBody: GetLearnCategoriesRequest())
+        guard let userToken = SessionManager.shared.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        return RestAPITransport()
+            .callServerApi(requestBody: GetLearnCategoriesRequest(userToken: userToken))
             .map { try ErrorChecker.throwErrorIfHas(from: $0) }
             .map { GetLearnCategoriesResponseMapper.map(response: $0) }
             .do(onSuccess: { [weak self] categories in
@@ -77,8 +81,13 @@ private extension LearnManagerCore {
     }
     
     func retrieveContent(articleId: Int) -> Single<LearnContent?> {
-        RestAPITransport()
-            .callServerApi(requestBody: GetLearnContentRequest(articleId: articleId))
+        guard let userToken = SessionManager.shared.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        return RestAPITransport()
+            .callServerApi(requestBody: GetLearnContentRequest(userToken: userToken,
+                                                               articleId: articleId))
             .map { try ErrorChecker.throwErrorIfHas(from: $0) }
             .map { GetLearnContentResponseMapper.map(response: $0) }
     }

@@ -83,7 +83,7 @@ private extension OnboardingSlider {
         let equalWidths = frame.width - slidesContainerWidth
         var slideIndicatorX = equalWidths / 2
         
-        let slideIndicatorY = frame.height - (ScreenSize.isIphoneXFamily ? 159.scale : 100.scale)
+        let slideIndicatorY = frame.height - (ScreenSize.isIphoneXFamily ? 139.scale : 80.scale)
         
         let selectedColor = UIColor.white
         let unselectedColor = UIColor(red: 142 / 255, green: 142 / 255, blue: 147 / 255, alpha: 0.6)

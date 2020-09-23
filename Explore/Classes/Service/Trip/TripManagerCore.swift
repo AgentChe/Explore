@@ -122,7 +122,6 @@ extension TripManagerCore {
 // MARK: API(Rx) - Feedback
 
 extension TripManagerCore {
-    // TODO: Check when API will done
     func rxCreateFeedback(tripId: Int, text: String) -> Single<Bool> {
         guard let userToken = SessionManager.shared.getSession()?.userToken else {
             return .deferred { .error(SignError.tokenNotFound) }

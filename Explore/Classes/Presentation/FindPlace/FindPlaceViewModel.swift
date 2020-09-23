@@ -269,7 +269,7 @@ private extension FindPlaceViewModel {
     
     func receiveCreateTripForCreateResultSection() -> Driver<FindPlaceTableSection> {
         createTrip
-            .flatMapLatest { [weak self] _ -> Observable<Bool> in
+            .flatMapLatest { [weak self] _ -> Observable<FindPlaceTableSection> in
                 guard let this = self else {
                     return .empty()
                 }
@@ -279,48 +279,37 @@ private extension FindPlaceViewModel {
                 return this.geoLocationManager.rx
                     .justDetermineCurrentLocation
                     .asObservable()
-                    .flatMapLatest { coordinate -> Single<Bool> in
+                    .flatMapLatest { coordinate -> Single<FindPlaceTableSection?> in
                         this.tripManager
                             .rxCreateTrip(with: GeoLocationUtils.findCoordinate(from: coordinate, on: Double(this.radiusBundle.radius)))
+                            .map { success -> FindPlaceTableSection? in
+                                success ? nil : FindPlaceTableSection(identifier: "FindPlaceTableSection.Identifiers.notification",
+                                                                      items: [.notification("FindPlace.CreateTrip.Failure".localized)])
+                            }
                             .do(onError: { [weak self] error in
-                                if let paymentError = error as? PaymentError, paymentError == .needPayment {
+                                if ErrorChecker.needPayment(in: error) {
                                     self?.needPaygateTrigger.accept(Void())
-                                    
-                                    return
-                                }
-                                
-                                if let signError = error as? SignError, signError == .tokenNotFound {
-                                    self?.needPaygateTrigger.accept(Void())
-                                    
-                                    return
                                 }
                             })
-                            .catchErrorJustReturn(false)
+                            .catchError { error in
+                                if ErrorChecker.needPayment(in: error) {
+                                    return .just(nil)
+                                }
+                                
+                                let section = FindPlaceTableSection(identifier: "FindPlaceTableSection.Identifiers.notification",
+                                                                    items: [.notification("FindPlace.CreateTrip.Failure".localized)])
+                                
+                                return .just(section)
+                            }
                     }
-            }
-            .do(onNext: { [weak self] success in
-                guard success else {
-                    return
-                }
-                
-                self?.tripCreatedTrigger.accept(Void())
-            })
-            .flatMapLatest { success -> Observable<FindPlaceTableSection> in
-                guard !success else {
-                    return .empty()
-                }
-                
-                return Observable<FindPlaceTableSection>.create { event in
-                    event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.notification,
-                                                       items: [.notification("FindPlace.CreateTrip.Failure".localized)]))
-                    
-                    event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.complete,
-                                                       items: [.complete]))
-                    
-                    event.onCompleted()
-                    
-                    return Disposables.create()
-                }
+                    .flatMap { [weak self] section -> Observable<FindPlaceTableSection> in
+                        guard let section = section else {
+                            self?.tripCreatedTrigger.accept(Void())
+                            return .empty()
+                        }
+                        
+                        return .just(section)
+                    }
             }
             .asDriver(onErrorDriveWith: .empty())
     }

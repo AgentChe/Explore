@@ -8,6 +8,5 @@
 
 enum LearnCategoriesCollectionElement {
     case title
-    case subTitle
     case category(LearnCategory)
 }

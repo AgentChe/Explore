@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 
 final class LearnCategoriesViewController: UIViewController {
+    weak var delegate: LearnCategoriesViewControllerDelegate?
+    
     var learnCategoriesView = LearnCategoriesView()
     
     private let viewModel = LearnCategoriesViewModel()
@@ -25,7 +27,14 @@ final class LearnCategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        learnCategoriesView.collectionView.actionsDelegate = self 
+        learnCategoriesView.collectionView.actionsDelegate = self
+        
+        viewModel
+            .needPayment
+            .emit(onNext: { [weak self] in
+                self?.delegate?.learnCategoriesViewControllerNeedPayment()
+            })
+            .disposed(by: disposeBag)
         
         viewModel
             .elements

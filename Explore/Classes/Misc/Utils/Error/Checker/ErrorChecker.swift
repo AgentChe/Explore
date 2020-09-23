@@ -39,4 +39,16 @@ extension ErrorChecker {
         
         return !hasResponse
     }
+    
+    static func needPayment(in error: Error) -> Bool {
+        if let paymentError = error as? PaymentError, paymentError == .needPayment {
+            return true
+        }
+
+        if let signError = error as? SignError, signError == .tokenNotFound {
+            return true
+        }
+        
+        return false
+    }
 }

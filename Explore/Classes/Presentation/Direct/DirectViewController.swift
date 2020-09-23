@@ -87,6 +87,16 @@ extension DirectViewController: WallpapersViewControllerDelegate {
     }
 }
 
+// MARK: LearnCategoriesViewControllerDelegate
+
+extension DirectViewController: LearnCategoriesViewControllerDelegate {
+    func learnCategoriesViewControllerNeedPayment() {
+        navigationController?.popViewController(animated: false)
+        
+        showPaygate()
+    }
+}
+
 // MARK: Private
 
 private extension DirectViewController {
@@ -105,7 +115,10 @@ private extension DirectViewController {
             
             vc = mapVC
         case .learn:
-            vc = LearnCategoriesViewController.make()
+            let learnVC = LearnCategoriesViewController.make()
+            learnVC.delegate = self
+            
+            vc = learnVC
         case .wallpapers:
             let wallpapersVC = WallpapersViewController.make()
             wallpapersVC.delegate = self

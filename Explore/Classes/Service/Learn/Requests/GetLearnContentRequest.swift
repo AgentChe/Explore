@@ -9,9 +9,11 @@
 import Alamofire
 
 struct GetLearnContentRequest: APIRequestBody {
+    private let userToken: String
     private let articleId: Int
     
-    init(articleId: Int) {
+    init(userToken: String, articleId: Int) {
+        self.userToken = userToken
         self.articleId = articleId
     }
     
@@ -26,6 +28,7 @@ struct GetLearnContentRequest: APIRequestBody {
     var parameters: Parameters? {
         [
             "_api_key": GlobalDefinitions.apiKey,
+            "_user_token": userToken,
             "id": articleId
         ]
     }

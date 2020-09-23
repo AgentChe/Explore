@@ -9,6 +9,12 @@
 import Alamofire
 
 struct GetLearnCategoriesRequest: APIRequestBody {
+    private let userToken: String
+    
+    init(userToken: String) {
+        self.userToken = userToken
+    }
+    
     var url: String {
         GlobalDefinitions.domain + "/api/learn/list"
     }
@@ -19,7 +25,8 @@ struct GetLearnCategoriesRequest: APIRequestBody {
     
     var parameters: Parameters? {
         [
-            "_api_key": GlobalDefinitions.apiKey
+            "_api_key": GlobalDefinitions.apiKey,
+            "_user_token": userToken
         ]
     }
     

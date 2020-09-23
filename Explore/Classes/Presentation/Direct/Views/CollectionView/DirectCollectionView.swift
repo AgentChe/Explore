@@ -62,9 +62,9 @@ extension DirectCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch elements[indexPath.row] {
         case .explore:
-            return CGSize(width: 335.scale, height: 122.scale)
+            return CGSize(width: 335.scale, height: 152.scale)
         case .learn, .wallpapers:
-            return CGSize(width: 161.scale, height: 122.scale)
+            return CGSize(width: 161.scale, height: 152.scale)
         }
     }
     

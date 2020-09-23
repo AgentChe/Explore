@@ -45,8 +45,6 @@ extension LearnCollectionView: UICollectionViewDataSource {
         switch elements[indexPath.row] {
         case .title:
             return dequeueReusableCell(withReuseIdentifier: String(describing: LearnCategoriesCollectionTitleCell.self), for: indexPath)
-        case .subTitle:
-            return dequeueReusableCell(withReuseIdentifier: String(describing: LearnCategoriesCollectionSubTitleCell.self), for: indexPath)
         case .category(let category):
             let cell = dequeueReusableCell(withReuseIdentifier: String(describing: LearnCategoriesCollectionCell.self), for: indexPath) as! LearnCategoriesCollectionCell
             cell.actionsDelegate = actionsDelegate
@@ -70,8 +68,6 @@ extension LearnCollectionView: UICollectionViewDelegateFlowLayout {
         switch elements[indexPath.row] {
         case .title:
             return CGSize(width: cellWidth, height: 41.scale)
-        case .subTitle:
-            return CGSize(width: cellWidth, height: 22.scale)
         case .category:
             return CGSize(width: 158.scale, height: 158.scale)
         }
@@ -85,7 +81,6 @@ private extension LearnCollectionView {
         backgroundColor = UIColor.clear
         
         register(LearnCategoriesCollectionTitleCell.self, forCellWithReuseIdentifier: String(describing: LearnCategoriesCollectionTitleCell.self))
-        register(LearnCategoriesCollectionSubTitleCell.self, forCellWithReuseIdentifier: String(describing: LearnCategoriesCollectionSubTitleCell.self))
         register(LearnCategoriesCollectionCell.self, forCellWithReuseIdentifier: String(describing: LearnCategoriesCollectionCell.self))
         
         dataSource = self

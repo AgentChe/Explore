@@ -10,9 +10,12 @@ import RxSwift
 import RxCocoa
 
 final class LearnCategoriesViewModel {
+    lazy var elements = createElements()
+    lazy var needPayment = createNeedPaymentSignal()
+    
     private let learnManager = LearnManagerCore()
     
-    lazy var elements = createElements()
+    private let needPaymentTrigger = PublishRelay<Void>()
 }
 
 // MARK: Private
@@ -26,6 +29,19 @@ private extension LearnCategoriesViewModel {
         
         let updated = learnManager
             .rxGetCategories(forceUpdate: true)
+            .do(onError: { [weak self] error in
+                if let paymentError = error as? PaymentError, paymentError == .needPayment {
+                    self?.needPaymentTrigger.accept(Void())
+                    
+                    return
+                }
+                
+                if let signError = error as? SignError, signError == .tokenNotFound {
+                    self?.needPaymentTrigger.accept(Void())
+                    
+                    return
+                }
+            })
             .asDriver(onErrorJustReturn: [])
         
         return Driver<[LearnCategory]>
@@ -35,7 +51,11 @@ private extension LearnCategoriesViewModel {
                     .category($0)
                 }
                 
-                return [.title, .subTitle] + list
+                return [.title] + list
             }
+    }
+    
+    func createNeedPaymentSignal() -> Signal<Void> {
+        needPaymentTrigger.asSignal()
     }
 }
