@@ -54,12 +54,12 @@
 "FindPlace.FPWhatLikeGetCell.WhatItIs" = "What's this?";
 "FindPlace.FPRadiusCell.Title" = "Set radius";
 "FindPlace.FPRadiusCell.Value" = "%i m";
-"FindPlace.FPCompleteCell.Start" = "Retry";
+"FindPlace.FPCompleteCell.Start" = "Get location";
 "FindPlace.FPCompleteCell.Reset" = "Reset";
 "FindPlace.FPDenieedGeoPermission.Title" = "Go to settings and enable permission for detect geo";
 "FindPlace.FPDenieedGeoPermission.SettingsButton" = "Settings";
 "FindPlace.FPWhatItIsCell.Message" = "When looking for a random point of interest we rely on our database, which also includes the experiences of other users nearby. However when choosing between several variants we like to rely on so called random seed. There're different things we can use for that: your device ID, a completely random number from a third party who knows nothing about you, current weather or time.";
-"FindPlace.HasCreatingTrip" = "Has creating trip...";
+"FindPlace.HasCreatingTrip" = "Processing the location...";
 "FindPlace.CreateTrip.Failure" = "Failed to yield a random spot:";
 
 // MARK: Direct
