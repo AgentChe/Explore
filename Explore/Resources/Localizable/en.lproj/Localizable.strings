@@ -12,6 +12,8 @@
 "Send" = "Send";
 "Continue" = "Continue";
 "Settings" = "Settings";
+"TermsOfService" = "Terms of Service";
+"PrivacyPolicy" = "Privacy Policy";
 
 // MARK: Image Picker
 "ImagePicker.TakePhoto" = "TakePhoto";
@@ -22,12 +24,12 @@
 "Paygate.Purchase.Failed" = "Failed to purchase";
 
 // MARK: Onboarding
-"Onboarding.Slide1.Title" = "Welcome to Randonautica";
+"Onboarding.Slide1.Title" = "Welcome to Randonauting";
 "Onboarding.Slide2.Title" = "Let's explore!";
 "Onboarding.Slide2.SubTitle" = "This is app is used by thousands of users all over the world for stumbling upon unexpected places. Track your own story of random findings!";
 
 // MARK: Map
-"Map.Title" = "Randonautica";
+"Map.Title" = "Randonauting";
 "Map.Navigate" = "Navigate";
 "Map.StopTrip" = "Stop trip";
 "Map.SendFeedback.Failure" = "Failed to send feedback";
@@ -40,7 +42,7 @@
 "Map.RadiusToTrip" = "r = %im";
 
 // MARK: FindPlace
-"FindPlace.Title" = "Randonautica";
+"FindPlace.Title" = "Randonauting";
 "FindPlace.FPRequireGeoPermissionCell.Title" = "Start by sending\nyour location:";
 "FindPlace.FPRequireGeoPermissionCell.Button" = "Send My Location";
 "FindPlace.FPSearchingCoordinateCell.Title" = "Searching your location...";
@@ -69,6 +71,7 @@
 "Direct.Learn.SubTitle" = "Our regular digest with hiking tips.";
 "Direct.Wallpapers.Title" = "See";
 "Direct.Wallpapers.SubTitle" = "Abandoned places are art. Wallpapers to style your phone with.";
+"Direct.And" = " and ";
 
 // MARK: Wallpapers
 "Wallpapers.Title" = "Wallpapers";

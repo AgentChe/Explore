@@ -42,7 +42,8 @@ private extension DirectViewModel {
             let elements = [
                 DirectCollectionElement.explore(explore),
                 DirectCollectionElement.learn(learn),
-                DirectCollectionElement.wallpapers(wallpapers)
+                DirectCollectionElement.wallpapers(wallpapers),
+                DirectCollectionElement.termsOfService
             ]
             
             return .just(elements)
@@ -51,14 +52,17 @@ private extension DirectViewModel {
     
     func createStep() -> Driver<Step> {
         didSelectElement
-            .map { [tripManager] element -> Step in
+            .flatMap { [tripManager] element -> Single<Step> in
                 switch element {
                 case .explore:
-                    return tripManager.hasTrip() ? .map : .findPlace
+                    let step: Step = tripManager.hasTrip() ? .map : .findPlace
+                    return .just(step)
                 case .learn:
-                    return .learn
+                    return .just(.learn)
                 case .wallpapers:
-                    return .wallpapers
+                    return .just(.wallpapers)
+                case .termsOfService:
+                    return .never()
                 }
             }
             .asDriver(onErrorDriveWith: .empty())

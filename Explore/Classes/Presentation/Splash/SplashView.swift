@@ -40,7 +40,7 @@ private extension SplashView {
         let view =  UILabel()
         view.textColor = UIColor.white
         view.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        view.text = "Explore"
+        view.text = "Randonauting"
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

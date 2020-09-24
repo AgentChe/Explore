@@ -63,7 +63,7 @@ private extension DirectView {
         layout.minimumLineSpacing = 12.scale
         
         let view = DirectCollectionView(frame: .zero, collectionViewLayout: layout)
-        view.contentInset = UIEdgeInsets(top: ScreenSize.isIphoneXFamily ? 386.scale : 270.scale, left: 20.scale, bottom: 40.scale, right: 20.scale)
+        view.contentInset = UIEdgeInsets(top: ScreenSize.isIphoneXFamily ? 346.scale : 240.scale, left: 20.scale, bottom: 40.scale, right: 20.scale)
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

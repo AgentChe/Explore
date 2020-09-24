@@ -22,6 +22,7 @@ final class DirectCollectionView: UICollectionView {
         delegate = self
         
         register(DirectCollectionCell.self, forCellWithReuseIdentifier: String(describing: DirectCollectionCell.self))
+        register(DirectCollectionTermsOfServiceCell.self, forCellWithReuseIdentifier: String(describing: DirectCollectionTermsOfServiceCell.self))
     }
     
     required init?(coder: NSCoder) {
@@ -52,6 +53,8 @@ extension DirectCollectionView: UICollectionViewDataSource {
                        title: model.title,
                        subTitle: model.subTitle)
             return cell
+        case .termsOfService:
+            return dequeueReusableCell(withReuseIdentifier: String(describing: DirectCollectionTermsOfServiceCell.self), for: indexPath)
         }
     }
 }
@@ -65,6 +68,8 @@ extension DirectCollectionView: UICollectionViewDelegateFlowLayout {
             return CGSize(width: 335.scale, height: 152.scale)
         case .learn, .wallpapers:
             return CGSize(width: 161.scale, height: 152.scale)
+        case .termsOfService:
+            return CGSize(width: 335.scale, height: 24.scale)
         }
     }
     
