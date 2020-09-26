@@ -36,9 +36,9 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We'll use your location to propose points of interest close to you</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Please allow access to save photo in your photo library</string>
+	<string>The access is required for saving wallpapers to your device</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Please allow access to save photo in your photo library</string>
+	<string>The access is required for saving wallpapers to your device</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Compact-Text-Bold.otf</string>
