@@ -149,10 +149,10 @@ private extension PaygateMapper {
                                                         .letterSpacing(0.06)
                                                         .dictionary)
         let captionPriceLocalizedRange = NSString(string: caption ?? "").range(of: priceLocalized)
-        captionAttrs.addAttributes(TextAttributes().font(Font.Poppins.bold(size: 20.scale)).letterSpacing(0.06).dictionary,
+        captionAttrs.addAttributes(TextAttributes().font(Font.Poppins.bold(size: 16.scale)).letterSpacing(0.06).dictionary,
                                    range: captionPriceLocalizedRange)
         let captionPriceDivLocalizedRange = NSString(string: caption ?? "").range(of: priceDivLocalized)
-        captionAttrs.addAttributes(TextAttributes().font(Font.Poppins.bold(size: 20.scale)).letterSpacing(0.06).dictionary,
+        captionAttrs.addAttributes(TextAttributes().font(Font.Poppins.bold(size: 16.scale)).letterSpacing(0.06).dictionary,
                                    range: captionPriceDivLocalizedRange)
         
         let bottomLine = (option["bottom_line"] as? String)?

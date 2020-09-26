@@ -1881,7 +1881,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 84M2AR9RYC;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1889,7 +1889,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore Development";
@@ -1905,7 +1905,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 84M2AR9RYC;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1913,7 +1913,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore AppStore";
