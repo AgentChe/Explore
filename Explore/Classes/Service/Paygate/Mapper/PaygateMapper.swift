@@ -75,15 +75,18 @@ private extension PaygateMapper {
                 .lineHeight(27.scale)
                 .textColor(UIColor.white.withAlphaComponent(0.3)))
         
+        let optionsJSONArray = (main["options"] as? [[String: Any]]) ?? []
+        let options = optionsJSONArray.enumerated().compactMap { map(option: $1, productsPrices: productsPrices, index: $0) }
+        
         return PaygateMainOffer(title: title,
                                 subTitle: subTitle,
-                                options: (main["options"] as? [[String: Any]])?.compactMap { map(option: $0, productsPrices: productsPrices) },
+                                options: options,
                                 button: button,
                                 subButton: subButton,
                                 restore: restore)
     }
     
-    static func map(option: [String: Any], productsPrices: [ProductPrice]?) -> PaygateOption? {
+    static func map(option: [String: Any], productsPrices: [ProductPrice]?, index: Int) -> PaygateOption? {
         guard
             let productId = option["product_id"] as? String
         else {
@@ -149,10 +152,10 @@ private extension PaygateMapper {
                                                         .letterSpacing(0.06)
                                                         .dictionary)
         let captionPriceLocalizedRange = NSString(string: caption ?? "").range(of: priceLocalized)
-        captionAttrs.addAttributes(TextAttributes().font(Font.Poppins.bold(size: 16.scale)).letterSpacing(0.06).dictionary,
+        captionAttrs.addAttributes(TextAttributes().font(Font.Poppins.bold(size: index == 0 ? 16.scale : 20.scale)).letterSpacing(0.06).dictionary,
                                    range: captionPriceLocalizedRange)
         let captionPriceDivLocalizedRange = NSString(string: caption ?? "").range(of: priceDivLocalized)
-        captionAttrs.addAttributes(TextAttributes().font(Font.Poppins.bold(size: 16.scale)).letterSpacing(0.06).dictionary,
+        captionAttrs.addAttributes(TextAttributes().font(Font.Poppins.bold(size: index == 0 ? 16.scale : 20.scale)).letterSpacing(0.06).dictionary,
                                    range: captionPriceDivLocalizedRange)
         
         let bottomLine = (option["bottom_line"] as? String)?
