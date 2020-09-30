@@ -62,6 +62,20 @@ extension FindPlaceTableView {
             self?.reloadSections(IndexSet(sectionsIndexes), with: .middle)
         }
     }
+    
+    func replaceOrAdd(section: FindPlaceTableSection) {
+        DispatchQueue.main.async { [weak self] in
+            guard let this = self else {
+                return
+            }
+            
+            if this.sections.contains(where: { $0.identifier == section.identifier }) {
+                this.replace(section: section)
+            } else {
+                this.add(section: section)
+            }
+        }
+    }
 }
  
 // MARK: UITableViewDataSource

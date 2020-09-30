@@ -25,4 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        AppStateManager.shared.applicationDidBecome()
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        AppStateManager.shared.applicationWillResign()
+    }
 }

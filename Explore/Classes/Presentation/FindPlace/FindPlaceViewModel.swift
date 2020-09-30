@@ -22,6 +22,8 @@ final class FindPlaceViewModel {
     var selectedWhatLikeGetTag: FPWhatLikeGetCell.Tag?
     var radiusBundle = FPTableRadiusBundle()
     
+    private var lastGeoPermissionStatus: GLAuthorizationStatus?
+    
     private let geoLocationManager = GeoLocationManager(mode: .whenInUseAuthorization)
     private let tripManager = TripManagerCore()
     
@@ -54,6 +56,10 @@ final class FindPlaceViewModel {
             ])
     }
     
+    func replaceOrAddSection() -> Driver<FindPlaceTableSection> {
+        receiveBecomeAppForCheckGLAuthStatus()
+    }
+    
     func currentCoordinate() -> Driver<Coordinate> {
         geoLocationManager.rx
             .justDetermineCurrentLocation
@@ -78,6 +84,7 @@ private extension FindPlaceViewModel {
     func createMapLoadDelay() -> Driver<Void> {
         reset
             .do(onNext: { [weak self] in
+                self?.lastGeoPermissionStatus = nil
                 self?.selectedWhatLikeGetTag = nil
                 self?.radiusBundle.setDefault()
             })
@@ -112,9 +119,6 @@ private extension FindPlaceViewModel {
                     case .denied:
                         event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.deniedGeoPermission,
                                                            items: [.deniedGeoPermission]))
-                        
-                        event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.requireGeoPermission,
-                                                           items: [.requireGeoPermission]))
                     case .notDetermined:
                         event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.requireGeoPermission,
                                                            items: [.requireGeoPermission]))
@@ -138,9 +142,6 @@ private extension FindPlaceViewModel {
                             event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.deniedGeoPermission,
                                                                items: [.deniedGeoPermission]))
                             
-                            event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.requireGeoPermission,
-                                                               items: [.requireGeoPermission]))
-                            
                             event.onCompleted()
                         case .authorization:
                             self?.findCoordinate.accept(Void())
@@ -157,6 +158,45 @@ private extension FindPlaceViewModel {
                 }
             }
             .asDriver(onErrorDriveWith: .empty())
+    }
+    
+    func receiveBecomeAppForCheckGLAuthStatus() -> Driver<FindPlaceTableSection> {
+        let storeLastStatus = AppStateManager.shared
+            .rxWillResignApplication
+            .do(onNext: { [weak self] in
+                guard let this = self else {
+                    return
+                }
+                
+                this.lastGeoPermissionStatus = this.geoLocationManager.authorizationStatus
+            })
+            .flatMap { _ -> Driver<FindPlaceTableSection> in .never() }
+        
+        let become = AppStateManager.shared
+            .rxDidBecomeApplication
+            .flatMap { [weak self] _ -> Driver<FindPlaceTableSection> in
+                guard let this = self else {
+                    return .empty()
+                }
+                
+                guard this.lastGeoPermissionStatus == .denied else {
+                    return .never()
+                }
+                
+                switch this.geoLocationManager.authorizationStatus {
+                case .authorization:
+                    this.findCoordinate.accept(Void())
+                    
+                    return .never()
+                case .notDetermined:
+                    return .just(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.requireGeoPermission,
+                                                       items: [.requireGeoPermission]))
+                default:
+                    return .never()
+                }
+            }
+        
+        return Driver.merge(storeLastStatus, become)
     }
     
     func receiveFindCoordinate() -> Driver<FindPlaceTableSection> {

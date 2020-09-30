@@ -44,6 +44,13 @@ final class FindPlaceViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel
+            .replaceOrAddSection()
+            .drive(onNext: { [weak self] section in
+                self?.findPlaceView.tableView.replaceOrAdd(section: section)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
             .currentCoordinate()
             .drive(onNext: { [weak self] coordinate in
                 self?.findPlaceView.mapView.moveCamera(to: coordinate)

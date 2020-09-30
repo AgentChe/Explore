@@ -172,6 +172,8 @@
 		966F47AB24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AA24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift */; };
 		966F47AD24F80D9A0025FD5F /* PaygateManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AC24F80D9A0025FD5F /* PaygateManagerCore.swift */; };
 		966F47AF24F80E610025FD5F /* PaygateManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */; };
+		9687B0182524B0A400B81DC8 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687B0172524B0A400B81DC8 /* AppStateManager.swift */; };
+		9687B01C2524B0D700B81DC8 /* AppStateManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
 		96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */; };
 		96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C31250ED76500413D81 /* DirectViewController.swift */; };
@@ -376,6 +378,8 @@
 		966F47AA24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSliderDelegate.swift; sourceTree = "<group>"; };
 		966F47AC24F80D9A0025FD5F /* PaygateManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerCore.swift; sourceTree = "<group>"; };
 		966F47AE24F80E610025FD5F /* PaygateManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerMock.swift; sourceTree = "<group>"; };
+		9687B0172524B0A400B81DC8 /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
+		9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManagerDelegate.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResponseMapper.swift; sourceTree = "<group>"; };
 		96B74C31250ED76500413D81 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
@@ -651,6 +655,7 @@
 		960F029A24DAC5D3008267FA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9687B0162524B09100B81DC8 /* AppState */,
 				9609B845251734B300457FD6 /* Learn */,
 				96F2F8652511453000F7A58B /* Wallpapers */,
 				966F476B24F6B0030025FD5F /* Analytics */,
@@ -1224,6 +1229,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		9687B0162524B09100B81DC8 /* AppState */ = {
+			isa = PBXGroup;
+			children = (
+				9687B0172524B0A400B81DC8 /* AppStateManager.swift */,
+				9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */,
+			);
+			path = AppState;
+			sourceTree = "<group>";
+		};
 		96B74C2D250EC68000413D81 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -1569,6 +1583,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9687B01C2524B0D700B81DC8 /* AppStateManagerDelegate.swift in Sources */,
 				96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */,
 				960F031D24DAC686008267FA /* Scalable.swift in Sources */,
 				9631642C251A9132007791D3 /* LearnContentViewController.swift in Sources */,
@@ -1738,6 +1753,7 @@
 				96F2F85725102A4E00F7A58B /* LearnCategoriesViewController.swift in Sources */,
 				96316430251A9144007791D3 /* LearnContentView.swift in Sources */,
 				9604B06D24DB490300649DA7 /* GLAuthorizationStatus.swift in Sources */,
+				9687B0182524B0A400B81DC8 /* AppStateManager.swift in Sources */,
 				96B74C34250ED7AF00413D81 /* DirectViewModel.swift in Sources */,
 				960F02FB24DAC5E3008267FA /* DataBaseError.swift in Sources */,
 				966F476524F6A6410025FD5F /* PurchaseValidateRequest.swift in Sources */,
