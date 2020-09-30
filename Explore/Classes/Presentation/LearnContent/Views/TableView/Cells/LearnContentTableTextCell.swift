@@ -32,7 +32,7 @@ extension LearnContentTableTextCell {
             .textColor( UIColor(red: 131 / 255, green: 131 / 255, blue: 135 / 255, alpha: 1))
             .font(Font.SFProText.regular(size: 20.scale))
             .lineHeight(24.scale)
-            .textAlignment(.center)
+            .textAlignment(.left)
             .letterSpacing(0.015.scale))
     }
 }
@@ -42,8 +42,8 @@ extension LearnContentTableTextCell {
 private extension LearnContentTableTextCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.scale),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.scale),
             label.topAnchor.constraint(equalTo: contentView.topAnchor),
             label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
