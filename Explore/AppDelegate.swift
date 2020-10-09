@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey(GlobalDefinitions.googleApiKey)
         PurchaseManager.register()
-        
+        FacebookAnalytics.shared.configure()
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         AppRegisterManager.shared.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)

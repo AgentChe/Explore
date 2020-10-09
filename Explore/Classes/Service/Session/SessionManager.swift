@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 final class SessionManager {
     static let shared = SessionManager()
@@ -14,6 +15,10 @@ final class SessionManager {
     private struct Constants {
         static let sessionKey = "session_manager_session_key"
     }
+    
+    private var delegates = [Weak<SessionManagerDelegate>]()
+    
+    fileprivate let didStoredSessionTrigger = PublishRelay<Session>()
     
     private init() {}
 }
@@ -29,6 +34,10 @@ extension SessionManager {
         
         UserDefaults.standard.set(data, forKey: Constants.sessionKey)
         
+        didStoredSessionTrigger.accept(session)
+        
+        delegates.forEach { $0.weak?.sessionManagerDidStored(session: session) }
+        
         return true
     }
     
@@ -41,7 +50,7 @@ extension SessionManager {
     }
 }
 
-// MARK: API - Rx
+// MARK: API(Rx)
 
 extension Reactive where Base: SessionManager {
     func store(session: Session) -> Single<Bool> {
@@ -56,3 +65,27 @@ extension Reactive where Base: SessionManager {
 // MARK: Rx
 
 extension SessionManager: ReactiveCompatible {}
+
+// MARK: Trigger(Rx)
+
+extension SessionManager {
+    var didStoredSession: Signal<Session> {
+        didStoredSessionTrigger.asSignal()
+    }
+}
+
+// MARK: Observer
+
+extension SessionManager {
+    func add(observer: SessionManagerDelegate) {
+        let weakly = observer as AnyObject
+        delegates.append(Weak<SessionManagerDelegate>(weakly))
+        delegates = delegates.filter { $0.weak != nil }
+    }
+    
+    func remove(observer: SessionManagerDelegate) {
+        if let index = delegates.firstIndex(where: { $0.weak === observer }) {
+            delegates.remove(at: index)
+        }
+    }
+}

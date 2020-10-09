@@ -62,6 +62,8 @@
 		960F032C24DAC686008267FA /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F031824DAC686008267FA /* CircleView.swift */; };
 		961A08B824D99D79001F23E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961A08B724D99D79001F23E6 /* AppDelegate.swift */; };
 		961A08C124D99D7B001F23E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 961A08C024D99D7B001F23E6 /* Assets.xcassets */; };
+		96224C46253098DF002C1988 /* FacebookAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224C45253098DF002C1988 /* FacebookAnalytics.swift */; };
+		96224C4925309BF0002C1988 /* SessionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224C4825309BF0002C1988 /* SessionManagerDelegate.swift */; };
 		9631640A25195C91007791D3 /* LearnCategoriesCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631640925195C91007791D3 /* LearnCategoriesCollectionElement.swift */; };
 		9631640C25195D10007791D3 /* LearnCategoriesCollectionTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631640B25195D10007791D3 /* LearnCategoriesCollectionTitleCell.swift */; };
 		9631641025195F72007791D3 /* LearnCategoriesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631640F25195F72007791D3 /* LearnCategoriesCollectionCell.swift */; };
@@ -268,6 +270,8 @@
 		961A08B724D99D79001F23E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		961A08C024D99D7B001F23E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		961A08C524D99D7B001F23E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		96224C45253098DF002C1988 /* FacebookAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAnalytics.swift; sourceTree = "<group>"; };
+		96224C4825309BF0002C1988 /* SessionManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerDelegate.swift; sourceTree = "<group>"; };
 		9631640925195C91007791D3 /* LearnCategoriesCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesCollectionElement.swift; sourceTree = "<group>"; };
 		9631640B25195D10007791D3 /* LearnCategoriesCollectionTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesCollectionTitleCell.swift; sourceTree = "<group>"; };
 		9631640F25195F72007791D3 /* LearnCategoriesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesCollectionCell.swift; sourceTree = "<group>"; };
@@ -1009,6 +1013,7 @@
 			children = (
 				966F471C24F688E90025FD5F /* Models */,
 				966F471F24F68A540025FD5F /* SessionManager.swift */,
+				96224C4825309BF0002C1988 /* SessionManagerDelegate.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -1174,6 +1179,7 @@
 				9609B8392515570C00457FD6 /* Request */,
 				966F476C24F6B0620025FD5F /* IDFAService.swift */,
 				9609B83C251559E800457FD6 /* AppRegisterManager.swift */,
+				96224C45253098DF002C1988 /* FacebookAnalytics.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -1630,6 +1636,7 @@
 				960F029824DAC586008267FA /* RestAPITransport.swift in Sources */,
 				9631642E251A913D007791D3 /* LearnContentViewModel.swift in Sources */,
 				9631644F251D46B1007791D3 /* UITapGestureExtension.swift in Sources */,
+				96224C4925309BF0002C1988 /* SessionManagerDelegate.swift in Sources */,
 				961A08B824D99D79001F23E6 /* AppDelegate.swift in Sources */,
 				9609B83525129AF700457FD6 /* WallpaperNotAccessToPhotoLibraryAlert.swift in Sources */,
 				96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */,
@@ -1645,6 +1652,7 @@
 				966F471624F6761F0025FD5F /* CreateTripRequest.swift in Sources */,
 				966F475F24F6A4FE0025FD5F /* ProductPrice.swift in Sources */,
 				963A442424FB921B0018A8CA /* FPNotificationCell.swift in Sources */,
+				96224C46253098DF002C1988 /* FacebookAnalytics.swift in Sources */,
 				960F031F24DAC686008267FA /* ScreenSize.swift in Sources */,
 				9609B82B2511892000457FD6 /* WallpaperViewController.swift in Sources */,
 				963A440E24F9322C0018A8CA /* MapAppsActionSheet.swift in Sources */,

@@ -14,4 +14,6 @@ target 'Explore' do
   pod 'GoogleMaps'
   
   pod 'SwiftyStoreKit'
+  
+  pod 'FacebookSDK'
 end

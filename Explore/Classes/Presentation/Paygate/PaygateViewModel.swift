@@ -62,6 +62,7 @@ private extension PaygateViewModel {
                     .buySubscription(productId: productId)
                     .flatMap { purchaseManager.paymentValidate() }
                     .map { $0 != nil }
+                    .do(onSuccess: { _ in FacebookAnalytics.shared.logPurchase(amount: 0, currency: "USD") })
                     .trackActivity(buyProcessing)
                     .catchErrorJustReturn(false)
             }
