@@ -64,6 +64,7 @@
 		961A08C124D99D7B001F23E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 961A08C024D99D7B001F23E6 /* Assets.xcassets */; };
 		96224C46253098DF002C1988 /* FacebookAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224C45253098DF002C1988 /* FacebookAnalytics.swift */; };
 		96224C4925309BF0002C1988 /* SessionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224C4825309BF0002C1988 /* SessionManagerDelegate.swift */; };
+		96224DE4253652C9002C1988 /* SetIDFARequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DE3253652C9002C1988 /* SetIDFARequest.swift */; };
 		9631640A25195C91007791D3 /* LearnCategoriesCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631640925195C91007791D3 /* LearnCategoriesCollectionElement.swift */; };
 		9631640C25195D10007791D3 /* LearnCategoriesCollectionTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631640B25195D10007791D3 /* LearnCategoriesCollectionTitleCell.swift */; };
 		9631641025195F72007791D3 /* LearnCategoriesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631640F25195F72007791D3 /* LearnCategoriesCollectionCell.swift */; };
@@ -277,6 +278,7 @@
 		96224DD825363C92002C1988 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		96224DD925363CAB002C1988 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		96224DDA25363CC0002C1988 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		96224DE3253652C9002C1988 /* SetIDFARequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetIDFARequest.swift; sourceTree = "<group>"; };
 		9631640925195C91007791D3 /* LearnCategoriesCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesCollectionElement.swift; sourceTree = "<group>"; };
 		9631640B25195D10007791D3 /* LearnCategoriesCollectionTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesCollectionTitleCell.swift; sourceTree = "<group>"; };
 		9631640F25195F72007791D3 /* LearnCategoriesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesCollectionCell.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				9609B83A2515572B00457FD6 /* AppRegisterRequest.swift */,
+				96224DE3253652C9002C1988 /* SetIDFARequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1765,6 +1768,7 @@
 				966F476D24F6B0620025FD5F /* IDFAService.swift in Sources */,
 				966F478724F6DCBE0025FD5F /* PaygateSpecialOfferView.swift in Sources */,
 				9631643A251A91CE007791D3 /* LearnContentTableTitleCell.swift in Sources */,
+				96224DE4253652C9002C1988 /* SetIDFARequest.swift in Sources */,
 				9609B8582517403500457FD6 /* GetLearnCategoriesResponseMapper.swift in Sources */,
 				963A442A24FCD5E20018A8CA /* FPCompleteCell.swift in Sources */,
 				966F472F24F6966C0025FD5F /* PaygateMainOffer.swift in Sources */,

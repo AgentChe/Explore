@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(GlobalDefinitions.googleApiKey)
         PurchaseManager.register()
         FacebookAnalytics.shared.configure()
+        IDFAService.shared.initialize()
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         AppRegisterManager.shared.configure()
         

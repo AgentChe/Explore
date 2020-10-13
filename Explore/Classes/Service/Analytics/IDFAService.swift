@@ -16,12 +16,30 @@ final class IDFAService {
         static let appKey = "idfa_service_app_key"
     }
     
+    private let disposeBag = DisposeBag()
+    
     private init() {}
 }
 
 // MARK: API
-
 extension IDFAService {
+    func initialize() {
+        SessionManager.shared
+            .didStoredSession
+            .asObservable()
+            .flatMap { session -> Single<Any> in
+                guard let userToken = session.userToken else {
+                    return .never()
+                }
+                
+                return RestAPITransport()
+                    .callServerApi(requestBody: SetIDFARequest(userToken: userToken,
+                                                               idfa: IDFAService.shared.getIDFA()))
+            }
+            .subscribe()
+            .disposed(by: disposeBag)
+    }
+    
     func getAppKey() -> String {
         if let randomKey = UserDefaults.standard.string(forKey: Constants.appKey) {
             return randomKey
