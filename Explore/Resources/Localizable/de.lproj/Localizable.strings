@@ -1,0 +1,91 @@
+/*
+  Localizable.strings
+  Explore
+
+  Created by Andrey Chernyshev on 05.08.2020.
+  Copyright © 2020 Andrey Chernyshev. All rights reserved.
+*/
+
+// MARK: General
+"Cancel" = "Abbrechen";
+"OK" = "OK";
+"Send" = "Senden";
+"Continue" = "Weiter";
+"Settings" = "Einstellungen";
+"TermsOfService" = "Servicebedingungen";
+"PrivacyPolicy" = "Datenschutzerklärung";
+
+// MARK: Image Picker
+"ImagePicker.TakePhoto" = "Foto machen";
+"ImagePicker.CameraRoll" = "Filmrolle";
+"ImagePicker.PhotoLibrary" = "Fotobibliothek";
+
+// MARK: Paygate
+"Paygate.Purchase.Failed" = "Kauf fehlgeschlagen";
+
+// MARK: Onboarding
+"Onboarding.Slide1.Title" = "Willkommen bei Randonautica";
+"Onboarding.Slide2.Title" = "Lassen Sie uns erforschen!";
+"Onboarding.Slide2.SubTitle" = "Diese App wird von Tausenden von Benutzern auf der ganzen Welt verwendet, um überraschende Orte zu erkunden. Verfolgen Sie Ihre eigene Geschichte von zufälligen Funden!";
+
+// MARK: Map
+"Map.Title" = "Randonautica";
+"Map.Navigate" = "Navigieren";
+"Map.StopTrip" = "Trip stoppen";
+"Map.SendFeedback.Failure" = "Senden von Feedback fehlgeschlagen";
+"Map.MapAppsActionSheet.Message" = "Wählen Sie die Anwendung aus, um die Route zu erstellen";
+"Map.MapAppsActionSheet.AppleMap" = "Apple Map";
+"Map.MapAppsActionSheet.GoogleMap" = "Google Map";
+"Map.MapAppsActionSheet.DGis" = "2Gis";
+"Map.MapAppsActionSheet.YandexMap" = "Yandex Map";
+"Map.TripFeedbackViewController.Title" = "Senden Sie Feedback bezüglich des Trips";
+"Map.RadiusToTrip" = "r = %im";
+
+// MARK: FindPlace
+"FindPlace.Title" = "Randonautica";
+"FindPlace.FPRequireGeoPermissionCell.Title" = "Beginnen Sie, indem Sie \nIhren Standort senden:";
+"FindPlace.FPRequireGeoPermissionCell.Button" = "Meinen Standort senden";
+"FindPlace.FPSearchingCoordinateCell.Title" = "Standortsuche ...";
+"FindPlace.FPSearchedCoordinateCell.Title" = "Ihr Standort wird anhand Koordinaten festgelegt %f, %f";
+"FindPlace.FPSearchedCoordinateCell.MapSubtitle" = "dieser Punkt wird zum Zentrum der Suche";
+"FindPlace.FPWhatLikeGetCell.Title" = "Lassen Sie uns erkunden! Worauf sollte sich unser Zufallsalgorithmus stützen?";
+"FindPlace.FPWhatLikeGetCell.Anomaly" = "Gerät";
+"FindPlace.FPWhatLikeGetCell.Attractor" = "Drittpartei";
+"FindPlace.FPWhatLikeGetCell.Void" = "Wetter";
+"FindPlace.FPWhatLikeGetCell.Pseudo" = "Zeit";
+"FindPlace.FPWhatLikeGetCell.WhatItIs" = "Was ist das?";
+"FindPlace.FPRadiusCell.Title" = "Radius einstellen";
+"FindPlace.FPRadiusCell.Value" = "%i m";
+"FindPlace.FPCompleteCell.Start" = "Standort ermitteln";
+"FindPlace.FPCompleteCell.Reset" = "Zurücksetzen";
+"FindPlace.FPDenieedGeoPermission.Title" = "Gehen Sie zu Einstellungen und aktivieren Sie die Berechtigung zum Erkennen von Geo";
+"FindPlace.FPDenieedGeoPermission.SettingsButton" = "Einstellungen";
+"FindPlace.FPWhatItIsCell.Message" = "Bei der Suche nach einem zufälligen Ort von Interesse verlassen wir uns auf unsere Datenbank, die auch die Erfahrungen anderer Benutzer in der Nähe enthält. Bei der Auswahl mehrerer Optionen verlassen wir uns jedoch gerne auf den Anfangswert für Zufallsgenerator. Dafür können wir verschiedene Dinge verwenden: Ihre Geräte-ID, eine völlig zufällige Zahl von einem Dritten, der nichts über Sie, das aktuelle Wetter oder die aktuelle Zeit weiß.";
+"FindPlace.HasCreatingTrip" = "Standort wird verarbeitet ...";
+"FindPlace.CreateTrip.Failure" = "Fehler beim Generieren eines zufälligen Orts:";
+
+// MARK: Direct
+"Direct.Explore.Title" = "Erkunden";
+"Direct.Explore.SubTitle" = "Teilen Sie Ihren Standort und fordern Sie den nächsten zufälligen Ort von Interesse an, den Sie erkunden möchten.";
+"Direct.Learn.Title" = "Lernen";
+"Direct.Learn.SubTitle" = "Unsere regelmäßige Auswahl mit Wandertipps.";
+"Direct.Wallpapers.Title" = "Sehen";
+"Direct.Wallpapers.SubTitle" = "Verlassene Orte sind Kunst. Hintergrundbilder für Ihr Handy.";
+"Direct.And" = " und ";
+
+// MARK: Wallpapers
+"Wallpapers.Title" = "Hintergrundbilder";
+
+// MARK: Wallpaper
+"Wallpaper.Save" = "Speichern";
+"Wallpaper.Preview" = "Voransicht";
+"Wallpaper.SavedToCameraRoll" = "Auf Filmrolle gespeichert";
+"Wallpaper.SavedToCameraRoll.Failure" = "Speichern des Bildes fehlgeschlagen";
+"Wallpaper.NoAccessToPhotoLibrary.Title" = "Kein Zugriff";
+"Wallpaper.NoAccessToPhotoLibrary.Message" = "Gehen Sie zu Einstellungen und erteilen Sie die Berechtigung";
+
+// MARK: LearnCategories
+"LearnCategories.Title" = "Lernen";
+
+// MARK: LearnContent
+"LearnContent.Title" = "Lernen";

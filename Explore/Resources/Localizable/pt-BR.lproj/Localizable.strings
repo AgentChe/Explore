@@ -1,0 +1,92 @@
+/*
+  Localizable.strings
+  Explore
+
+  Created by Andrey Chernyshev on 05.08.2020.
+  Copyright © 2020 Andrey Chernyshev. All rights reserved.
+*/
+
+// MARK: General
+"Cancel" = "Cancelar";
+"OK" = "OK";
+"Send" = "Enviar";
+"Continue" = "Continuar";
+"Settings" = "Configurações";
+"TermsOfService" = "Termos de Serviço";
+"PrivacyPolicy" = "Política de Privacidade";
+
+// MARK: Image Picker
+"ImagePicker.TakePhoto" = "Tirar foto";
+"ImagePicker.CameraRoll" = "Rolo da câmera";
+"ImagePicker.PhotoLibrary" = "Biblioteca de fotos";
+
+// MARK: Paygate
+"Paygate.Purchase.Failed" = "Falha ao comprar";
+
+// MARK: Onboarding
+"Onboarding.Slide1.Title" = "Bem-vindo à Randonautica";
+"Onboarding.Slide2.Title" = "Vamos explorar!";
+"Onboarding.Slide2.SubTitle" = "Milhares de usuários em todo o mundo utilizam este aplicativo para explorar lugares inesperados. Acompanhe sua própria história de descobertas aleatórias!";
+
+// MARK: Map
+"Map.Title" = "Randonautica";
+"Map.Navigate" = "Navegar";
+"Map.StopTrip" = "Parar viagem";
+"Map.SendFeedback.Failure" = "Falha em enviar feedback";
+"Map.MapAppsActionSheet.Message" = "Selecione aplicativo para montar a rota";
+"Map.MapAppsActionSheet.AppleMap" = "Mapa da Apple";
+"Map.MapAppsActionSheet.GoogleMap" = "Mapa da Google";
+"Map.MapAppsActionSheet.DGis" = "2Gis";
+"Map.MapAppsActionSheet.YandexMap" = "Mapa da Yandex";
+"Map.TripFeedbackViewController.Title" = "Envie feedback sobre a viagem";
+"Map.RadiusToTrip" = "r = %im";
+
+// MARK: FindPlace
+"FindPlace.Title" = "Randonautica";
+"FindPlace.FPRequireGeoPermissionCell.Title" = "Comece enviando\nsua localização:";
+"FindPlace.FPRequireGeoPermissionCell.Button" = "Enviar minha localização";
+"FindPlace.FPSearchingCoordinateCell.Title" = "Pesquisando sua localização...";
+"FindPlace.FPSearchedCoordinateCell.Title" = "Sua localização está definida nas coordenadas %f, %f";
+"FindPlace.FPSearchedCoordinateCell.MapSubtitle" = "este ponto se tornará o centro da pesquisa";
+"FindPlace.FPWhatLikeGetCell.Title" = "Vamos explorar! No que o nosso algoritmo aleatório deve se basear?";
+"FindPlace.FPWhatLikeGetCell.Anomaly" = "dispositivo";
+"FindPlace.FPWhatLikeGetCell.Attractor" = "terceiros";
+"FindPlace.FPWhatLikeGetCell.Void" = "clima";
+"FindPlace.FPWhatLikeGetCell.Pseudo" = "data e hora";
+"FindPlace.FPWhatLikeGetCell.WhatItIs" = "O que é isso?";
+"FindPlace.FPRadiusCell.Title" = "Definir alcance";
+"FindPlace.FPRadiusCell.Value" = "%im";
+"FindPlace.FPCompleteCell.Start" = "Obter localização";
+"FindPlace.FPCompleteCell.Reset" = "Redefinir";
+"FindPlace.FPDenieedGeoPermission.Title" = "Vá em configurações e ative a permissão para geodetecção";
+"FindPlace.FPDenieedGeoPermission.SettingsButton" = "Configurações";
+"FindPlace.FPWhatItIsCell.Message" = "Ao procurarmos um ponto de interesse aleatório, nos baseamos em nosso banco de dados, que também inclui as experiências de outros usuários nas proximidades. Porém, ao escolher entre várias opções, gostamos de contar com a chamada semente aleatória. Podemos usar várias coisas diferentes para fazer isso: a ID do seu dispositivo, um número completamente aleatório de um terceiro que não sabe nada sobre você, o clima ou a data e hora atuais.";
+"FindPlace.HasCreatingTrip" = "Processando a localização...";
+"FindPlace.CreateTrip.Failure" = "Falha em gerar um ponto aleatório:";
+
+// MARK: Direct
+"Direct.Explore.Title" = "Explorar";
+"Direct.Explore.SubTitle" = "Compartilhe sua localização e solicite o próximo ponto de interesse aleatório para explorar.";
+"Direct.Learn.Title" = "Informar-se";
+"Direct.Learn.SubTitle" = "Nosso resumo regular com dicas de caminhada.";
+"Direct.Wallpapers.Title" = "Ver";
+"Direct.Wallpapers.SubTitle" = "Lugares abandonados são arte. Papéis de parede para o seu celular.";
+"Direct.And" = " e ";
+
+// MARK: Wallpapers
+"Wallpapers.Title" = "Papéis de parede";
+
+// MARK: Wallpaper
+"Wallpaper.Save" = "Salvar";
+"Wallpaper.Preview" = "Visualizar";
+"Wallpaper.SavedToCameraRoll" = "Salvo no rolo da câmera";
+"Wallpaper.SavedToCameraRoll.Failure" = "Falha ao salvar imagem";
+"Wallpaper.NoAccessToPhotoLibrary.Title" = "Sem acesso";
+"Wallpaper.NoAccessToPhotoLibrary.Message" = "Vá em configurações e conceda permissão";
+
+// MARK: LearnCategories
+"LearnCategories.Title" = "Informar-se";
+
+// MARK: LearnContent
+"LearnContent.Title" = "Informar-se";
+

@@ -69,7 +69,7 @@ extension DirectCollectionView: UICollectionViewDelegateFlowLayout {
         case .learn, .wallpapers:
             return CGSize(width: 161.scale, height: 152.scale)
         case .termsOfService:
-            return CGSize(width: 335.scale, height: 24.scale)
+            return CGSize(width: 335.scale, height: 36.scale)
         }
     }
     

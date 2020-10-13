@@ -40,14 +40,14 @@ final class DirectCollectionCell: UICollectionViewCell {
         
         titleLabel.attributedText = title.attributed(with: TextAttributes()
             .textColor(UIColor.white)
-            .font(Font.SFProText.bold(size: 22.scale))
-            .lineHeight(24.scale)
+            .font(Font.SFProText.bold(size: 20.scale))
+            .lineHeight(22.scale)
             .letterSpacing(-0.03.scale))
         
         subTitleLabel.attributedText = subTitle.attributed(with: TextAttributes()
             .textColor(UIColor.white)
-            .font(Font.SFProText.regular(size: 15.scale))
-            .lineHeight(17.scale)
+            .font(Font.SFProText.regular(size: 14.scale))
+            .lineHeight(16.scale)
             .letterSpacing(-0.24.scale))
     }
 }

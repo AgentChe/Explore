@@ -1,0 +1,142 @@
+/*
+  Localizable.strings
+  Explore
+
+  Created by Andrey Chernyshev on 05.08.2020.
+  Copyright © 2020 Andrey Chernyshev. All rights reserved.
+*/
+// MARK: General
+"Cancel" = "Отмена";
+
+"OK" = "ОК";
+
+"Send" = "Отправить";
+
+"Continue" = "Продолжить";
+
+"Settings" = "Настройки";
+
+"TermsOfService" = "Условия обслуживания";
+
+"PrivacyPolicy" = "Политика конфиденциальности";
+
+// MARK: Image Picker
+"ImagePicker.TakePhoto" = "Сфотографировать";
+
+"ImagePicker.CameraRoll" = "Фотопленка";
+
+"ImagePicker.PhotoLibrary" = "Библиотека фотографий";
+
+// MARK: Paygate
+"Paygate.Purchase.Failed" = "Не удалось совершить покупку";
+
+// MARK: Onboarding
+"Onboarding.Slide1.Title" = "Добро пожаловать в Randonautica";
+
+"Onboarding.Slide2.Title" = "Вперед к приключениям!";
+
+"Onboarding.Slide2.SubTitle" = "Этим приложением используются тысячи пользователей по всему миру, чтобы исследовать неожиданные места. Следите за своей собственной историей случайных открытий!";
+
+// MARK: Map
+"Map.Title" = "Randonautica";
+
+"Map.Navigate" = "Навигация";
+
+"Map.StopTrip" = "Остановить путешествие";
+
+"Map.SendFeedback.Failure" = "Не удалось отправить отзыв";
+
+"Map.MapAppsActionSheet.Message" = "Выберите приложение для построения маршрута";
+
+"Map.MapAppsActionSheet.AppleMap" = "Apple карта";
+
+"Map.MapAppsActionSheet.GoogleMap" = "Google карта";
+
+"Map.MapAppsActionSheet.DGis" = "2Gis";
+
+"Map.MapAppsActionSheet.YandexMap" = "Yandex карта";
+
+"Map.TripFeedbackViewController.Title" = "Отправить отзыв о путешествии";
+
+"Map.RadiusToTrip" = "r = %iм";
+
+// MARK: FindPlace
+"FindPlace.Title" = "Randonautica";
+
+"FindPlace.FPRequireGeoPermissionCell.Title" = "Отправьте свое местоположение\nчтобы начать:";
+
+"FindPlace.FPRequireGeoPermissionCell.Button" = "Отправить мое местоположение";
+
+"FindPlace.FPSearchingCoordinateCell.Title" = "Поиск вашего местоположения ...";
+
+"FindPlace.FPSearchedCoordinateCell.Title" = "Ваше местоположение установлено в координатах %f,%f";
+
+"FindPlace.FPSearchedCoordinateCell.MapSubtitle" = "эта точка будет центром поиска";
+
+"FindPlace.FPWhatLikeGetCell.Title" = "Давайте исследовать! На что должен полагаться наш случайный алгоритм?";
+
+"FindPlace.FPWhatLikeGetCell.Anomaly" = "устройство";
+
+"FindPlace.FPWhatLikeGetCell.Attractor" = "третье лицо";
+
+"FindPlace.FPWhatLikeGetCell.Void" = "погода";
+
+"FindPlace.FPWhatLikeGetCell.Pseudo" = "время";
+
+"FindPlace.FPWhatLikeGetCell.WhatItIs" = "Что это?";
+
+"FindPlace.FPRadiusCell.Title" = "Установить радиус";
+
+"FindPlace.FPRadiusCell.Value" = "%iм";
+
+"FindPlace.FPCompleteCell.Start" = "Получить местоположение";
+
+"FindPlace.FPCompleteCell.Reset" = "Сброс";
+
+"FindPlace.FPDenieedGeoPermission.Title" = "Перейдите в настройки и включите разрешение на определение геолокации";
+
+"FindPlace.FPDenieedGeoPermission.SettingsButton" = "Настройки";
+
+"FindPlace.FPWhatItIsCell.Message" = "При поиске случайной точки мы полагаемся на нашу базу данных, которая также включает опыт других пользователей поблизости. Однако при выборе из нескольких вариантов мы предпочитаем полагаться на так называемое случайное начальное число. Для этого мы  используем различные вещи: идентификатор вашего устройства, полностью случайное число третьей стороны, которая ничего о вас не знает, текущую погоду или время.";
+
+"FindPlace.HasCreatingTrip" = "Обработка местоположения ...";
+
+"FindPlace.CreateTrip.Failure" = "Не удалось создать случайную точку:";
+
+// MARK: Direct
+"Direct.Explore.Title" = "Исследовать";
+
+"Direct.Explore.SubTitle" = "Поделитесь своим местоположением и запросите следующую случайную точку для исследования.";
+
+"Direct.Learn.Title" = "Узнать";
+
+"Direct.Learn.SubTitle" = "Советы по пешим походам в нашем регулярном дайджесте.";
+
+"Direct.Wallpapers.Title" = "Увидеть";
+
+"Direct.Wallpapers.SubTitle" = "Заброшенные места — это искусство. Обои для вашего телефона.";
+
+"Direct.And" = " и ";
+
+// MARK: Wallpapers
+"Wallpapers.Title" = "Обои";
+
+// MARK: Wallpaper
+"Wallpaper.Save" = "Сохранить";
+
+"Wallpaper.Preview" = "Предварительный просмотр";
+
+"Wallpaper.SavedToCameraRoll" = "Сохранено в Фотопленку";
+
+"Wallpaper.SavedToCameraRoll.Failure" = "Не удалось сохранить изображение";
+
+"Wallpaper.NoAccessToPhotoLibrary.Title" = "Нет доступа";
+
+"Wallpaper.NoAccessToPhotoLibrary.Message" = "Зайдите в настройки и дайте разрешение";
+
+// MARK: LearnCategories
+"LearnCategories.Title" = "Узнать";
+
+// MARK: LearnContent
+"LearnContent.Title" = "Узнать";
+

@@ -272,6 +272,11 @@
 		961A08C524D99D7B001F23E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		96224C45253098DF002C1988 /* FacebookAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAnalytics.swift; sourceTree = "<group>"; };
 		96224C4825309BF0002C1988 /* SessionManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerDelegate.swift; sourceTree = "<group>"; };
+		96224DD525363C71002C1988 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		96224DD725363C79002C1988 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		96224DD825363C92002C1988 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		96224DD925363CAB002C1988 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		96224DDA25363CC0002C1988 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9631640925195C91007791D3 /* LearnCategoriesCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesCollectionElement.swift; sourceTree = "<group>"; };
 		9631640B25195D10007791D3 /* LearnCategoriesCollectionTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesCollectionTitleCell.swift; sourceTree = "<group>"; };
 		9631640F25195F72007791D3 /* LearnCategoriesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesCollectionCell.swift; sourceTree = "<group>"; };
@@ -1481,6 +1486,11 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				ru,
+				es,
+				"pt-BR",
+				fr,
 			);
 			mainGroup = 961A08AB24D99D79001F23E6;
 			productRefGroup = 961A08B524D99D79001F23E6 /* Products */;
@@ -1777,6 +1787,11 @@
 			isa = PBXVariantGroup;
 			children = (
 				960F029424DAC181008267FA /* en */,
+				96224DD525363C71002C1988 /* de */,
+				96224DD725363C79002C1988 /* ru */,
+				96224DD825363C92002C1988 /* es */,
+				96224DD925363CAB002C1988 /* pt-BR */,
+				96224DDA25363CC0002C1988 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1788,6 +1803,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1848,6 +1864,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1905,7 +1922,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 84M2AR9RYC;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1913,7 +1930,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore Development";
@@ -1929,7 +1946,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 84M2AR9RYC;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1937,7 +1954,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore AppStore";

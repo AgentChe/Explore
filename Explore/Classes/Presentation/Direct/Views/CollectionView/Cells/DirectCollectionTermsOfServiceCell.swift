@@ -51,7 +51,8 @@ private extension DirectCollectionTermsOfServiceCell {
 private extension DirectCollectionTermsOfServiceCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8.scale),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8.scale),
             label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }
@@ -64,6 +65,7 @@ private extension DirectCollectionTermsOfServiceCell {
         let attrs = TextAttributes()
             .textColor(UIColor.white)
             .font(Font.SFProText.regular(size: 15.scale))
+            .lineHeight(17.scale)
             .textAlignment(.center)
         
         let underlineAttrs = attrs.underlineStyle(.single)
