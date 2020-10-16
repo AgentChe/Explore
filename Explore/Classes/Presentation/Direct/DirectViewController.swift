@@ -112,6 +112,8 @@ private extension DirectViewController {
             wallpapersVC.delegate = self
             
             navigationController?.pushViewController(wallpapersVC, animated: true)
+        case .join:
+            join()
         case .paygate:
             showPaygate()
         }
@@ -120,5 +122,13 @@ private extension DirectViewController {
     func showPaygate() {
         let vc = PaygateViewController.make()
         navigationController?.present(vc, animated: true)
+    }
+    
+    func join() {
+        guard let url = URL(string: "https://www.reddit.com/r/randonauts/") else {
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:])
     }
 }

@@ -72,6 +72,8 @@
 "Direct.Wallpapers.Title" = "Ver";
 "Direct.Wallpapers.SubTitle" = "Los lugares abandonados son arte. Fondos de pantalla para tu teléfono.";
 "Direct.And" = " y ";
+"Direct.Join.Title" = "Join";
+"Direct.Join.SubTitle" = "An ever-growing community of enthusiastic randonauts";
 
 // MARK: Wallpapers
 "Wallpapers.Title" = "Fondos de pantalla";

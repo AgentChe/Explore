@@ -10,5 +10,6 @@ enum DirectCollectionElement {
     case explore(DirectModel)
     case learn(DirectModel)
     case wallpapers(DirectModel)
+    case join(DirectModel)
     case termsOfService
 }

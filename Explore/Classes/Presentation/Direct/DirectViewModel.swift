@@ -11,7 +11,7 @@ import RxCocoa
 
 final class DirectViewModel {
     enum Step {
-        case findPlace, map, learn, wallpapers, paygate
+        case findPlace, map, learn, wallpapers, join, paygate
     }
     
     let didSelectElement = PublishRelay<DirectCollectionElement>()
@@ -39,10 +39,15 @@ private extension DirectViewModel {
                                          title: "Direct.Wallpapers.Title".localized,
                                          subTitle: "Direct.Wallpapers.SubTitle".localized)
             
+            let join = DirectModel(iconName: "Direct.Join",
+                                   title: "Direct.Join.Title".localized,
+                                   subTitle: "Direct.Join.SubTitle".localized)
+            
             let elements = [
                 DirectCollectionElement.explore(explore),
                 DirectCollectionElement.learn(learn),
                 DirectCollectionElement.wallpapers(wallpapers),
+                DirectCollectionElement.join(join),
                 DirectCollectionElement.termsOfService
             ]
             
@@ -77,6 +82,8 @@ private extension DirectViewModel {
                     }
                     
                     return .just(.wallpapers)
+                case .join:
+                    return .just(.join)
                 case .termsOfService:
                     return .never()
                 }
