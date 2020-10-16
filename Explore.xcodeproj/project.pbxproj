@@ -183,6 +183,10 @@
 		96744693253895F100E32205 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96744692253895F100E32205 /* OnboardingViewModel.swift */; };
 		967446A52539641A00E32205 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446A42539641A00E32205 /* AmplitudeManager.swift */; };
 		967446A825399A0C00E32205 /* FPWhatYourSearchIntentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446A725399A0C00E32205 /* FPWhatYourSearchIntentCell.swift */; };
+		967446AB2539AC0200E32205 /* SearchAttributionsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446AA2539AC0200E32205 /* SearchAttributionsDetails.swift */; };
+		967446AF2539AC3C00E32205 /* UniversalLinkAttributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446AE2539AC3C00E32205 /* UniversalLinkAttributions.swift */; };
+		967446B32539AC5800E32205 /* SetUniversalLinkAttributionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446B22539AC5800E32205 /* SetUniversalLinkAttributionsRequest.swift */; };
+		967446B62539AC8600E32205 /* UniversalLinksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446B52539AC8600E32205 /* UniversalLinksService.swift */; };
 		9687B0182524B0A400B81DC8 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687B0172524B0A400B81DC8 /* AppStateManager.swift */; };
 		9687B01C2524B0D700B81DC8 /* AppStateManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
@@ -405,6 +409,11 @@
 		96744692253895F100E32205 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		967446A42539641A00E32205 /* AmplitudeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
 		967446A725399A0C00E32205 /* FPWhatYourSearchIntentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPWhatYourSearchIntentCell.swift; sourceTree = "<group>"; };
+		967446AA2539AC0200E32205 /* SearchAttributionsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAttributionsDetails.swift; sourceTree = "<group>"; };
+		967446AE2539AC3C00E32205 /* UniversalLinkAttributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkAttributions.swift; sourceTree = "<group>"; };
+		967446B22539AC5800E32205 /* SetUniversalLinkAttributionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUniversalLinkAttributionsRequest.swift; sourceTree = "<group>"; };
+		967446B52539AC8600E32205 /* UniversalLinksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinksService.swift; sourceTree = "<group>"; };
+		967446B82539AF1200E32205 /* Randonauting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Randonauting.entitlements; sourceTree = "<group>"; };
 		9687B0172524B0A400B81DC8 /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
 		9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManagerDelegate.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
@@ -533,6 +542,7 @@
 			children = (
 				9609B83A2515572B00457FD6 /* AppRegisterRequest.swift */,
 				96224DE3253652C9002C1988 /* SetIDFARequest.swift */,
+				967446B22539AC5800E32205 /* SetUniversalLinkAttributionsRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -800,6 +810,7 @@
 		961A08B624D99D79001F23E6 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				967446B82539AF1200E32205 /* Randonauting.entitlements */,
 				960F028E24DAC136008267FA /* Classes */,
 				960F028F24DAC13B008267FA /* Resources */,
 			);
@@ -1206,11 +1217,14 @@
 		966F476B24F6B0030025FD5F /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				967446AD2539AC2F00E32205 /* Models */,
 				9609B8392515570C00457FD6 /* Request */,
 				966F476C24F6B0620025FD5F /* IDFAService.swift */,
 				9609B83C251559E800457FD6 /* AppRegisterManager.swift */,
 				96224C45253098DF002C1988 /* FacebookAnalytics.swift */,
 				967446A42539641A00E32205 /* AmplitudeManager.swift */,
+				967446AA2539AC0200E32205 /* SearchAttributionsDetails.swift */,
+				967446B52539AC8600E32205 /* UniversalLinksService.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -1273,6 +1287,14 @@
 				9674468F25388AC200E32205 /* PaygateConfigurationManagerCore.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		967446AD2539AC2F00E32205 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				967446AE2539AC3C00E32205 /* UniversalLinkAttributions.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9687B0162524B09100B81DC8 /* AppState */ = {
@@ -1688,6 +1710,7 @@
 				96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */,
 				96316417251A56C3007791D3 /* LearnArticlesViewController.swift in Sources */,
 				966F472424F68F520025FD5F /* ErrorChecker.swift in Sources */,
+				967446B32539AC5800E32205 /* SetUniversalLinkAttributionsRequest.swift in Sources */,
 				966F479824F7AFB50025FD5F /* MapViewModel.swift in Sources */,
 				967446802538843400E32205 /* PaygateConfigurationManager.swift in Sources */,
 				96F2F87025115A5B00F7A58B /* WallpapersManager.swift in Sources */,
@@ -1718,6 +1741,7 @@
 				966F471E24F688F20025FD5F /* Session.swift in Sources */,
 				963A441724FA4EC90018A8CA /* TripManagerMock.swift in Sources */,
 				966F471A24F676720025FD5F /* TripFeedbackRequest.swift in Sources */,
+				967446AF2539AC3C00E32205 /* UniversalLinkAttributions.swift in Sources */,
 				9609B85225173C2F00457FD6 /* GetLearnCategoriesRequest.swift in Sources */,
 				966F478624F6DCBE0025FD5F /* PaygateView.swift in Sources */,
 				966F476724F6A94B0025FD5F /* GetPaygateRequest.swift in Sources */,
@@ -1792,6 +1816,7 @@
 				960F02FF24DAC64D008267FA /* GlobalDefinitions.swift in Sources */,
 				966F475B24F6A4A20025FD5F /* PaygateMapper.swift in Sources */,
 				966F476A24F6AF890025FD5F /* PaygateManager.swift in Sources */,
+				967446B62539AC8600E32205 /* UniversalLinksService.swift in Sources */,
 				9609B84D2517367700457FD6 /* LearnArticle.swift in Sources */,
 				960F032624DAC686008267FA /* Toast.swift in Sources */,
 				9604B06824DB46F400649DA7 /* GeoLocationManager.swift in Sources */,
@@ -1800,6 +1825,7 @@
 				9609B85C2517429400457FD6 /* LearnManagerMock.swift in Sources */,
 				963A440924F91B490018A8CA /* TripGoogleMapView.swift in Sources */,
 				9631641025195F72007791D3 /* LearnCategoriesCollectionCell.swift in Sources */,
+				967446AB2539AC0200E32205 /* SearchAttributionsDetails.swift in Sources */,
 				96F2F87625115EFC00F7A58B /* GetWallpapersRequest.swift in Sources */,
 				966F479624F7A5C10025FD5F /* MapViewController.swift in Sources */,
 				96316434251A916C007791D3 /* LearnContentTableView.swift in Sources */,
@@ -1964,6 +1990,7 @@
 			baseConfigurationReference = B22F64F4A27F9D92296D9874 /* Pods-Explore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Explore/Randonauting.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 14;
@@ -1988,6 +2015,7 @@
 			baseConfigurationReference = EA359854945A0243058EA051 /* Pods-Explore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Explore/Randonauting.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 14;
