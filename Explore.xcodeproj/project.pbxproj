@@ -182,6 +182,7 @@
 		9674469025388AC200E32205 /* PaygateConfigurationManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674468F25388AC200E32205 /* PaygateConfigurationManagerCore.swift */; };
 		96744693253895F100E32205 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96744692253895F100E32205 /* OnboardingViewModel.swift */; };
 		967446A52539641A00E32205 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446A42539641A00E32205 /* AmplitudeManager.swift */; };
+		967446A825399A0C00E32205 /* FPWhatYourSearchIntentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446A725399A0C00E32205 /* FPWhatYourSearchIntentCell.swift */; };
 		9687B0182524B0A400B81DC8 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687B0172524B0A400B81DC8 /* AppStateManager.swift */; };
 		9687B01C2524B0D700B81DC8 /* AppStateManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
@@ -403,6 +404,7 @@
 		9674468F25388AC200E32205 /* PaygateConfigurationManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateConfigurationManagerCore.swift; sourceTree = "<group>"; };
 		96744692253895F100E32205 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		967446A42539641A00E32205 /* AmplitudeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
+		967446A725399A0C00E32205 /* FPWhatYourSearchIntentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPWhatYourSearchIntentCell.swift; sourceTree = "<group>"; };
 		9687B0172524B0A400B81DC8 /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
 		9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManagerDelegate.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
@@ -984,6 +986,7 @@
 				963A443424FD57510018A8CA /* FPDeniedGeoPermissionCell.swift */,
 				963A443624FE50E40018A8CA /* FPWhatItIsCell.swift */,
 				963A443824FEE4BF0018A8CA /* FPRadiusCell.swift */,
+				967446A725399A0C00E32205 /* FPWhatYourSearchIntentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1730,6 +1733,7 @@
 				966F476124F6A58A0025FD5F /* RetrievedProductsPrices.swift in Sources */,
 				963A443124FCF3850018A8CA /* FindPlaceTableSectionItem.swift in Sources */,
 				963A443524FD57510018A8CA /* FPDeniedGeoPermissionCell.swift in Sources */,
+				967446A825399A0C00E32205 /* FPWhatYourSearchIntentCell.swift in Sources */,
 				960F031A24DAC686008267FA /* UIDeviceExtension.swift in Sources */,
 				963A441924FA4F240018A8CA /* TripManager.swift in Sources */,
 				963A441024F9A5B30018A8CA /* TripFeedbackViewController.swift in Sources */,

@@ -102,6 +102,15 @@
 "FindPlace.HasCreatingTrip" = "Обработка местоположения ...";
 
 "FindPlace.CreateTrip.Failure" = "Не удалось создать случайную точку:";
+"FindPlace.FPWhatYourSearchIntentCell.Title" = "What's your search intent?";
+"FindPlace.FPWhatYourSearchIntentCell.Void" = "void";
+"FindPlace.FPWhatYourSearchIntentCell.Anomaly" = "anomaly";
+"FindPlace.FPWhatYourSearchIntentCell.Treasure" = "treasure";
+"FindPlace.FPWhatYourSearchIntentCell.Beauty" = "beauty";
+"FindPlace.FPWhatYourSearchIntentCell.Peace" = "peace";
+"FindPlace.FPWhatYourSearchIntentCell.SomethingElse" = "something else";
+"FindPlace.FPWhatYourSearchIntentCell.WhatThis" = "what's this?";
+"FindPlace.FPWhatItIsCell.Message2" = "Figuring out a good intention can be hard, but it's essential to completing a fulfilling Randonautica quest. If you're looking for new ideas to spice up your next adventure, plenty of Randonautica adventurers on Reddit have been sharing how they've been using the app, and you can look there for inspiration.";
 
 // MARK: Direct
 "Direct.Explore.Title" = "Исследовать";

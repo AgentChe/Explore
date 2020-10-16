@@ -108,6 +108,11 @@ extension FindPlaceTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: FPSearchedCoordinateCell.self)) as! FPSearchedCoordinateCell
             cell.setup(coordinate: coordinate)
             returnCell = cell
+        case .whatYourSearchIntent(let tag):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: FPWhatYourSearchIntentCell.self)) as! FPWhatYourSearchIntentCell
+            cell.delegate = fpTableDelegate
+            cell.setup(selectedTag: tag)
+            returnCell = cell
         case .whatLikeGet(let tag):
             let cell = dequeueReusableCell(withIdentifier: String(describing: FPWhatLikeGetCell.self)) as! FPWhatLikeGetCell
             cell.delegate = fpTableDelegate
@@ -121,8 +126,9 @@ extension FindPlaceTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: FPDeniedGeoPermissionCell.self)) as! FPDeniedGeoPermissionCell
             cell.delegate = fpTableDelegate
             returnCell = cell
-        case .whatItis:
+        case .whatItis(let message):
             let cell = dequeueReusableCell(withIdentifier: String(describing: FPWhatItIsCell.self)) as! FPWhatItIsCell
+            cell.setup(message: message)
             returnCell = cell
         case .radius(let bundle):
             let cell = dequeueReusableCell(withIdentifier: String(describing: FPRadiusCell.self)) as! FPRadiusCell
@@ -159,6 +165,7 @@ private extension FindPlaceTableView {
         register(FPRequireGeoPermissionCell.self, forCellReuseIdentifier: String(describing: FPRequireGeoPermissionCell.self))
         register(FPNotificationCell.self, forCellReuseIdentifier: String(describing: FPNotificationCell.self))
         register(FPSearchedCoordinateCell.self, forCellReuseIdentifier: String(describing: FPSearchedCoordinateCell.self))
+        register(FPWhatYourSearchIntentCell.self, forCellReuseIdentifier: String(describing: FPWhatYourSearchIntentCell.self))
         register(FPWhatLikeGetCell.self, forCellReuseIdentifier: String(describing: FPWhatLikeGetCell.self))
         register(FPCompleteCell.self, forCellReuseIdentifier: String(describing: FPCompleteCell.self))
         register(FPDeniedGeoPermissionCell.self, forCellReuseIdentifier: String(describing: FPDeniedGeoPermissionCell.self))

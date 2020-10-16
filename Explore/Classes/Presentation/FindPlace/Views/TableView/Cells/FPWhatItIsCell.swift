@@ -20,10 +20,13 @@ final class FPWhatItIsCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setup(message: String) {
+        messageLabel.text = message
+    }
 }
 
 // MARK: Make constraints
-
 private extension FPWhatItIsCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
@@ -36,7 +39,6 @@ private extension FPWhatItIsCell {
 }
 
 // MARK: Lazy initialization
-
 private extension FPWhatItIsCell {
     func makeMessageLabel() -> UILabel {
         let view = UILabel()
@@ -44,7 +46,6 @@ private extension FPWhatItIsCell {
         view.textColor = UIColor.white
         view.numberOfLines = 0
         view.textAlignment = .left
-        view.text = "FindPlace.FPWhatItIsCell.Message".localized
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

@@ -63,6 +63,15 @@
 "FindPlace.FPWhatItIsCell.Message" = "Bei der Suche nach einem zufälligen Ort von Interesse verlassen wir uns auf unsere Datenbank, die auch die Erfahrungen anderer Benutzer in der Nähe enthält. Bei der Auswahl mehrerer Optionen verlassen wir uns jedoch gerne auf den Anfangswert für Zufallsgenerator. Dafür können wir verschiedene Dinge verwenden: Ihre Geräte-ID, eine völlig zufällige Zahl von einem Dritten, der nichts über Sie, das aktuelle Wetter oder die aktuelle Zeit weiß.";
 "FindPlace.HasCreatingTrip" = "Standort wird verarbeitet ...";
 "FindPlace.CreateTrip.Failure" = "Fehler beim Generieren eines zufälligen Orts:";
+"FindPlace.FPWhatYourSearchIntentCell.Title" = "What's your search intent?";
+"FindPlace.FPWhatYourSearchIntentCell.Void" = "void";
+"FindPlace.FPWhatYourSearchIntentCell.Anomaly" = "anomaly";
+"FindPlace.FPWhatYourSearchIntentCell.Treasure" = "treasure";
+"FindPlace.FPWhatYourSearchIntentCell.Beauty" = "beauty";
+"FindPlace.FPWhatYourSearchIntentCell.Peace" = "peace";
+"FindPlace.FPWhatYourSearchIntentCell.SomethingElse" = "something else";
+"FindPlace.FPWhatYourSearchIntentCell.WhatThis" = "what's this?";
+"FindPlace.FPWhatItIsCell.Message2" = "Figuring out a good intention can be hard, but it's essential to completing a fulfilling Randonautica quest. If you're looking for new ideas to spice up your next adventure, plenty of Randonautica adventurers on Reddit have been sharing how they've been using the app, and you can look there for inspiration.";
 
 // MARK: Direct
 "Direct.Explore.Title" = "Erkunden";

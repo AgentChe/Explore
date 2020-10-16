@@ -19,6 +19,7 @@ extension FindPlaceTableSection {
         static let deniedGeoPermission = "deniedGeoPermission"
         static let notification = "notification"
         static let searchedCoordinate = "searchedCoordinate"
+        static let whatYourSearchIntent = "whatYourSearchTntent"
         static let whatLikeGet = "whatLikeGet"
         static let complete = "complete"
         static let whatItis = "whatItis"

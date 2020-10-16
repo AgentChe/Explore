@@ -98,6 +98,14 @@ extension FindPlaceViewController: FindPlaceTableDelegate {
         }
     }
     
+    func findPlaceTableDidSelected(whatYourSearchIntent tag: FPWhatYourSearchIntentCell.Tag) {
+        guard viewModel.selectedWhatYourSearchIntentTag == nil else {
+            return
+        }
+        
+        viewModel.selectWhatYourSearchIntent.accept(tag)
+    }
+    
     func findPlaceTableDidSelected(whatLikeGet tag: FPWhatLikeGetCell.Tag) {
         guard viewModel.selectedWhatLikeGetTag == nil else {
             return

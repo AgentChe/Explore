@@ -10,9 +10,10 @@ enum FindPlaceTableSectionItem {
     case requireGeoPermission
     case deniedGeoPermission
     case searchedCoordinate(Coordinate)
+    case whatYourSearchIntent(FPWhatYourSearchIntentCell.Tag?)
     case whatLikeGet(FPWhatLikeGetCell.Tag?)
     case complete
-    case whatItis
+    case whatItis(String)
     case notification(String)
     case radius(FPTableRadiusBundle)
 }

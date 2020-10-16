@@ -14,11 +14,14 @@ final class FindPlaceViewModel {
     let findGeoPermissionStatus = PublishRelay<Void>()
     let requireGeoPermission = PublishRelay<Void>()
     let findCoordinate = PublishRelay<Void>()
+    let whatYourSearchIntent = PublishRelay<Void>()
+    let selectWhatYourSearchIntent = PublishRelay<FPWhatYourSearchIntentCell.Tag>()
     let whatLikeGet = PublishRelay<Void>()
     let selectWhatLikeGet = PublishRelay<FPWhatLikeGetCell.Tag>()
     let setRadius = PublishRelay<FPTableRadiusBundle>()
     let createTrip = PublishRelay<Void>()
     
+    var selectedWhatYourSearchIntentTag: FPWhatYourSearchIntentCell.Tag?
     var selectedWhatLikeGetTag: FPWhatLikeGetCell.Tag?
     var radiusBundle = FPTableRadiusBundle()
     
@@ -35,6 +38,8 @@ final class FindPlaceViewModel {
             .merge([
                 receiveRequireGeoPermission(),
                 receiveFindCoordinate(),
+                receiveWhatYourSearch(),
+                receiveSelectWhatYourSearch(),
                 receiveWhatLikeGet(),
                 receiveSelectWhatLikeGet(),
                 receiveFindGeoPermissionStatus(),
@@ -51,6 +56,7 @@ final class FindPlaceViewModel {
     func replaceSection() -> Driver<FindPlaceTableSection> {
         Driver
             .merge([
+                receiveSelectWhatYourSearchForReplace(),
                 receiveSelectWhatLikeGetForReplace(),
                 receiveSelectRadiusForReplace(),
             ])
@@ -84,6 +90,7 @@ private extension FindPlaceViewModel {
         reset
             .do(onNext: { [weak self] in
                 self?.lastGeoPermissionStatus = nil
+                self?.selectedWhatYourSearchIntentTag = nil
                 self?.selectedWhatLikeGetTag = nil
                 self?.radiusBundle.setDefault()
             })
@@ -215,9 +222,69 @@ private extension FindPlaceViewModel {
                     }
                     .asSingle()
                     .do(onSuccess: { [weak self] _ in
-                        self?.whatLikeGet.accept(Void())
+                        self?.whatYourSearchIntent.accept(Void())
                     })
             }
+            .asDriver(onErrorDriveWith: .empty())
+    }
+    
+    func receiveWhatYourSearch() -> Driver<FindPlaceTableSection> {
+        whatYourSearchIntent
+            .flatMap {
+                Observable<FindPlaceTableSection>.create { [weak self] event in
+                    DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1) {
+                        DispatchQueue.main.async {
+                            let section = FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.whatYourSearchIntent,
+                                                                items: [.whatYourSearchIntent(self?.selectedWhatYourSearchIntentTag)])
+                            
+                            event.onNext(section)
+                            event.onCompleted()
+                        }
+                    }
+                    
+                    return Disposables.create()
+                }
+            }
+            .asDriver(onErrorDriveWith: .empty())
+    }
+    
+    func receiveSelectWhatYourSearch() -> Driver<FindPlaceTableSection> {
+        selectWhatYourSearchIntent
+            .flatMap { tag -> Observable<FindPlaceTableSection> in
+                Observable<FindPlaceTableSection>
+                    .create { [weak self] event in
+                        guard let this = self else {
+                            return Disposables.create()
+                        }
+                        
+                        if tag == .whatThis {
+                            event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.whatItis,
+                                                               items: [.whatItis("FindPlace.FPWhatItIsCell.Message2".localized)]))
+                            event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.whatYourSearchIntent,
+                                                               items: [.whatYourSearchIntent(this.selectedWhatYourSearchIntentTag)]))
+                        } else {
+                            event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.whatLikeGet,
+                                                               items: [.whatLikeGet(this.selectedWhatLikeGetTag)]))
+                        }
+                        
+                        event.onCompleted()
+                        
+                        return Disposables.create()
+                    }
+            }
+            .asDriver(onErrorDriveWith: .empty())
+    }
+    
+    func receiveSelectWhatYourSearchForReplace() -> Driver<FindPlaceTableSection> {
+        selectWhatYourSearchIntent
+            .filter {
+                $0 != .whatThis
+            }
+            .do(onNext: { [weak self] tag in
+                self?.selectedWhatYourSearchIntentTag = tag
+            })
+            .map { FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.whatYourSearchIntent,
+                                         items: [.whatYourSearchIntent($0)]) }
             .asDriver(onErrorDriveWith: .empty())
     }
     
@@ -252,7 +319,7 @@ private extension FindPlaceViewModel {
                         
                         if tag == .whatItIs {
                             event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.whatItis,
-                                                               items: [.whatItis]))
+                                                               items: [.whatItis("FindPlace.FPWhatItIsCell.Message".localized)]))
                             event.onNext(FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.whatLikeGet,
                                                                items: [.whatLikeGet(this.selectedWhatLikeGetTag)]))
                         } else {
