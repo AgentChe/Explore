@@ -78,7 +78,6 @@ final class FindPlaceViewModel {
 }
 
 // MARK: Private
-
 private extension FindPlaceViewModel {
     // Delay for map will load
     func createMapLoadDelay() -> Driver<Void> {
@@ -324,7 +323,7 @@ private extension FindPlaceViewModel {
                         this.tripManager
                             .rxCreateTrip(with: GeoLocationUtils.findCoordinate(from: coordinate, on: Double(this.radiusBundle.radius)))
                             .map { success -> FindPlaceTableSection? in
-                                success ? nil : FindPlaceTableSection(identifier: "FindPlaceTableSection.Identifiers.notification",
+                                success ? nil : FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.notification,
                                                                       items: [.notification("FindPlace.CreateTrip.Failure".localized)])
                             }
                             .do(onError: { [weak self] error in
@@ -337,7 +336,7 @@ private extension FindPlaceViewModel {
                                     return .just(nil)
                                 }
                                 
-                                let section = FindPlaceTableSection(identifier: "FindPlaceTableSection.Identifiers.notification",
+                                let section = FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.notification,
                                                                     items: [.notification("FindPlace.CreateTrip.Failure".localized)])
                                 
                                 return .just(section)

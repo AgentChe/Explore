@@ -15,14 +15,25 @@ final class SplashViewModel {
     }
     
     lazy var step = createStep()
+    
+    private let paygateConfigurationManager = PaygateConfigurationManagerCore()
 }
 
 // MARK: Private
 
 private extension SplashViewModel {
     func createStep() -> Single<Step> {
-        .deferred {
-            .just(OnboardingViewController.wasViewed ? Step.direct : Step.onboarding)
+        let step = Single.deferred {
+            Single<Step>.just(OnboardingViewController.wasViewed ? Step.direct : Step.onboarding)
         }
+        
+        return initiale()
+            .andThen(step)
+    }
+    
+    func initiale() -> Completable {
+        paygateConfigurationManager
+            .rxRetrieveConfiguration()
+            .asCompletable()
     }
 }

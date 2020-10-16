@@ -8,10 +8,8 @@
 
 protocol FindPlaceViewControllerDelegate: class {
     func findPlaceViewControllerTripCreated()
-    func findPlaceViewControllerNeedPayment()
 }
 
 extension FindPlaceViewControllerDelegate {
     func findPlaceViewControllerTripCreated() {}
-    func findPlaceViewControllerNeedPayment() {}
 }

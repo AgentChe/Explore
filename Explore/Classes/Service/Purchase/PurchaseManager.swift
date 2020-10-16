@@ -69,6 +69,7 @@ extension PurchaseManager {
             .do(onSuccess: { session in
                 if let session = session {
                     SessionManager.shared.store(session: session)
+                    PaygateConfigurationManagerCore().set(activeSubscription: session.activeSubscription)
                 }
             })
     }

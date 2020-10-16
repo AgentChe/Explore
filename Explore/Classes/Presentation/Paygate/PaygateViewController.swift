@@ -89,17 +89,17 @@ final class PaygateViewController: UIViewController {
             .subscribe(onNext: { [unowned self] paygate in
                 switch self.currentScene {
                 case .not:
-                    self.dismiss()
+                    self.dismiss(with: .cancelled)
                 case .main:
                     if paygate?.specialOffer != nil {
                         self.animateMoveToSpecialOfferView()
                         self.currentScene = .specialOffer
                     } else {
-                        self.dismiss()
+                        self.dismiss(with: .cancelled)
                     }
                 case .specialOffer:
                     self.paygateView.specialOfferView.stopTimer()
-                    self.dismiss()
+                    self.dismiss(with: .cancelled)
                 }
             })
             .disposed(by: disposeBag)
@@ -181,9 +181,7 @@ final class PaygateViewController: UIViewController {
                     return
                 }
                 
-                self?.delegate?.wasPurchased()
-                
-                self?.dismiss()
+                self?.dismiss(with: .bied)
             })
             .disposed(by: disposeBag)
         
@@ -195,9 +193,7 @@ final class PaygateViewController: UIViewController {
                     return
                 }
                 
-                self?.delegate?.wasRestored()
-            
-                self?.dismiss()
+                self?.dismiss(with: .restored)
             })
             .disposed(by: disposeBag)
     }
@@ -290,7 +286,9 @@ private extension PaygateViewController {
         }
     }
     
-    func dismiss() {
-        dismiss(animated: true)
+    func dismiss(with result: PaygateViewControllerResult) {
+        dismiss(animated: true) { [weak self] in
+            self?.delegate?.paygateDidClosed(with: result)
+        }
     }
 }

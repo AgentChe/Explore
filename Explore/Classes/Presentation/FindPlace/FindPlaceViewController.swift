@@ -18,6 +18,8 @@ final class FindPlaceViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    private var paygateWasOpened: Bool = false
+    
     override func loadView() {
         super.loadView()
         
@@ -60,7 +62,7 @@ final class FindPlaceViewController: UIViewController {
         viewModel
             .needPaygate()
             .drive(onNext: { [weak self] in
-                self?.delegate?.findPlaceViewControllerNeedPayment()
+                self?.showPaygate()
             })
             .disposed(by: disposeBag)
         
@@ -74,7 +76,6 @@ final class FindPlaceViewController: UIViewController {
 }
 
 // MARK: Make
-
 extension FindPlaceViewController {
     static func make() -> FindPlaceViewController {
         FindPlaceViewController()
@@ -82,7 +83,6 @@ extension FindPlaceViewController {
 }
 
 // MARK: FindPlaceTableDelegate
-
 extension FindPlaceViewController: FindPlaceTableDelegate {
     func findPlaceTableDidRequireGeoPermission() {
         viewModel.requireGeoPermission.accept(Void())
@@ -111,12 +111,45 @@ extension FindPlaceViewController: FindPlaceTableDelegate {
     }
     
     func findPlaceTableDidStart() {
-        viewModel.createTrip.accept(Void())
+        if isNeedOpenPaygate && !paygateWasOpened {
+            paygateWasOpened = true
+            
+            showPaygate()
+        } else {
+            viewModel.createTrip.accept(Void())
+        }
     }
     
     func findPlaceTableDidReset() {
         findPlaceView.tableView.removeAll()
         
         viewModel.reset.accept(Void())
+    }
+}
+
+// MARK: PaygateViewControllerDelegate
+extension FindPlaceViewController: PaygateViewControllerDelegate {
+    func paygateDidClosed(with result: PaygateViewControllerResult) {
+        if paygateWasOpened {
+            viewModel.createTrip.accept(Void())
+        }
+    }
+}
+
+// MARK: Private
+private extension FindPlaceViewController {
+    var isNeedOpenPaygate: Bool {
+        guard let config = PaygateConfigurationManagerCore().getConfiguration() else {
+            return false
+        }
+        
+        return !config.activeSubscription && config.generateSpotPaygate
+    }
+    
+    func showPaygate() {
+        let vc = PaygateViewController.make()
+        vc.delegate = self
+        
+        present(vc, animated: true)
     }
 }

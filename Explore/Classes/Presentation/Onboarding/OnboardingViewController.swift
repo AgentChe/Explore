@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class OnboardingViewController: UIViewController {
     var onboardingView = OnboardingView()
@@ -21,6 +22,10 @@ final class OnboardingViewController: UIViewController {
         .init(imageName: nil, title: nil, subTitle: nil)
     ]
     
+    private let viewModel = OnboardingViewModel()
+    
+    private let disposeBag = DisposeBag()
+    
     override func loadView() {
         super.loadView()
         
@@ -32,11 +37,24 @@ final class OnboardingViewController: UIViewController {
         
         markAsViewed()
         setupSlider()
+        
+        viewModel
+            .step
+            .drive(onNext: { [weak self] step in
+                switch step {
+                case .direct:
+                    UIApplication.shared.keyWindow?.rootViewController = DirectNavigationController(rootViewController: DirectViewController.make())
+                case .paygate:
+                    let vc = PaygateViewController.make()
+                    vc.delegate = self
+                    self?.present(vc, animated: true)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
 // MARK: Make
-
 extension OnboardingViewController {
     static func make() -> OnboardingViewController {
         OnboardingViewController()
@@ -44,7 +62,6 @@ extension OnboardingViewController {
 }
 
 // MARK: API
-
 extension OnboardingViewController {
     static var wasViewed: Bool {
         UserDefaults.standard.bool(forKey: Constants.wasOpenedKey)
@@ -52,17 +69,22 @@ extension OnboardingViewController {
 }
 
 // MARK: OnboardingSliderDelegate
-
 extension OnboardingViewController: OnboardingSliderDelegate {
     func onboardingSlider(changed slideIndex: Int) {
         if slideIndex == slides.count - 1 {
-            UIApplication.shared.keyWindow?.rootViewController = DirectNavigationController(rootViewController: DirectViewController.make())
+            viewModel.end.accept(Void())
         }
     }
 }
 
-// MARK: Private
+// MARK: PaygateViewControllerDelegate
+extension OnboardingViewController: PaygateViewControllerDelegate {
+    func paygateDidClosed(with result: PaygateViewControllerResult) {
+        UIApplication.shared.keyWindow?.rootViewController = DirectNavigationController(rootViewController: DirectViewController.make())
+    }
+}
 
+// MARK: Private
 extension OnboardingViewController {
     func markAsViewed() {
         UserDefaults.standard.set(true, forKey: Constants.wasOpenedKey)

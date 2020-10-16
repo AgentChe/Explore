@@ -48,7 +48,6 @@ final class DirectViewController: UIViewController {
 }
 
 // MARK: Make
-
 extension DirectViewController {
     static func make() -> DirectViewController {
         DirectViewController()
@@ -56,21 +55,15 @@ extension DirectViewController {
 }
 
 // MARK: FindPlaceViewControllerDelegate
-
 extension DirectViewController: FindPlaceViewControllerDelegate {
     func findPlaceViewControllerTripCreated() {
         navigationController?.popViewController(animated: false)
         
         navigate(at: .map)
     }
-    
-    func findPlaceViewControllerNeedPayment() {
-        showPaygate()
-    }
 }
 
 // MARK: MapViewControllerDelegate
-
 extension DirectViewController: MapViewControllerDelegate {
     func mapViewControllerTripRemoved() {
         navigationController?.popViewController(animated: true)
@@ -78,7 +71,6 @@ extension DirectViewController: MapViewControllerDelegate {
 }
 
 // MARK: WallpapersViewControllerDelegate
-
 extension DirectViewController: WallpapersViewControllerDelegate {
     func wallpapersViewControllerNeedPayment() {
         navigationController?.popViewController(animated: false)
@@ -88,7 +80,6 @@ extension DirectViewController: WallpapersViewControllerDelegate {
 }
 
 // MARK: LearnCategoriesViewControllerDelegate
-
 extension DirectViewController: LearnCategoriesViewControllerDelegate {
     func learnCategoriesViewControllerNeedPayment() {
         navigationController?.popViewController(animated: false)
@@ -98,35 +89,32 @@ extension DirectViewController: LearnCategoriesViewControllerDelegate {
 }
 
 // MARK: Private
-
 private extension DirectViewController {
     func navigate(at step: DirectViewModel.Step) {
-        let vc: UIViewController
-        
         switch step {
         case .findPlace:
             let findPlaceVC = FindPlaceViewController.make()
             findPlaceVC.delegate = self
             
-            vc = findPlaceVC
+            navigationController?.pushViewController(findPlaceVC, animated: true)
         case .map:
             let mapVC = MapViewController.make()
             mapVC.delegate = self
             
-            vc = mapVC
+            navigationController?.pushViewController(mapVC, animated: true)
         case .learn:
             let learnVC = LearnCategoriesViewController.make()
             learnVC.delegate = self
             
-            vc = learnVC
+            navigationController?.pushViewController(learnVC, animated: true)
         case .wallpapers:
             let wallpapersVC = WallpapersViewController.make()
             wallpapersVC.delegate = self
             
-            vc = wallpapersVC
+            navigationController?.pushViewController(wallpapersVC, animated: true)
+        case .paygate:
+            showPaygate()
         }
-        
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     func showPaygate() {

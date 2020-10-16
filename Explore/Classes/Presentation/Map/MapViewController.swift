@@ -101,7 +101,6 @@ final class MapViewController: UIViewController {
 }
 
 // MARK: Make
-
 extension MapViewController {
     static func make() -> MapViewController {
         MapViewController()
@@ -109,7 +108,6 @@ extension MapViewController {
 }
 
 // MARK: TripFeedbackViewControllerDelegate
-
 extension MapViewController: TripFeedbackViewControllerDelegate {
     func tripFeedbackControllerDidSendTapped(text: String) {
         viewModel.sendFeedback.accept(text)
@@ -117,7 +115,6 @@ extension MapViewController: TripFeedbackViewControllerDelegate {
 }
 
 // MARK: Private
-
 private extension MapViewController {
     func updateRadius(from location: Coordinate, to trip: Trip) {
         let distance = GeoLocationUtils.distance(from: location, to: trip.toCoordinate)
@@ -143,6 +140,9 @@ private extension MapViewController {
             let vc = TripFeedbackViewController.make()
             vc.delegate = self 
             present(vc, animated: true)
+        } else if isNeedOpenPaygate {
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         } else {
             guard let coordinate = viewModel.getTrip()?.toCoordinate else {
                 return
@@ -154,5 +154,13 @@ private extension MapViewController {
             
             present(mapAppsActionSheet, animated: true)
         }
+    }
+    
+    var isNeedOpenPaygate: Bool {
+        guard let config = PaygateConfigurationManagerCore().getConfiguration() else {
+            return false
+        }
+        
+        return !config.activeSubscription && config.navigateSpotPaygate
     }
 }

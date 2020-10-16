@@ -6,7 +6,14 @@
 //  Copyright © 2020 Алексей Петров. All rights reserved.
 //
 
+enum PaygateViewControllerResult {
+    case bied, restored, cancelled
+}
+
 protocol PaygateViewControllerDelegate: class {
-    func wasPurchased()
-    func wasRestored()
+    func paygateDidClosed(with result: PaygateViewControllerResult)
+}
+
+extension PaygateViewControllerDelegate {
+    func paygateDidClosed(with result: PaygateViewControllerResult) {}
 }

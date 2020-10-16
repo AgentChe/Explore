@@ -11,7 +11,7 @@ import RxCocoa
 
 final class DirectViewModel {
     enum Step {
-        case findPlace, map, learn, wallpapers
+        case findPlace, map, learn, wallpapers, paygate
     }
     
     let didSelectElement = PublishRelay<DirectCollectionElement>()
@@ -58,8 +58,24 @@ private extension DirectViewModel {
                     let step: Step = tripManager.hasTrip() ? .map : .findPlace
                     return .just(step)
                 case .learn:
+                    guard let configuration = PaygateConfigurationManagerCore().getConfiguration() else {
+                        return .just(.learn)
+                    }
+                    
+                    if !configuration.activeSubscription && configuration.learnPaygate {
+                        return .just(.paygate)
+                    }
+                    
                     return .just(.learn)
                 case .wallpapers:
+                    guard let configuration = PaygateConfigurationManagerCore().getConfiguration() else {
+                        return .just(.wallpapers)
+                    }
+                    
+                    if !configuration.activeSubscription && configuration.seePaygate {
+                        return .just(.paygate)
+                    }
+                    
                     return .just(.wallpapers)
                 case .termsOfService:
                     return .never()
