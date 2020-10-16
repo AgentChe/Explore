@@ -181,6 +181,7 @@
 		9674468D2538864200E32205 /* GetPaygateConfigurationResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674468C2538864200E32205 /* GetPaygateConfigurationResponseMapper.swift */; };
 		9674469025388AC200E32205 /* PaygateConfigurationManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674468F25388AC200E32205 /* PaygateConfigurationManagerCore.swift */; };
 		96744693253895F100E32205 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96744692253895F100E32205 /* OnboardingViewModel.swift */; };
+		967446A52539641A00E32205 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446A42539641A00E32205 /* AmplitudeManager.swift */; };
 		9687B0182524B0A400B81DC8 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687B0172524B0A400B81DC8 /* AppStateManager.swift */; };
 		9687B01C2524B0D700B81DC8 /* AppStateManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
@@ -401,6 +402,7 @@
 		9674468C2538864200E32205 /* GetPaygateConfigurationResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaygateConfigurationResponseMapper.swift; sourceTree = "<group>"; };
 		9674468F25388AC200E32205 /* PaygateConfigurationManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateConfigurationManagerCore.swift; sourceTree = "<group>"; };
 		96744692253895F100E32205 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		967446A42539641A00E32205 /* AmplitudeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
 		9687B0172524B0A400B81DC8 /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
 		9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManagerDelegate.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
@@ -1205,6 +1207,7 @@
 				966F476C24F6B0620025FD5F /* IDFAService.swift */,
 				9609B83C251559E800457FD6 /* AppRegisterManager.swift */,
 				96224C45253098DF002C1988 /* FacebookAnalytics.swift */,
+				967446A42539641A00E32205 /* AmplitudeManager.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -1763,6 +1766,7 @@
 				96F2F8692511459E00F7A58B /* Wallpaper.swift in Sources */,
 				96316425251A5969007791D3 /* LearnArticlesCollectionArticleCell.swift in Sources */,
 				96EB730524DBFABD008A32BC /* Model.swift in Sources */,
+				967446A52539641A00E32205 /* AmplitudeManager.swift in Sources */,
 				966F47A724F7BAA60025FD5F /* OnboardingSlide.swift in Sources */,
 				96F2F851251024B000F7A58B /* DirectCollectionElement.swift in Sources */,
 				96F2F864251133AF00F7A58B /* MapViewControllerDelegate.swift in Sources */,

@@ -14,4 +14,8 @@ struct GlobalDefinitions {
     
     static let termsOrServiceUrl = "https://explore.korrekted.com/terms.html"
     static let privacyPolicyUrl = "https://explore.korrekted.com/policy.html"
+    
+    static let amplitudeAPIKey = "b503251969f4b1d7901d2f7d1388d476"
+    
+    static let applicationTag = "EXPLORE"
 }

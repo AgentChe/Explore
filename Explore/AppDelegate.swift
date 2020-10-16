@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         AppRegisterManager.shared.configure()
         
+        AmplitudeManager.shared.configure()
+        
         PaygateConfigurationManagerCore().clearCache()
         
         window = UIWindow(frame: UIScreen.main.bounds)

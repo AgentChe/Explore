@@ -16,4 +16,5 @@ target 'Explore' do
   pod 'SwiftyStoreKit'
   
   pod 'FacebookSDK'
+  pod 'Amplitude-iOS'
 end

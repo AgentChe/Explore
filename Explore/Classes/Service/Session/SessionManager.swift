@@ -24,7 +24,6 @@ final class SessionManager {
 }
 
 // MARK: API
-
 extension SessionManager {
     @discardableResult
     func store(session: Session) -> Bool {
@@ -51,7 +50,6 @@ extension SessionManager {
 }
 
 // MARK: API(Rx)
-
 extension Reactive where Base: SessionManager {
     func store(session: Session) -> Single<Bool> {
         .deferred { [weak base] in .just(base?.store(session: session) ?? false) }
@@ -63,11 +61,9 @@ extension Reactive where Base: SessionManager {
 }
 
 // MARK: Rx
-
 extension SessionManager: ReactiveCompatible {}
 
 // MARK: Trigger(Rx)
-
 extension SessionManager {
     var didStoredSession: Signal<Session> {
         didStoredSessionTrigger.asSignal()
@@ -75,7 +71,6 @@ extension SessionManager {
 }
 
 // MARK: Observer
-
 extension SessionManager {
     func add(observer: SessionManagerDelegate) {
         let weakly = observer as AnyObject

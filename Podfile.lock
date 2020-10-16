@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.0.5)
+  - Amplitude-iOS (4.10.0)
   - FacebookSDK (8.0.0):
     - FacebookSDK/CoreKit (= 8.0.0)
   - FacebookSDK/CoreKit (8.0.0):
@@ -33,6 +34,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Amplitude-iOS
   - FacebookSDK
   - GoogleMaps
   - Kingfisher
@@ -44,6 +46,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Amplitude-iOS
     - FacebookSDK
     - FBSDKCoreKit
     - GoogleMaps
@@ -58,6 +61,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  Amplitude-iOS: 7d8cdc3408ba35c2e68368fc7c692cd104606b94
   FacebookSDK: 57f08b331cc29d7c65e2b7200dbb6f58e223d627
   FBSDKCoreKit: 9d27fe97a2fa2abe5eeefea8240e837623ab88e0
   GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
@@ -70,6 +74,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
 
-PODFILE CHECKSUM: e64e0c2553e0e4b185f700939a59380388dbe3d1
+PODFILE CHECKSUM: 4931e4d68e08f9a9ec620aa54367073aeff5cabf
 
 COCOAPODS: 1.10.0.rc.1

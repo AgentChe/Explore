@@ -35,7 +35,10 @@ final class DirectViewController: UIViewController {
         directView
             .collectionView.rx
             .didSelectElement
-            .emit(to: viewModel.didSelectElement)
+            .emit(onNext: { [weak self] element in
+                self?.viewModel.didSelectElement.accept(element)
+                self?.logEvent(at: element)
+            })
             .disposed(by: disposeBag)
         
         viewModel
@@ -130,5 +133,20 @@ private extension DirectViewController {
         }
         
         UIApplication.shared.open(url, options: [:])
+    }
+    
+    func logEvent(at element: DirectCollectionElement) {
+        switch element {
+        case .explore:
+            AmplitudeManager.shared.logEvent(name: "Index Tap", parameters: ["what": "explore"])
+        case .learn:
+            AmplitudeManager.shared.logEvent(name: "Index Tap", parameters: ["what": "learn"])
+        case .wallpapers:
+            AmplitudeManager.shared.logEvent(name: "Index Tap", parameters: ["what": "see"])
+        case .join:
+            AmplitudeManager.shared.logEvent(name: "Index Tap", parameters: ["what": "join"])
+        default:
+            break
+        }
     }
 }
