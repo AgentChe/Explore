@@ -34,14 +34,16 @@ private extension AppRegisterManager {
             return
         }
         
-        let request = AppRegisterRequest(idfa: IDFAService.shared.getIDFA(),
-                                        appKey: IDFAService.shared.getAppKey(),
-                                        version: UIDevice.appVersion ?? "1")
+        SearchAttributionsDetails.request { attributionsDetails in
+            let request = AppRegisterRequest(idfa: IDFAService.shared.getIDFA(),
+                                             appKey: IDFAService.shared.getAppKey(),
+                                             version: UIDevice.appVersion ?? "1",
+                                             attributions: attributionsDetails)
             
-        _ = RestAPITransport()
-            .callServerApi(requestBody: request)
-            .subscribe(onSuccess: { _ in
-                UserDefaults.standard.set(true, forKey: Constants.appWasRegisteredKey)
-            })
+            _ = RestAPITransport().callServerApi(requestBody: request)
+                .subscribe(onSuccess: { _ in
+                    UserDefaults.standard.set(true, forKey: Constants.appWasRegisteredKey)
+                })
+        }
     }
 }

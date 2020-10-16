@@ -12,11 +12,13 @@ struct AppRegisterRequest: APIRequestBody {
     private let idfa: String
     private let appKey: String
     private let version: String
+    private let attributions: [String: Any]?
     
-    init(idfa: String, appKey: String, version: String) {
+    init(idfa: String, appKey: String, version: String, attributions: [String: Any]?) {
         self.idfa = idfa
         self.appKey = appKey
         self.version = version
+        self.attributions = attributions
     }
     
     var url: String {
@@ -28,11 +30,11 @@ struct AppRegisterRequest: APIRequestBody {
     }
     
     var parameters: Parameters? {
-        [
-            "_api_key": GlobalDefinitions.apiKey,
-            "idfa": idfa,
-            "random_string": appKey,
-            "version": version
-        ]
+        var result = attributions ?? [:]
+        result["_api_key"] = GlobalDefinitions.apiKey
+        result["idfa"] = idfa
+        result["random_string"] = appKey
+        result["version"] = version
+        return result
     }
 }
