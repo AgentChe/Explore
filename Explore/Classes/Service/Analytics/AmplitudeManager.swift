@@ -42,7 +42,8 @@ extension AmplitudeManager {
 extension AmplitudeManager: SessionManagerDelegate {
     func sessionManagerDidStored(session: Session) {
         if let userId = session.userId {
-            Amplitude.instance()?.setUserId(String(userId))
+            let tag = String(format: "%@_%i", GlobalDefinitions.applicationTag, userId)
+            Amplitude.instance()?.setUserId(tag)
         }
     }
 }
