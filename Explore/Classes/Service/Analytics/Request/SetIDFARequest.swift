@@ -11,10 +11,12 @@ import Alamofire
 struct SetIDFARequest: APIRequestBody {
     private let userToken: String
     private let idfa: String
+    private let appKey: String
     
-    init(userToken: String, idfa: String) {
+    init(userToken: String, idfa: String, appKey: String) {
         self.userToken = userToken
         self.idfa = idfa
+        self.appKey = appKey
     }
     
     var method: HTTPMethod {
@@ -29,7 +31,8 @@ struct SetIDFARequest: APIRequestBody {
         [
             "_api_key": GlobalDefinitions.apiKey,
             "idfa": idfa,
-            "_user_token": userToken
+            "_user_token": userToken,
+            "random_string": appKey
         ]
     }
 }

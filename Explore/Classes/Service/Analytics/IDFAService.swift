@@ -34,7 +34,8 @@ extension IDFAService {
                 
                 return RestAPITransport()
                     .callServerApi(requestBody: SetIDFARequest(userToken: userToken,
-                                                               idfa: IDFAService.shared.getIDFA()))
+                                                               idfa: IDFAService.shared.getIDFA(),
+                                                               appKey: IDFAService.shared.getAppKey()))
             }
             .subscribe()
             .disposed(by: disposeBag)
