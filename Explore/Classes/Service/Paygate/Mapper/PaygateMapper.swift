@@ -73,7 +73,7 @@ private extension PaygateMapper {
             .attributed(with: TextAttributes()
                 .font(Font.OpenSans.semibold(size: 17.scale))
                 .lineHeight(27.scale)
-                .textColor(UIColor.white.withAlphaComponent(0.3)))
+                .textColor(UIColor.white.withAlphaComponent(0.9)))
         
         let optionsJSONArray = (main["options"] as? [[String: Any]]) ?? []
         let options = optionsJSONArray.enumerated().compactMap { map(option: $1, productsPrices: productsPrices, index: $0) }
@@ -248,7 +248,7 @@ private extension PaygateMapper {
             .attributed(with: TextAttributes()
                 .font(Font.OpenSans.semibold(size: 17.scale))
                 .lineHeight(27.scale)
-                .textColor(UIColor.white.withAlphaComponent(0.3)))
+                .textColor(UIColor.white.withAlphaComponent(0.9)))
         
         let multiplicator = specialOffer["special_offer_multiplicator"] as? Int ?? 1
         let oldPrice = productPrice.priceValue * Double(multiplicator)
