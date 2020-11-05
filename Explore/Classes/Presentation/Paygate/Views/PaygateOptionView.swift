@@ -71,7 +71,7 @@ private extension PaygateOptionView {
         bottomLabel.textColor = onlyWhiteViews.contains(bottomLabel) ? .white : contentColor
         
         saveLabel.textColor = isSelected ? .white : UIColor(red: 17 / 255, green: 17 / 255, blue: 17 / 255, alpha: 1)
-        saveLabel.backgroundColor = contentColor
+        saveLabel.backgroundColor = isSelected ? UIColor(red: 223 / 255, green: 86 / 255, blue: 21 / 255, alpha: 1) : UIColor.white
     }
 }
 

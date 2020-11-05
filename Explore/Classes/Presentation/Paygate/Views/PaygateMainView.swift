@@ -82,7 +82,7 @@ private extension PaygateMainView {
         NSLayoutConstraint.activate([
             subTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.scale),
             subTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.scale),
-            subTitleLabel.bottomAnchor.constraint(equalTo: leftOptionView.topAnchor, constant: -32.scale)
+            subTitleLabel.bottomAnchor.constraint(equalTo: leftOptionView.topAnchor, constant: -60.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -90,27 +90,27 @@ private extension PaygateMainView {
             leftOptionView.heightAnchor.constraint(equalToConstant: 185.scale),
             leftOptionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.scale),
             leftOptionView.trailingAnchor.constraint(equalTo: rightOptionView.leadingAnchor, constant: -13.scale),
-            leftOptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -275.scale : -175.scale)
+            leftOptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -198.scale : -175.scale)
         ])
         
         NSLayoutConstraint.activate([
             rightOptionView.heightAnchor.constraint(equalToConstant: 185.scale),
             rightOptionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.scale),
-            rightOptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -275.scale : -175.scale)
+            rightOptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -198.scale : -175.scale)
         ])
         
         NSLayoutConstraint.activate([
-            continueButton.heightAnchor.constraint(equalToConstant: 56.scale),
-            continueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.scale),
-            continueButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.scale),
-            continueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -126.scale : -56.scale)
+            continueButton.heightAnchor.constraint(equalToConstant: 50.scale),
+            continueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25.scale),
+            continueButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25.scale),
+            continueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -84.scale : -36.scale)
         ])
         
         NSLayoutConstraint.activate([
             lockImageView.widthAnchor.constraint(equalToConstant: 12.scale),
             lockImageView.heightAnchor.constraint(equalToConstant: 16.scale),
             lockImageView.trailingAnchor.constraint(equalTo: termsOfferLabel.leadingAnchor, constant: -10.scale),
-            lockImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -88.scale : -18.scale)
+            lockImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -43.scale : -18.scale)
         ])
         
         NSLayoutConstraint.activate([
