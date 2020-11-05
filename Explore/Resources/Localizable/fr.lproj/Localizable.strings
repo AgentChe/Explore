@@ -61,7 +61,6 @@
 "FindPlace.FPDenieedGeoPermission.Title" = "Accédez aux paramètres et activez l'autorisation de détection géographique";
 "FindPlace.FPDenieedGeoPermission.SettingsButton" = "Paramètres";
 "FindPlace.FPWhatItIsCell.Message" = "Lorsque vous recherchez un point d'intérêt aléatoire, nous nous appuyons sur notre base de données, qui comprend les expériences d'autres utilisateurs à proximité. Cependant, pour choisir parmi plusieurs alternatives, nous aimons nous fier à la soi-disant « Graine aléatoire ». Pour ce faire, nous pouvons utiliser différentes choses : votre identifiant d'appareil, un numéro complètement aléatoire d'un tiers qui ne connait rien à votre sujet, la météo ou l'heure actuelle.";
-"FindPlace.HasCreatingTrip" = "Traitement de la localisation...";
 "FindPlace.CreateTrip.Failure" = "Échec de la génération d'un lieu aléatoire :";
 "FindPlace.FPWhatYourSearchIntentCell.Title" = "What's your search intent?";
 "FindPlace.FPWhatYourSearchIntentCell.Void" = "void";
@@ -72,6 +71,10 @@
 "FindPlace.FPWhatYourSearchIntentCell.SomethingElse" = "something else";
 "FindPlace.FPWhatYourSearchIntentCell.WhatThis" = "what's this?";
 "FindPlace.FPWhatItIsCell.Message2" = "Figuring out a good intention can be hard, but it's essential to completing a fulfilling Randonautica quest. If you're looking for new ideas to spice up your next adventure, plenty of Randonautica adventurers on Reddit have been sharing how they've been using the app, and you can look there for inspiration.";
+"FindPlace.FPPreloaderAnimation.Title" = "Randonautica";
+"FindPlace.FPPreloaderAnimation.Bottom" = "Random points are generated...";
+"FindPlace.FPPreloaderAnimation.Second" = "second";
+"FindPlace.FPPreloaderAnimation.Seconds" = "seconds";
 
 // MARK: Direct
 "Direct.Explore.Title" = "Explorer";

@@ -1,9 +1,13 @@
 //
-//  FPPreloaderAnimationController.swift
+//  CreateTripResult.swift
 //  Explore
 //
 //  Created by Andrey Chernyshev on 05.11.2020.
 //  Copyright © 2020 Andrey Chernyshev. All rights reserved.
 //
 
-import Foundation
+enum CreateTripResult {
+    case success
+    case needPayment
+    case failure
+}

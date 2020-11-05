@@ -30,9 +30,6 @@ final class FindPlaceViewModel {
     private let geoLocationManager = GeoLocationManager(mode: .whenInUseAuthorization)
     private let tripManager = TripManagerCore()
     
-    private let needPaygateTrigger = PublishRelay<Void>()
-    private let tripCreatedTrigger = PublishRelay<Void>()
-    
     func newSection() -> Driver<FindPlaceTableSection> {
         let sections = Driver<FindPlaceTableSection>
             .merge([
@@ -43,8 +40,6 @@ final class FindPlaceViewModel {
                 receiveWhatLikeGet(),
                 receiveSelectWhatLikeGet(),
                 receiveFindGeoPermissionStatus(),
-                receiveCreateTripForCreatePreloaderSection(),
-                receiveCreateTripForCreateResultSection(),
                 receiveSelectRadiusForNextSection()
             ])
         
@@ -72,13 +67,32 @@ final class FindPlaceViewModel {
             .asDriver(onErrorDriveWith: .empty())
     }
     
-    func needPaygate() -> Driver<Void> {
-        needPaygateTrigger
-            .asDriver(onErrorDriveWith: .empty())
-    }
-    
-    func tripCreated() -> Driver<Void> {
-        tripCreatedTrigger
+    func tripCreated() -> Driver<CreateTripResult> {
+        createTrip
+            .flatMapLatest { [weak self] void -> Observable<CreateTripResult> in
+                guard let this = self else {
+                    return .never()
+                }
+                
+                defer {
+                    this.geoLocationManager.justDetermineCurrentLocation()
+                }
+                
+                return this.geoLocationManager.rx
+                    .justDetermineCurrentLocation
+                    .asObservable()
+                    .take(1)
+                    .flatMapLatest { coordinate -> Single<CreateTripResult> in
+                        this.tripManager
+                            .rxCreateTrip(with: GeoLocationUtils.findCoordinate(from: coordinate, on: Double(this.radiusBundle.radius)))
+                            .map { success -> CreateTripResult in
+                                success ? .success : .failure
+                            }
+                            .catchError { error in
+                                .just(ErrorChecker.needPayment(in: error) ? .needPayment : .failure)
+                            }
+                    }
+            }
             .asDriver(onErrorDriveWith: .empty())
     }
 }
@@ -363,60 +377,6 @@ private extension FindPlaceViewModel {
             .map { _ in
                 FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.complete,
                                       items: [.complete])
-            }
-            .asDriver(onErrorDriveWith: .empty())
-    }
-    
-    func receiveCreateTripForCreatePreloaderSection() -> Driver<FindPlaceTableSection> {
-        createTrip
-            .map { FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.notification,
-                                         items: [.notification("FindPlace.HasCreatingTrip".localized)]) }
-            .asDriver(onErrorDriveWith: .empty())
-    }
-    
-    func receiveCreateTripForCreateResultSection() -> Driver<FindPlaceTableSection> {
-        createTrip
-            .flatMapLatest { [weak self] _ -> Observable<FindPlaceTableSection> in
-                guard let this = self else {
-                    return .empty()
-                }
-                
-                defer { this.geoLocationManager.justDetermineCurrentLocation() }
-                
-                return this.geoLocationManager.rx
-                    .justDetermineCurrentLocation
-                    .asObservable()
-                    .flatMapLatest { coordinate -> Single<FindPlaceTableSection?> in
-                        this.tripManager
-                            .rxCreateTrip(with: GeoLocationUtils.findCoordinate(from: coordinate, on: Double(this.radiusBundle.radius)))
-                            .map { success -> FindPlaceTableSection? in
-                                success ? nil : FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.notification,
-                                                                      items: [.notification("FindPlace.CreateTrip.Failure".localized)])
-                            }
-                            .do(onError: { [weak self] error in
-                                if ErrorChecker.needPayment(in: error) {
-                                    self?.needPaygateTrigger.accept(Void())
-                                }
-                            })
-                            .catchError { error in
-                                if ErrorChecker.needPayment(in: error) {
-                                    return .just(nil)
-                                }
-                                
-                                let section = FindPlaceTableSection(identifier: FindPlaceTableSection.Identifiers.notification,
-                                                                    items: [.notification("FindPlace.CreateTrip.Failure".localized)])
-                                
-                                return .just(section)
-                            }
-                    }
-                    .flatMap { [weak self] section -> Observable<FindPlaceTableSection> in
-                        guard let section = section else {
-                            self?.tripCreatedTrigger.accept(Void())
-                            return .empty()
-                        }
-                        
-                        return .just(section)
-                    }
             }
             .asDriver(onErrorDriveWith: .empty())
     }

@@ -12,6 +12,9 @@
 		9604B06B24DB471F00649DA7 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604B06A24DB471F00649DA7 /* Coordinate.swift */; };
 		9604B06D24DB490300649DA7 /* GLAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604B06C24DB490300649DA7 /* GLAuthorizationStatus.swift */; };
 		9604B06F24DB497F00649DA7 /* GeoLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604B06E24DB497F00649DA7 /* GeoLocationManagerDelegate.swift */; };
+		9609101325543D6A00E781A1 /* FPPreloaderAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609101225543D6A00E781A1 /* FPPreloaderAnimationController.swift */; };
+		9609101725543D9200E781A1 /* FPPreloaderAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609101625543D9200E781A1 /* FPPreloaderAnimationView.swift */; };
+		9609101C2554684A00E781A1 /* CreateTripResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609101B2554684A00E781A1 /* CreateTripResult.swift */; };
 		9609B8232511735A00457FD6 /* WallpaperCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B8222511735A00457FD6 /* WallpaperCollectionElement.swift */; };
 		9609B825251175E100457FD6 /* WallpapersViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B824251175E100457FD6 /* WallpapersViewControllerDelegate.swift */; };
 		9609B828251180AF00457FD6 /* WallpapersCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B827251180AF00457FD6 /* WallpapersCollectionHeader.swift */; };
@@ -231,6 +234,9 @@
 		9604B06A24DB471F00649DA7 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		9604B06C24DB490300649DA7 /* GLAuthorizationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLAuthorizationStatus.swift; sourceTree = "<group>"; };
 		9604B06E24DB497F00649DA7 /* GeoLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationManagerDelegate.swift; sourceTree = "<group>"; };
+		9609101225543D6A00E781A1 /* FPPreloaderAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPreloaderAnimationController.swift; sourceTree = "<group>"; };
+		9609101625543D9200E781A1 /* FPPreloaderAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPreloaderAnimationView.swift; sourceTree = "<group>"; };
+		9609101B2554684A00E781A1 /* CreateTripResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResult.swift; sourceTree = "<group>"; };
 		9609B8222511735A00457FD6 /* WallpaperCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCollectionElement.swift; sourceTree = "<group>"; };
 		9609B824251175E100457FD6 /* WallpapersViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewControllerDelegate.swift; sourceTree = "<group>"; };
 		9609B827251180AF00457FD6 /* WallpapersCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCollectionHeader.swift; sourceTree = "<group>"; };
@@ -490,6 +496,31 @@
 				96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */,
 			);
 			path = GeoLocation;
+			sourceTree = "<group>";
+		};
+		9609100B25543B5E00E781A1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9609101125543D5A00E781A1 /* PreloaderAnimation */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9609101125543D5A00E781A1 /* PreloaderAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				9609101225543D6A00E781A1 /* FPPreloaderAnimationController.swift */,
+				9609101625543D9200E781A1 /* FPPreloaderAnimationView.swift */,
+			);
+			path = PreloaderAnimation;
+			sourceTree = "<group>";
+		};
+		9609101A2554683200E781A1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9609101B2554684A00E781A1 /* CreateTripResult.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9609B8262511809E00457FD6 /* Header */ = {
@@ -1085,6 +1116,8 @@
 		966F472624F695E30025FD5F /* FindPlace */ = {
 			isa = PBXGroup;
 			children = (
+				9609101A2554683200E781A1 /* Models */,
+				9609100B25543B5E00E781A1 /* Controllers */,
 				963A441C24FB894D0018A8CA /* Views */,
 				966F479024F7A3740025FD5F /* FindPlaceViewController.swift */,
 				966F479D24F7B14F0025FD5F /* FindPlaceViewModel.swift */,
@@ -1666,6 +1699,7 @@
 				966F478524F6DCBE0025FD5F /* PaygateOptionView.swift in Sources */,
 				966F47A924F7BDFE0025FD5F /* OnboardingSlider.swift in Sources */,
 				96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */,
+				9609101725543D9200E781A1 /* FPPreloaderAnimationView.swift in Sources */,
 				96F2F86B251149B800F7A58B /* Wallpapers.swift in Sources */,
 				96EB732424DD3139008A32BC /* SplashView.swift in Sources */,
 				96316419251A56F0007791D3 /* LearnArticlesViewModel.swift in Sources */,
@@ -1759,6 +1793,7 @@
 				963A443524FD57510018A8CA /* FPDeniedGeoPermissionCell.swift in Sources */,
 				967446A825399A0C00E32205 /* FPWhatYourSearchIntentCell.swift in Sources */,
 				960F031A24DAC686008267FA /* UIDeviceExtension.swift in Sources */,
+				9609101325543D6A00E781A1 /* FPPreloaderAnimationController.swift in Sources */,
 				963A441924FA4F240018A8CA /* TripManager.swift in Sources */,
 				963A441024F9A5B30018A8CA /* TripFeedbackViewController.swift in Sources */,
 				9609B83D251559E800457FD6 /* AppRegisterManager.swift in Sources */,
@@ -1781,6 +1816,7 @@
 				966F472024F68A540025FD5F /* SessionManager.swift in Sources */,
 				96F2F87225115BAD00F7A58B /* WallpapersManagerDelegate.swift in Sources */,
 				9609B828251180AF00457FD6 /* WallpapersCollectionHeader.swift in Sources */,
+				9609101C2554684A00E781A1 /* CreateTripResult.swift in Sources */,
 				9609B85A2517427D00457FD6 /* LearnManagerCore.swift in Sources */,
 				960F02FA24DAC5E3008267FA /* PaymentError.swift in Sources */,
 				963A442F24FCF3770018A8CA /* FindPlaceTableSection.swift in Sources */,

@@ -19,6 +19,7 @@ final class FindPlaceViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     private var paygateWasOpened: Bool = false
+    private var preloaderAnimationController: FPPreloaderAnimationController?
     
     override func loadView() {
         super.loadView()
@@ -56,20 +57,6 @@ final class FindPlaceViewController: UIViewController {
             .currentCoordinate()
             .drive(onNext: { [weak self] coordinate in
                 self?.findPlaceView.mapView.moveCamera(to: coordinate)
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel
-            .needPaygate()
-            .drive(onNext: { [weak self] in
-                self?.showPaygate()
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel
-            .tripCreated()
-            .drive(onNext: { [weak self] in
-                self?.delegate?.findPlaceViewControllerTripCreated()
             })
             .disposed(by: disposeBag)
     }
@@ -121,10 +108,10 @@ extension FindPlaceViewController: FindPlaceTableDelegate {
     func findPlaceTableDidStart() {
         if isNeedOpenPaygate && !paygateWasOpened {
             paygateWasOpened = true
-            
+
             showPaygate()
         } else {
-            viewModel.createTrip.accept(Void())
+            createTrip()
         }
     }
     
@@ -139,7 +126,7 @@ extension FindPlaceViewController: FindPlaceTableDelegate {
 extension FindPlaceViewController: PaygateViewControllerDelegate {
     func paygateDidClosed(with result: PaygateViewControllerResult) {
         if paygateWasOpened {
-            viewModel.createTrip.accept(Void())
+            createTrip()
         }
     }
 }
@@ -152,6 +139,27 @@ private extension FindPlaceViewController {
         }
         
         return !config.activeSubscription && config.generateSpotPaygate
+    }
+    
+    func createTrip() {
+        preloaderAnimationController = FPPreloaderAnimationController.make(tripCreatedTrigger: viewModel.tripCreated(), complete: handle(result:))
+        present(preloaderAnimationController!, animated: false)
+        
+        viewModel.createTrip.accept(Void())
+    }
+    
+    func handle(result: CreateTripResult) {
+        preloaderAnimationController?.dismiss(animated: true)
+        preloaderAnimationController = nil
+        
+        switch result {
+        case .success:
+            delegate?.findPlaceViewControllerTripCreated()
+        case .needPayment:
+            showPaygate()
+        case .failure:
+            Toast.notify(with: "FindPlace.CreateTrip.Failure".localized, style: .danger)
+        }
     }
     
     func showPaygate() {

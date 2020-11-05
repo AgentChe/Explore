@@ -99,8 +99,6 @@
 
 "FindPlace.FPWhatItIsCell.Message" = "При поиске случайной точки мы полагаемся на нашу базу данных, которая также включает опыт других пользователей поблизости. Однако при выборе из нескольких вариантов мы предпочитаем полагаться на так называемое случайное начальное число. Для этого мы  используем различные вещи: идентификатор вашего устройства, полностью случайное число третьей стороны, которая ничего о вас не знает, текущую погоду или время.";
 
-"FindPlace.HasCreatingTrip" = "Обработка местоположения ...";
-
 "FindPlace.CreateTrip.Failure" = "Не удалось создать случайную точку:";
 "FindPlace.FPWhatYourSearchIntentCell.Title" = "What's your search intent?";
 "FindPlace.FPWhatYourSearchIntentCell.Void" = "void";
@@ -111,6 +109,10 @@
 "FindPlace.FPWhatYourSearchIntentCell.SomethingElse" = "something else";
 "FindPlace.FPWhatYourSearchIntentCell.WhatThis" = "what's this?";
 "FindPlace.FPWhatItIsCell.Message2" = "Figuring out a good intention can be hard, but it's essential to completing a fulfilling Randonautica quest. If you're looking for new ideas to spice up your next adventure, plenty of Randonautica adventurers on Reddit have been sharing how they've been using the app, and you can look there for inspiration.";
+"FindPlace.FPPreloaderAnimation.Title" = "Randonautica";
+"FindPlace.FPPreloaderAnimation.Bottom" = "Random points are generated...";
+"FindPlace.FPPreloaderAnimation.Second" = "second";
+"FindPlace.FPPreloaderAnimation.Seconds" = "seconds";
 
 // MARK: Direct
 "Direct.Explore.Title" = "Исследовать";
