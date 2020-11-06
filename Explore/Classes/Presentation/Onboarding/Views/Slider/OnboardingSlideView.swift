@@ -40,22 +40,22 @@ final class OnboardingSlideView: UIView {
 private extension OnboardingSlideView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            imageView.widthAnchor.constraint(equalToConstant: 340.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 370.scale),
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 119.scale : 50.scale),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40.scale),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40.scale),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 467.scale : 350.scale)
+            titleLabel.bottomAnchor.constraint(equalTo: subTitleLabel.topAnchor, constant: -14.scale)
         ])
         
         NSLayoutConstraint.activate([
             subTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40.scale),
             subTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40.scale),
-            subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24.scale)
+            subTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -135.scale : -80.scale)
         ])
     }
 }

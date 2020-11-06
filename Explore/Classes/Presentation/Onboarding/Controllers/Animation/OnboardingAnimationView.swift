@@ -1,15 +1,14 @@
 //
-//  FPPreloaderAnimationView.swift
+//  OnboardingAnimationView.swift
 //  Explore
 //
-//  Created by Andrey Chernyshev on 05.11.2020.
+//  Created by Andrey Chernyshev on 06.11.2020.
 //  Copyright © 2020 Andrey Chernyshev. All rights reserved.
 //
 
 import UIKit
 
-final class FPPreloaderAnimationView: UIView {
-    lazy var titleLabel = makeTitleLabel()
+final class OnboardingAnimationView: UIView {
     lazy var imageView = makeImageView()
     lazy var bottomLabel = makeBottomLabel()
     
@@ -26,26 +25,20 @@ final class FPPreloaderAnimationView: UIView {
 }
 
 // MARK: Private
-private extension FPPreloaderAnimationView {
+private extension OnboardingAnimationView {
     func configure() {
-        backgroundColor = UIColor.black
+        backgroundColor = UIColor(red: 53 / 255, green: 53 / 255, blue: 53 / 255, alpha: 1)
     }
 }
 
 // MARK: Make constraints
-private extension FPPreloaderAnimationView {
+private extension OnboardingAnimationView {
     func makeConstraints() {
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 70.scale)
-        ])
-        
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 285.scale),
             imageView.heightAnchor.constraint(equalToConstant: 285.scale),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 228.scale : 130.scale)
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 228.scale : 100.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -57,26 +50,10 @@ private extension FPPreloaderAnimationView {
 }
 
 // MARK: Lazy initialization
-private extension FPPreloaderAnimationView {
-    func makeTitleLabel() -> UILabel {
-        let attrs = TextAttributes()
-            .textColor(UIColor.white)
-            .font(Font.Poppins.regular(size: 18.scale))
-            .lineHeight(27.scale)
-            .letterSpacing(0.5.scale)
-            .textAlignment(.center)
-        
-        let view = UILabel()
-        view.numberOfLines = 0
-        view.attributedText = "FindPlace.FPPreloaderAnimation.Title".localized.attributed(with: attrs)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
+private extension OnboardingAnimationView {
     func makeImageView() -> UIImageView {
         let view = UIImageView()
-        view.image = UIImage(named: "FindPlace.Preloader.Image")
+        view.image = UIImage(named: "Onboarding.Animate")
         view.contentMode = .scaleAspectFit
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -86,15 +63,15 @@ private extension FPPreloaderAnimationView {
     
     func makeBottomLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(UIColor.white)
-            .font(Font.Poppins.regular(size: 22.scale))
+            .textColor(UIColor.white.withAlphaComponent(0.5))
+            .font(Font.SFProText.regular(size: 22.scale))
             .lineHeight(28.scale)
             .letterSpacing(0.6.scale)
             .textAlignment(.center)
         
         let view = UILabel()
         view.numberOfLines = 0
-        view.attributedText = "Onboarding.PreloaderTitle".localized.attributed(with: attrs)
+        view.attributedText = "FindPlace.FPPreloaderAnimation.Bottom".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

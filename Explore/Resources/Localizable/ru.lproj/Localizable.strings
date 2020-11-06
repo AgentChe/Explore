@@ -31,11 +31,19 @@
 "Paygate.Purchase.Failed" = "Не удалось совершить покупку";
 
 // MARK: Onboarding
-"Onboarding.Slide1.Title" = "Добро пожаловать в Randonautica";
-
-"Onboarding.Slide2.Title" = "Вперед к приключениям!";
-
-"Onboarding.Slide2.SubTitle" = "Этим приложением используются тысячи пользователей по всему миру, чтобы исследовать неожиданные места. Следите за своей собственной историей случайных открытий!";
+"Onboarding.Slide1.Title" = "Welcome to #1\nRandonauting\nExperience";
+"Onboarding.Slide2.Title" = "Explore the unknown";
+"Onboarding.Slide2.SubTitle" = "Break the daily mundane routine\nand take a journey of randomness";
+"Onboarding.Slide3.Title" = "Quantuly random";
+"Onboarding.Slide3.SubTitle" = "Different random algorithms for\neach of your intent";
+"Onboarding.Slide4.Title" = "Track and share findings";
+"Onboarding.Slide4.SubTitle" = "Explore what others have found,\nshare yours";
+"Onboarding.Slide5.Title" = "State-of-art wallpapers";
+"Onboarding.Slide5.SubTitle" = "Style your phone with gargeous\nshots of abandoneed places";
+"Onboarding.Slide6.Title" = "Tips from the leaders";
+"Onboarding.Slide6.SubTitle" = "Enjoy the blog led by world's top\nrandonauts";
+"Onboarding.EnjoyNow" = "ENJOY NOW";
+"Onboarding.PreloaderTitle" = "The unknown is almost here...";
 
 // MARK: Map
 "Map.Title" = "Randonautica";

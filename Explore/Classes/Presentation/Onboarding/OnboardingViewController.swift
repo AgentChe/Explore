@@ -17,9 +17,12 @@ final class OnboardingViewController: UIViewController {
     }
     
     private let slides: [OnboardingSlide] = [
-        .init(imageName: "Onboarding.Icon.Slide1", title: "Onboarding.Slide1.Title".localized, subTitle: nil),
-        .init(imageName: "Onboarding.Icon.Slide2", title: "Onboarding.Slide2.Title".localized, subTitle: "Onboarding.Slide2.SubTitle".localized),
-        .init(imageName: nil, title: nil, subTitle: nil)
+        .init(imageName: "Onboarding.Slide.1", title: "Onboarding.Slide1.Title".localized, subTitle: nil),
+        .init(imageName: "Onboarding.Slide.2", title: "Onboarding.Slide2.Title".localized, subTitle: "Onboarding.Slide2.SubTitle".localized),
+        .init(imageName: "Onboarding.Slide.3", title: "Onboarding.Slide3.Title".localized, subTitle: "Onboarding.Slide3.SubTitle".localized),
+        .init(imageName: "Onboarding.Slide.4", title: "Onboarding.Slide4.Title".localized, subTitle: "Onboarding.Slide4.SubTitle".localized),
+        .init(imageName: "Onboarding.Slide.5", title: "Onboarding.Slide5.Title".localized, subTitle: "Onboarding.Slide5.SubTitle".localized),
+        .init(imageName: "Onboarding.Slide.6", title: "Onboarding.Slide6.Title".localized, subTitle: "Onboarding.Slide6.SubTitle".localized)
     ]
     
     private let viewModel = OnboardingViewModel()
@@ -37,6 +40,13 @@ final class OnboardingViewController: UIViewController {
         
         markAsViewed()
         setupSlider()
+        
+        onboardingView
+            .enjoyNowButton.rx.tap
+            .subscribe(onNext: { [weak self] void in
+                self?.startAnimation()
+            })
+            .disposed(by: disposeBag)
         
         viewModel
             .step
@@ -71,9 +81,9 @@ extension OnboardingViewController {
 // MARK: OnboardingSliderDelegate
 extension OnboardingViewController: OnboardingSliderDelegate {
     func onboardingSlider(changed slideIndex: Int) {
-        if slideIndex == slides.count - 1 {
-            viewModel.end.accept(Void())
-        }
+        onboardingView.indicatorsView.isHidden = slideIndex == slides.count - 1
+        onboardingView.enjoyNowButton.isHidden = slideIndex != slides.count - 1
+        onboardingView.indicatorsView.index = slideIndex
     }
 }
 
@@ -92,6 +102,15 @@ extension OnboardingViewController {
     
     func setupSlider() {
         onboardingView.slider.setup(models: slides)
+        onboardingView.indicatorsView.count = slides.count
+        onboardingView.indicatorsView.index = 0
         onboardingView.slider.delegate = self
+    }
+    
+    func startAnimation() {
+        let vc = OnboardingAnimationController.make { [weak self] in
+            self?.viewModel.end.accept(Void())
+        }
+        present(vc, animated: false)
     }
 }
