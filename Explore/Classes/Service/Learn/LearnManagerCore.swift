@@ -60,7 +60,8 @@ private extension LearnManagerCore {
             return .error(SignError.tokenNotFound)
         }
         
-        return RestAPITransport()
+        return SDKStorage.shared
+            .restApiTransport
             .callServerApi(requestBody: GetLearnCategoriesRequest(userToken: userToken))
             .map { try ErrorChecker.throwErrorIfHas(from: $0) }
             .map { GetLearnCategoriesResponseMapper.map(response: $0) }
@@ -85,7 +86,8 @@ private extension LearnManagerCore {
             return .error(SignError.tokenNotFound)
         }
         
-        return RestAPITransport()
+        return SDKStorage.shared
+            .restApiTransport
             .callServerApi(requestBody: GetLearnContentRequest(userToken: userToken,
                                                                articleId: articleId))
             .map { try ErrorChecker.throwErrorIfHas(from: $0) }

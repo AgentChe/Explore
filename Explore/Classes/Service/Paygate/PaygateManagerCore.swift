@@ -11,28 +11,31 @@ import RxSwift
 final class PaygateManagerCore: PaygateManager {}
 
 // MARK: Retrieve
-
 extension PaygateManagerCore {
     func retrievePaygate() -> Single<PaygateMapper.PaygateResponse?> {
-        RestAPITransport()
+        SDKStorage.shared
+            .restApiTransport
             .callServerApi(requestBody: GetPaygateRequest(userToken: SessionManager.shared.getSession()?.userToken,
                                                           locale: UIDevice.deviceLanguageCode ?? "en",
                                                           version: UIDevice.appVersion ?? "1",
-                                                          appKey: IDFAService.shared.getAppKey()))
+                                                          appKey: SDKStorage.shared.applicationAnonymousID))
             .map { PaygateMapper.parse(response: $0, productsPrices: nil) }
     }
 }
 
 // MARK: Prepare prices
-
 extension PaygateManagerCore {
     func prepareProductsPrices(for paygate: PaygateMapper.PaygateResponse) -> Single<PaygateMapper.PaygateResponse?> {
         guard !paygate.productsIds.isEmpty else {
             return .deferred { .just(paygate) }
         }
-
-        return PurchaseManager
-            .productsPrices(ids: paygate.productsIds)
-            .map { PaygateMapper.parse(response: paygate.json, productsPrices: $0.retrievedPrices) }
+        
+        return SDKStorage.shared
+            .iapManager
+            .obtainProducts(ids: paygate.productsIds)
+            .map { products -> [ProductPrice] in
+                products.map { ProductPrice(product: $0.product) }
+            }
+            .map { PaygateMapper.parse(response: paygate.json, productsPrices: $0) }
     }
 }

@@ -74,14 +74,16 @@ extension PaygateConfigurationManagerCore {
 // MARK: Private
 private extension PaygateConfigurationManagerCore {
     func hasActiveSubscription() -> Single<Bool> {
-        PurchaseManager()
-            .paymentValidate()
+        SDKStorage.shared
+            .purchaseManager
+            .validateReceipt()
             .map { $0?.activeSubscription ?? false }
             .catchErrorJustReturn(false)
     }
     
     func obtainConfiguration() -> Single<PaygateConfiguration?> {
-        RestAPITransport()
+        SDKStorage.shared
+            .restApiTransport
             .callServerApi(requestBody: GetPaygateConfigurationRequest())
             .map { GetPaygateConfigurationResponseMapper.from(response: $0) }
     }

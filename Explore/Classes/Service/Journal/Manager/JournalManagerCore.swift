@@ -44,7 +44,8 @@ extension JournalManagerCore {
         
         return Single
             .zip(
-                RestAPITransport()
+                SDKStorage.shared
+                    .restApiTransport
                     .callServerApi(requestBody: getArticleDetailsRequest),
                 
                 tagsSuquence
@@ -76,7 +77,8 @@ extension JournalManagerCore {
         
         return Single
             .zip(
-                RestAPITransport()
+                SDKStorage.shared
+                    .restApiTransport
                     .callServerApi(requestBody: request),
                 
                 getCachedList(key: Constants.cachedTagsKey)
@@ -100,7 +102,8 @@ extension JournalManagerCore {
         
         let request = DeleteJournalArticleRequest(userToken: userToken, articleId: articleId)
         
-        return RestAPITransport()
+        return SDKStorage.shared
+            .restApiTransport
             .callServerApi(requestBody: request)
             .do(onSuccess: { [weak self] any in
                 self?.removeFromArticlesCache(articleId: articleId)
@@ -172,7 +175,8 @@ private extension JournalManagerCore {
         
         return Single
             .zip(
-                RestAPITransport()
+                SDKStorage.shared
+                    .restApiTransport
                     .callServerApi(requestBody: getArticlesRequest),
                 
                 loadTags()
@@ -208,7 +212,8 @@ private extension JournalManagerCore {
         
         let getTagsRequest = GetJournalTagsRequest(userToken: userToken)
         
-        return RestAPITransport()
+        return SDKStorage.shared
+            .restApiTransport
             .callServerApi(requestBody: getTagsRequest)
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .map { GetJournalTagsResponseMapper.map(from: $0) }

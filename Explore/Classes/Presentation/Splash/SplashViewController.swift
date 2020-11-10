@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 final class SplashViewController: UIViewController {
     var splashView = SplashView()
@@ -15,6 +16,18 @@ final class SplashViewController: UIViewController {
     private let viewModel = SplashViewModel()
     
     private let disposeBag = DisposeBag()
+    
+    private let generateStep: Signal<Void>
+    
+    private init(generateStep: Signal<Void>) {
+        self.generateStep = generateStep
+        
+        super.init(nibName: nil, bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         super.loadView()
@@ -25,10 +38,12 @@ final class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel
-            .step
-            .delaySubscription(RxTimeInterval.seconds(1), scheduler: ConcurrentMainScheduler.instance)
-            .subscribe(onSuccess: { step in
+        generateStep
+            .flatMapLatest { [viewModel] in
+                viewModel.step.asSignal(onErrorSignalWith: .empty())
+            }
+            .delay(RxTimeInterval.seconds(1))
+            .emit(onNext: { step in
                 switch step {
                 case .onboarding:
                     UIApplication.shared.keyWindow?.rootViewController = OnboardingViewController.make()
@@ -41,9 +56,8 @@ final class SplashViewController: UIViewController {
 }
 
 // MARK: Make
-
 extension SplashViewController {
-    static func make() -> SplashViewController {
-        SplashViewController()
+    static func make(generateStep: Signal<Void>) -> SplashViewController {
+        SplashViewController(generateStep: generateStep)
     }
 }

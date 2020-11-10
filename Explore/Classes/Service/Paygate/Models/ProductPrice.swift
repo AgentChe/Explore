@@ -2,7 +2,7 @@
 //  ProductPrice.swift
 //  Explore
 //
-//  Created by Andrey Chernyshev on 26.08.2020.
+//  Created by Andrey Chernyshev on 10.11.2020.
 //  Copyright © 2020 Andrey Chernyshev. All rights reserved.
 //
 

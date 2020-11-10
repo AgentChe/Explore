@@ -112,7 +112,8 @@ private extension WallpapersManagerCore {
             return .deferred { .error(SignError.tokenNotFound) }
         }
         
-        return RestAPITransport()
+        return SDKStorage.shared
+            .restApiTransport
             .callServerApi(requestBody: GetWallpapersRequest(userToken: userToken))
             .map { try ErrorChecker.throwErrorIfHas(from: $0) }
             .map { WallpapersResponseMapper.map(response: $0) }

@@ -8,42 +8,40 @@
 
 import UIKit
 import GoogleMaps
-import FBSDKCoreKit
+import RxCocoa
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
+    let sdkProvider = SDKProvider()
+    
+    private let generateStepInSplash = PublishRelay<Void>()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey(GlobalDefinitions.googleApiKey)
-        PurchaseManager.register()
-        FacebookAnalytics.shared.configure()
-        IDFAService.shared.initialize()
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        AppRegisterManager.shared.configure()
-        
-        AmplitudeManager.shared.configure()
-        
-        PaygateConfigurationManagerCore().clearCache()
-        
-        UniversalLinksService.shared.register(didFinishLaunchingWithOptions: launchOptions)
-        
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = SplashViewController.make()
+        let vc = SplashViewController.make(generateStep: generateStepInSplash.asSignal())
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
+        
+        startSDKProvider(on: vc.view)
+        
+        sdkProvider.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        GMSServices.provideAPIKey(GlobalDefinitions.googleApiKey)
+        PaygateConfigurationManagerCore().clearCache()
         
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        ApplicationDelegate.shared.application(app, open: url, options: options)
-        UniversalLinksService.shared.register(with: url, options: options)
+        sdkProvider.application(app, open: url, options: options)
         
         return true
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        UniversalLinksService.shared.register(with: userActivity)
+        sdkProvider.application(application, continue: userActivity, restorationHandler: restorationHandler)
         
         return true
     }
@@ -54,5 +52,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillResignActive(_ application: UIApplication) {
         AppStateManager.shared.applicationWillResign()
+    }
+}
+
+// MARK: Private
+private extension AppDelegate {
+    func startSDKProvider(on view: UIView) {
+        let sdkSettings = SDKSettings(backendBaseUrl: GlobalDefinitions.sdkDomainUrl,
+                                      backendApiKey: GlobalDefinitions.sdkApiKey,
+                                      amplitudeApiKey: GlobalDefinitions.amplitudeAPIKey,
+                                      facebookActive: true,
+                                      branchActive: false,
+                                      firebaseActive: false,
+                                      applicationTag: GlobalDefinitions.applicationTag,
+                                      userToken: SessionManager.shared.getSession()?.userToken,
+                                      userId: SessionManager.shared.getSession()?.userId,
+                                      view: view,
+                                      shouldAddStorePayment: false,
+                                      isTest: false)
+        
+        sdkProvider.initialize(settings: sdkSettings) { [weak self] in
+            self?.generateStepInSplash.accept(Void())
+        }
     }
 }

@@ -138,13 +138,21 @@ private extension DirectViewController {
     func logEvent(at element: DirectCollectionElement) {
         switch element {
         case .explore:
-            AmplitudeManager.shared.logEvent(name: "Index Tap", parameters: ["what": "explore"])
+            SDKStorage.shared
+                .amplitudeManager
+                .logEvent(name: "Index Tap", parameters: ["what": "explore"])
         case .learn:
-            AmplitudeManager.shared.logEvent(name: "Index Tap", parameters: ["what": "learn"])
+            SDKStorage.shared
+                .amplitudeManager
+                .logEvent(name: "Index Tap", parameters: ["what": "learn"])
         case .wallpapers:
-            AmplitudeManager.shared.logEvent(name: "Index Tap", parameters: ["what": "see"])
+            SDKStorage.shared
+                .amplitudeManager
+                .logEvent(name: "Index Tap", parameters: ["what": "see"])
         case .join:
-            AmplitudeManager.shared.logEvent(name: "Index Tap", parameters: ["what": "join"])
+            SDKStorage.shared
+                .amplitudeManager
+                .logEvent(name: "Index Tap", parameters: ["what": "join"])
         default:
             break
         }

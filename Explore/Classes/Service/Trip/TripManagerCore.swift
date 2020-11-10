@@ -105,7 +105,8 @@ extension TripManagerCore {
             return .deferred { .error(SignError.tokenNotFound) }
         }
         
-        return RestAPITransport()
+        return SDKStorage.shared
+            .restApiTransport
             .callServerApi(requestBody: CreateTripRequest(userToken: userToken,
                                                           coordinate: coordinate))
             .map { try ErrorChecker.throwErrorIfHas(from: $0) } 
@@ -127,7 +128,8 @@ extension TripManagerCore {
             return .deferred { .error(SignError.tokenNotFound) }
         }
         
-        return RestAPITransport()
+        return SDKStorage.shared
+            .restApiTransport
             .callServerApi(requestBody: TripFeedbackRequest(userToken: userToken,
                                                             tripId: tripId,
                                                             feedback: text))

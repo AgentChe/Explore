@@ -21,4 +21,7 @@ struct GlobalDefinitions {
     static let amplitudeAPIKey = "b503251969f4b1d7901d2f7d1388d476"
     
     static let applicationTag = "EXPLORE"
+    
+    static let sdkDomainUrl = "https://analytics.korrekted.com"
+    static let sdkApiKey = "wCjZrrUAEMWJ5bDk"
 }

@@ -21,11 +21,10 @@ final class PaygateViewModel {
     let retrieveCompleted = BehaviorRelay<Bool>(value: false)
     
     private let paygateManager = PaygateManagerCore()
-    private let purchaseManager = PurchaseManager()
+    private let purchaseInteractor = SDKStorage.shared.purchaseInteractor
 }
 
 // MARK: Get paygate content
-
 extension PaygateViewModel {
     func retrieve() -> Driver<(Paygate?, Bool)> {
         let paygate = paygateManager
@@ -53,16 +52,20 @@ extension PaygateViewModel {
 }
 
 // MARK: Make purchase
-
 private extension PaygateViewModel {
     func createBuyed() -> Signal<Bool> {
         let purchase = buy
-            .flatMapLatest { [purchaseManager, buyProcessing] productId -> Observable<Bool> in
-                purchaseManager
-                    .buySubscription(productId: productId)
-                    .flatMap { purchaseManager.paymentValidate() }
-                    .map { $0 != nil }
-                    .do(onSuccess: { _ in FacebookAnalytics.shared.logPurchase(amount: 0, currency: "USD") })
+            .flatMapLatest { [purchaseInteractor, buyProcessing] productId -> Observable<Bool> in
+                purchaseInteractor
+                    .makeActiveSubscriptionByBuy(productId: productId)
+                    .map { result -> Bool in
+                        switch result {
+                        case .completed(let response):
+                            return response != nil
+                        case .cancelled:
+                            return false
+                        }
+                    }
                     .trackActivity(buyProcessing)
                     .catchErrorJustReturn(false)
             }
@@ -73,11 +76,17 @@ private extension PaygateViewModel {
     
     func createRestored() -> Signal<Bool> {
         let purchase = restore
-            .flatMapLatest { [purchaseManager, restoreProcessing] productId -> Observable<Bool> in
-                purchaseManager
-                    .restoreSubscription(productId: productId)
-                    .flatMap { purchaseManager.paymentValidate() }
-                    .map { $0 != nil }
+            .flatMapLatest { [purchaseInteractor, restoreProcessing] productId -> Observable<Bool> in
+                purchaseInteractor
+                    .makeActiveSubscriptionByRestore()
+                    .map { result -> Bool in
+                        switch result {
+                        case .completed(let response):
+                            return response != nil
+                        case .cancelled:
+                            return false
+                        }
+                    }
                     .trackActivity(restoreProcessing)
                     .catchErrorJustReturn(false)
             }
