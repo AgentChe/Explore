@@ -1,0 +1,33 @@
+{
+    "_code": 200,
+    "_msg": "OK",
+    "_need_payment": false,
+    "_data": {
+        "tags": [
+            {
+                "id": 0,
+                "name": "cozy"
+            },
+            
+            {
+                "id": 1,
+                "name": "beatiful"
+            },
+            
+            {
+                "id": 2,
+                "name": "paranormal"
+            },
+            
+            {
+                "id": 3,
+                "name": "trash"
+            },
+            
+            {
+                "id": 4,
+                "name": "loud"
+            },
+        ]
+    }
+}
