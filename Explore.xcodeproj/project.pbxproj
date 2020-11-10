@@ -482,6 +482,7 @@
 		967446B82539AF1200E32205 /* Randonauting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Randonauting.entitlements; sourceTree = "<group>"; };
 		9687B0172524B0A400B81DC8 /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
 		9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManagerDelegate.swift; sourceTree = "<group>"; };
+		96B43EDA255B13E400537439 /* Explore-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Explore-Bridging-Header.h"; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResponseMapper.swift; sourceTree = "<group>"; };
 		96B74C31250ED76500413D81 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
@@ -865,6 +866,7 @@
 				961A08C024D99D7B001F23E6 /* Assets.xcassets */,
 				961A08C524D99D7B001F23E6 /* Info.plist */,
 				9604B05D24DB44A100649DA7 /* LaunchScreen.storyboard */,
+				96B43EDA255B13E400537439 /* Explore-Bridging-Header.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -2257,6 +2259,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore Development";
+				SWIFT_OBJC_BRIDGING_HEADER = "Explore/Resources/Explore-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2282,6 +2285,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore AppStore";
+				SWIFT_OBJC_BRIDGING_HEADER = "Explore/Resources/Explore-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
