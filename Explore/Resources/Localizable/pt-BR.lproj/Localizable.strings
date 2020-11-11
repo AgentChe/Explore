@@ -96,6 +96,8 @@
 "Direct.And" = " e ";
 "Direct.Join.Title" = "Join";
 "Direct.Join.SubTitle" = "An ever-growing community of enthusiastic randonauts";
+"Direct.Journal.Title" = "Remember";
+"Direct.Journal.SubTitle" = "View your trips and share with your friends";
 
 // MARK: Wallpapers
 "Wallpapers.Title" = "Papéis de parede";

@@ -115,6 +115,10 @@ private extension DirectViewController {
             wallpapersVC.delegate = self
             
             navigationController?.pushViewController(wallpapersVC, animated: true)
+        case .journal:
+            let journalVC = JournalViewController.make()
+            
+            navigationController?.pushViewController(journalVC, animated: true)
         case .join:
             join()
         case .paygate:

@@ -47,7 +47,7 @@ extension DirectCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch elements[indexPath.row] {
-        case .explore(let model), .learn(let model), .wallpapers(let model), .join(let model):
+        case .explore(let model), .learn(let model), .wallpapers(let model), .join(let model), .journal(let model):
             let cell = dequeueReusableCell(withReuseIdentifier: String(describing: DirectCollectionCell.self), for: indexPath) as! DirectCollectionCell
             cell.setup(iconName: model.iconName,
                        title: model.title,
@@ -66,10 +66,8 @@ extension DirectCollectionView: UICollectionViewDelegateFlowLayout {
         switch elements[indexPath.row] {
         case .explore:
             return CGSize(width: 335.scale, height: 152.scale)
-        case .learn, .wallpapers:
+        case .learn, .wallpapers, .join, .journal:
             return CGSize(width: 161.scale, height: 152.scale)
-        case .join:
-            return CGSize(width: 335.scale, height: 150.scale)
         case .termsOfService:
             return CGSize(width: 335.scale, height: 36.scale)
         }

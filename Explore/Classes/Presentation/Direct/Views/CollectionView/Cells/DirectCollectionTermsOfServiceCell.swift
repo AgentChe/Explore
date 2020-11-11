@@ -64,7 +64,7 @@ private extension DirectCollectionTermsOfServiceCell {
     func makeLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.white)
-            .font(Font.SFProText.regular(size: 15.scale))
+            .font(Font.Poppins.regular(size: 15.scale))
             .lineHeight(17.scale)
             .textAlignment(.center)
         

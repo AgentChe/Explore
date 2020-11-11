@@ -12,7 +12,6 @@ struct Trip {
 }
 
 // MARK: Make
-
 extension Trip: Model {
     private enum Keys: String, CodingKey {
         case id

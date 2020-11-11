@@ -207,6 +207,10 @@
 		9687B0182524B0A400B81DC8 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687B0172524B0A400B81DC8 /* AppStateManager.swift */; };
 		9687B01C2524B0D700B81DC8 /* AppStateManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */; };
 		96B43EFD255B1A2900537439 /* ProductPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43EFC255B1A2900537439 /* ProductPrice.swift */; };
+		96B43F02255B41DE00537439 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F01255B41DE00537439 /* JournalViewController.swift */; };
+		96B43F06255B426700537439 /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F05255B426700537439 /* JournalViewModel.swift */; };
+		96B43F09255B428300537439 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F08255B428300537439 /* JournalView.swift */; };
+		96B43F0C255B493300537439 /* JournalViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F0B255B493300537439 /* JournalViewControllerDelegate.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
 		96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */; };
 		96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C31250ED76500413D81 /* DirectViewController.swift */; };
@@ -453,6 +457,10 @@
 		9687B01B2524B0D700B81DC8 /* AppStateManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManagerDelegate.swift; sourceTree = "<group>"; };
 		96B43EDA255B13E400537439 /* Explore-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Explore-Bridging-Header.h"; sourceTree = "<group>"; };
 		96B43EFC255B1A2900537439 /* ProductPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPrice.swift; sourceTree = "<group>"; };
+		96B43F01255B41DE00537439 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		96B43F05255B426700537439 /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
+		96B43F08255B428300537439 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		96B43F0B255B493300537439 /* JournalViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewControllerDelegate.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResponseMapper.swift; sourceTree = "<group>"; };
 		96B74C31250ED76500413D81 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
@@ -824,6 +832,7 @@
 		960F029924DAC5C9008267FA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				96B43F00255B41CD00537439 /* Journal */,
 				9631642A251A911D007791D3 /* LearnContent */,
 				96316415251A5686007791D3 /* LearnArticles */,
 				9609B8292511890F00457FD6 /* Wallpaper */,
@@ -1417,6 +1426,17 @@
 			path = AppState;
 			sourceTree = "<group>";
 		};
+		96B43F00255B41CD00537439 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				96B43F01255B41DE00537439 /* JournalViewController.swift */,
+				96B43F05255B426700537439 /* JournalViewModel.swift */,
+				96B43F08255B428300537439 /* JournalView.swift */,
+				96B43F0B255B493300537439 /* JournalViewControllerDelegate.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
 		96B74C2D250EC68000413D81 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -1822,6 +1842,7 @@
 				9609B847251734BE00457FD6 /* LearnManager.swift in Sources */,
 				966F478424F6DCBE0025FD5F /* PaygateMainView.swift in Sources */,
 				9631642E251A913D007791D3 /* LearnContentViewModel.swift in Sources */,
+				96B43F02255B41DE00537439 /* JournalViewController.swift in Sources */,
 				9631644F251D46B1007791D3 /* UITapGestureExtension.swift in Sources */,
 				96224C4925309BF0002C1988 /* SessionManagerDelegate.swift in Sources */,
 				961A08B824D99D79001F23E6 /* AppDelegate.swift in Sources */,
@@ -1869,6 +1890,7 @@
 				966F471A24F676720025FD5F /* TripFeedbackRequest.swift in Sources */,
 				9609B85225173C2F00457FD6 /* GetLearnCategoriesRequest.swift in Sources */,
 				966F478624F6DCBE0025FD5F /* PaygateView.swift in Sources */,
+				96B43F09255B428300537439 /* JournalView.swift in Sources */,
 				966F476724F6A94B0025FD5F /* GetPaygateRequest.swift in Sources */,
 				9609107D255AF76E00E781A1 /* BridgeArticleDetails.swift in Sources */,
 				96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */,
@@ -1918,6 +1940,7 @@
 				966C847A2519540C0094784C /* LearnCategoriesView.swift in Sources */,
 				9631640A25195C91007791D3 /* LearnCategoriesCollectionElement.swift in Sources */,
 				96744686253884C200E32205 /* PaygateConfiguration.swift in Sources */,
+				96B43F0C255B493300537439 /* JournalViewControllerDelegate.swift in Sources */,
 				966F47AB24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift in Sources */,
 				96F2F8692511459E00F7A58B /* Wallpaper.swift in Sources */,
 				96316425251A5969007791D3 /* LearnArticlesCollectionArticleCell.swift in Sources */,
@@ -1942,6 +1965,7 @@
 				9609103E2555C70500E781A1 /* GetJournalTagsRequest.swift in Sources */,
 				9631640C25195D10007791D3 /* LearnCategoriesCollectionTitleCell.swift in Sources */,
 				960F02FF24DAC64D008267FA /* GlobalDefinitions.swift in Sources */,
+				96B43F06255B426700537439 /* JournalViewModel.swift in Sources */,
 				966F475B24F6A4A20025FD5F /* PaygateMapper.swift in Sources */,
 				966F476A24F6AF890025FD5F /* PaygateManager.swift in Sources */,
 				9609102525559FA200E781A1 /* OnboardingAnimationController.swift in Sources */,
