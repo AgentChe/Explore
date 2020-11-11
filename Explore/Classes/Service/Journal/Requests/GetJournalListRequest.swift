@@ -16,7 +16,7 @@ struct GetJournalListRequest: APIRequestBody {
     }
     
     var method: HTTPMethod {
-        .get
+        .post
     }
     
     var url: String {

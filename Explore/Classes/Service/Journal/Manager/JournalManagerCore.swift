@@ -60,7 +60,8 @@ extension JournalManagerCore {
                   rating: Int,
                   description: String?,
                   tagsIds: [Int]?,
-                  imagesIds: [Int]?,
+                  originImagesIds: [Int]?,
+                  thumbsImagesIds: [Int]?,
                   imagesIdsToDelete: [Int]?) -> Single<JournalArticleDetails?> {
         guard let userToken = SessionManager.shared.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
@@ -72,7 +73,8 @@ extension JournalManagerCore {
                                                 rating: rating,
                                                 description: description,
                                                 tagsIds: tagsIds,
-                                                imagesIds: imagesIds,
+                                                originImagesIds: originImagesIds,
+                                                thumbsImagesIds: thumbsImagesIds,
                                                 imagesIdsToDelete: imagesIdsToDelete)
         
         return Single
@@ -155,6 +157,8 @@ private extension JournalManagerCore {
                     let data = UserDefaults.standard.data(forKey: key),
                     let models = try? JSONDecoder().decode([T].self, from: data)
                 else {
+                    event(.success([]))
+                    
                     return Disposables.create()
                 }
                 

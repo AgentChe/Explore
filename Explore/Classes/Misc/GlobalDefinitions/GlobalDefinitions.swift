@@ -7,11 +7,11 @@
 //
 
 struct GlobalDefinitions {
-    static let domain = "https://explore.korrekted.com" // prod
-//    static let domain = "https://test.explore.korrekted.com" // dev
+//    static let domain = "https://explore.korrekted.com" // prod
+    static let domain = "https://test.explore.korrekted.com" // dev
     
-    static let apiKey = "7UUmIkjzWNdweEx3" // prod
-//    static let apiKey = "XHcB33Jdgk3uEtKK" // dev
+//    static let apiKey = "7UUmIkjzWNdweEx3" // prod
+    static let apiKey = "XHcB33Jdgk3uEtKK" // dev
     
     static let googleApiKey = "AIzaSyBdakvJp7Zv1ZDDLTpWReGBgQNZ6H0tOOQ"
     

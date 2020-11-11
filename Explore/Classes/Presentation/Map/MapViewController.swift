@@ -11,8 +11,6 @@ import RxSwift
 import RxCocoa
 
 final class MapViewController: UIViewController {
-    weak var delegate: MapViewControllerDelegate?
-    
     var mapView = MapView()
     
     private let viewModel = MapViewModel()
@@ -35,13 +33,6 @@ final class MapViewController: UIViewController {
         
         let trip = viewModel
             .trip()
-        
-        viewModel
-            .activityIndicator
-            .drive(onNext: { [weak self] active in
-                self?.mapView.switchPreloader(in: active)
-            })
-            .disposed(by: disposeBag)
         
         lifeUpdatingCoordinate
             .drive(onNext: { [weak self] coordinate in
@@ -83,20 +74,6 @@ final class MapViewController: UIViewController {
                 self?.tripButtonTapped(inProgress: inProgress)
             })
             .disposed(by: disposeBag)
-        
-        viewModel
-            .feedbackSended()
-            .drive(onNext: { [weak self] success in
-                if !success {
-                    Toast.notify(with: "Map.SendFeedback.Failure".localized, style: .danger)
-                    return
-                }
-                
-                self?.viewModel.removeTrip()
-                
-                self?.delegate?.mapViewControllerTripRemoved()
-            })
-            .disposed(by: disposeBag)
     }
 }
 
@@ -104,13 +81,6 @@ final class MapViewController: UIViewController {
 extension MapViewController {
     static func make() -> MapViewController {
         MapViewController()
-    }
-}
-
-// MARK: TripFeedbackViewControllerDelegate
-extension MapViewController: TripFeedbackViewControllerDelegate {
-    func tripFeedbackControllerDidSendTapped(text: String) {
-        viewModel.sendFeedback.accept(text)
     }
 }
 
@@ -137,9 +107,12 @@ private extension MapViewController {
     
     func tripButtonTapped(inProgress: Bool) {
         if inProgress {
-            let vc = TripFeedbackViewController.make()
-            vc.delegate = self 
-            present(vc, animated: true)
+            guard let tripId = viewModel.getTrip()?.id else {
+                return
+            }
+            
+            let vc = FeedbackViewController.make(tripId: tripId)
+            navigationController?.pushViewController(vc, animated: true)
         } else if isNeedOpenPaygate {
             let vc = PaygateViewController.make()
             present(vc, animated: true)

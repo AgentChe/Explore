@@ -53,7 +53,8 @@ extension JournalManagerMock {
                   rating: Int,
                   description: String?,
                   tagsIds: [Int]?,
-                  imagesIds: [Int]?,
+                  originImagesIds: [Int]?,
+                  thumbsImagesIds: [Int]?,
                   imagesIdsToDelete: [Int]?) -> Single<JournalArticleDetails?> {
         Single
             .zip(

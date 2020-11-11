@@ -13,7 +13,6 @@ final class MapView: UIView {
     lazy var mapView = makeMapView()
     lazy var radiusLabel = makeRadiusLabel()
     lazy var tripButton = makeTripButton()
-    lazy var activityIndicator = makeActivityIndicator()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,12 +22,6 @@ final class MapView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func switchPreloader(in active: Bool) {
-        tripButton.isUserInteractionEnabled = !active
-        tripButton.alpha = active ? 0.2 : 1
-        active ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
 }
 
@@ -53,11 +46,6 @@ private extension MapView {
             tripButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40.scale),
             tripButton.heightAnchor.constraint(equalToConstant: 48.scale),
             tripButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -64.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            activityIndicator.centerXAnchor.constraint(equalTo: tripButton.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: tripButton.centerYAnchor)
         ])
     }
 }
@@ -96,16 +84,6 @@ private extension MapView {
         view.titleLabel?.font = Font.SFProText.regular(size: 18.scale)
         view.setTitle("Map.Navigate".localized, for: .normal)
         view.setTitleColor(UIColor.black, for: .normal)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeActivityIndicator() -> UIActivityIndicatorView {
-        let view = UIActivityIndicatorView()
-        view.style = .white
-        view.stopAnimating()
-        view.hidesWhenStopped = true
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

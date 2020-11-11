@@ -8,8 +8,7 @@
 
 struct JournalImage {
     let id: Int
-    let thumbPath: String
-    let originalPath: String?
+    let url: String
 }
 
 // MARK: Codable

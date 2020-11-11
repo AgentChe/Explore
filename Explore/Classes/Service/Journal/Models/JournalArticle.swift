@@ -6,8 +6,6 @@
 //  Copyright © 2020 Andrey Chernyshev. All rights reserved.
 //
 
-import Foundation
-
 struct JournalArticle {
     let id: Int
     let tripId: Int
@@ -15,9 +13,10 @@ struct JournalArticle {
     let rating: Int 
     let description: String
     let tags: [JournalTag]
-    let timestamp: TimeInterval
+    let dateTime: String
     let tripTime: Int // секунды
-    let images: [JournalImage]
+    let originImages: [JournalImage]
+    let thumbsImages: [JournalImage]
 }
 
 // MARK: Codable

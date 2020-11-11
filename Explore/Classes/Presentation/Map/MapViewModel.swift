@@ -10,10 +10,6 @@ import RxSwift
 import RxCocoa
 
 final class MapViewModel {
-    let sendFeedback = PublishRelay<String>()
-    
-    let activityIndicator = RxActivityIndicator()
-    
     private let geoLocationManager = GeoLocationManager(mode: .whenInUseAuthorization)
     private let tripManager: TripManager = TripManagerCore()
     
@@ -43,31 +39,11 @@ final class MapViewModel {
         return Driver.merge(initial, updated)
     }
     
-    func feedbackSended() -> Driver<Bool> {
-        sendFeedback
-            .flatMapLatest { [tripManager, activityIndicator] feedback -> Observable<Bool> in
-                guard let tripId = tripManager.getTrip()?.id else {
-                    return .just(false)
-                }
-                
-                return tripManager
-                    .rxCreateFeedback(tripId: tripId, text: feedback)
-                    .trackActivity(activityIndicator)
-                    .catchErrorJustReturn(false)
-            }
-            .asDriver(onErrorJustReturn: false)
-    }
-    
     func getTrip() -> Trip? {
         tripManager.getTrip()
     }
     
     func addTripToProgress() -> Bool {
         tripManager.addTripToProgress()
-    }
-    
-    func removeTrip() {
-        tripManager.removeTripFromProgress()
-        tripManager.removeTrip()
     }
 }

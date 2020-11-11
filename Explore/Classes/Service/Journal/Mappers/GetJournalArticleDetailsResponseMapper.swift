@@ -21,9 +21,8 @@ final class GetJournalArticleDetailsResponseMapper {
         let responseArticle = response.article
             
         let articleTags = tags.filter { responseArticle.tags.contains($0.id) }
-        let articleImages = responseArticle.images.map { JournalImage(id: $0.id,
-                                                                      thumbPath: $0.thumb,
-                                                                      originalPath: nil) }
+        let articleOriginImages = responseArticle.images.map { JournalImage(id: $0.id, url: $0.url) }
+        let articleThumbImages = responseArticle.thumbs.map { JournalImage(id: $0.id, url: $0.url) }
             
         return JournalArticleDetails(id: responseArticle.id,
                                      tripId: responseArticle.location_id,
@@ -31,9 +30,10 @@ final class GetJournalArticleDetailsResponseMapper {
                                      rating: responseArticle.rating,
                                      description: responseArticle.description,
                                      tags: articleTags,
-                                     timestamp: responseArticle.timestamp,
+                                     dateTime: responseArticle.timestamp,
                                      tripTime: responseArticle.trip_time,
-                                     images: articleImages,
+                                     originImages: articleOriginImages,
+                                     thumbsImages: articleThumbImages,
                                      sharePath: responseArticle.share_url)
     }
 }
@@ -61,15 +61,15 @@ private struct ResponseArticle: Decodable {
     let rating: Int
     let description: String
     let tags: [Int]
-    let timestamp: TimeInterval
+    let timestamp: String
     let trip_time: Int
     let images: [ResponseImage]
+    let thumbs: [ResponseImage]
     let share_url: String
 }
 
 // MARK: ResponseImage
 private struct ResponseImage: Decodable {
     let id: Int
-    let thumb: String
-    let full: String
+    let url: String
 }

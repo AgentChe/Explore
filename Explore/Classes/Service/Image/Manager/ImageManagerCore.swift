@@ -14,13 +14,18 @@ final class ImageManagerCore: ImageManager {}
 
 // MARK: API(Rx)
 extension ImageManagerCore {
-    func upload(image: UIImage) -> Single<Image?> {
-        upload(url: GlobalDefinitions.domain + "",
+    func upload(image: UIImage) -> Single<Picture?> {
+        guard let userToken = SessionManager.shared.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        return upload(url: GlobalDefinitions.domain + "/api/images/upload",
                image: image,
                mimeType: "image/jpg",
-               name: "file",
+               name: "image",
                fileName: String(format: "%@%@.jpeg", UUID().uuidString, String(Date().timeIntervalSinceNow)),
-               parameters: ["_api_key": GlobalDefinitions.apiKey])
+               parameters: ["_api_key": GlobalDefinitions.apiKey,
+                            "_user_token": userToken])
             .map { UploadImageResponseMapper.map(from: $0) }
     }
 }

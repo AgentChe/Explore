@@ -11,7 +11,6 @@ import RxCocoa
 
 protocol TripManager: class {
     //MARK: API - Trip
-    
     func getTrip() -> Trip?
     func removeTrip()
     func hasTrip() -> Bool
@@ -20,7 +19,6 @@ protocol TripManager: class {
     func isTripInProgress() -> Bool
     
     // MARK: API(Rx) - Trip
-    
     func rxGetTrip() -> Single<Trip?>
     func rxRemoveTrip() -> Single<Void>
     func rxHasTrip() -> Single<Bool>
@@ -29,17 +27,11 @@ protocol TripManager: class {
     func rxIsTripInProgress() -> Single<Bool>
     func rxCreateTrip(with coordinate: Coordinate) -> Single<Bool>
     
-    // MARK: API(Rx) - Feedback
-    
-    func rxCreateFeedback(tripId: Int, text: String) -> Single<Bool>
-    
     // MARK: Trigger(Rx)
-    
     var rxChangedProgressState: Signal<Bool> { get }
     var rxTripWasRemovedTrigger: Signal<Void> { get }
     
     // MARK: Observer
-    
     func add(observer: TripManagerDelegate)
     func remove(observer: TripManagerDelegate)
 }

@@ -13,15 +13,20 @@ final class ImageManagerMock: ImageManager {}
 
 // MARK: API(Rx)
 extension ImageManagerMock {
-    func upload(image: UIImage) -> Single<Image?> {
-        Single<Image?>
+    func upload(image: UIImage) -> Single<Picture?> {
+        Single<Picture?>
             .create { event in
                 DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 2) {
                     DispatchQueue.main.async {
-                        let result = Image(id: Int.random(in: 0...Int.max),
+                        let thumb = Image(id: Int.random(in: 0...Int.max),
+                                          url: "https://onlinepngtools.com/images/examples-onlinepngtools/clouds-transparent.png")
+                        
+                        let origin = Image(id: Int.random(in: 0...Int.max),
                                            url: "https://onlinepngtools.com/images/examples-onlinepngtools/clouds-transparent.png")
                         
-                        event(.success(result))
+                        let picture = Picture(thumb: thumb, origin: origin)
+                        
+                        event(.success(picture))
                     }
                 }
                 

@@ -10,5 +10,5 @@ import UIKit
 import RxSwift
 
 protocol ImageManager: class {
-    func upload(image: UIImage) -> Single<Image?>
+    func upload(image: UIImage) -> Single<Picture?>
 }

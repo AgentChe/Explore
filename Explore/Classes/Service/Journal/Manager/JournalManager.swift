@@ -19,7 +19,8 @@ protocol JournalManager: class {
                   rating: Int,
                   description: String?,
                   tagsIds: [Int]?,
-                  imagesIds: [Int]?,
+                  originImagesIds: [Int]?,
+                  thumbsImagesIds: [Int]?,
                   imagesIdsToDelete: [Int]?) -> Single<JournalArticleDetails?>
     func rxDelete(articleId: Int) -> Completable
     

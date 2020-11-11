@@ -15,7 +15,8 @@ struct SaveJournalArticleRequest: APIRequestBody {
     private let rating: Int
     private let description: String?
     private let tagsIds: [Int]?
-    private let imagesIds: [Int]?
+    private let originImagesIds: [Int]?
+    private let thumbsImagesIds: [Int]?
     private let imagesIdsToDelete: [Int]?
     
     init(userToken: String,
@@ -24,7 +25,8 @@ struct SaveJournalArticleRequest: APIRequestBody {
          rating: Int,
          description: String? = nil,
          tagsIds: [Int]? = nil,
-         imagesIds: [Int]? = nil,
+         originImagesIds: [Int]? = nil,
+         thumbsImagesIds: [Int]? = nil,
          imagesIdsToDelete: [Int]? = nil) {
         self.userToken = userToken
         self.tripId = tripId
@@ -32,7 +34,8 @@ struct SaveJournalArticleRequest: APIRequestBody {
         self.rating = rating
         self.description = description
         self.tagsIds = tagsIds
-        self.imagesIds = imagesIds
+        self.originImagesIds = originImagesIds
+        self.thumbsImagesIds = thumbsImagesIds
         self.imagesIdsToDelete = imagesIdsToDelete
     }
     
@@ -61,8 +64,12 @@ struct SaveJournalArticleRequest: APIRequestBody {
             params["tags"] = tagsIds
         }
         
-        if let imagesIds = self.imagesIds {
-            params["images"] = imagesIds
+        if let originImagesIds = self.originImagesIds {
+            params["images"] = originImagesIds
+        }
+        
+        if let thumbsImagesIds = self.thumbsImagesIds {
+            params["thumbs"] = thumbsImagesIds
         }
         
         if let imagesIdsToDelete = self.imagesIdsToDelete {

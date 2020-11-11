@@ -9,7 +9,7 @@
 import Foundation
 
 final class UploadImageResponseMapper {
-    static func map(from response: Any) -> Image? {
+    static func map(from response: Any) -> Picture? {
         guard
             let json = response as? [String: Any],
             let data = try? JSONSerialization.data(withJSONObject: json, options: []),
@@ -18,18 +18,18 @@ final class UploadImageResponseMapper {
             return nil
         }
         
-        return response.image
+        return response.picture
     }
 }
 
 // MARK: Response
 private struct Response: Decodable {
-    let image: Image
+    let picture: Picture
     
     enum Keys: String, CodingKey {
         case _data
-        case id
-        case url
+        case image
+        case thumb
     }
     
     init(from decoder: Decoder) throws {
@@ -37,9 +37,9 @@ private struct Response: Decodable {
         
         let data = try container.nestedContainer(keyedBy: Keys.self, forKey: ._data)
         
-        let id = try data.decode(Int.self, forKey: .id)
-        let url = try data.decode(String.self, forKey: .url)
+        let image = try data.decode(Image.self, forKey: .image)
+        let thumb = try data.decode(Image.self, forKey: .thumb)
         
-        image = Image(id: id, url: url)
+        picture = Picture(thumb: thumb, origin: image)
     }
 }

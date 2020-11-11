@@ -22,7 +22,6 @@ final class TripManagerCore: TripManager {
 }
 
 // MARK: API - Trip
-
 extension TripManagerCore {
     func getTrip() -> Trip? {
         guard let data = UserDefaults.standard.data(forKey: Constants.tripCacheKey) else {
@@ -74,7 +73,6 @@ extension TripManagerCore {
 }
 
 // MARK: API(Rx) - Trip
-
 extension TripManagerCore {
     func rxGetTrip() -> Single<Trip?> {
         .deferred { [weak self] in .just(self?.getTrip()) }
@@ -120,25 +118,7 @@ extension TripManagerCore {
     }
 }
 
-// MARK: API(Rx) - Feedback
-
-extension TripManagerCore {
-    func rxCreateFeedback(tripId: Int, text: String) -> Single<Bool> {
-        guard let userToken = SessionManager.shared.getSession()?.userToken else {
-            return .deferred { .error(SignError.tokenNotFound) }
-        }
-        
-        return SDKStorage.shared
-            .restApiTransport
-            .callServerApi(requestBody: TripFeedbackRequest(userToken: userToken,
-                                                            tripId: tripId,
-                                                            feedback: text))
-            .map { !ErrorChecker.hasError(in: $0) }
-    }
-}
-
 // MARK: Trigger(Rx)
-
 extension TripManagerCore {
     var rxChangedProgressState: Signal<Bool> {
         changedProgressStateTrigger.asSignal()
@@ -150,7 +130,6 @@ extension TripManagerCore {
 }
 
 // MARK: Observer
-
 extension TripManagerCore {
     func add(observer: TripManagerDelegate) {
         let weakly = observer as AnyObject
@@ -166,7 +145,6 @@ extension TripManagerCore {
 }
 
 // MARK: Private
-
 private extension TripManagerCore {
     @discardableResult
     func storeTrip(_ trip: Trip) -> Bool {

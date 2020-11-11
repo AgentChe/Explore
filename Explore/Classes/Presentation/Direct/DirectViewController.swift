@@ -66,13 +66,6 @@ extension DirectViewController: FindPlaceViewControllerDelegate {
     }
 }
 
-// MARK: MapViewControllerDelegate
-extension DirectViewController: MapViewControllerDelegate {
-    func mapViewControllerTripRemoved() {
-        navigationController?.popViewController(animated: true)
-    }
-}
-
 // MARK: WallpapersViewControllerDelegate
 extension DirectViewController: WallpapersViewControllerDelegate {
     func wallpapersViewControllerNeedPayment() {
@@ -102,7 +95,6 @@ private extension DirectViewController {
             navigationController?.pushViewController(findPlaceVC, animated: true)
         case .map:
             let mapVC = MapViewController.make()
-            mapVC.delegate = self
             
             navigationController?.pushViewController(mapVC, animated: true)
         case .learn:

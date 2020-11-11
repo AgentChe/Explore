@@ -32,4 +32,8 @@ struct GetJournalArticleDetailsRequest: APIRequestBody {
             "id": id
         ]
     }
+    
+    var encoding: ParameterEncoding {
+        URLEncoding.queryString
+    }
 }

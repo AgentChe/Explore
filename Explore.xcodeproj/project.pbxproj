@@ -122,9 +122,6 @@
 		963A440924F91B490018A8CA /* TripGoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A440824F91B490018A8CA /* TripGoogleMapView.swift */; };
 		963A440C24F930BA0018A8CA /* OpenMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A440B24F930BA0018A8CA /* OpenMap.swift */; };
 		963A440E24F9322C0018A8CA /* MapAppsActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A440D24F9322C0018A8CA /* MapAppsActionSheet.swift */; };
-		963A441024F9A5B30018A8CA /* TripFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A440F24F9A5B30018A8CA /* TripFeedbackViewController.swift */; };
-		963A441324F9A87D0018A8CA /* TripFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A441224F9A87D0018A8CA /* TripFeedbackView.swift */; };
-		963A441524F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A441424F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift */; };
 		963A441724FA4EC90018A8CA /* TripManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A441624FA4EC90018A8CA /* TripManagerMock.swift */; };
 		963A441924FA4F240018A8CA /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A441824FA4F240018A8CA /* TripManager.swift */; };
 		963A442024FB89D00018A8CA /* FPRequireGeoPermissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A441F24FB89D00018A8CA /* FPRequireGeoPermissionCell.swift */; };
@@ -148,7 +145,6 @@
 		966F471224F66CE40025FD5F /* TripManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471124F66CE40025FD5F /* TripManagerCore.swift */; };
 		966F471424F66CFD0025FD5F /* TripManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */; };
 		966F471624F6761F0025FD5F /* CreateTripRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471524F6761F0025FD5F /* CreateTripRequest.swift */; };
-		966F471A24F676720025FD5F /* TripFeedbackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471924F676720025FD5F /* TripFeedbackRequest.swift */; };
 		966F471E24F688F20025FD5F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471D24F688F20025FD5F /* Session.swift */; };
 		966F472024F68A540025FD5F /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F471F24F68A540025FD5F /* SessionManager.swift */; };
 		966F472424F68F520025FD5F /* ErrorChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F472324F68F520025FD5F /* ErrorChecker.swift */; };
@@ -211,6 +207,10 @@
 		96B43F06255B426700537439 /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F05255B426700537439 /* JournalViewModel.swift */; };
 		96B43F09255B428300537439 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F08255B428300537439 /* JournalView.swift */; };
 		96B43F0C255B493300537439 /* JournalViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F0B255B493300537439 /* JournalViewControllerDelegate.swift */; };
+		96B43F11255BF50100537439 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F10255BF50100537439 /* FeedbackViewController.swift */; };
+		96B43F15255BF52B00537439 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F14255BF52B00537439 /* FeedbackViewModel.swift */; };
+		96B43F18255BF53F00537439 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F17255BF53F00537439 /* FeedbackView.swift */; };
+		96B43F1D255C297800537439 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F1C255C297800537439 /* Picture.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
 		96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */; };
 		96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C31250ED76500413D81 /* DirectViewController.swift */; };
@@ -230,7 +230,6 @@
 		96F2F85D25102AB600F7A58B /* WallpapersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F85C25102AB600F7A58B /* WallpapersViewModel.swift */; };
 		96F2F86025102CF000F7A58B /* DirectNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F85F25102CF000F7A58B /* DirectNavigationController.swift */; };
 		96F2F862251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F861251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift */; };
-		96F2F864251133AF00F7A58B /* MapViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F863251133AF00F7A58B /* MapViewControllerDelegate.swift */; };
 		96F2F8692511459E00F7A58B /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F8682511459E00F7A58B /* Wallpaper.swift */; };
 		96F2F86B251149B800F7A58B /* Wallpapers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F86A251149B800F7A58B /* Wallpapers.swift */; };
 		96F2F86E25114B2600F7A58B /* WallpapersResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F86D25114B2600F7A58B /* WallpapersResponseMapper.swift */; };
@@ -370,9 +369,6 @@
 		963A440824F91B490018A8CA /* TripGoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripGoogleMapView.swift; sourceTree = "<group>"; };
 		963A440B24F930BA0018A8CA /* OpenMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMap.swift; sourceTree = "<group>"; };
 		963A440D24F9322C0018A8CA /* MapAppsActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAppsActionSheet.swift; sourceTree = "<group>"; };
-		963A440F24F9A5B30018A8CA /* TripFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackViewController.swift; sourceTree = "<group>"; };
-		963A441224F9A87D0018A8CA /* TripFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackView.swift; sourceTree = "<group>"; };
-		963A441424F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackViewControllerDelegate.swift; sourceTree = "<group>"; };
 		963A441624FA4EC90018A8CA /* TripManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerMock.swift; sourceTree = "<group>"; };
 		963A441824FA4F240018A8CA /* TripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
 		963A441F24FB89D00018A8CA /* FPRequireGeoPermissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRequireGeoPermissionCell.swift; sourceTree = "<group>"; };
@@ -396,7 +392,6 @@
 		966F471124F66CE40025FD5F /* TripManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerCore.swift; sourceTree = "<group>"; };
 		966F471324F66CFD0025FD5F /* TripManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerDelegate.swift; sourceTree = "<group>"; };
 		966F471524F6761F0025FD5F /* CreateTripRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripRequest.swift; sourceTree = "<group>"; };
-		966F471924F676720025FD5F /* TripFeedbackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeedbackRequest.swift; sourceTree = "<group>"; };
 		966F471D24F688F20025FD5F /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		966F471F24F68A540025FD5F /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		966F472324F68F520025FD5F /* ErrorChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorChecker.swift; sourceTree = "<group>"; };
@@ -461,6 +456,10 @@
 		96B43F05255B426700537439 /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
 		96B43F08255B428300537439 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		96B43F0B255B493300537439 /* JournalViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewControllerDelegate.swift; sourceTree = "<group>"; };
+		96B43F10255BF50100537439 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		96B43F14255BF52B00537439 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
+		96B43F17255BF53F00537439 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		96B43F1C255C297800537439 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResponseMapper.swift; sourceTree = "<group>"; };
 		96B74C31250ED76500413D81 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
@@ -480,7 +479,6 @@
 		96F2F85C25102AB600F7A58B /* WallpapersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewModel.swift; sourceTree = "<group>"; };
 		96F2F85F25102CF000F7A58B /* DirectNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectNavigationController.swift; sourceTree = "<group>"; };
 		96F2F861251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewControllerDelegate.swift; sourceTree = "<group>"; };
-		96F2F863251133AF00F7A58B /* MapViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerDelegate.swift; sourceTree = "<group>"; };
 		96F2F8682511459E00F7A58B /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
 		96F2F86A251149B800F7A58B /* Wallpapers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpapers.swift; sourceTree = "<group>"; };
 		96F2F86D25114B2600F7A58B /* WallpapersResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersResponseMapper.swift; sourceTree = "<group>"; };
@@ -660,6 +658,7 @@
 			isa = PBXGroup;
 			children = (
 				96091068255AD00100E781A1 /* Image.swift */,
+				96B43F1C255C297800537439 /* Picture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -731,7 +730,6 @@
 		9609B840251733C000457FD6 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				966F471924F676720025FD5F /* TripFeedbackRequest.swift */,
 				966F471524F6761F0025FD5F /* CreateTripRequest.swift */,
 			);
 			path = Requests;
@@ -832,6 +830,7 @@
 		960F029924DAC5C9008267FA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				96B43F0F255BF4D000537439 /* Feedback */,
 				96B43F00255B41CD00537439 /* Journal */,
 				9631642A251A911D007791D3 /* LearnContent */,
 				96316415251A5686007791D3 /* LearnArticles */,
@@ -1097,7 +1096,6 @@
 		963A440524F902370018A8CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				963A441124F9A85F0018A8CA /* TripFeedback */,
 				963A440824F91B490018A8CA /* TripGoogleMapView.swift */,
 				9609B83E25169BDC00457FD6 /* CircleMarkerIconView.swift */,
 			);
@@ -1111,16 +1109,6 @@
 				963A440D24F9322C0018A8CA /* MapAppsActionSheet.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		963A441124F9A85F0018A8CA /* TripFeedback */ = {
-			isa = PBXGroup;
-			children = (
-				963A440F24F9A5B30018A8CA /* TripFeedbackViewController.swift */,
-				963A441224F9A87D0018A8CA /* TripFeedbackView.swift */,
-				963A441424F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift */,
-			);
-			path = TripFeedback;
 			sourceTree = "<group>";
 		};
 		963A441C24FB894D0018A8CA /* Views */ = {
@@ -1375,7 +1363,6 @@
 				966F479524F7A5C10025FD5F /* MapViewController.swift */,
 				966F479724F7AFB50025FD5F /* MapViewModel.swift */,
 				966F479924F7AFCC0025FD5F /* MapView.swift */,
-				96F2F863251133AF00F7A58B /* MapViewControllerDelegate.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -1435,6 +1422,16 @@
 				96B43F0B255B493300537439 /* JournalViewControllerDelegate.swift */,
 			);
 			path = Journal;
+			sourceTree = "<group>";
+		};
+		96B43F0F255BF4D000537439 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				96B43F10255BF50100537439 /* FeedbackViewController.swift */,
+				96B43F14255BF52B00537439 /* FeedbackViewModel.swift */,
+				96B43F17255BF53F00537439 /* FeedbackView.swift */,
+			);
+			path = Feedback;
 			sourceTree = "<group>";
 		};
 		96B74C2D250EC68000413D81 /* Mapper */ = {
@@ -1828,6 +1825,7 @@
 				960F032224DAC686008267FA /* Weak.swift in Sources */,
 				96F2F86025102CF000F7A58B /* DirectNavigationController.swift in Sources */,
 				96091064255ACF4300E781A1 /* ImageManager.swift in Sources */,
+				96B43F1D255C297800537439 /* Picture.swift in Sources */,
 				963A443B24FEEF1B0018A8CA /* FPTableRadiusBundle.swift in Sources */,
 				96F2F862251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift in Sources */,
 				96F2F85D25102AB600F7A58B /* WallpapersViewModel.swift in Sources */,
@@ -1871,6 +1869,7 @@
 				96F2F87425115EC800F7A58B /* WallpapersManagerCore.swift in Sources */,
 				960910442555C81E00E781A1 /* SaveJournalArticleRequest.swift in Sources */,
 				96091052255AB36C00E781A1 /* GetJournalArticleDetailsResponseMapper.swift in Sources */,
+				96B43F11255BF50100537439 /* FeedbackViewController.swift in Sources */,
 				96316423251A58B4007791D3 /* LearnArticlesCollectionTitleCell.swift in Sources */,
 				963A442824FCCC720018A8CA /* FPWhatLikeGetCell.swift in Sources */,
 				966F479124F7A3740025FD5F /* FindPlaceViewController.swift in Sources */,
@@ -1887,7 +1886,6 @@
 				966F471E24F688F20025FD5F /* Session.swift in Sources */,
 				963A441724FA4EC90018A8CA /* TripManagerMock.swift in Sources */,
 				96B43EFD255B1A2900537439 /* ProductPrice.swift in Sources */,
-				966F471A24F676720025FD5F /* TripFeedbackRequest.swift in Sources */,
 				9609B85225173C2F00457FD6 /* GetLearnCategoriesRequest.swift in Sources */,
 				966F478624F6DCBE0025FD5F /* PaygateView.swift in Sources */,
 				96B43F09255B428300537439 /* JournalView.swift in Sources */,
@@ -1909,7 +1907,6 @@
 				960F031A24DAC686008267FA /* UIDeviceExtension.swift in Sources */,
 				9609101325543D6A00E781A1 /* FPPreloaderAnimationController.swift in Sources */,
 				963A441924FA4F240018A8CA /* TripManager.swift in Sources */,
-				963A441024F9A5B30018A8CA /* TripFeedbackViewController.swift in Sources */,
 				966F479324F7A57B0025FD5F /* SplashViewModel.swift in Sources */,
 				96F2F853251024D900F7A58B /* DirectModel.swift in Sources */,
 				966F473124F698C60025FD5F /* Paygate.swift in Sources */,
@@ -1923,18 +1920,19 @@
 				9609B8232511735A00457FD6 /* WallpaperCollectionElement.swift in Sources */,
 				9631643C251A91D8007791D3 /* LearnContentTableImageCell.swift in Sources */,
 				960F031E24DAC686008267FA /* TextAttributes.swift in Sources */,
-				963A441324F9A87D0018A8CA /* TripFeedbackView.swift in Sources */,
 				960910412555C74A00E781A1 /* GetJournalArticleDetailsRequest.swift in Sources */,
 				966C847E251954DC0094784C /* LearnCollectionView.swift in Sources */,
 				966F471224F66CE40025FD5F /* TripManagerCore.swift in Sources */,
 				966F472024F68A540025FD5F /* SessionManager.swift in Sources */,
 				96F2F87225115BAD00F7A58B /* WallpapersManagerDelegate.swift in Sources */,
 				9609B828251180AF00457FD6 /* WallpapersCollectionHeader.swift in Sources */,
+				96B43F18255BF53F00537439 /* FeedbackView.swift in Sources */,
 				9609101C2554684A00E781A1 /* CreateTripResult.swift in Sources */,
 				9609B85A2517427D00457FD6 /* LearnManagerCore.swift in Sources */,
 				960F02FA24DAC5E3008267FA /* PaymentError.swift in Sources */,
 				963A442F24FCF3770018A8CA /* FindPlaceTableSection.swift in Sources */,
 				966F479C24F7B0600025FD5F /* OnboardingView.swift in Sources */,
+				96B43F15255BF52B00537439 /* FeedbackViewModel.swift in Sources */,
 				966F47A324F7B7110025FD5F /* OnboardingSlideView.swift in Sources */,
 				96F2F87D25116E8100F7A58B /* WallpapersView.swift in Sources */,
 				966C847A2519540C0094784C /* LearnCategoriesView.swift in Sources */,
@@ -1947,7 +1945,6 @@
 				96EB730524DBFABD008A32BC /* Model.swift in Sources */,
 				966F47A724F7BAA60025FD5F /* OnboardingSlide.swift in Sources */,
 				96F2F851251024B000F7A58B /* DirectCollectionElement.swift in Sources */,
-				96F2F864251133AF00F7A58B /* MapViewControllerDelegate.swift in Sources */,
 				96F2F88025116FE500F7A58B /* WallpapersCollectionView.swift in Sources */,
 				966F47A024F7B1650025FD5F /* FindPlaceView.swift in Sources */,
 				96B74C3A250ED80100413D81 /* DirectCollectionView.swift in Sources */,
@@ -1973,7 +1970,6 @@
 				960F032624DAC686008267FA /* Toast.swift in Sources */,
 				9604B06824DB46F400649DA7 /* GeoLocationManager.swift in Sources */,
 				9609B825251175E100457FD6 /* WallpapersViewControllerDelegate.swift in Sources */,
-				963A441524F9ACBE0018A8CA /* TripFeedbackViewControllerDelegate.swift in Sources */,
 				9609B85C2517429400457FD6 /* LearnManagerMock.swift in Sources */,
 				963A440924F91B490018A8CA /* TripGoogleMapView.swift in Sources */,
 				9631641025195F72007791D3 /* LearnCategoriesCollectionCell.swift in Sources */,

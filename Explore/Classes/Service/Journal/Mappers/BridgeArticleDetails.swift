@@ -14,8 +14,9 @@ final class BridgeArticleDetails {
                        rating: details.rating,
                        description: details.description,
                        tags: details.tags,
-                       timestamp: details.timestamp,
+                       dateTime: details.dateTime,
                        tripTime: details.tripTime,
-                       images: details.images)
+                       originImages: details.originImages,
+                       thumbsImages: details.thumbsImages)
     }
 }

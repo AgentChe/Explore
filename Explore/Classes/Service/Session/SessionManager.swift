@@ -40,12 +40,16 @@ extension SessionManager {
         return true
     }
     
+    // TODO: Заглушка
     func getSession() -> Session? {
-        guard let data = UserDefaults.standard.data(forKey: Constants.sessionKey) else {
-            return nil 
-        }
-        
-        return try? Session.parse(from: data)
+        return Session(userToken: "oAVK6aVh8Swn0bjXfxH9Bb8PaLTLyHAz0kHvVysO9zdSpKL0m4semD6i9KgQha8wkhX1xjkkUdlPyfMvqCrOLQqRwM35S9w9RU8UrJCQYoFFaDhLROe0QY3DGAvqmpxL",
+                       activeSubscription: true,
+                       userId: 83250)
+//        guard let data = UserDefaults.standard.data(forKey: Constants.sessionKey) else {
+//            return nil
+//        }
+//
+//        return try? Session.parse(from: data)
     }
 }
 

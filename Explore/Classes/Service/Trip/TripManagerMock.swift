@@ -22,7 +22,6 @@ final class TripManagerMock: TripManager {
 }
 
 // MARK: API - Trip
-
 extension TripManagerMock {
     func getTrip() -> Trip? {
         guard let data = UserDefaults.standard.data(forKey: Constants.tripCacheKey) else {
@@ -74,7 +73,6 @@ extension TripManagerMock {
 }
 
 // MARK: API(Rx) - Trip
-
 extension TripManagerMock {
     func rxGetTrip() -> Single<Trip?> {
         .deferred { [weak self] in .just(self?.getTrip()) }
@@ -119,25 +117,7 @@ extension TripManagerMock {
     }
 }
 
-// MARK: API(Rx) - Feedback
-
-extension TripManagerMock {
-    func rxCreateFeedback(tripId: Int, text: String) -> Single<Bool> {
-        Single<Bool>
-            .create { event in
-                DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1) {
-                    DispatchQueue.main.async {
-                        event(.success(true))
-                    }
-                }
-        
-                return Disposables.create()
-            }
-    }
-}
-
 // MARK: Trigger(Rx)
-
 extension TripManagerMock {
     var rxChangedProgressState: Signal<Bool> {
         changedProgressStateTrigger.asSignal()
@@ -149,7 +129,6 @@ extension TripManagerMock {
 }
 
 // MARK: Observer
-
 extension TripManagerMock {
     func add(observer: TripManagerDelegate) {
         let weakly = observer as AnyObject
@@ -165,7 +144,6 @@ extension TripManagerMock {
 }
 
 // MARK: Private
-
 private extension TripManagerMock {
     @discardableResult
     func storeTrip(_ trip: Trip) -> Bool {
