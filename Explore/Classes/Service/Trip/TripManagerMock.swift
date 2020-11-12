@@ -14,11 +14,6 @@ final class TripManagerMock: TripManager {
         static let tripCacheKey = "trip_manager_mock_trip_cache_key"
         static let tripInProgressKey = "trip_manager_mock_trip_in_progress_key"
     }
-    
-    private var delegates = [Weak<TripManagerDelegate>]()
-    
-    fileprivate let changedProgressStateTrigger = PublishRelay<Bool>()
-    fileprivate let tripWasRemovedTrigger = PublishRelay<Void>()
 }
 
 // MARK: API - Trip
@@ -35,9 +30,7 @@ extension TripManagerMock {
         UserDefaults.standard.removeObject(forKey: Constants.tripCacheKey)
         UserDefaults.standard.removeObject(forKey: Constants.tripInProgressKey)
         
-        delegates.forEach { $0.weak?.tripManagerTripWasRemoved() }
-        
-        tripWasRemovedTrigger.accept(Void())
+        TripMediator.shared.notifyAboutTripWasRemoved()
     }
     
     func hasTrip() -> Bool {
@@ -52,9 +45,7 @@ extension TripManagerMock {
         
         UserDefaults.standard.set(true, forKey: Constants.tripInProgressKey)
         
-        delegates.forEach { $0.weak?.tripManagerChanged(progressState: true) }
-        
-        changedProgressStateTrigger.accept(true)
+        TripMediator.shared.notifyAboutChangedProgress(state: true)
         
         return true
     }
@@ -62,9 +53,7 @@ extension TripManagerMock {
     func removeTripFromProgress() {
         UserDefaults.standard.set(false, forKey: Constants.tripInProgressKey)
         
-        delegates.forEach { $0.weak?.tripManagerChanged(progressState: false) }
-        
-        changedProgressStateTrigger.accept(false)
+        TripMediator.shared.notifyAboutChangedProgress(state: false)
     }
     
     func isTripInProgress() -> Bool {
@@ -114,32 +103,6 @@ extension TripManagerMock {
             
                 return Disposables.create()
             }
-    }
-}
-
-// MARK: Trigger(Rx)
-extension TripManagerMock {
-    var rxChangedProgressState: Signal<Bool> {
-        changedProgressStateTrigger.asSignal()
-    }
-    
-    var rxTripWasRemovedTrigger: Signal<Void> {
-        tripWasRemovedTrigger.asSignal()
-    }
-}
-
-// MARK: Observer
-extension TripManagerMock {
-    func add(observer: TripManagerDelegate) {
-        let weakly = observer as AnyObject
-        delegates.append(Weak<TripManagerDelegate>(weakly))
-        delegates = delegates.filter { $0.weak != nil }
-    }
-    
-    func remove(observer: TripManagerDelegate) {
-        if let index = delegates.firstIndex(where: { $0.weak === observer }) {
-            delegates.remove(at: index)
-        }
     }
 }
 

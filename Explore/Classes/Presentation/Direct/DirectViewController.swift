@@ -84,6 +84,15 @@ extension DirectViewController: LearnCategoriesViewControllerDelegate {
     }
 }
 
+// MARK: JournalViewControllerDelegate
+extension DirectViewController: JournalViewControllerDelegate {
+    func journalViewControllerNeedPayment() {
+        navigationController?.popViewController(animated: true)
+        
+        showPaygate()
+    }
+}
+
 // MARK: Private
 private extension DirectViewController {
     func navigate(at step: DirectViewModel.Step) {
@@ -109,6 +118,7 @@ private extension DirectViewController {
             navigationController?.pushViewController(wallpapersVC, animated: true)
         case .journal:
             let journalVC = JournalViewController.make()
+            journalVC.delegate = self 
             
             navigationController?.pushViewController(journalVC, animated: true)
         case .join:

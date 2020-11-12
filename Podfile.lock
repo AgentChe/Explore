@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.4.0)
   - Amplitude-iOS (4.10.0)
   - Branch (0.35.1)
+  - Cosmos (23.0.0)
   - FacebookSDK (8.1.0):
     - FacebookSDK/CoreKit (= 8.1.0)
   - FacebookSDK/CoreKit (8.1.0):
@@ -122,6 +123,7 @@ PODS:
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
+  - Cosmos
   - GoogleMaps
   - Kingfisher
   - NotificationBannerSwift
@@ -132,6 +134,7 @@ SPEC REPOS:
     - Alamofire
     - Amplitude-iOS
     - Branch
+    - Cosmos
     - FacebookSDK
     - FBSDKCoreKit
     - Firebase
@@ -169,6 +172,7 @@ SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   Amplitude-iOS: 7d8cdc3408ba35c2e68368fc7c692cd104606b94
   Branch: 43863eab4c2339a58fa552f2f277139c3839dfb4
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   FacebookSDK: 1cbc65761001feb1bffd7921541f668e13592983
   FBSDKCoreKit: b3ca27e124dae67122d3bb47c8f96800b39986a6
   Firebase: 78e8dd2e39d653de6270432ad84fe8b59f7bf4e8
@@ -194,6 +198,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 5d47ffa4c07fb0f388d44e5ab7e526cbce12082c
+PODFILE CHECKSUM: 51dfee27a73db5ef3c2950eee58a0d6b6f34ceeb
 
 COCOAPODS: 1.10.0.rc.1

@@ -32,7 +32,7 @@ final class MapViewModel {
             .rxIsTripInProgress()
             .asDriver(onErrorJustReturn: false)
         
-        let updated = tripManager
+        let updated = TripMediator.shared
             .rxChangedProgressState
             .asDriver(onErrorJustReturn: false)
         

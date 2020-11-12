@@ -163,3 +163,12 @@
 // MARK: LearnContent
 "LearnContent.Title" = "Узнать";
 
+// MARK: Journal
+"Journal.Empty.Title" = "Journal keeps track of your trips";
+"Journal.Empty.Bottom" = "Generate a location to visit first";
+"Journal.FeedbackButton" = "Review your latest trip";
+"Journal.NewEntryButton" = "New entry";
+"Journal.Cell.TripTime" = "🏁 Trip time: %@";
+"Journal.Hour" = "hour";
+"Journal.Hours" = "hours";
+"Journal.Minute" = "min.";

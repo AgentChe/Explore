@@ -26,12 +26,4 @@ protocol TripManager: class {
     func rxRemoveTripFromProgress() -> Single<Void>
     func rxIsTripInProgress() -> Single<Bool>
     func rxCreateTrip(with coordinate: Coordinate) -> Single<Bool>
-    
-    // MARK: Trigger(Rx)
-    var rxChangedProgressState: Signal<Bool> { get }
-    var rxTripWasRemovedTrigger: Signal<Void> { get }
-    
-    // MARK: Observer
-    func add(observer: TripManagerDelegate)
-    func remove(observer: TripManagerDelegate)
 }
