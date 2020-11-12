@@ -215,6 +215,10 @@
 		96B43F2A255C80D000537439 /* JournalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F29255C80D000537439 /* JournalTableCell.swift */; };
 		96B43F4B255CAAF600537439 /* JournalViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F4A255CAAF600537439 /* JournalViewControllerDelegate.swift */; };
 		96B43F4E255CADB300537439 /* TripMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F4D255CADB300537439 /* TripMediator.swift */; };
+		96B43F58255D3E5A00537439 /* JADetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F57255D3E5A00537439 /* JADetailsViewController.swift */; };
+		96B43F5B255D3E9200537439 /* JADetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F5A255D3E9200537439 /* JADetailsViewModel.swift */; };
+		96B43F5E255D3EB100537439 /* JADetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F5D255D3EB100537439 /* JADetailsView.swift */; };
+		96B43F61255D402D00537439 /* JournalMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F60255D402D00537439 /* JournalMediator.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
 		96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */; };
 		96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C31250ED76500413D81 /* DirectViewController.swift */; };
@@ -468,6 +472,10 @@
 		96B43F29255C80D000537439 /* JournalTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableCell.swift; sourceTree = "<group>"; };
 		96B43F4A255CAAF600537439 /* JournalViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewControllerDelegate.swift; sourceTree = "<group>"; };
 		96B43F4D255CADB300537439 /* TripMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMediator.swift; sourceTree = "<group>"; };
+		96B43F57255D3E5A00537439 /* JADetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JADetailsViewController.swift; sourceTree = "<group>"; };
+		96B43F5A255D3E9200537439 /* JADetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JADetailsViewModel.swift; sourceTree = "<group>"; };
+		96B43F5D255D3EB100537439 /* JADetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JADetailsView.swift; sourceTree = "<group>"; };
+		96B43F60255D402D00537439 /* JournalMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalMediator.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResponseMapper.swift; sourceTree = "<group>"; };
 		96B74C31250ED76500413D81 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
@@ -638,6 +646,7 @@
 				96091076255ADCA300E781A1 /* JournalManagerDelegate.swift */,
 				96091079255AE32E00E781A1 /* JournalManagerCore.swift */,
 				9609107F255AF92A00E781A1 /* JournalManagerMock.swift */,
+				96B43F60255D402D00537439 /* JournalMediator.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -838,6 +847,7 @@
 		960F029924DAC5C9008267FA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				96B43F56255D3E3D00537439 /* JournalArticleDetails */,
 				96B43F0F255BF4D000537439 /* Feedback */,
 				96B43F00255B41CD00537439 /* Journal */,
 				9631642A251A911D007791D3 /* LearnContent */,
@@ -1470,6 +1480,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		96B43F56255D3E3D00537439 /* JournalArticleDetails */ = {
+			isa = PBXGroup;
+			children = (
+				96B43F57255D3E5A00537439 /* JADetailsViewController.swift */,
+				96B43F5A255D3E9200537439 /* JADetailsViewModel.swift */,
+				96B43F5D255D3EB100537439 /* JADetailsView.swift */,
+			);
+			path = JournalArticleDetails;
+			sourceTree = "<group>";
+		};
 		96B74C2D250EC68000413D81 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -1835,6 +1855,7 @@
 				96B43F22255C7DD300537439 /* JournalEmptyView.swift in Sources */,
 				96F2F885251170F400F7A58B /* WallpaperCollectionCell.swift in Sources */,
 				9609B83825129E2100457FD6 /* PhotoLibraryWrapper.swift in Sources */,
+				96B43F58255D3E5A00537439 /* JADetailsViewController.swift in Sources */,
 				966F478524F6DCBE0025FD5F /* PaygateOptionView.swift in Sources */,
 				966F47A924F7BDFE0025FD5F /* OnboardingSlider.swift in Sources */,
 				96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */,
@@ -1904,6 +1925,7 @@
 				9609B82B2511892000457FD6 /* WallpaperViewController.swift in Sources */,
 				963A440E24F9322C0018A8CA /* MapAppsActionSheet.swift in Sources */,
 				9609101F255564DE00E781A1 /* OnboardingSliderIndicatorsView.swift in Sources */,
+				96B43F61255D402D00537439 /* JournalMediator.swift in Sources */,
 				96B43F4B255CAAF600537439 /* JournalViewControllerDelegate.swift in Sources */,
 				960910362555C51A00E781A1 /* JournalArticleDetails.swift in Sources */,
 				96F2F87425115EC800F7A58B /* WallpapersManagerCore.swift in Sources */,
@@ -1914,6 +1936,7 @@
 				963A442824FCCC720018A8CA /* FPWhatLikeGetCell.swift in Sources */,
 				966F479124F7A3740025FD5F /* FindPlaceViewController.swift in Sources */,
 				966F478F24F7A3480025FD5F /* OnboardingViewController.swift in Sources */,
+				96B43F5B255D3E9200537439 /* JADetailsViewModel.swift in Sources */,
 				960F032024DAC686008267FA /* Fonts.swift in Sources */,
 				960F032724DAC686008267FA /* InterceptingEventsView.swift in Sources */,
 				9609B83225118C9400457FD6 /* WallpaperActionsView.swift in Sources */,
@@ -1990,6 +2013,7 @@
 				96B74C3A250ED80100413D81 /* DirectCollectionView.swift in Sources */,
 				9631643E251A91E8007791D3 /* LearnContentTableTextCell.swift in Sources */,
 				960F032A24DAC686008267FA /* PaddingTextField.swift in Sources */,
+				96B43F5E255D3EB100537439 /* JADetailsView.swift in Sources */,
 				9609103B2555C65800E781A1 /* GetJournalListRequest.swift in Sources */,
 				9674469025388AC200E32205 /* PaygateConfigurationManagerCore.swift in Sources */,
 				966F478D24F6DCF80025FD5F /* PaygateViewModel.swift in Sources */,

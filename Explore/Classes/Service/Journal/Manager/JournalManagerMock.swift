@@ -14,13 +14,6 @@ final class JournalManagerMock: JournalManager {
         static let cachedArticlesKey = "journal_manager_mock_cached_articles_key"
         static let cachedTagsKey = "journal_manager_mock_cached_tags_key"
     }
-    
-    private var delegates = [Weak<JournalManagerDelegate>]()
-    
-    private let rxDidStoredArticlesTrigger = PublishRelay<[JournalArticle]>()
-    private let rxDidStoredTagsTrigger = PublishRelay<[JournalTag]>()
-    private let rxDidCreatedArticleDetailsTrigger = PublishRelay<JournalArticleDetails>()
-    private let rxDidRemovedArticleIdTrigger = PublishRelay<Int>()
 }
 
 // MARK: API(Rx)
@@ -94,40 +87,6 @@ extension JournalManagerMock {
     }
 }
 
-// MARK: Triggers(Rx)
-extension JournalManagerMock {
-    var rxDidStoredArticles: Signal<[JournalArticle]> {
-        rxDidStoredArticlesTrigger.asSignal()
-    }
-    
-    var rxDidStoredTags: Signal<[JournalTag]> {
-        rxDidStoredTagsTrigger.asSignal()
-    }
-    
-    var rxDidCreatedArticleDetails: Signal<JournalArticleDetails> {
-        rxDidCreatedArticleDetailsTrigger.asSignal()
-    }
-    
-    var rxDidRemovedArticleId: Signal<Int> {
-        rxDidRemovedArticleIdTrigger.asSignal()
-    }
-}
-
-// MARK: Observer
-extension JournalManagerMock {
-    func add(observer: JournalManagerDelegate) {
-        let weakly = observer as AnyObject
-        delegates.append(Weak<JournalManagerDelegate>(weakly))
-        delegates = delegates.filter { $0.weak != nil }
-    }
-    
-    func remove(observer: JournalManagerDelegate) {
-        if let index = delegates.firstIndex(where: { $0.weak === observer }) {
-            delegates.remove(at: index)
-        }
-    }
-}
-
 // MARK: Private
 private extension JournalManagerMock {
     func getJSON(with name: String) -> Any {
@@ -186,11 +145,7 @@ private extension JournalManagerMock {
             
             UserDefaults.standard.setValue(data, forKey: Constants.cachedArticlesKey)
             
-            DispatchQueue.main.async { [weak self] in
-                self?.delegates.forEach { $0.weak?.journalManagerDidStored(articles: articles) }
-                
-                self?.rxDidStoredArticlesTrigger.accept(articles)
-            }
+            JournalMediator.shared.notifyAboutStored(articles: articles)
         }
     }
     
@@ -217,11 +172,7 @@ private extension JournalManagerMock {
             
             UserDefaults.standard.setValue(data, forKey: Constants.cachedTagsKey)
             
-            DispatchQueue.main.async { [weak self] in
-                self?.delegates.forEach { $0.weak?.journalManagerDidStored(tags: tags) }
-                
-                self?.rxDidStoredTagsTrigger.accept(tags)
-            }
+            JournalMediator.shared.notifyAboutStored(tags: tags)
         }
     }
     
@@ -240,9 +191,7 @@ private extension JournalManagerMock {
             
             self?.store(articles: articles)
             
-            DispatchQueue.main.async {
-                self?.rxDidCreatedArticleDetailsTrigger.accept(details)
-            }
+            JournalMediator.shared.notifyAboutCreated(articleDetails: details)
         }
     }
     
@@ -259,9 +208,7 @@ private extension JournalManagerMock {
             
             self?.store(articles: articles)
             
-            DispatchQueue.main.async {
-                self?.rxDidRemovedArticleIdTrigger.accept(articleId)
-            }
+            JournalMediator.shared.notifyAboutRemoved(articleId: articleId)
         }
     }
 }

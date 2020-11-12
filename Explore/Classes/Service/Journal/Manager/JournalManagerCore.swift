@@ -14,13 +14,6 @@ final class JournalManagerCore: JournalManager {
         static let cachedArticlesKey = "journal_manager_core_cached_articles_key"
         static let cachedTagsKey = "journal_manager_core_cached_tags_key"
     }
-    
-    private var delegates = [Weak<JournalManagerDelegate>]()
-    
-    private let rxDidStoredArticlesTrigger = PublishRelay<[JournalArticle]>()
-    private let rxDidStoredTagsTrigger = PublishRelay<[JournalTag]>()
-    private let rxDidCreatedArticleDetailsTrigger = PublishRelay<JournalArticleDetails>()
-    private let rxDidRemovedArticleIdTrigger = PublishRelay<Int>()
 }
 
 // MARK: API(Rx)
@@ -114,40 +107,6 @@ extension JournalManagerCore {
     }
 }
 
-// MARK: Triggers(Rx)
-extension JournalManagerCore {
-    var rxDidStoredArticles: Signal<[JournalArticle]> {
-        rxDidStoredArticlesTrigger.asSignal()
-    }
-    
-    var rxDidStoredTags: Signal<[JournalTag]> {
-        rxDidStoredTagsTrigger.asSignal()
-    }
-    
-    var rxDidCreatedArticleDetails: Signal<JournalArticleDetails> {
-        rxDidCreatedArticleDetailsTrigger.asSignal()
-    }
-    
-    var rxDidRemovedArticleId: Signal<Int> {
-        rxDidRemovedArticleIdTrigger.asSignal()
-    }
-}
-
-// MARK: Observer
-extension JournalManagerCore {
-    func add(observer: JournalManagerDelegate) {
-        let weakly = observer as AnyObject
-        delegates.append(Weak<JournalManagerDelegate>(weakly))
-        delegates = delegates.filter { $0.weak != nil }
-    }
-    
-    func remove(observer: JournalManagerDelegate) {
-        if let index = delegates.firstIndex(where: { $0.weak === observer }) {
-            delegates.remove(at: index)
-        }
-    }
-}
-
 // MARK: Private
 private extension JournalManagerCore {
     func getCachedList<T: Decodable>(key: String) -> Single<[T]> {
@@ -201,11 +160,7 @@ private extension JournalManagerCore {
             
             UserDefaults.standard.setValue(data, forKey: Constants.cachedArticlesKey)
             
-            DispatchQueue.main.async { [weak self] in
-                self?.delegates.forEach { $0.weak?.journalManagerDidStored(articles: articles) }
-                
-                self?.rxDidStoredArticlesTrigger.accept(articles)
-            }
+            JournalMediator.shared.notifyAboutStored(articles: articles)
         }
     }
     
@@ -235,11 +190,7 @@ private extension JournalManagerCore {
             
             UserDefaults.standard.setValue(data, forKey: Constants.cachedTagsKey)
             
-            DispatchQueue.main.async { [weak self] in
-                self?.delegates.forEach { $0.weak?.journalManagerDidStored(tags: tags) }
-                
-                self?.rxDidStoredTagsTrigger.accept(tags)
-            }
+            JournalMediator.shared.notifyAboutStored(tags: tags)
         }
     }
     
@@ -258,9 +209,7 @@ private extension JournalManagerCore {
             
             self?.store(articles: articles)
             
-            DispatchQueue.main.async {
-                self?.rxDidCreatedArticleDetailsTrigger.accept(details)
-            }
+            JournalMediator.shared.notifyAboutCreated(articleDetails: details)
         }
     }
     
@@ -277,9 +226,7 @@ private extension JournalManagerCore {
             
             self?.store(articles: articles)
             
-            DispatchQueue.main.async {
-                self?.rxDidRemovedArticleIdTrigger.accept(articleId)
-            }
+            JournalMediator.shared.notifyAboutRemoved(articleId: articleId)
         }
     }
 }

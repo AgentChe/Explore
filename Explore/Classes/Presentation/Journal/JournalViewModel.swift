@@ -91,12 +91,12 @@ private extension JournalViewModel {
                         return .empty()
                     }),
                 
-                journalManager
+                JournalMediator.shared
                     .rxDidStoredArticles
                     .map { Content.articles($0) }
                     .asDriver(onErrorDriveWith: .empty()),
                 
-                journalManager
+                JournalMediator.shared
                     .rxDidRemovedArticleId
                     .flatMapLatest { [weak self] removedId -> Driver<Content> in
                         guard let this = self else {

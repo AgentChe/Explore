@@ -140,6 +140,8 @@ private extension JournalViewController {
     }
     
     func goToDetails(with article: JournalArticle) {
+        let vc = JADetailsViewController.make(artricle: article)
         
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

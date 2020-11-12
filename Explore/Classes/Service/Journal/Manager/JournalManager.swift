@@ -23,14 +23,4 @@ protocol JournalManager: class {
                   thumbsImagesIds: [Int]?,
                   imagesIdsToDelete: [Int]?) -> Single<JournalArticleDetails?>
     func rxDelete(articleId: Int) -> Completable
-    
-    // MARK: Triggers(Rx)
-    var rxDidStoredArticles: Signal<[JournalArticle]> { get }
-    var rxDidStoredTags: Signal<[JournalTag]> { get }
-    var rxDidCreatedArticleDetails: Signal<JournalArticleDetails> { get }
-    var rxDidRemovedArticleId: Signal<Int> { get }
-    
-    // MARK: Observer
-    func add(observer: JournalManagerDelegate)
-    func remove(observer: JournalManagerDelegate)
 }
