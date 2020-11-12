@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RxCocoa
 
 final class JournalTableView: UITableView {
+    let tapped = PublishRelay<JournalArticle>()
+    
     private var elements = [JournalArticle]()
     
     override init(frame: CGRect, style: UITableView.Style) {
@@ -62,6 +65,12 @@ extension JournalTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let element = elements[indexPath.section]
+        
+        tapped.accept(element)
     }
 }
 

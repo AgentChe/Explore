@@ -74,6 +74,12 @@ final class JournalViewController: UIViewController {
             .withLatestFrom(buttonState)
             .subscribe(onNext: handleButtonTap(with:))
             .disposed(by: disposeBag)
+        
+        mainView
+            .tableView
+            .tapped
+            .subscribe(onNext: goToDetails(with:))
+            .disposed(by: disposeBag)
     }
 }
 
@@ -131,5 +137,9 @@ private extension JournalViewController {
         case .hidden:
             break
         }
+    }
+    
+    func goToDetails(with article: JournalArticle) {
+        
     }
 }

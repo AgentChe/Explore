@@ -13,9 +13,12 @@ final class JournalTableCell: UITableViewCell {
     lazy var titleLabel = makeLabel()
     lazy var ratingView = makeRatingView()
     lazy var descriptionLabel = makeLabel()
+    lazy var photosScrollView = makePhotosScrollView()
     lazy var tagsLabel = makeLabel()
     lazy var dateLabel = makeLabel()
     lazy var tripTimeLabel = makeLabel()
+    
+    private var imagesView = [UIImageView]()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -50,6 +53,8 @@ extension JournalTableCell {
                             .textAlignment(.left)
                             .letterSpacing(0.5.scale))
         
+        setupPhotos(from: element)
+        
         tagsLabel.attributedText  = element.tags
             .map { String(format: "#%@", $0.name) }
             .joined(separator: ", ")
@@ -81,6 +86,44 @@ private extension JournalTableCell {
         
         contentView.backgroundColor = UIColor.clear
         backgroundColor = UIColor.clear
+    }
+    
+    func setupPhotos(from element: JournalArticle) {
+        imagesView.forEach { $0.removeFromSuperview() }
+        imagesView = []
+        
+        photosScrollView.contentSize = .zero
+        
+        guard !element.thumbsImages.isEmpty else {
+            return
+        }
+        
+        let urls = element
+            .thumbsImages
+            .compactMap { URL(string: $0.url) }
+        
+        var x = CGFloat(0)
+        
+        urls
+            .forEach { url in
+                let imageView = UIImageView()
+                imageView.frame.size = CGSize(width: 72.scale, height: 72.scale)
+                imageView.frame.origin = CGPoint(x: x, y: 0)
+                imageView.contentMode = .scaleAspectFill
+                imageView.backgroundColor = UIColor.clear
+                imageView.image = UIImage(named: "Journal.Empty")
+                imageView.layer.cornerRadius = 8.scale
+                imageView.clipsToBounds = true
+                
+                x += 72.scale + 12.scale
+                
+                imagesView.append(imageView)
+                
+                photosScrollView.addSubview(imageView)
+            }
+        
+        let contentWidth = 72.scale * CGFloat(urls.count) + 12.scale * CGFloat(urls.count - 1)
+        photosScrollView.contentSize = CGSize(width: contentWidth, height: 72.scale)
     }
     
     func date(from element: JournalArticle) -> String {
@@ -135,9 +178,16 @@ private extension JournalTableCell {
         ])
         
         NSLayoutConstraint.activate([
+            photosScrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
+            photosScrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
+            photosScrollView.heightAnchor.constraint(equalToConstant: 72.scale),
+            photosScrollView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
             tagsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
             tagsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
-            tagsLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 16.scale)
+            tagsLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 104.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -148,8 +198,7 @@ private extension JournalTableCell {
         
         NSLayoutConstraint.activate([
             tripTimeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
-            tripTimeLabel.topAnchor.constraint(equalTo: tagsLabel.bottomAnchor, constant: 16.scale),
-            tripTimeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            tripTimeLabel.centerYAnchor.constraint(equalTo: dateLabel.centerYAnchor)
         ])
     }
 }
@@ -173,6 +222,16 @@ private extension JournalTableCell {
         view.settings.starMargin = Double(4.scale)
         view.settings.starSize = Double(16.scale)
         view.isUserInteractionEnabled = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePhotosScrollView() -> UIScrollView {
+        let view = UIScrollView()
+        view.contentSize = CGSize(width: 375.scale, height: 72.scale)
+        view.showsHorizontalScrollIndicator = false
+        view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
