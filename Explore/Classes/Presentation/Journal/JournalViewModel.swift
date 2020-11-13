@@ -14,14 +14,13 @@ final class JournalViewModel {
         case feedback, newEntry, hidden
     }
     
-    
     enum Content {
         case articles([JournalArticle])
         case needPayment
     }
     
-    private let tripManager: TripManager = TripManagerMock()
-    private let journalManager: JournalManager = JournalManagerMock()
+    private let tripManager: TripManager = TripManagerCore()
+    private let journalManager: JournalManager = JournalManagerCore()
     
     func buttonState() -> Driver<ButtonState> {
         createButtonState()

@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import Kingfisher
 
 final class JournalTableCell: UITableViewCell {
     lazy var titleLabel = makeLabel()
@@ -89,7 +90,10 @@ private extension JournalTableCell {
     }
     
     func setupPhotos(from element: JournalArticle) {
-        imagesView.forEach { $0.removeFromSuperview() }
+        imagesView.forEach {
+            $0.kf.cancelDownloadTask()
+            $0.removeFromSuperview()
+        }
         imagesView = []
         
         photosScrollView.contentSize = .zero
@@ -111,9 +115,10 @@ private extension JournalTableCell {
                 imageView.frame.origin = CGPoint(x: x, y: 0)
                 imageView.contentMode = .scaleAspectFill
                 imageView.backgroundColor = UIColor.clear
-                imageView.image = UIImage(named: "Journal.Empty")
                 imageView.layer.cornerRadius = 8.scale
                 imageView.clipsToBounds = true
+                
+                imageView.kf.setImage(with: url)
                 
                 x += 72.scale + 12.scale
                 

@@ -14,6 +14,7 @@
 "Settings" = "Einstellungen";
 "TermsOfService" = "Servicebedingungen";
 "PrivacyPolicy" = "Datenschutzerklärung";
+"Delete" = "Delete";
 
 // MARK: Image Picker
 "ImagePicker.TakePhoto" = "Foto machen";
@@ -125,3 +126,13 @@
 "Journal.Hour" = "hour";
 "Journal.Hours" = "hours";
 "Journal.Minute" = "min.";
+
+// MARK: Journal Article Details
+"JADetails.Edit" = "Edit";
+"JADetails.Share" = "Share";
+"JADetails.Delete" = "Delete";
+"JADetails.Tags" = "Tags";
+"JADetails.TripTime" = "🏁 Trip time: %@";
+"JADetails.DeleteFailure" = "Failure to delete recover";
+"JADetails.DeleteAlert.Title" = "Are you sure?";
+"JADetails.DeleteAlert.Body" = "You will not be able to recover this note.";
