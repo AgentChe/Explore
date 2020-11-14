@@ -24,7 +24,8 @@ extension FeedbackViewModel {
         Driver<FTableElement>
             .merge([
                 inputTripId
-                    .map { tripId in FTableElement() }
+                    .compactMap { $0 }
+                    .map { tripId in FTableElement(tripId: tripId) }
                     .asDriver(onErrorDriveWith: .empty()),
                 
                 inputArticle

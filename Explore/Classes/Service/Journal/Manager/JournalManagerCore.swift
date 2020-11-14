@@ -205,7 +205,11 @@ private extension JournalManagerCore {
             
             let article = BridgeArticleDetails().bridge(details)
             
-            articles.append(article)
+            if let index = articles.firstIndex(where: { $0.id == article.id }) {
+                articles[index] = article
+            } else {
+                articles.append(article)
+            }
             
             self?.store(articles: articles)
             
