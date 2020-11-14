@@ -105,7 +105,7 @@ private extension JADetailsViewController {
                     return
                 }
                 
-                let vc = FeedbackViewController.make(articleDetails: details)
+                let vc = FeedbackViewController.make(articleDetails: details, screenType: .edit)
                 self?.navigationController?.pushViewController(vc, animated: true)
             })
             .disposed(by: disposeBag)

@@ -136,3 +136,15 @@
 "JADetails.DeleteFailure" = "Failure to delete recover";
 "JADetails.DeleteAlert.Title" = "Are you sure?";
 "JADetails.DeleteAlert.Body" = "You will not be able to recover this note.";
+
+// MARK: Feedback
+"Feedback.TitleCell.Title" = "Title";
+"Feedback.RatingCell.Title" = "How would you rate your experience?";
+"Feedback.DescriptionCell.Title" = "Review";
+"Feedback.PhotosCell.Title" = "Photos";
+"Feedback.TagsCell.Title" = "Tags";
+"Feedback.Save" = "Save";
+"Feedback.Success.Title" = "Your trip record has been\nsuccessfully added!";
+"Feedback.Success.Button" = "To new location";
+"Feedback.CreateFailure" = "Failure to create feedback";
+"Feedback.EditSuccess" = "Edit successfully";

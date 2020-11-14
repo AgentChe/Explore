@@ -222,6 +222,14 @@
 		96B43F6B255D46C600537439 /* JADetailsMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F6A255D46C600537439 /* JADetailsMenuItem.swift */; };
 		96B43F6E255D484600537439 /* JADetailsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F6D255D484600537439 /* JADetailsMenu.swift */; };
 		96B43F72255D4C4600537439 /* JADetailsPhotosSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F71255D4C4600537439 /* JADetailsPhotosSlider.swift */; };
+		96B43F83255F14FE00537439 /* FeedbackTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F82255F14FE00537439 /* FeedbackTableView.swift */; };
+		96B43F86255F155D00537439 /* FTableTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F85255F155D00537439 /* FTableTitleCell.swift */; };
+		96B43F8A255F15EF00537439 /* FTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F89255F15EF00537439 /* FTableElement.swift */; };
+		96B43F8D255FB76800537439 /* FTableRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F8C255FB76800537439 /* FTableRatingCell.swift */; };
+		96B43F90255FBC5B00537439 /* FTableDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F8F255FBC5B00537439 /* FTableDescriptionCell.swift */; };
+		96B43F982560264100537439 /* FeedbackSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F972560264100537439 /* FeedbackSuccessController.swift */; };
+		96B43F9B2560267D00537439 /* FeedbackSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F9A2560267D00537439 /* FeedbackSuccessView.swift */; };
+		96B43F9E25602A8E00537439 /* FeedbackViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F9D25602A8E00537439 /* FeedbackViewControllerDelegate.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
 		96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */; };
 		96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C31250ED76500413D81 /* DirectViewController.swift */; };
@@ -482,6 +490,14 @@
 		96B43F6A255D46C600537439 /* JADetailsMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JADetailsMenuItem.swift; sourceTree = "<group>"; };
 		96B43F6D255D484600537439 /* JADetailsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JADetailsMenu.swift; sourceTree = "<group>"; };
 		96B43F71255D4C4600537439 /* JADetailsPhotosSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JADetailsPhotosSlider.swift; sourceTree = "<group>"; };
+		96B43F82255F14FE00537439 /* FeedbackTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableView.swift; sourceTree = "<group>"; };
+		96B43F85255F155D00537439 /* FTableTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTableTitleCell.swift; sourceTree = "<group>"; };
+		96B43F89255F15EF00537439 /* FTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTableElement.swift; sourceTree = "<group>"; };
+		96B43F8C255FB76800537439 /* FTableRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTableRatingCell.swift; sourceTree = "<group>"; };
+		96B43F8F255FBC5B00537439 /* FTableDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTableDescriptionCell.swift; sourceTree = "<group>"; };
+		96B43F972560264100537439 /* FeedbackSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackSuccessController.swift; sourceTree = "<group>"; };
+		96B43F9A2560267D00537439 /* FeedbackSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackSuccessView.swift; sourceTree = "<group>"; };
+		96B43F9D25602A8E00537439 /* FeedbackViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewControllerDelegate.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResponseMapper.swift; sourceTree = "<group>"; };
 		96B74C31250ED76500413D81 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
@@ -1453,9 +1469,12 @@
 		96B43F0F255BF4D000537439 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
+				96B43F962560262700537439 /* Controllers */,
+				96B43F7F255F14D100537439 /* Views */,
 				96B43F10255BF50100537439 /* FeedbackViewController.swift */,
 				96B43F14255BF52B00537439 /* FeedbackViewModel.swift */,
 				96B43F17255BF53F00537439 /* FeedbackView.swift */,
+				96B43F9D25602A8E00537439 /* FeedbackViewControllerDelegate.swift */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -1521,6 +1540,51 @@
 				96B43F71255D4C4600537439 /* JADetailsPhotosSlider.swift */,
 			);
 			path = PhotosSlider;
+			sourceTree = "<group>";
+		};
+		96B43F7F255F14D100537439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96B43F80255F14DC00537439 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96B43F80255F14DC00537439 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				96B43F88255F157C00537439 /* Models */,
+				96B43F81255F14E300537439 /* Cells */,
+				96B43F82255F14FE00537439 /* FeedbackTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		96B43F81255F14E300537439 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				96B43F85255F155D00537439 /* FTableTitleCell.swift */,
+				96B43F8C255FB76800537439 /* FTableRatingCell.swift */,
+				96B43F8F255FBC5B00537439 /* FTableDescriptionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		96B43F88255F157C00537439 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96B43F89255F15EF00537439 /* FTableElement.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		96B43F962560262700537439 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				96B43F972560264100537439 /* FeedbackSuccessController.swift */,
+				96B43F9A2560267D00537439 /* FeedbackSuccessView.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		96B74C2D250EC68000413D81 /* Mapper */ = {
@@ -1881,6 +1945,7 @@
 				9687B01C2524B0D700B81DC8 /* AppStateManagerDelegate.swift in Sources */,
 				96B43F4E255CADB300537439 /* TripMediator.swift in Sources */,
 				96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */,
+				96B43F9B2560267D00537439 /* FeedbackSuccessView.swift in Sources */,
 				960F031D24DAC686008267FA /* Scalable.swift in Sources */,
 				9631642C251A9132007791D3 /* LearnContentViewController.swift in Sources */,
 				9609102825559FD000E781A1 /* OnboardingAnimationView.swift in Sources */,
@@ -1952,6 +2017,7 @@
 				96316414251A5376007791D3 /* LearnCollectionViewDelegate.swift in Sources */,
 				966F471424F66CFD0025FD5F /* TripManagerDelegate.swift in Sources */,
 				966F471624F6761F0025FD5F /* CreateTripRequest.swift in Sources */,
+				96B43F8A255F15EF00537439 /* FTableElement.swift in Sources */,
 				96091077255ADCA300E781A1 /* JournalManagerDelegate.swift in Sources */,
 				963A442424FB921B0018A8CA /* FPNotificationCell.swift in Sources */,
 				960F031F24DAC686008267FA /* ScreenSize.swift in Sources */,
@@ -1981,6 +2047,7 @@
 				96091069255AD00100E781A1 /* Image.swift in Sources */,
 				96744693253895F100E32205 /* OnboardingViewModel.swift in Sources */,
 				966F471E24F688F20025FD5F /* Session.swift in Sources */,
+				96B43F90255FBC5B00537439 /* FTableDescriptionCell.swift in Sources */,
 				963A441724FA4EC90018A8CA /* TripManagerMock.swift in Sources */,
 				96B43EFD255B1A2900537439 /* ProductPrice.swift in Sources */,
 				9609B85225173C2F00457FD6 /* GetLearnCategoriesRequest.swift in Sources */,
@@ -2020,6 +2087,7 @@
 				9631643C251A91D8007791D3 /* LearnContentTableImageCell.swift in Sources */,
 				960F031E24DAC686008267FA /* TextAttributes.swift in Sources */,
 				960910412555C74A00E781A1 /* GetJournalArticleDetailsRequest.swift in Sources */,
+				96B43F86255F155D00537439 /* FTableTitleCell.swift in Sources */,
 				966C847E251954DC0094784C /* LearnCollectionView.swift in Sources */,
 				966F471224F66CE40025FD5F /* TripManagerCore.swift in Sources */,
 				966F472024F68A540025FD5F /* SessionManager.swift in Sources */,
@@ -2033,6 +2101,7 @@
 				966F479C24F7B0600025FD5F /* OnboardingView.swift in Sources */,
 				96B43F15255BF52B00537439 /* FeedbackViewModel.swift in Sources */,
 				966F47A324F7B7110025FD5F /* OnboardingSlideView.swift in Sources */,
+				96B43F982560264100537439 /* FeedbackSuccessController.swift in Sources */,
 				96F2F87D25116E8100F7A58B /* WallpapersView.swift in Sources */,
 				966C847A2519540C0094784C /* LearnCategoriesView.swift in Sources */,
 				9631640A25195C91007791D3 /* LearnCategoriesCollectionElement.swift in Sources */,
@@ -2063,6 +2132,7 @@
 				9631640C25195D10007791D3 /* LearnCategoriesCollectionTitleCell.swift in Sources */,
 				960F02FF24DAC64D008267FA /* GlobalDefinitions.swift in Sources */,
 				96B43F06255B426700537439 /* JournalViewModel.swift in Sources */,
+				96B43F9E25602A8E00537439 /* FeedbackViewControllerDelegate.swift in Sources */,
 				966F475B24F6A4A20025FD5F /* PaygateMapper.swift in Sources */,
 				966F476A24F6AF890025FD5F /* PaygateManager.swift in Sources */,
 				9609102525559FA200E781A1 /* OnboardingAnimationController.swift in Sources */,
@@ -2084,6 +2154,8 @@
 				96091055255AB39E00E781A1 /* SaveJournalArticleResponseMapper.swift in Sources */,
 				9609107A255AE32E00E781A1 /* JournalManagerCore.swift in Sources */,
 				9609B8582517403500457FD6 /* GetLearnCategoriesResponseMapper.swift in Sources */,
+				96B43F8D255FB76800537439 /* FTableRatingCell.swift in Sources */,
+				96B43F83255F14FE00537439 /* FeedbackTableView.swift in Sources */,
 				963A442A24FCD5E20018A8CA /* FPCompleteCell.swift in Sources */,
 				966F472F24F6966C0025FD5F /* PaygateMainOffer.swift in Sources */,
 				96F2F85725102A4E00F7A58B /* LearnCategoriesViewController.swift in Sources */,

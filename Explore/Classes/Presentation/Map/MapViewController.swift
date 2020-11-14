@@ -84,6 +84,13 @@ extension MapViewController {
     }
 }
 
+// MARK: FeedbackViewControllerDelegate
+extension MapViewController: FeedbackViewControllerDelegate {
+    func feedbackViewControllerToNewLocation() {
+        navigationController?.popViewController(animated: false)
+    }
+}
+
 // MARK: Private
 private extension MapViewController {
     func updateRadius(from location: Coordinate, to trip: Trip) {
@@ -111,7 +118,9 @@ private extension MapViewController {
                 return
             }
             
-            let vc = FeedbackViewController.make(tripId: tripId)
+            let vc = FeedbackViewController.make(tripId: tripId, screenType: .create)
+            vc.delegate = self
+            
             navigationController?.pushViewController(vc, animated: true)
         } else if isNeedOpenPaygate {
             let vc = PaygateViewController.make()

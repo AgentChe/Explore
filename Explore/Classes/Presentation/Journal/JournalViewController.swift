@@ -126,7 +126,7 @@ private extension JournalViewController {
                 return
             }
             
-            let vc = FeedbackViewController.make(tripId: tripId)
+            let vc = FeedbackViewController.make(tripId: tripId, screenType: .create)
             
             navigationController?.pushViewController(vc, animated: true)
         case .newEntry:
