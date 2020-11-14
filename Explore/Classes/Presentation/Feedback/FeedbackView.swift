@@ -63,13 +63,13 @@ private extension FeedbackView {
         return view
     }
     
-    func makeButton() -> UIButton {
+    func makeButton() -> FeedbackSaveButton {
         let attrs = TextAttributes()
             .textColor(UIColor(red: 21 / 255, green: 21 / 255, blue: 34 / 255, alpha: 1))
             .font(Font.Poppins.semibold(size: 16.scale))
             .lineHeight(22.scale)
         
-        let view = UIButton()
+        let view = FeedbackSaveButton()
         view.backgroundColor = UIColor.white
         view.setAttributedTitle("Feedback.Save".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 25.scale

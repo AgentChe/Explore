@@ -230,6 +230,7 @@
 		96B43F982560264100537439 /* FeedbackSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F972560264100537439 /* FeedbackSuccessController.swift */; };
 		96B43F9B2560267D00537439 /* FeedbackSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F9A2560267D00537439 /* FeedbackSuccessView.swift */; };
 		96B43F9E25602A8E00537439 /* FeedbackViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F9D25602A8E00537439 /* FeedbackViewControllerDelegate.swift */; };
+		96B43FA12560464000537439 /* FeedbackSaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FA02560464000537439 /* FeedbackSaveButton.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
 		96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */; };
 		96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C31250ED76500413D81 /* DirectViewController.swift */; };
@@ -498,6 +499,7 @@
 		96B43F972560264100537439 /* FeedbackSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackSuccessController.swift; sourceTree = "<group>"; };
 		96B43F9A2560267D00537439 /* FeedbackSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackSuccessView.swift; sourceTree = "<group>"; };
 		96B43F9D25602A8E00537439 /* FeedbackViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewControllerDelegate.swift; sourceTree = "<group>"; };
+		96B43FA02560464000537439 /* FeedbackSaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackSaveButton.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResponseMapper.swift; sourceTree = "<group>"; };
 		96B74C31250ED76500413D81 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
@@ -1546,6 +1548,7 @@
 			isa = PBXGroup;
 			children = (
 				96B43F80255F14DC00537439 /* TableView */,
+				96B43FA02560464000537439 /* FeedbackSaveButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2057,6 +2060,7 @@
 				9609107D255AF76E00E781A1 /* BridgeArticleDetails.swift in Sources */,
 				96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */,
 				960F032C24DAC686008267FA /* CircleView.swift in Sources */,
+				96B43FA12560464000537439 /* FeedbackSaveButton.swift in Sources */,
 				96F2F87B251169ED00F7A58B /* WallpapersManagerMock.swift in Sources */,
 				9609B85425173DB700457FD6 /* GetLearnContentRequest.swift in Sources */,
 				96091074255ADA5E00E781A1 /* ImageManagerMock.swift in Sources */,

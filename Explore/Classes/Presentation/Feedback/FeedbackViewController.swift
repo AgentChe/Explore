@@ -67,6 +67,13 @@ final class FeedbackViewController: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
+        viewModel
+            .createFeedbackInProgress
+            .drive(onNext: { [weak self] inProgress in
+                inProgress ? self?.mainView.button.startAnimation() : self?.mainView.button.stopAnimation()
+            })
+            .disposed(by: disposeBag)
     }
 }
 

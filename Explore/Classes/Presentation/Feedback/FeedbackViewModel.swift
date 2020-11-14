@@ -14,6 +14,8 @@ final class FeedbackViewModel {
     let inputArticle = BehaviorRelay<JournalArticle?>(value: nil)
     let inputArticleDetails = BehaviorRelay<JournalArticleDetails?>(value: nil)
     
+    let createFeedbackInProgress = RxActivityIndicator()
+    
     private let tripManager = TripManagerCore()
     private let journalManager = JournalManagerCore()
 }
@@ -41,7 +43,7 @@ extension FeedbackViewModel {
             ])
     }
     
-    func createFeedback(element: FTableElement) -> Single<Bool> {
+    func createFeedback(element: FTableElement) -> Driver<Bool> {
         journalManager
             .rxCreate(tripId: element.tripId,
                       title: element.title ?? "",
@@ -51,7 +53,8 @@ extension FeedbackViewModel {
                       originImagesIds: nil,
                       thumbsImagesIds: nil,
                       imagesIdsToDelete: nil)
-            .catchErrorJustReturn(nil)
+            .trackActivity(createFeedbackInProgress)
+            .asDriver(onErrorJustReturn: nil)
             .map { $0 != nil }
     }
     
