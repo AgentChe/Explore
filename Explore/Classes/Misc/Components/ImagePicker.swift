@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ImagePickerDelegate: class {
-    func didSelect(image: UIImage?)
+    func imagePickerDidSelect(image: UIImage?)
 }
 
 final class ImagePicker: NSObject {
@@ -58,7 +58,6 @@ final class ImagePicker: NSObject {
 }
 
 // MARK: UIImagePickerControllerDelegate & UINavigationControllerDelegate
-
 extension ImagePicker: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.pickerController(picker, didSelect: nil)
@@ -74,7 +73,6 @@ extension ImagePicker: UIImagePickerControllerDelegate, UINavigationControllerDe
 }
 
 // MARK: Private
-
 private extension ImagePicker {
     func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {
         guard UIImagePickerController.isSourceTypeAvailable(type) else {
@@ -90,6 +88,6 @@ private extension ImagePicker {
     func pickerController(_ controller: UIImagePickerController, didSelect image: UIImage?) {
         controller.dismiss(animated: true, completion: nil)
 
-        delegate?.didSelect(image: image)
+        delegate?.imagePickerDidSelect(image: image)
     }
 }

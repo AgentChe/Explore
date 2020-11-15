@@ -9,6 +9,8 @@
 import UIKit
 
 final class FeedbackTableView: UITableView {
+    weak var vc: UIViewController?
+    
     private var element: FTableElement!
     
     override init(frame: CGRect, style: UITableView.Style) {
@@ -34,7 +36,7 @@ extension FeedbackTableView {
 // MARK: UITableViewDataSource
 extension FeedbackTableView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        3
+        4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,6 +59,11 @@ extension FeedbackTableView: UITableViewDataSource {
             return cell
         case 2:
             let cell = dequeueReusableCell(withIdentifier: String(describing: FTableDescriptionCell.self)) as! FTableDescriptionCell
+            cell.setup(element: element)
+            return cell
+        case 3:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: FTablePhotosCell.self)) as! FTablePhotosCell
+            cell.vc = vc
             cell.setup(element: element)
             return cell
         default:
@@ -83,7 +90,7 @@ extension FeedbackTableView: UITableViewDelegate {
             return 71.scale
         case 1:
             return 65.scale
-        case 2:
+        case 2, 3:
             return UITableView.automaticDimension
         default:
             return 0
@@ -97,6 +104,7 @@ private extension FeedbackTableView {
         register(FTableTitleCell.self, forCellReuseIdentifier: String(describing: FTableTitleCell.self))
         register(FTableRatingCell.self, forCellReuseIdentifier: String(describing: FTableRatingCell.self))
         register(FTableDescriptionCell.self, forCellReuseIdentifier: String(describing: FTableDescriptionCell.self))
+        register(FTablePhotosCell.self, forCellReuseIdentifier: String(describing: FTablePhotosCell.self))
         
         dataSource = self
         delegate = self

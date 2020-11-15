@@ -23,6 +23,11 @@ final class FTableElement {
         }
     }
     var description: String?
+    
+    var uploadedThumbsImages: [JournalImage]?
+    var uploadedOriginImages: [JournalImage]?
+    var uploadedThumbsImagesForDelete: [JournalImage]?
+    var newImages: [UIImage]?
 }
 
 // MARK: Make
@@ -30,13 +35,19 @@ extension FTableElement {
     convenience init(tripId: Int,
                      title: String? = nil,
                      rating: Int? = nil,
-                     description: String? = nil) {
+                     description: String? = nil,
+                     uploadedThumbsImages: [JournalImage]? = nil,
+                     uploadedOriginImages: [JournalImage]? = nil) {
         self.init()
         
         self.tripId = tripId
         self.title = title
         self.rating = rating
         self.description = description
+        self.uploadedThumbsImages = uploadedThumbsImages
+        self.uploadedOriginImages = uploadedOriginImages
+        
+        update()
     }
 }
 

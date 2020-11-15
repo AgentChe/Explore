@@ -43,6 +43,8 @@ final class FeedbackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainView.tableView.vc = self 
+        
         let element = viewModel.element()
         
         element

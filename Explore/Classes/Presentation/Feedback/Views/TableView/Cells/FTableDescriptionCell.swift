@@ -78,7 +78,7 @@ private extension FTableDescriptionCell {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.white)
-            .font(Font.Poppins.regular(size: 14.scale))
+            .font(Font.Poppins.bold(size: 14.scale))
             .lineHeight(21.scale)
             .letterSpacing(0.5.scale)
         

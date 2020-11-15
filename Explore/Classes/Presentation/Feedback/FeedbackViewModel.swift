@@ -18,6 +18,7 @@ final class FeedbackViewModel {
     
     private let tripManager = TripManagerCore()
     private let journalManager = JournalManagerCore()
+    private let imageManager = ImageManagerCore()
 }
 
 // MARK: API
@@ -39,20 +40,38 @@ extension FeedbackViewModel {
                 inputArticleDetails
                     .compactMap { $0 }
                     .map(map(articleDetails:))
+                    .asDriver(onErrorDriveWith: .empty()),
+                
+                JournalMediator.shared
+                    .rxDidCreatedArticleDetails
+                    .map(map(articleDetails:))
                     .asDriver(onErrorDriveWith: .empty())
             ])
     }
     
     func createFeedback(element: FTableElement) -> Driver<Bool> {
-        journalManager
-            .rxCreate(tripId: element.tripId,
-                      title: element.title ?? "",
-                      rating: element.rating ?? 1,
-                      description: element.description,
-                      tagsIds: nil,
-                      originImagesIds: nil,
-                      thumbsImagesIds: nil,
-                      imagesIdsToDelete: nil)
+        uploadImages(element: element)
+            .flatMap { [weak self] uploadedPictures -> Single<JournalArticleDetails?> in
+                guard let this = self else {
+                    return .never()
+                }
+                
+                let storedOriginImagesIds = element.uploadedOriginImages.map { $0.map { $0.id } } ?? []
+                let uploadedOriginImagesIds = uploadedPictures.map { $0.origin.id }
+                
+                let storedThumbsImagesIds = element.uploadedThumbsImages.map { $0.map { $0.id } } ?? []
+                let uploadedThumbsImagesIds = uploadedPictures.map { $0.thumb.id }
+                
+                return this.journalManager
+                    .rxCreate(tripId: element.tripId,
+                              title: element.title ?? "",
+                              rating: element.rating ?? 1,
+                              description: element.description,
+                              tagsIds: nil,
+                              originImagesIds: storedOriginImagesIds + uploadedOriginImagesIds,
+                              thumbsImagesIds: storedThumbsImagesIds + uploadedThumbsImagesIds,
+                              imagesIdsToDelete: element.uploadedThumbsImagesForDelete.map { $0.map { $0.id } })
+            }
             .trackActivity(createFeedbackInProgress)
             .asDriver(onErrorJustReturn: nil)
             .map { $0 != nil }
@@ -66,6 +85,22 @@ extension FeedbackViewModel {
 
 // MARK: Private
 private extension FeedbackViewModel {
+    func uploadImages(element: FTableElement) -> Single<[Picture]> {
+        Observable
+            .from(element.newImages ?? [])
+            .flatMap { [weak self] image -> Single<Picture?> in
+                guard let this = self else {
+                    return .never()
+                }
+                
+                return this.imageManager
+                    .upload(image: image)
+                    .catchErrorJustReturn(nil)
+            }
+            .toArray()
+            .map { $0.compactMap { $0 } }
+    }
+    
     func bridge(article: JournalArticle) -> JournalArticleDetails {
         JournalArticleDetails(id: article.id,
                               tripId: article.tripId,
@@ -84,6 +119,8 @@ private extension FeedbackViewModel {
         return FTableElement(tripId: articleDetails.tripId,
                              title: articleDetails.title,
                              rating: articleDetails.rating,
-                             description: articleDetails.description)
+                             description: articleDetails.description,
+                             uploadedThumbsImages: articleDetails.thumbsImages,
+                             uploadedOriginImages: articleDetails.originImages)
     }
 }

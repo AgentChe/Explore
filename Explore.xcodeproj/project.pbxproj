@@ -231,6 +231,9 @@
 		96B43F9B2560267D00537439 /* FeedbackSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F9A2560267D00537439 /* FeedbackSuccessView.swift */; };
 		96B43F9E25602A8E00537439 /* FeedbackViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43F9D25602A8E00537439 /* FeedbackViewControllerDelegate.swift */; };
 		96B43FA12560464000537439 /* FeedbackSaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FA02560464000537439 /* FeedbackSaveButton.swift */; };
+		96B43FA52561645A00537439 /* FTablePhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FA42561645A00537439 /* FTablePhotosCell.swift */; };
+		96B43FAF256165D200537439 /* FPhotosSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FAE256165D200537439 /* FPhotosSlider.swift */; };
+		96B43FB22561731800537439 /* FPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FB12561731800537439 /* FPhotoView.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
 		96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */; };
 		96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C31250ED76500413D81 /* DirectViewController.swift */; };
@@ -500,6 +503,9 @@
 		96B43F9A2560267D00537439 /* FeedbackSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackSuccessView.swift; sourceTree = "<group>"; };
 		96B43F9D25602A8E00537439 /* FeedbackViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewControllerDelegate.swift; sourceTree = "<group>"; };
 		96B43FA02560464000537439 /* FeedbackSaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackSaveButton.swift; sourceTree = "<group>"; };
+		96B43FA42561645A00537439 /* FTablePhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTablePhotosCell.swift; sourceTree = "<group>"; };
+		96B43FAE256165D200537439 /* FPhotosSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPhotosSlider.swift; sourceTree = "<group>"; };
+		96B43FB12561731800537439 /* FPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPhotoView.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResponseMapper.swift; sourceTree = "<group>"; };
 		96B74C31250ED76500413D81 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
@@ -1566,6 +1572,7 @@
 		96B43F81255F14E300537439 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				96B43FA32561644600537439 /* FTablePhotosCell */,
 				96B43F85255F155D00537439 /* FTableTitleCell.swift */,
 				96B43F8C255FB76800537439 /* FTableRatingCell.swift */,
 				96B43F8F255FBC5B00537439 /* FTableDescriptionCell.swift */,
@@ -1588,6 +1595,24 @@
 				96B43F9A2560267D00537439 /* FeedbackSuccessView.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		96B43FA32561644600537439 /* FTablePhotosCell */ = {
+			isa = PBXGroup;
+			children = (
+				96B43FA82561645E00537439 /* Views */,
+				96B43FA42561645A00537439 /* FTablePhotosCell.swift */,
+			);
+			path = FTablePhotosCell;
+			sourceTree = "<group>";
+		};
+		96B43FA82561645E00537439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96B43FAE256165D200537439 /* FPhotosSlider.swift */,
+				96B43FB12561731800537439 /* FPhotoView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		96B74C2D250EC68000413D81 /* Mapper */ = {
@@ -1967,6 +1992,7 @@
 				96F2F85B25102A8F00F7A58B /* WallpapersViewController.swift in Sources */,
 				96316412251A4BF7007791D3 /* DirectNavigationControllerSettings.swift in Sources */,
 				9609104C255AB33B00E781A1 /* GetJournalListResponseMapper.swift in Sources */,
+				96B43FA52561645A00537439 /* FTablePhotosCell.swift in Sources */,
 				963A440724F902450018A8CA /* GoogleMapView.swift in Sources */,
 				96F2F84F25101FAF00F7A58B /* DirectCollectionCell.swift in Sources */,
 				963A440C24F930BA0018A8CA /* OpenMap.swift in Sources */,
@@ -2146,6 +2172,7 @@
 				9609B825251175E100457FD6 /* WallpapersViewControllerDelegate.swift in Sources */,
 				9609B85C2517429400457FD6 /* LearnManagerMock.swift in Sources */,
 				963A440924F91B490018A8CA /* TripGoogleMapView.swift in Sources */,
+				96B43FAF256165D200537439 /* FPhotosSlider.swift in Sources */,
 				9631641025195F72007791D3 /* LearnCategoriesCollectionCell.swift in Sources */,
 				96F2F87625115EFC00F7A58B /* GetWallpapersRequest.swift in Sources */,
 				966F479624F7A5C10025FD5F /* MapViewController.swift in Sources */,
@@ -2159,6 +2186,7 @@
 				9609107A255AE32E00E781A1 /* JournalManagerCore.swift in Sources */,
 				9609B8582517403500457FD6 /* GetLearnCategoriesResponseMapper.swift in Sources */,
 				96B43F8D255FB76800537439 /* FTableRatingCell.swift in Sources */,
+				96B43FB22561731800537439 /* FPhotoView.swift in Sources */,
 				96B43F83255F14FE00537439 /* FeedbackTableView.swift in Sources */,
 				963A442A24FCD5E20018A8CA /* FPCompleteCell.swift in Sources */,
 				966F472F24F6966C0025FD5F /* PaygateMainOffer.swift in Sources */,
