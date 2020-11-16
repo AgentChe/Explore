@@ -36,7 +36,7 @@ extension FeedbackTableView {
 // MARK: UITableViewDataSource
 extension FeedbackTableView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        4
+        5
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,6 +66,10 @@ extension FeedbackTableView: UITableViewDataSource {
             cell.vc = vc
             cell.setup(element: element)
             return cell
+        case 4:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: FTableTagsCell.self)) as! FTableTagsCell
+            cell.setup(element: element)
+            return cell
         default:
             return UITableViewCell()
         }
@@ -90,7 +94,7 @@ extension FeedbackTableView: UITableViewDelegate {
             return 71.scale
         case 1:
             return 65.scale
-        case 2, 3:
+        case 2, 3, 4:
             return UITableView.automaticDimension
         default:
             return 0
@@ -105,6 +109,7 @@ private extension FeedbackTableView {
         register(FTableRatingCell.self, forCellReuseIdentifier: String(describing: FTableRatingCell.self))
         register(FTableDescriptionCell.self, forCellReuseIdentifier: String(describing: FTableDescriptionCell.self))
         register(FTablePhotosCell.self, forCellReuseIdentifier: String(describing: FTablePhotosCell.self))
+        register(FTableTagsCell.self, forCellReuseIdentifier: String(describing: FTableTagsCell.self))
         
         dataSource = self
         delegate = self

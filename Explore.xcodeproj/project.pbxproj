@@ -234,6 +234,10 @@
 		96B43FA52561645A00537439 /* FTablePhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FA42561645A00537439 /* FTablePhotosCell.swift */; };
 		96B43FAF256165D200537439 /* FPhotosSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FAE256165D200537439 /* FPhotosSlider.swift */; };
 		96B43FB22561731800537439 /* FPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FB12561731800537439 /* FPhotoView.swift */; };
+		96B43FDA25625FFC00537439 /* FTableTagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FD925625FFC00537439 /* FTableTagsCell.swift */; };
+		96B43FE125630FEF00537439 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FE025630FEF00537439 /* TagView.swift */; };
+		96B43FE425631AAF00537439 /* TagCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FE325631AAF00537439 /* TagCloseButton.swift */; };
+		96B43FE725631AE300537439 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B43FE625631AE300537439 /* TagListView.swift */; };
 		96B74C2C250E676D00413D81 /* FPRadiusSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */; };
 		96B74C2F250EC69F00413D81 /* CreateTripResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */; };
 		96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C31250ED76500413D81 /* DirectViewController.swift */; };
@@ -506,6 +510,10 @@
 		96B43FA42561645A00537439 /* FTablePhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTablePhotosCell.swift; sourceTree = "<group>"; };
 		96B43FAE256165D200537439 /* FPhotosSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPhotosSlider.swift; sourceTree = "<group>"; };
 		96B43FB12561731800537439 /* FPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPhotoView.swift; sourceTree = "<group>"; };
+		96B43FD925625FFC00537439 /* FTableTagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTableTagsCell.swift; sourceTree = "<group>"; };
+		96B43FE025630FEF00537439 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		96B43FE325631AAF00537439 /* TagCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloseButton.swift; sourceTree = "<group>"; };
+		96B43FE625631AE300537439 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		96B74C2B250E676D00413D81 /* FPRadiusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusSlider.swift; sourceTree = "<group>"; };
 		96B74C2E250EC69F00413D81 /* CreateTripResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripResponseMapper.swift; sourceTree = "<group>"; };
 		96B74C31250ED76500413D81 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
@@ -1572,6 +1580,7 @@
 		96B43F81255F14E300537439 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				96B43FDC25630FBA00537439 /* FTableTagsCell */,
 				96B43FA32561644600537439 /* FTablePhotosCell */,
 				96B43F85255F155D00537439 /* FTableTitleCell.swift */,
 				96B43F8C255FB76800537439 /* FTableRatingCell.swift */,
@@ -1611,6 +1620,25 @@
 			children = (
 				96B43FAE256165D200537439 /* FPhotosSlider.swift */,
 				96B43FB12561731800537439 /* FPhotoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96B43FDC25630FBA00537439 /* FTableTagsCell */ = {
+			isa = PBXGroup;
+			children = (
+				96B43FDE25630FDD00537439 /* Views */,
+				96B43FD925625FFC00537439 /* FTableTagsCell.swift */,
+			);
+			path = FTableTagsCell;
+			sourceTree = "<group>";
+		};
+		96B43FDE25630FDD00537439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96B43FE025630FEF00537439 /* TagView.swift */,
+				96B43FE325631AAF00537439 /* TagCloseButton.swift */,
+				96B43FE625631AE300537439 /* TagListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2014,6 +2042,7 @@
 				96091064255ACF4300E781A1 /* ImageManager.swift in Sources */,
 				96B43F1D255C297800537439 /* Picture.swift in Sources */,
 				963A443B24FEEF1B0018A8CA /* FPTableRadiusBundle.swift in Sources */,
+				96B43FDA25625FFC00537439 /* FTableTagsCell.swift in Sources */,
 				96B43F6E255D484600537439 /* JADetailsMenu.swift in Sources */,
 				96F2F862251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift in Sources */,
 				96F2F85D25102AB600F7A58B /* WallpapersViewModel.swift in Sources */,
@@ -2025,6 +2054,7 @@
 				9609B84B2517366D00457FD6 /* LearnCategory.swift in Sources */,
 				9674468D2538864200E32205 /* GetPaygateConfigurationResponseMapper.swift in Sources */,
 				963A443724FE50E40018A8CA /* FPWhatItIsCell.swift in Sources */,
+				96B43FE425631AAF00537439 /* TagCloseButton.swift in Sources */,
 				9609B847251734BE00457FD6 /* LearnManager.swift in Sources */,
 				966F478424F6DCBE0025FD5F /* PaygateMainView.swift in Sources */,
 				9631642E251A913D007791D3 /* LearnContentViewModel.swift in Sources */,
@@ -2051,6 +2081,7 @@
 				963A442424FB921B0018A8CA /* FPNotificationCell.swift in Sources */,
 				960F031F24DAC686008267FA /* ScreenSize.swift in Sources */,
 				9609104F255AB35600E781A1 /* GetJournalTagsResponseMapper.swift in Sources */,
+				96B43FE725631AE300537439 /* TagListView.swift in Sources */,
 				9609B82B2511892000457FD6 /* WallpaperViewController.swift in Sources */,
 				963A440E24F9322C0018A8CA /* MapAppsActionSheet.swift in Sources */,
 				9609101F255564DE00E781A1 /* OnboardingSliderIndicatorsView.swift in Sources */,
@@ -2159,6 +2190,7 @@
 				963A442624FB936A0018A8CA /* FPSearchedCoordinateCell.swift in Sources */,
 				9609B85625173E3300457FD6 /* GetLearnContentResponseMapper.swift in Sources */,
 				9609103E2555C70500E781A1 /* GetJournalTagsRequest.swift in Sources */,
+				96B43FE125630FEF00537439 /* TagView.swift in Sources */,
 				9631640C25195D10007791D3 /* LearnCategoriesCollectionTitleCell.swift in Sources */,
 				960F02FF24DAC64D008267FA /* GlobalDefinitions.swift in Sources */,
 				96B43F06255B426700537439 /* JournalViewModel.swift in Sources */,

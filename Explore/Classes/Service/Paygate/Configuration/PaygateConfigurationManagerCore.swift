@@ -20,19 +20,12 @@ extension PaygateConfigurationManagerCore {
         UserDefaults.standard.removeObject(forKey: Constants.configurationCacheKey)
     }
     
-    // TODO: Заглушка
     func getConfiguration() -> PaygateConfiguration? {
-        return PaygateConfiguration(activeSubscription: true,
-                                    onboardingPaygate: false,
-                                    generateSpotPaygate: false,
-                                    navigateSpotPaygate: false,
-                                    learnPaygate: false,
-                                    seePaygate: false)
-//        guard let data = UserDefaults.standard.data(forKey: Constants.configurationCacheKey) else {
-//            return nil
-//        }
-//
-//        return try? JSONDecoder().decode(PaygateConfiguration.self, from: data)
+        guard let data = UserDefaults.standard.data(forKey: Constants.configurationCacheKey) else {
+            return nil
+        }
+
+        return try? JSONDecoder().decode(PaygateConfiguration.self, from: data)
     }
     
     func set(activeSubscription: Bool) {
@@ -80,34 +73,19 @@ extension PaygateConfigurationManagerCore {
 
 // MARK: Private
 private extension PaygateConfigurationManagerCore {
-    // TODO: Заглушка
     func hasActiveSubscription() -> Single<Bool> {
-        return .deferred {
-            .just(true)
-        }
-//        SDKStorage.shared
-//            .purchaseManager
-//            .validateReceipt()
-//            .map { $0?.activeSubscription ?? false }
-//            .catchErrorJustReturn(false)
+        SDKStorage.shared
+            .purchaseManager
+            .validateReceipt()
+            .map { $0?.activeSubscription ?? false }
+            .catchErrorJustReturn(false)
     }
     
-    // TODO: Заглушка
     func obtainConfiguration() -> Single<PaygateConfiguration?> {
-        let config = PaygateConfiguration(activeSubscription: true,
-                                          onboardingPaygate: false,
-                                          generateSpotPaygate: false,
-                                          navigateSpotPaygate: false,
-                                          learnPaygate: false,
-                                          seePaygate: false)
-        
-        return .deferred {
-            .just(config)
-        }
-//        SDKStorage.shared
-//            .restApiTransport
-//            .callServerApi(requestBody: GetPaygateConfigurationRequest())
-//            .map { GetPaygateConfigurationResponseMapper.from(response: $0) }
+        SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: GetPaygateConfigurationRequest())
+            .map { GetPaygateConfigurationResponseMapper.from(response: $0) }
     }
     
     func store(configuration: PaygateConfiguration) {

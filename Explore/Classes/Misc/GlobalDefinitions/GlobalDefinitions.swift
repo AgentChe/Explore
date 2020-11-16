@@ -22,6 +22,9 @@ struct GlobalDefinitions {
     
     static let applicationTag = "EXPLORE"
     
-    static let sdkDomainUrl = "https://analytics.korrekted.com"
-    static let sdkApiKey = "wCjZrrUAEMWJ5bDk"
+//    static let sdkDomainUrl = "https://analytics.korrekted.com" // prod
+    static let sdkDomainUrl = "https://test.analytics.korrekted.com" // dev
+    
+//    static let sdkApiKey = "wCjZrrUAEMWJ5bDk" // prod
+    static let sdkApiKey = "HjLXv1yilSvUpJIL" // dev
 }

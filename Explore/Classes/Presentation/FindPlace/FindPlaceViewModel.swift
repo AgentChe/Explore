@@ -28,7 +28,7 @@ final class FindPlaceViewModel {
     private var lastGeoPermissionStatus: GLAuthorizationStatus?
     
     private let geoLocationManager = GeoLocationManager(mode: .whenInUseAuthorization)
-    private let tripManager = TripManagerCore()
+    private let tripManager = TripManagerCore() 
     
     func newSection() -> Driver<FindPlaceTableSection> {
         let sections = Driver<FindPlaceTableSection>

@@ -132,7 +132,7 @@ private extension JADetailsView {
             photosSlider.leadingAnchor.constraint(equalTo: leadingAnchor),
             photosSlider.trailingAnchor.constraint(equalTo: trailingAnchor),
             photosSlider.topAnchor.constraint(equalTo: topAnchor, constant: 122.scale),
-            photosSlider.heightAnchor.constraint(equalToConstant: 313.scale)
+            photosSlider.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 313.scale : 263.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -145,7 +145,7 @@ private extension JADetailsView {
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            scrollView.topAnchor.constraint(equalTo: topAnchor, constant: 377.scale)
+            scrollView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 377.scale : 327.scale)
         ])
         
         NSLayoutConstraint.activate([

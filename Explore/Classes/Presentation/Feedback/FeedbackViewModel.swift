@@ -17,18 +17,18 @@ final class FeedbackViewModel {
     let createFeedbackInProgress = RxActivityIndicator()
     
     private let tripManager = TripManagerCore()
-    private let journalManager = JournalManagerCore()
+    private let journalManager = JournalManagerCore() 
     private let imageManager = ImageManagerCore()
 }
 
 // MARK: API
 extension FeedbackViewModel {
     func element() -> Driver<FTableElement> {
-        Driver<FTableElement>
+        let element = Driver<FTableElement>
             .merge([
                 inputTripId
                     .compactMap { $0 }
-                    .map { tripId in FTableElement(tripId: tripId) }
+                    .map { tripId in FTableElement(tripId: tripId, tags: []) }
                     .asDriver(onErrorDriveWith: .empty()),
                 
                 inputArticle
@@ -47,6 +47,15 @@ extension FeedbackViewModel {
                     .map(map(articleDetails:))
                     .asDriver(onErrorDriveWith: .empty())
             ])
+        
+        let tags = loadTags()
+        
+        return Driver
+            .combineLatest(element, tags)
+            .map { element, tags -> FTableElement in
+                element.tags = tags
+                return element
+            }
     }
     
     func createFeedback(element: FTableElement) -> Driver<Bool> {
@@ -67,7 +76,7 @@ extension FeedbackViewModel {
                               title: element.title ?? "",
                               rating: element.rating ?? 1,
                               description: element.description,
-                              tagsIds: nil,
+                              tagsIds: element.selectedTags?.compactMap { $0.id },
                               originImagesIds: storedOriginImagesIds + uploadedOriginImagesIds,
                               thumbsImagesIds: storedThumbsImagesIds + uploadedThumbsImagesIds,
                               imagesIdsToDelete: element.uploadedThumbsImagesForDelete.map { $0.map { $0.id } })
@@ -85,6 +94,12 @@ extension FeedbackViewModel {
 
 // MARK: Private
 private extension FeedbackViewModel {
+    func loadTags() -> Driver<[JournalTag]> {
+        journalManager
+            .rxRetrieveTags(forceUpdate: true)
+            .asDriver(onErrorJustReturn: [])
+    }
+    
     func uploadImages(element: FTableElement) -> Single<[Picture]> {
         Observable
             .from(element.newImages ?? [])
@@ -121,6 +136,8 @@ private extension FeedbackViewModel {
                              rating: articleDetails.rating,
                              description: articleDetails.description,
                              uploadedThumbsImages: articleDetails.thumbsImages,
-                             uploadedOriginImages: articleDetails.originImages)
+                             uploadedOriginImages: articleDetails.originImages,
+                             tags: [],
+                             selectedTags: articleDetails.tags)
     }
 }

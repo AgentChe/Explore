@@ -28,6 +28,9 @@ final class FTableElement {
     var uploadedOriginImages: [JournalImage]?
     var uploadedThumbsImagesForDelete: [JournalImage]?
     var newImages: [UIImage]?
+    
+    var tags: [JournalTag] = []
+    var selectedTags: [JournalTag]?
 }
 
 // MARK: Make
@@ -37,7 +40,9 @@ extension FTableElement {
                      rating: Int? = nil,
                      description: String? = nil,
                      uploadedThumbsImages: [JournalImage]? = nil,
-                     uploadedOriginImages: [JournalImage]? = nil) {
+                     uploadedOriginImages: [JournalImage]? = nil,
+                     tags: [JournalTag],
+                     selectedTags: [JournalTag]? = nil) {
         self.init()
         
         self.tripId = tripId
@@ -46,6 +51,8 @@ extension FTableElement {
         self.description = description
         self.uploadedThumbsImages = uploadedThumbsImages
         self.uploadedOriginImages = uploadedOriginImages
+        self.tags = tags
+        self.selectedTags = selectedTags
         
         update()
     }
