@@ -82,13 +82,7 @@ private extension JournalViewModel {
                 journalManager
                     .rxRetrieveArticles(forceUpdate: true)
                     .map { Content.articles($0) }
-                    .asDriver(onErrorRecover: { error -> Driver<Content> in
-                        if ErrorChecker.needPayment(in: error) {
-                            return .just(.needPayment)
-                        }
-                        
-                        return .empty()
-                    }),
+                    .asDriver(onErrorJustReturn: .articles([])),
                 
                 JournalMediator.shared
                     .rxDidStoredArticles
