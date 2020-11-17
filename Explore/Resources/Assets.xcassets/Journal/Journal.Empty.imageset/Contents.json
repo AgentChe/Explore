@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "x1.png",
+      "filename" : "rando_journal.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "x2.png",
+      "filename" : "rando_journal-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "x3.png",
+      "filename" : "rando_journal-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
