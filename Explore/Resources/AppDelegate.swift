@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
+        addDelegates()
+        
         startSDKProvider(on: vc.view)
         
         sdkProvider.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -55,6 +57,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+// MARK: SDKPurchaseMediatorDelegate
+extension AppDelegate: SDKPurchaseMediatorDelegate {
+    func purchaseMediatorDidValidateReceipt(response: ReceiptValidateResponse?) {
+        guard let response = response else {
+            return
+        }
+        
+        PaygateConfigurationManagerCore().set(activeSubscription: response.activeSubscription)
+        
+        let session = Session(userToken: response.userToken,
+                              activeSubscription: response.activeSubscription,
+                              userId: response.userId)
+        SessionManager.shared.store(session: session)
+    }
+}
+
 // MARK: Private
 private extension AppDelegate {
     func startSDKProvider(on view: UIView) {
@@ -74,5 +92,9 @@ private extension AppDelegate {
         sdkProvider.initialize(settings: sdkSettings) { [weak self] in
             self?.generateStepInSplash.accept(Void())
         }
+    }
+    
+    func addDelegates() {
+        SDKStorage.shared.purchaseMediator.add(delegate: self)
     }
 }
