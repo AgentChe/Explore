@@ -17,7 +17,7 @@
 "Delete" = "Delete";
 
 // MARK: Image Picker
-"ImagePicker.TakePhoto" = "TakePhoto";
+"ImagePicker.TakePhoto" = "Take Photo";
 "ImagePicker.CameraRoll" = "CameraRoll";
 "ImagePicker.PhotoLibrary" = "PhotoLibrary";
 
@@ -37,7 +37,7 @@
 "Onboarding.Slide6.Title" = "Tips from the leaders";
 "Onboarding.Slide6.SubTitle" = "Enjoy the blog led by world's top\nrandonauts";
 "Onboarding.EnjoyNow" = "ENTER";
-"Onboarding.PreloaderTitle" = "Random points are generated...";
+"Onboarding.PreloaderTitle" = "The unknown is almost here...";
 
 // MARK: Map
 "Map.Title" = "/r/randonauts";
@@ -83,7 +83,7 @@
 "FindPlace.FPWhatYourSearchIntentCell.WhatThis" = "what's this?";
 "FindPlace.FPWhatItIsCell.Message2" = "Figuring out a good intention can be hard, but it's essential to completing a fulfilling /r/randonauts quest. If you're looking for new ideas to spice up your next adventure, plenty of /r/randonauts adventurers on Reddit have been sharing how they've been using the app, and you can look there for inspiration.";
 "FindPlace.FPPreloaderAnimation.Title" = "/r/randonauts";
-"FindPlace.FPPreloaderAnimation.Bottom" = "Random points are generated...";
+"FindPlace.FPPreloaderAnimation.Bottom" = "The unknown is almost here...";
 "FindPlace.FPPreloaderAnimation.Second" = "second";
 "FindPlace.FPPreloaderAnimation.Seconds" = "seconds";
 

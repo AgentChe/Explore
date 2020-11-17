@@ -39,7 +39,7 @@ private extension FeedbackSuccessView {
             imageView.widthAnchor.constraint(equalToConstant: 223.scale),
             imageView.heightAnchor.constraint(equalToConstant: 260.scale),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 232.scale)
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 232.scale : 132.scale)
         ])
         
         NSLayoutConstraint.activate([

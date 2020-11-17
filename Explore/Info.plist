@@ -52,6 +52,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>The camera will be used for attaching photos to the journal entry</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>We'll use your location to propose points of interest close to you</string>
 	<key>NSLocationAlwaysUsageDescription</key>
