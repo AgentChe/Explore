@@ -25,22 +25,22 @@
 "Paygate.Purchase.Failed" = "Error en la compra";
 
 // MARK: Onboarding
-"Onboarding.Slide1.Title" = "Welcome to #1\nRandonauting\nExperience";
+"Onboarding.Slide1.Title" = "Welcome to #1\nrandonauts\ncommunity";
 "Onboarding.Slide2.Title" = "Explore the unknown";
 "Onboarding.Slide2.SubTitle" = "Break the daily mundane routine\nand take a journey of randomness";
-"Onboarding.Slide3.Title" = "Quantuly random";
+"Onboarding.Slide3.Title" = "Quantumly random";
 "Onboarding.Slide3.SubTitle" = "Different random algorithms for\neach of your intent";
 "Onboarding.Slide4.Title" = "Track and share findings";
 "Onboarding.Slide4.SubTitle" = "Explore what others have found,\nshare yours";
 "Onboarding.Slide5.Title" = "State-of-art wallpapers";
-"Onboarding.Slide5.SubTitle" = "Style your phone with gargeous\nshots of abandoneed places";
+"Onboarding.Slide5.SubTitle" = "Style your phone with gorgeous\nshots of abandoned places";
 "Onboarding.Slide6.Title" = "Tips from the leaders";
 "Onboarding.Slide6.SubTitle" = "Enjoy the blog led by world's top\nrandonauts";
-"Onboarding.EnjoyNow" = "ENJOY NOW";
-"Onboarding.PreloaderTitle" = "The unknown is almost here...";
+"Onboarding.EnjoyNow" = "ENTER";
+"Onboarding.PreloaderTitle" = "Random points are generated...";
 
 // MARK: Map
-"Map.Title" = "Randonautica";
+"Map.Title" = "/r/randonauts";
 "Map.Navigate" = "Navegar";
 "Map.StopTrip" = "Detener recorrido";
 "Map.SendFeedback.Failure" = "Error al enviar comentarios";
@@ -53,7 +53,7 @@
 "Map.RadiusToTrip" = "r = %im";
 
 // MARK: FindPlace
-"FindPlace.Title" = "Randonautica";
+"FindPlace.Title" = "/r/randonauts";
 "FindPlace.FPRequireGeoPermissionCell.Title" = "Comienza enviando\ntu ubicación:";
 "FindPlace.FPRequireGeoPermissionCell.Button" = "Enviar mi ubicación";
 "FindPlace.FPSearchingCoordinateCell.Title" = "Buscando tu ubicación...";
@@ -81,8 +81,8 @@
 "FindPlace.FPWhatYourSearchIntentCell.Peace" = "peace";
 "FindPlace.FPWhatYourSearchIntentCell.SomethingElse" = "something else";
 "FindPlace.FPWhatYourSearchIntentCell.WhatThis" = "what's this?";
-"FindPlace.FPWhatItIsCell.Message2" = "Figuring out a good intention can be hard, but it's essential to completing a fulfilling Randonautica quest. If you're looking for new ideas to spice up your next adventure, plenty of Randonautica adventurers on Reddit have been sharing how they've been using the app, and you can look there for inspiration.";
-"FindPlace.FPPreloaderAnimation.Title" = "Randonautica";
+"FindPlace.FPWhatItIsCell.Message2" = "Figuring out a good intention can be hard, but it's essential to completing a fulfilling /r/randonauts quest. If you're looking for new ideas to spice up your next adventure, plenty of /r/randonauts adventurers on Reddit have been sharing how they've been using the app, and you can look there for inspiration.";
+"FindPlace.FPPreloaderAnimation.Title" = "/r/randonauts";
 "FindPlace.FPPreloaderAnimation.Bottom" = "Random points are generated...";
 "FindPlace.FPPreloaderAnimation.Second" = "second";
 "FindPlace.FPPreloaderAnimation.Seconds" = "seconds";
@@ -97,7 +97,7 @@
 "Direct.And" = " y ";
 "Direct.Join.Title" = "Join";
 "Direct.Join.SubTitle" = "An ever-growing community of enthusiastic randonauts";
-"Direct.Journal.Title" = "Remember";
+"Direct.Journal.Title" = "TRACK";
 "Direct.Journal.SubTitle" = "View your trips and share with your friends";
 
 // MARK: Wallpapers
