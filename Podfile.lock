@@ -1,17 +1,17 @@
 PODS:
   - Alamofire (5.4.0)
   - Amplitude-iOS (4.10.0)
-  - Branch (0.35.1)
+  - Branch (0.36.0)
   - Cosmos (23.0.0)
-  - FacebookSDK (8.1.0):
-    - FacebookSDK/CoreKit (= 8.1.0)
-  - FacebookSDK/CoreKit (8.1.0):
-    - FBSDKCoreKit (~> 8.1.0)
-  - FBSDKCoreKit (8.1.0):
-    - FBSDKCoreKit/Basics (= 8.1.0)
-    - FBSDKCoreKit/Core (= 8.1.0)
-  - FBSDKCoreKit/Basics (8.1.0)
-  - FBSDKCoreKit/Core (8.1.0):
+  - FacebookSDK (8.2.0):
+    - FacebookSDK/CoreKit (= 8.2.0)
+  - FacebookSDK/CoreKit (8.2.0):
+    - FBSDKCoreKit (~> 8.2.0)
+  - FBSDKCoreKit (8.2.0):
+    - FBSDKCoreKit/Basics (= 8.2.0)
+    - FBSDKCoreKit/Core (= 8.2.0)
+  - FBSDKCoreKit/Basics (8.2.0)
+  - FBSDKCoreKit/Core (8.2.0):
     - FBSDKCoreKit/Basics
   - Firebase/Analytics (7.1.0):
     - Firebase/Core
@@ -103,7 +103,7 @@ PODS:
     - MarqueeLabel (~> 4.0.0)
     - SnapKit (~> 5.0.0)
   - PromisesObjC (1.2.11)
-  - RushSDK (1.4.2):
+  - RushSDK (1.4.6):
     - Alamofire
     - Amplitude-iOS
     - Branch
@@ -165,16 +165,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   RushSDK:
-    :commit: 73871c61dc4adcc28ad30258385b99b37e1b3c58
+    :commit: 3271261099200e74fd9abfea3e9f5e70d813f35e
     :git: https://github.com/AgentChe/rushSDK.git
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   Amplitude-iOS: 7d8cdc3408ba35c2e68368fc7c692cd104606b94
-  Branch: 43863eab4c2339a58fa552f2f277139c3839dfb4
+  Branch: 8aebcb7a6465f19f9f4d315acced369ae078d3f2
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
-  FacebookSDK: 1cbc65761001feb1bffd7921541f668e13592983
-  FBSDKCoreKit: b3ca27e124dae67122d3bb47c8f96800b39986a6
+  FacebookSDK: 7aa80d5e6eaf235f492328ad40c36dbc16440e52
+  FBSDKCoreKit: 4afd6ff53d8133a433dbcda44451c9498f8c6ce4
   Firebase: 78e8dd2e39d653de6270432ad84fe8b59f7bf4e8
   FirebaseAnalytics: 7f165a56dea86ddd5b8ce02af3bee982c683405c
   FirebaseCore: 20046127eef0fcb8fa25df7fc12f7b97d4e48611
@@ -191,7 +191,7 @@ SPEC CHECKSUMS:
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   NotificationBannerSwift: 713e20f21b6105f4a36a00e5d9fa414a930d3d8e
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
-  RushSDK: c7335d402326edaf4c46b7f882463c8b985c13e3
+  RushSDK: d352ffd1613bd8aaae61a4a532035a9db619405b
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178

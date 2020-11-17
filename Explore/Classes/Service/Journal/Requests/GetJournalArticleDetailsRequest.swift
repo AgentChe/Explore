@@ -29,7 +29,8 @@ struct GetJournalArticleDetailsRequest: APIRequestBody {
         [
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken,
-            "id": id
+            "id": id,
+            "anonymous_id": SDKStorage.shared.applicationAnonymousID
         ]
     }
     

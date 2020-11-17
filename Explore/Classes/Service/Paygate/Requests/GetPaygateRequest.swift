@@ -33,7 +33,8 @@ struct GetPaygateRequest: APIRequestBody {
         var params = [
             "_api_key": GlobalDefinitions.apiKey,
             "version": version,
-            "random_string": appKey
+            "random_string": appKey,
+            "anonymous_id": SDKStorage.shared.applicationAnonymousID
         ]
         
         if let locale = self.locale {

@@ -29,7 +29,8 @@ struct DeleteJournalArticleRequest: APIRequestBody {
         [
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken,
-            "id": articleId
+            "id": articleId,
+            "anonymous_id": SDKStorage.shared.applicationAnonymousID
         ]
     }
 }

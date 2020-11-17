@@ -53,7 +53,8 @@ struct SaveJournalArticleRequest: APIRequestBody {
             "_user_token": userToken,
             "location_id": tripId,
             "title": title,
-            "rating": rating
+            "rating": rating,
+            "anonymous_id": SDKStorage.shared.applicationAnonymousID
         ]
         
         if let description = self.description {

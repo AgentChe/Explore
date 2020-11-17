@@ -30,7 +30,8 @@ struct CreateTripRequest: APIRequestBody {
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken,
             "long": coordinate.longitude,
-            "lat": coordinate.latitude
+            "lat": coordinate.latitude,
+            "anonymous_id": SDKStorage.shared.applicationAnonymousID
         ]
     }
 }

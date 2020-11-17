@@ -26,7 +26,8 @@ struct GetJournalListRequest: APIRequestBody {
     var parameters: Parameters? {
         [
             "_api_key": GlobalDefinitions.apiKey,
-            "_user_token": userToken
+            "_user_token": userToken,
+            "anonymous_id": SDKStorage.shared.applicationAnonymousID
         ]
     }
 }

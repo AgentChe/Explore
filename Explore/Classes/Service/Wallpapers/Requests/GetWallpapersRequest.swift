@@ -27,7 +27,8 @@ struct GetWallpapersRequest: APIRequestBody {
     
     var parameters: Parameters? {
         var params = [
-            "_api_key": GlobalDefinitions.apiKey
+            "_api_key": GlobalDefinitions.apiKey,
+            "anonymous_id": SDKStorage.shared.applicationAnonymousID
         ]
         
         if let hash = self.hash {
