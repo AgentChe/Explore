@@ -74,11 +74,9 @@ extension PaygateConfigurationManagerCore {
 // MARK: Private
 private extension PaygateConfigurationManagerCore {
     func hasActiveSubscription() -> Single<Bool> {
-        SDKStorage.shared
-            .purchaseManager
-            .validateReceipt()
-            .map { $0?.activeSubscription ?? false }
-            .catchErrorJustReturn(false)
+        .deferred {
+            .just(SessionManager.shared.getSession()?.activeSubscription ?? false)
+        }
     }
     
     func obtainConfiguration() -> Single<PaygateConfiguration?> {
