@@ -11,7 +11,7 @@ import RxCocoa
 
 final class MapViewModel {
     private let geoLocationManager = GeoLocationManager(mode: .whenInUseAuthorization)
-    private let tripManager: TripManager = TripManagerMock() // TODO
+    private let tripManager: TripManager = TripManagerCore() 
     
     func monitoringOfCoordinate() -> Driver<Coordinate> {
         defer { geoLocationManager.continuoslyKeepLocation() }

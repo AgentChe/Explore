@@ -16,9 +16,9 @@ final class FeedbackViewModel {
     
     let createFeedbackInProgress = RxActivityIndicator()
     
-    private let tripManager = TripManagerMock() // TODO
-    private let journalManager = JournalManagerMock() // TODO
-    private let imageManager = ImageManagerMock() // TODO
+    private let tripManager = TripManagerCore()
+    private let journalManager = JournalManagerCore()
+    private let imageManager = ImageManagerCore() 
 }
 
 // MARK: API
