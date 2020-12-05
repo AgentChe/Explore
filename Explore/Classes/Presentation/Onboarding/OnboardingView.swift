@@ -41,9 +41,9 @@ private extension OnboardingView {
         ])
         
         NSLayoutConstraint.activate([
-            enjoyNowButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            enjoyNowButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            enjoyNowButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -55.scale : -30.scale),
+            enjoyNowButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25.scale),
+            enjoyNowButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25.scale),
+            enjoyNowButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -61.scale : -25.scale),
             enjoyNowButton.heightAnchor.constraint(equalToConstant: 50.scale)
         ])
     }
@@ -70,7 +70,7 @@ private extension OnboardingView {
     func makeEnjoyNowButton() -> UIButton {
         let attrs = TextAttributes()
             .font(Font.Poppins.regular(size: 17.scale))
-            .textColor(UIColor.white)
+            .textColor(UIColor(red: 21 / 255, green: 21 / 255, blue: 34 / 255, alpha: 1))
             .lineHeight(24.scale)
             .letterSpacing(-0.18.scale)
             .underlineStyle(NSUnderlineStyle.single)
@@ -78,7 +78,10 @@ private extension OnboardingView {
         
         let view = UIButton()
         view.isHidden = true
-        view.backgroundColor = UIColor.clear
+        view.layer.cornerRadius = 25.scale
+        view.layer.borderWidth = 1.scale
+        view.layer.borderColor = UIColor(red: 109 / 255, green: 95 / 255, blue: 162 / 255, alpha: 1).cgColor
+        view.backgroundColor = UIColor.white
         view.setAttributedTitle("Onboarding.EnjoyNow".localized.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

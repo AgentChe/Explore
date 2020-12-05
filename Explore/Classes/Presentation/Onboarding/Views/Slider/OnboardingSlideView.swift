@@ -36,14 +36,13 @@ final class OnboardingSlideView: UIView {
 }
 
 // MARK: Make constraints
-
 private extension OnboardingSlideView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 340.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 370.scale),
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 119.scale : 50.scale),
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor)
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -61,7 +60,6 @@ private extension OnboardingSlideView {
 }
 
 // MARK: Lazy initialization
-
 private extension OnboardingSlideView {
     func makeImageView() -> UIImageView {
         let view = UIImageView()

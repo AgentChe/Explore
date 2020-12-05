@@ -25,18 +25,18 @@
 "Paygate.Purchase.Failed" = "Falha ao comprar";
 
 // MARK: Onboarding
-"Onboarding.Slide1.Title" = "Welcome to #1\nrandonauts\ncommunity";
+"Onboarding.Slide1.Title" = "Welcome to #1\nRandonauting\nExperience";
 "Onboarding.Slide2.Title" = "Explore the unknown";
-"Onboarding.Slide2.SubTitle" = "Break the daily mundane routine\nand take a journey of randomness";
-"Onboarding.Slide3.Title" = "Quantumly random";
-"Onboarding.Slide3.SubTitle" = "Different random algorithms for\neach of your intent";
+"Onboarding.Slide2.SubTitle" = "Break the daily mundane routine and take a journey of randomness";
+"Onboarding.Slide3.Title" = "Quantuly random";
+"Onboarding.Slide3.SubTitle" = "Different random algorithms for each of your intent";
 "Onboarding.Slide4.Title" = "Track and share findings";
-"Onboarding.Slide4.SubTitle" = "Explore what others have found,\nshare yours";
+"Onboarding.Slide4.SubTitle" = "Explore what others have found, share yours'";
 "Onboarding.Slide5.Title" = "State-of-art wallpapers";
-"Onboarding.Slide5.SubTitle" = "Style your phone with gorgeous\nshots of abandoned places";
+"Onboarding.Slide5.SubTitle" = "Style your phone with gorgeous shots of abandoned places";
 "Onboarding.Slide6.Title" = "Tips from the leaders";
-"Onboarding.Slide6.SubTitle" = "Enjoy the blog led by world's top\nrandonauts";
-"Onboarding.EnjoyNow" = "ENTER";
+"Onboarding.Slide6.SubTitle" = "Enjoy the blog led by world's top randonauts";
+"Onboarding.EnjoyNow" = "ENJOY NOW";
 "Onboarding.PreloaderTitle" = "The unknown is almost here...";
 
 // MARK: Map

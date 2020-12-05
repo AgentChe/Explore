@@ -70,7 +70,6 @@ private extension OnboardingSlider {
             let slide = OnboardingSlideView()
             slide.frame.size = CGSize(width: frame.width, height: frame.height)
             slide.frame.origin = CGPoint(x: frame.width * CGFloat(index), y: 0)
-            slide.backgroundColor = UIColor(red: 53 / 255, green: 53 / 255, blue: 53 / 255, alpha: 1)
             slide.setup(model: model)
             slides.append(slide)
             scrollView.addSubview(slide)
