@@ -15,7 +15,7 @@ final class JADetailsViewModel {
     
     let delete = PublishRelay<Void>()
     
-    private let journalManager: JournalManager = JournalManagerCore()
+    private let journalManager: JournalManager = JournalManagerMock() // TODO
     
     func articleDetails() -> Driver<JournalArticleDetails?> {
         Driver

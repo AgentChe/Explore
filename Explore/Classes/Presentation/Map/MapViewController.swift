@@ -74,6 +74,20 @@ final class MapViewController: UIViewController {
                 self?.tripButtonTapped(inProgress: inProgress)
             })
             .disposed(by: disposeBag)
+        
+        mapView
+            .resetButton.rx.tap
+            .flatMap { [weak self] void -> Single<Void> in
+                guard let this = self else {
+                    return .never()
+                }
+                
+                return this.viewModel.removeTrip()
+            }
+            .subscribe(onNext: { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

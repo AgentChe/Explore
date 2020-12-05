@@ -13,6 +13,7 @@ final class MapView: UIView {
     lazy var mapView = makeMapView()
     lazy var radiusLabel = makeRadiusLabel()
     lazy var tripButton = makeTripButton()
+    lazy var resetButton = makeResetButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,7 +46,14 @@ private extension MapView {
             tripButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40.scale),
             tripButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40.scale),
             tripButton.heightAnchor.constraint(equalToConstant: 48.scale),
-            tripButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -64.scale)
+            tripButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -98.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            resetButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40.scale),
+            resetButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40.scale),
+            resetButton.heightAnchor.constraint(equalToConstant: 40.scale),
+            resetButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -44.scale)
         ])
     }
 }
@@ -81,9 +89,24 @@ private extension MapView {
         let view = UIButton()
         view.backgroundColor = UIColor(red: 245 / 255, green: 245 / 255, blue: 245 / 255, alpha: 1)
         view.layer.cornerRadius = 16.scale
-        view.titleLabel?.font = Font.SFProText.regular(size: 18.scale)
         view.setTitle("Map.Navigate".localized, for: .normal)
         view.setTitleColor(UIColor.black, for: .normal)
+        view.titleLabel?.font = Font.SFProText.regular(size: 18.scale)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeResetButton() -> UIButton {
+        let attrs = TextAttributes()
+            .textColor(UIColor.white)
+            .font(Font.Poppins.semibold(size: 16.scale))
+            .lineHeight(22.scale)
+            .textAlignment(.center)
+        
+        let view = UIButton()
+        view.backgroundColor = UIColor.clear
+        view.setAttributedTitle("Map.Reset".localized.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

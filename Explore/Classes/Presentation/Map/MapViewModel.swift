@@ -11,7 +11,7 @@ import RxCocoa
 
 final class MapViewModel {
     private let geoLocationManager = GeoLocationManager(mode: .whenInUseAuthorization)
-    private let tripManager: TripManager = TripManagerCore() 
+    private let tripManager: TripManager = TripManagerMock() // TODO
     
     func monitoringOfCoordinate() -> Driver<Coordinate> {
         defer { geoLocationManager.continuoslyKeepLocation() }
@@ -19,6 +19,15 @@ final class MapViewModel {
         return geoLocationManager.rx
             .continuoslyKeepCurrentLocation
             .asDriver(onErrorDriveWith: .empty())
+    }
+    
+    func removeTrip() -> Single<Void> {
+        Single
+            .zip(
+                tripManager.rxRemoveTripFromProgress(),
+                tripManager.rxRemoveTrip()
+            )
+            .map { _, _ in Void() }  
     }
     
     func trip() -> Driver<Trip?> {

@@ -19,7 +19,7 @@ final class DirectViewModel {
     lazy var elements = createElements()
     lazy var step = createStep()
     
-    private let tripManager = TripManagerCore()
+    private let tripManager = TripManagerMock() // TODO
 }
 
 // MARK: Private

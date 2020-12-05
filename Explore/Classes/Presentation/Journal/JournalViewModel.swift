@@ -19,8 +19,8 @@ final class JournalViewModel {
         case needPayment
     }
     
-    private let tripManager: TripManager = TripManagerCore()
-    private let journalManager: JournalManager = JournalManagerCore()
+    private let tripManager: TripManager = TripManagerMock() // TODO
+    private let journalManager: JournalManager = JournalManagerMock() // TODO
     
     func buttonState() -> Driver<ButtonState> {
         createButtonState()

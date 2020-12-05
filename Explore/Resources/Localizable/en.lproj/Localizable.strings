@@ -41,8 +41,9 @@
 
 // MARK: Map
 "Map.Title" = "/r/randonauts";
-"Map.Navigate" = "Navigate";
+"Map.Navigate" = "Get location";
 "Map.StopTrip" = "Stop trip";
+"Map.Reset" = "Reset";
 "Map.SendFeedback.Failure" = "Failed to send feedback";
 "Map.MapAppsActionSheet.Message" = "Select application for build route";
 "Map.MapAppsActionSheet.AppleMap" = "Apple Map";
