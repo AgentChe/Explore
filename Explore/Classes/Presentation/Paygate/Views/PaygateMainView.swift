@@ -17,7 +17,7 @@ final class PaygateMainView: UIView {
     lazy var rightOptionView = makeOptionView()
     lazy var continueButton = makeContinueButton()
     lazy var lockImageView = makeLockIconView()
-    lazy var termsOfferLabel = makeTermsOfferLabel()
+    lazy var securedLabel = makeSecuredLabel()
     lazy var purchasePreloaderView = makePreloaderView()
     
     override init(frame: CGRect) {
@@ -31,12 +31,6 @@ final class PaygateMainView: UIView {
     }
     
     func setup(paygate: PaygateMainOffer) {
-        titleLabel.attributedText = paygate.title
-        subTitleLabel.attributedText = paygate.subTitle
-        continueButton.setAttributedTitle(paygate.button, for: .normal)
-        termsOfferLabel.attributedText = paygate.subButton
-        restoreButton.setAttributedTitle(paygate.restore, for: .normal)
-        
         let options = paygate.options?.prefix(2) ?? []
         
         if let leftOption = options.first {
@@ -57,7 +51,6 @@ final class PaygateMainView: UIView {
 }
 
 // MARK: Make constraints
-
 private extension PaygateMainView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
@@ -109,13 +102,13 @@ private extension PaygateMainView {
         NSLayoutConstraint.activate([
             lockImageView.widthAnchor.constraint(equalToConstant: 12.scale),
             lockImageView.heightAnchor.constraint(equalToConstant: 16.scale),
-            lockImageView.trailingAnchor.constraint(equalTo: termsOfferLabel.leadingAnchor, constant: -10.scale),
+            lockImageView.trailingAnchor.constraint(equalTo: securedLabel.leadingAnchor, constant: -10.scale),
             lockImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -43.scale : -18.scale)
         ])
         
         NSLayoutConstraint.activate([
-            termsOfferLabel.centerYAnchor.constraint(equalTo: lockImageView.centerYAnchor),
-            termsOfferLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 10.scale)
+            securedLabel.centerYAnchor.constraint(equalTo: lockImageView.centerYAnchor),
+            securedLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 10.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -126,11 +119,15 @@ private extension PaygateMainView {
 }
 
 // MARK: Lazy initialization
-
 private extension PaygateMainView {
     func makeRestoreButton() -> UIButton {
+        let atts = TextAttributes()
+            .font(Font.Poppins.semibold(size: 17.scale))
+            .lineHeight(27.scale)
+            .textColor(UIColor.white.withAlphaComponent(0.9))
+        
         let view = UIButton()
-        view.alpha = 0
+        view.setAttributedTitle("Paygate.Main.RestoreButton".localized.attributed(with: atts), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -146,8 +143,14 @@ private extension PaygateMainView {
     }
     
     func makeTitleLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .font(Font.Poppins.bold(size: 34.scale))
+            .textColor(UIColor.white)
+            .lineHeight(41.scale)
+            .textAlignment(.left)
+        
         let view = UILabel()
-        view.alpha = 0
+        view.attributedText = "Paygate.Main.Title".localized.attributed(with: attrs)
         view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
@@ -155,8 +158,15 @@ private extension PaygateMainView {
     }
     
     func makeSubTitleLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .font(Font.Poppins.regular(size: 17.scale))
+            .textColor(UIColor.white)
+            .lineHeight(28.scale)
+            .textAlignment(.left)
+            .letterSpacing(-0.5.scale)
+        
         let view = UILabel()
-        view.alpha = 0
+        view.attributedText = "Paygate.Main.SubTitle".localized.attributed(with: attrs)
         view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
@@ -166,6 +176,7 @@ private extension PaygateMainView {
     func makeOptionView() -> PaygateOptionView {
         let view = PaygateOptionView()
         view.alpha = 0
+        view.isHidden = true
         view.layer.cornerRadius = 8.scale
         view.layer.borderWidth = 2.scale
         view.layer.borderColor = UIColor.white.cgColor
@@ -175,8 +186,15 @@ private extension PaygateMainView {
     }
     
     func makeContinueButton() -> UIButton {
+        let attrs = TextAttributes()
+            .font(Font.Poppins.semibold(size: 16.scale))
+            .lineHeight(22.scale)
+            .textColor(UIColor(red: 21 / 255, green: 21 / 255, blue: 34 / 255, alpha: 1))
+            .textAlignment(.center)
+        
         let view = UIButton()
         view.isHidden = true
+        view.setAttributedTitle("Paygate.Main.Button".localized.attributed(with: attrs), for: .normal)
         view.backgroundColor = .white
         view.layer.cornerRadius = 28.scale
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -186,7 +204,6 @@ private extension PaygateMainView {
     
     func makeLockIconView() -> UIImageView {
         let view = UIImageView()
-        view.alpha = 0
         view.clipsToBounds = true
         view.contentMode = .scaleAspectFit
         view.image = UIImage(named: "Paygate.MainOffer.Lock")
@@ -195,9 +212,15 @@ private extension PaygateMainView {
         return view
     }
     
-    func makeTermsOfferLabel() -> UILabel {
+    func makeSecuredLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .font(Font.Poppins.regular(size: 13.scale))
+            .lineHeight(17.7.scale)
+            .textColor(UIColor.white)
+            .letterSpacing(-0.06.scale)
+        
         let view = UILabel()
-        view.alpha = 0
+        view.attributedText = "Paygate.Main.Secured".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

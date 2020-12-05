@@ -30,6 +30,11 @@
 
 // MARK: Paygate
 "Paygate.Purchase.Failed" = "Не удалось совершить покупку";
+"Paygate.Main.Title" = "Exploring to the fullest";
+"Paygate.Main.SubTitle" = "Unlimited point of interest requests Hiking journal, updated on a weekly basis\nThe ever growing collection of abandoned places wallpapers";
+"Paygate.Main.Button" = "Continue";
+"Paygate.Main.Secured" = "Secured with iTunes. Cancel anytime.";
+"Paygate.Main.RestoreButton" = "Restore";
 
 // MARK: Onboarding
 "Onboarding.Slide1.Title" = "Welcome to #1\nRandonauting\nExperience";

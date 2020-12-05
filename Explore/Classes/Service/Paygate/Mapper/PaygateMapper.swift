@@ -42,52 +42,10 @@ private extension PaygateMapper {
             return nil
         }
         
-        let title = (main["greeting"] as? String ?? "")
-            .attributed(with: TextAttributes()
-                .font(Font.OpenSans.bold(size: 34.scale))
-                .textColor(UIColor.white)
-                .lineHeight(41.scale)
-                .textAlignment(.left))
-        
-        let subTitle = (main["text"] as? [String] ?? [])
-            .joined(separator: "\n")
-            .attributed(with: TextAttributes()
-                .font(Font.Poppins.regular(size: 17.scale))
-                .textColor(UIColor.white)
-                .lineHeight(28.scale)
-                .textAlignment(.left)
-                .letterSpacing(-0.5.scale))
-        
-        let button = (main["button"] as? String ?? "")
-            .uppercased()
-            .attributed(with: TextAttributes()
-                .font(Font.Poppins.semibold(size: 16.scale))
-                .lineHeight(22.scale)
-                .textColor(UIColor(red: 21 / 255, green: 21 / 255, blue: 34 / 255, alpha: 1))
-                .textAlignment(.center))
-        
-        let subButton = (main["subbutton"] as? String ?? "")
-            .attributed(with: TextAttributes()
-                .font(Font.OpenSans.regular(size: 13.scale))
-                .lineHeight(17.7.scale)
-                .textColor(UIColor.white)
-                .letterSpacing(-0.06.scale))
-        
-        let restore = (main["restore"] as? String ?? "")
-            .attributed(with: TextAttributes()
-                .font(Font.OpenSans.semibold(size: 17.scale))
-                .lineHeight(27.scale)
-                .textColor(UIColor.white.withAlphaComponent(0.9)))
-        
         let optionsJSONArray = (main["options"] as? [[String: Any]]) ?? []
         let options = optionsJSONArray.enumerated().compactMap { map(option: $1, productsPrices: productsPrices, index: $0) }
         
-        return PaygateMainOffer(title: title,
-                                subTitle: subTitle,
-                                options: options,
-                                button: button,
-                                subButton: subButton,
-                                restore: restore)
+        return PaygateMainOffer(options: options)
     }
     
     static func map(option: [String: Any], productsPrices: [ProductPrice]?, index: Int) -> PaygateOption? {

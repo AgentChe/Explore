@@ -38,28 +38,7 @@ private extension PaygateManagerMock {
     }
     
     func createMainOffer() -> PaygateMainOffer {
-        PaygateMainOffer(title: "Hello".attributed(with: TextAttributes()
-                            .font(Font.OpenSans.bold(size: 34.scale))
-                            .textColor(UIColor.white)
-                            .lineHeight(38.scale)),
-                         subTitle: "Daily predictions based on your characteristics · Weekly and monthly love, finance and career insights".attributed(with: TextAttributes()
-                            .font(Font.OpenSans.regular(size: 14.scale))
-                            .textColor(UIColor.white)
-                            .lineHeight(16.scale)
-                            .textAlignment(.left)),
-                         options: [createOption1(), createOption2()],
-                         button: "CONTINUE".attributed(with: TextAttributes()
-                            .font(Font.Poppins.semibold(size: 17.scale))
-                            .textColor(UIColor.black)
-                            .textAlignment(.center)),
-                         subButton: "Secured with iTunes. Cancel anytime".attributed(with: TextAttributes()
-                            .font(Font.OpenSans.semibold(size: 13.scale))
-                            .textColor(UIColor.white)
-                            .letterSpacing(-0.06.scale)),
-                         restore: "Restore".attributed(with: TextAttributes()
-                            .font(Font.OpenSans.semibold(size: 17.scale))
-                            .lineHeight(27.scale)
-                            .textColor(UIColor.white.withAlphaComponent(0.3))))
+        PaygateMainOffer(options: [createOption1(), createOption2()])
     }
     
     func createOption1() -> PaygateOption {
