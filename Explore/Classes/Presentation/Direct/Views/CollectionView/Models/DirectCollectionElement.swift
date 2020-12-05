@@ -7,10 +7,11 @@
 //
 
 enum DirectCollectionElement {
-    case explore(DirectModel)
+    case explore(DirectExploreModel)
     case learn(DirectModel)
     case wallpapers(DirectModel)
     case join(DirectModel)
     case journal(DirectModel)
     case termsOfService
+    case dots
 }

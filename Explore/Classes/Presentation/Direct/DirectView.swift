@@ -31,9 +31,9 @@ private extension DirectView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             iconView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            iconView.widthAnchor.constraint(equalToConstant: 244.scale),
-            iconView.heightAnchor.constraint(equalToConstant: 244.scale),
-            iconView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 105.scale : 60.scale)
+            iconView.widthAnchor.constraint(equalToConstant: 210.scale),
+            iconView.heightAnchor.constraint(equalToConstant: 275.scale),
+            iconView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 94.scale : 60.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -63,7 +63,7 @@ private extension DirectView {
         layout.minimumLineSpacing = 12.scale
         
         let view = DirectCollectionView(frame: .zero, collectionViewLayout: layout)
-        view.contentInset = UIEdgeInsets(top: ScreenSize.isIphoneXFamily ? 246.scale : 240.scale, left: 20.scale, bottom: 40.scale, right: 20.scale)
+        view.contentInset = UIEdgeInsets(top: ScreenSize.isIphoneXFamily ? 300.scale : 200.scale, left: 0, bottom: 40.scale, right: 0)
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

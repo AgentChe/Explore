@@ -95,16 +95,12 @@
 
 // MARK: Direct
 "Direct.Explore.Title" = "Explore";
-"Direct.Explore.SubTitle" = "Share your location and request the next random point of interest to explore here.";
-"Direct.Learn.Title" = "Learn";
-"Direct.Learn.SubTitle" = "Our regular digest with hiking tips.";
-"Direct.Wallpapers.Title" = "See";
-"Direct.Wallpapers.SubTitle" = "Abandoned places are art. Wallpapers to style your phone with.";
-"Direct.And" = " and ";
-"Direct.Join.Title" = "Join";
-"Direct.Join.SubTitle" = "An ever-growing community of enthusiastic randonauts";
-"Direct.Journal.Title" = "Track";
-"Direct.Journal.SubTitle" = "View your trips and share with your friends";
+"Direct.Explore.SubTitle" = "It's time to open the box to look inside";
+"Direct.Learn.Title" = "Learn More";
+"Direct.Wallpapers.Title" = "See Unusual";
+"Direct.And" = " and\n";
+"Direct.Join.Title" = "Join Reddit";
+"Direct.Journal.Title" = "Journal Trip";
 
 // MARK: Wallpapers
 "Wallpapers.Title" = "Wallpapers";

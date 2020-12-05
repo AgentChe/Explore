@@ -93,17 +93,13 @@
 "FindPlace.FPPreloaderAnimation.Seconds" = "seconds";
 
 // MARK: Direct
-"Direct.Explore.Title" = "Explorar";
-"Direct.Explore.SubTitle" = "Compartilhe sua localização e solicite o próximo ponto de interesse aleatório para explorar.";
-"Direct.Learn.Title" = "Informar-se";
-"Direct.Learn.SubTitle" = "Nosso resumo regular com dicas de caminhada.";
-"Direct.Wallpapers.Title" = "Ver";
-"Direct.Wallpapers.SubTitle" = "Lugares abandonados são arte. Papéis de parede para o seu celular.";
-"Direct.And" = " e ";
-"Direct.Join.Title" = "Join";
-"Direct.Join.SubTitle" = "An ever-growing community of enthusiastic randonauts";
-"Direct.Journal.Title" = "Track";
-"Direct.Journal.SubTitle" = "View your trips and share with your friends";
+"Direct.Explore.Title" = "Explore";
+"Direct.Explore.SubTitle" = "It's time to open the box to look inside";
+"Direct.Learn.Title" = "Learn More";
+"Direct.Wallpapers.Title" = "See Unusual";
+"Direct.And" = " and\n";
+"Direct.Join.Title" = "Join Reddit";
+"Direct.Journal.Title" = "Journal Trip";
 
 // MARK: Wallpapers
 "Wallpapers.Title" = "Papéis de parede";

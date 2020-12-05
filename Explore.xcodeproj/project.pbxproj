@@ -244,6 +244,10 @@
 		96B74C34250ED7AF00413D81 /* DirectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C33250ED7AF00413D81 /* DirectViewModel.swift */; };
 		96B74C36250ED7C400413D81 /* DirectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C35250ED7C400413D81 /* DirectView.swift */; };
 		96B74C3A250ED80100413D81 /* DirectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B74C39250ED80100413D81 /* DirectCollectionView.swift */; };
+		96CDB70D257C127A0048F008 /* DirectCollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDB70C257C127A0048F008 /* DirectCollectionSection.swift */; };
+		96CDB710257C19370048F008 /* DirectCollectionDotsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDB70F257C19370048F008 /* DirectCollectionDotsCell.swift */; };
+		96CDB713257C1BA80048F008 /* DirectCollectionExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDB712257C1BA80048F008 /* DirectCollectionExploreCell.swift */; };
+		96CDB716257C1F830048F008 /* DirectExploreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDB715257C1F830048F008 /* DirectExploreModel.swift */; };
 		96EB730524DBFABD008A32BC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730424DBFABD008A32BC /* Model.swift */; };
 		96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */; };
 		96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732124DD3103008A32BC /* SplashViewController.swift */; };
@@ -520,6 +524,10 @@
 		96B74C33250ED7AF00413D81 /* DirectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewModel.swift; sourceTree = "<group>"; };
 		96B74C35250ED7C400413D81 /* DirectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectView.swift; sourceTree = "<group>"; };
 		96B74C39250ED80100413D81 /* DirectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCollectionView.swift; sourceTree = "<group>"; };
+		96CDB70C257C127A0048F008 /* DirectCollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCollectionSection.swift; sourceTree = "<group>"; };
+		96CDB70F257C19370048F008 /* DirectCollectionDotsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCollectionDotsCell.swift; sourceTree = "<group>"; };
+		96CDB712257C1BA80048F008 /* DirectCollectionExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCollectionExploreCell.swift; sourceTree = "<group>"; };
+		96CDB715257C1F830048F008 /* DirectExploreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectExploreModel.swift; sourceTree = "<group>"; };
 		96EB730424DBFABD008A32BC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationUtils.swift; sourceTree = "<group>"; };
 		96EB732124DD3103008A32BC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -1686,6 +1694,8 @@
 			children = (
 				96F2F84E25101FAF00F7A58B /* DirectCollectionCell.swift */,
 				9631644C251D3C66007791D3 /* DirectCollectionTermsOfServiceCell.swift */,
+				96CDB70F257C19370048F008 /* DirectCollectionDotsCell.swift */,
+				96CDB712257C1BA80048F008 /* DirectCollectionExploreCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1695,6 +1705,8 @@
 			children = (
 				96F2F850251024B000F7A58B /* DirectCollectionElement.swift */,
 				96F2F852251024D900F7A58B /* DirectModel.swift */,
+				96CDB70C257C127A0048F008 /* DirectCollectionSection.swift */,
+				96CDB715257C1F830048F008 /* DirectExploreModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2048,6 +2060,7 @@
 				96F2F85D25102AB600F7A58B /* WallpapersViewModel.swift in Sources */,
 				960F032424DAC686008267FA /* RxActivityIndicator.swift in Sources */,
 				966F478B24F6DCF80025FD5F /* PaygateViewControllerDelegate.swift in Sources */,
+				96CDB713257C1BA80048F008 /* DirectCollectionExploreCell.swift in Sources */,
 				960F02F824DAC5E3008267FA /* SignError.swift in Sources */,
 				96316438251A918D007791D3 /* LearnContentTableModel.swift in Sources */,
 				960F032B24DAC686008267FA /* PaddingLabel.swift in Sources */,
@@ -2092,6 +2105,7 @@
 				960910442555C81E00E781A1 /* SaveJournalArticleRequest.swift in Sources */,
 				96091052255AB36C00E781A1 /* GetJournalArticleDetailsResponseMapper.swift in Sources */,
 				96B43F11255BF50100537439 /* FeedbackViewController.swift in Sources */,
+				96CDB710257C19370048F008 /* DirectCollectionDotsCell.swift in Sources */,
 				96316423251A58B4007791D3 /* LearnArticlesCollectionTitleCell.swift in Sources */,
 				963A442824FCCC720018A8CA /* FPWhatLikeGetCell.swift in Sources */,
 				966F479124F7A3740025FD5F /* FindPlaceViewController.swift in Sources */,
@@ -2153,6 +2167,7 @@
 				966F471224F66CE40025FD5F /* TripManagerCore.swift in Sources */,
 				966F472024F68A540025FD5F /* SessionManager.swift in Sources */,
 				96F2F87225115BAD00F7A58B /* WallpapersManagerDelegate.swift in Sources */,
+				96CDB716257C1F830048F008 /* DirectExploreModel.swift in Sources */,
 				9609B828251180AF00457FD6 /* WallpapersCollectionHeader.swift in Sources */,
 				96B43F18255BF53F00537439 /* FeedbackView.swift in Sources */,
 				9609101C2554684A00E781A1 /* CreateTripResult.swift in Sources */,
@@ -2174,6 +2189,7 @@
 				966F47A724F7BAA60025FD5F /* OnboardingSlide.swift in Sources */,
 				96F2F851251024B000F7A58B /* DirectCollectionElement.swift in Sources */,
 				96F2F88025116FE500F7A58B /* WallpapersCollectionView.swift in Sources */,
+				96CDB70D257C127A0048F008 /* DirectCollectionSection.swift in Sources */,
 				966F47A024F7B1650025FD5F /* FindPlaceView.swift in Sources */,
 				96B74C3A250ED80100413D81 /* DirectCollectionView.swift in Sources */,
 				9631643E251A91E8007791D3 /* LearnContentTableTextCell.swift in Sources */,

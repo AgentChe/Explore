@@ -25,7 +25,6 @@ final class DirectCollectionTermsOfServiceCell: UICollectionViewCell {
 }
 
 // MARK: Private
-
 private extension DirectCollectionTermsOfServiceCell {
     @objc
     func tapped(gesture: UITapGestureRecognizer) {
@@ -47,7 +46,6 @@ private extension DirectCollectionTermsOfServiceCell {
 }
 
 // MARK: Make constraints
-
 private extension DirectCollectionTermsOfServiceCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
@@ -59,13 +57,12 @@ private extension DirectCollectionTermsOfServiceCell {
 }
 
 // MARK: Lazy initialization
-
 private extension DirectCollectionTermsOfServiceCell {
     func makeLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.white)
-            .font(Font.Poppins.regular(size: 15.scale))
-            .lineHeight(17.scale)
+            .font(Font.Poppins.regular(size: 14.scale))
+            .lineHeight(20.scale)
             .textAlignment(.center)
         
         let underlineAttrs = attrs.underlineStyle(.single)

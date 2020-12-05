@@ -9,5 +9,4 @@
 struct DirectModel {
     let iconName: String
     let title: String
-    let subTitle: String
 }

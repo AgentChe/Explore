@@ -26,9 +26,9 @@ final class DirectViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel
-            .elements
-            .drive(onNext: { [weak self] elements in
-                self?.directView.collectionView.setup(elements: elements)
+            .sections
+            .drive(onNext: { [weak self] sections in
+                self?.directView.collectionView.setup(sections: sections)
             })
             .disposed(by: disposeBag)
         

@@ -16,7 +16,7 @@ final class DirectViewModel {
     
     let didSelectElement = PublishRelay<DirectCollectionElement>()
     
-    lazy var elements = createElements()
+    lazy var sections = createSections()
     lazy var step = createStep()
     
     private let tripManager = TripManagerCore() 
@@ -25,38 +25,41 @@ final class DirectViewModel {
 // MARK: Private
 
 private extension DirectViewModel {
-    func createElements() -> Driver<[DirectCollectionElement]> {
+    func createSections() -> Driver<[DirectCollectionSection]> {
         .deferred {
-            let explore = DirectModel(iconName: "Direct.Explore",
-                                      title: "Direct.Explore.Title".localized,
-                                      subTitle: "Direct.Explore.SubTitle".localized)
+            var sections = [DirectCollectionSection]()
+            
+            let explore = DirectExploreModel(title: "Direct.Explore.Title".localized,
+                                             subTitle: "Direct.Explore.SubTitle".localized)
+            let s1 = DirectCollectionSection(elements: [DirectCollectionElement.explore(explore)])
+            sections.append(s1)
+            
+            let s2 = DirectCollectionSection(elements: [.dots])
+            sections.append(s2)
             
             let learn = DirectModel(iconName: "Direct.Learn",
-                                    title: "Direct.Learn.Title".localized,
-                                    subTitle: "Direct.Learn.SubTitle".localized)
+                                    title: "Direct.Learn.Title".localized)
             
             let wallpapers = DirectModel(iconName: "Direct.Wallpapers",
-                                         title: "Direct.Wallpapers.Title".localized,
-                                         subTitle: "Direct.Wallpapers.SubTitle".localized)
+                                         title: "Direct.Wallpapers.Title".localized)
             
             let join = DirectModel(iconName: "Direct.Join",
-                                   title: "Direct.Join.Title".localized,
-                                   subTitle: "Direct.Join.SubTitle".localized)
+                                   title: "Direct.Join.Title".localized)
             
             let journal = DirectModel(iconName: "Direct.Journal",
-                                   title: "Direct.Journal.Title".localized,
-                                   subTitle: "Direct.Journal.SubTitle".localized)
-            
-            let elements = [
-                DirectCollectionElement.explore(explore),
+                                   title: "Direct.Journal.Title".localized)
+            let s3 = DirectCollectionSection(elements: [
                 DirectCollectionElement.learn(learn),
                 DirectCollectionElement.wallpapers(wallpapers),
                 DirectCollectionElement.join(join),
-                DirectCollectionElement.journal(journal),
-                DirectCollectionElement.termsOfService
-            ]
+                DirectCollectionElement.journal(journal)
+            ])
+            sections.append(s3)
             
-            return .just(elements)
+            let s4 = DirectCollectionSection(elements: [.termsOfService])
+            sections.append(s4)
+            
+            return .just(sections)
         }
     }
     
@@ -91,7 +94,7 @@ private extension DirectViewModel {
                     return .just(.journal)
                 case .join:
                     return .just(.join)
-                case .termsOfService:
+                case .termsOfService, .dots:
                     return .never()
                 }
             }
