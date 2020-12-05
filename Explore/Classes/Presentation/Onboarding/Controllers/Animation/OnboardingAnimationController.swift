@@ -15,9 +15,9 @@ final class OnboardingAnimationController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-    private let complete: (() -> Void)
+    private let complete: ((UIViewController) -> Void)
     
-    private init(complete: @escaping (() -> Void)) {
+    private init(complete: @escaping ((UIViewController) -> Void)) {
         self.complete = complete
         
         super.init(nibName: nil, bundle: .main)
@@ -37,7 +37,7 @@ final class OnboardingAnimationController: UIViewController {
         super.viewDidLoad()
         
         Single
-            .just(Void())
+            .just(self)
             .delaySubscription(RxTimeInterval.seconds(3), scheduler: MainScheduler.asyncInstance)
             .subscribe(onSuccess: complete)
             .disposed(by: disposeBag)
@@ -48,7 +48,7 @@ final class OnboardingAnimationController: UIViewController {
 
 // MARK: Make
 extension OnboardingAnimationController {
-    static func make(complete: @escaping (() -> Void)) -> OnboardingAnimationController {
+    static func make(complete: @escaping ((UIViewController) -> Void)) -> OnboardingAnimationController {
         let vc = OnboardingAnimationController(complete: complete)
         vc.modalPresentationStyle = .fullScreen
         return vc

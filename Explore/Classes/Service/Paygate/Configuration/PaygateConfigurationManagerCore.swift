@@ -58,14 +58,14 @@ extension PaygateConfigurationManagerCore {
                                                       seePaygate: false)
                     return .just(config)
                 }
-                
+
                 return this.obtainConfiguration()
             }
             .do(onSuccess: { [weak self] configuration in
                 guard let this = self, let config = configuration else {
                     return
                 }
-                
+
                 this.store(configuration: config)
             })
     }

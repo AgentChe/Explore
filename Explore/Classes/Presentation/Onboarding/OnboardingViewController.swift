@@ -108,8 +108,10 @@ extension OnboardingViewController {
     }
     
     func startAnimation() {
-        let vc = OnboardingAnimationController.make { [weak self] in
-            self?.viewModel.end.accept(Void())
+        let vc = OnboardingAnimationController.make { [weak self] vc in
+            vc.dismiss(animated: true) {
+                self?.viewModel.end.accept(Void())
+            }
         }
         present(vc, animated: false)
     }
