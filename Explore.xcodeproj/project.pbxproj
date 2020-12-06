@@ -2395,15 +2395,15 @@
 				CODE_SIGN_ENTITLEMENTS = Explore/Randonauting.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 25;
-				DEVELOPMENT_TEAM = 84M2AR9RYC;
+				CURRENT_PROJECT_VERSION = 26;
+				DEVELOPMENT_TEAM = 82M89ZGHB7;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.15.1;
+				MARKETING_VERSION = 2.15.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore Development";
@@ -2421,15 +2421,15 @@
 				CODE_SIGN_ENTITLEMENTS = Explore/Randonauting.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 25;
-				DEVELOPMENT_TEAM = 84M2AR9RYC;
+				CURRENT_PROJECT_VERSION = 26;
+				DEVELOPMENT_TEAM = 82M89ZGHB7;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.15.1;
+				MARKETING_VERSION = 2.15.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore AppStore";
