@@ -7,11 +7,11 @@
 //
 
 struct GlobalDefinitions {
-    static let domain = "https://explore.korrekted.com" // prod
-//    static let domain = "https://test.explore.korrekted.com" // dev
+//    static let domain = "https://explore.korrekted.com" // prod
+    static let domain = "https://test.explore.korrekted.com" // dev
     
-    static let apiKey = "7UUmIkjzWNdweEx3" // prod
-//    static let apiKey = "XHcB33Jdgk3uEtKK" // dev
+//    static let apiKey = "7UUmIkjzWNdweEx3" // prod
+    static let apiKey = "XHcB33Jdgk3uEtKK" // dev
     
     static let googleApiKey = "AIzaSyBdakvJp7Zv1ZDDLTpWReGBgQNZ6H0tOOQ"
     
@@ -22,9 +22,9 @@ struct GlobalDefinitions {
     
     static let applicationTag = "EXPLORE"
     
-    static let sdkDomainUrl = "https://analytics.korrekted.com" // prod
-//    static let sdkDomainUrl = "https://test.analytics.korrekted.com" // dev
+//    static let sdkDomainUrl = "https://analytics.korrekted.com" // prod
+    static let sdkDomainUrl = "https://test.analytics.korrekted.com" // dev
     
-    static let sdkApiKey = "wCjZrrUAEMWJ5bDk" // prod
-//    static let sdkApiKey = "HjLXv1yilSvUpJIL" // dev
+//    static let sdkApiKey = "wCjZrrUAEMWJ5bDk" // prod
+    static let sdkApiKey = "HjLXv1yilSvUpJIL" // dev
 }

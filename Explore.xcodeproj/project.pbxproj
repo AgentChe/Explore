@@ -137,6 +137,19 @@
 		963A443724FE50E40018A8CA /* FPWhatItIsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A443624FE50E40018A8CA /* FPWhatItIsCell.swift */; };
 		963A443924FEE4BF0018A8CA /* FPRadiusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A443824FEE4BF0018A8CA /* FPRadiusCell.swift */; };
 		963A443B24FEEF1B0018A8CA /* FPTableRadiusBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A443A24FEEF1B0018A8CA /* FPTableRadiusBundle.swift */; };
+		9656D3392590A767006755EC /* WallpaperCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D3382590A767006755EC /* WallpaperCategory.swift */; };
+		9656D33D2590AC23006755EC /* GetWallpapersResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D33C2590AC23006755EC /* GetWallpapersResponseMapper.swift */; };
+		9656D3402590AD02006755EC /* WallpaperCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D33F2590AD02006755EC /* WallpaperCategories.swift */; };
+		9656D3492590DCD5006755EC /* WallpapersCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D3482590DCD5006755EC /* WallpapersCategoriesViewController.swift */; };
+		9656D34E2590EC32006755EC /* WallpapersCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D34D2590EC31006755EC /* WallpapersCategoriesViewModel.swift */; };
+		9656D3522590EC8F006755EC /* WCCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D3512590EC8F006755EC /* WCCollectionView.swift */; };
+		9656D35F2590EF80006755EC /* NewArrivalsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D35E2590EF80006755EC /* NewArrivalsCollectionView.swift */; };
+		9656D3632590EFE0006755EC /* WCCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D3622590EFE0006755EC /* WCCollectionElement.swift */; };
+		9656D3662590F03A006755EC /* WCCollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D3652590F03A006755EC /* WCCollectionSection.swift */; };
+		9656D3692590F10B006755EC /* NewArrivalsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D3682590F10B006755EC /* NewArrivalsCollectionCell.swift */; };
+		9656D36C2590F94D006755EC /* WCCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D36B2590F94D006755EC /* WCCollectionHeader.swift */; };
+		9656D36F259102DD006755EC /* WCCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D36E259102DD006755EC /* WCCollectionCell.swift */; };
+		9656D3722591052C006755EC /* WCCollectionNewArrivalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D3712591052C006755EC /* WCCollectionNewArrivalsCell.swift */; };
 		966C84732517FCEC0094784C /* GetLearnCategoriesRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 966C84722517FCEC0094784C /* GetLearnCategoriesRequestJSON.json */; };
 		966C84752517FE920094784C /* GetLearnContentRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 966C84742517FE920094784C /* GetLearnContentRequestJSON.json */; };
 		966C847A2519540C0094784C /* LearnCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C84792519540C0094784C /* LearnCategoriesView.swift */; };
@@ -262,14 +275,10 @@
 		96F2F86025102CF000F7A58B /* DirectNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F85F25102CF000F7A58B /* DirectNavigationController.swift */; };
 		96F2F862251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F861251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift */; };
 		96F2F8692511459E00F7A58B /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F8682511459E00F7A58B /* Wallpaper.swift */; };
-		96F2F86B251149B800F7A58B /* Wallpapers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F86A251149B800F7A58B /* Wallpapers.swift */; };
-		96F2F86E25114B2600F7A58B /* WallpapersResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F86D25114B2600F7A58B /* WallpapersResponseMapper.swift */; };
 		96F2F87025115A5B00F7A58B /* WallpapersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F86F25115A5B00F7A58B /* WallpapersManager.swift */; };
-		96F2F87225115BAD00F7A58B /* WallpapersManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F87125115BAD00F7A58B /* WallpapersManagerDelegate.swift */; };
 		96F2F87425115EC800F7A58B /* WallpapersManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F87325115EC800F7A58B /* WallpapersManagerCore.swift */; };
 		96F2F87625115EFC00F7A58B /* GetWallpapersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F87525115EFC00F7A58B /* GetWallpapersRequest.swift */; };
 		96F2F8792511684C00F7A58B /* GetWallpapersRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 96F2F8782511684C00F7A58B /* GetWallpapersRequestJSON.json */; };
-		96F2F87B251169ED00F7A58B /* WallpapersManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F87A251169ED00F7A58B /* WallpapersManagerMock.swift */; };
 		96F2F87D25116E8100F7A58B /* WallpapersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F87C25116E8100F7A58B /* WallpapersView.swift */; };
 		96F2F88025116FE500F7A58B /* WallpapersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F87F25116FE500F7A58B /* WallpapersCollectionView.swift */; };
 		96F2F885251170F400F7A58B /* WallpaperCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2F884251170F400F7A58B /* WallpaperCollectionCell.swift */; };
@@ -415,6 +424,19 @@
 		963A443624FE50E40018A8CA /* FPWhatItIsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPWhatItIsCell.swift; sourceTree = "<group>"; };
 		963A443824FEE4BF0018A8CA /* FPRadiusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPRadiusCell.swift; sourceTree = "<group>"; };
 		963A443A24FEEF1B0018A8CA /* FPTableRadiusBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPTableRadiusBundle.swift; sourceTree = "<group>"; };
+		9656D3382590A767006755EC /* WallpaperCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCategory.swift; sourceTree = "<group>"; };
+		9656D33C2590AC23006755EC /* GetWallpapersResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWallpapersResponseMapper.swift; sourceTree = "<group>"; };
+		9656D33F2590AD02006755EC /* WallpaperCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCategories.swift; sourceTree = "<group>"; };
+		9656D3482590DCD5006755EC /* WallpapersCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCategoriesViewController.swift; sourceTree = "<group>"; };
+		9656D34D2590EC31006755EC /* WallpapersCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCategoriesViewModel.swift; sourceTree = "<group>"; };
+		9656D3512590EC8F006755EC /* WCCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionView.swift; sourceTree = "<group>"; };
+		9656D35E2590EF80006755EC /* NewArrivalsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArrivalsCollectionView.swift; sourceTree = "<group>"; };
+		9656D3622590EFE0006755EC /* WCCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionElement.swift; sourceTree = "<group>"; };
+		9656D3652590F03A006755EC /* WCCollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionSection.swift; sourceTree = "<group>"; };
+		9656D3682590F10B006755EC /* NewArrivalsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArrivalsCollectionCell.swift; sourceTree = "<group>"; };
+		9656D36B2590F94D006755EC /* WCCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionHeader.swift; sourceTree = "<group>"; };
+		9656D36E259102DD006755EC /* WCCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionCell.swift; sourceTree = "<group>"; };
+		9656D3712591052C006755EC /* WCCollectionNewArrivalsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionNewArrivalsCell.swift; sourceTree = "<group>"; };
 		966C84722517FCEC0094784C /* GetLearnCategoriesRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetLearnCategoriesRequestJSON.json; sourceTree = "<group>"; };
 		966C84742517FE920094784C /* GetLearnContentRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetLearnContentRequestJSON.json; sourceTree = "<group>"; };
 		966C84792519540C0094784C /* LearnCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesView.swift; sourceTree = "<group>"; };
@@ -542,14 +564,10 @@
 		96F2F85F25102CF000F7A58B /* DirectNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectNavigationController.swift; sourceTree = "<group>"; };
 		96F2F861251131BA00F7A58B /* FindPlaceViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewControllerDelegate.swift; sourceTree = "<group>"; };
 		96F2F8682511459E00F7A58B /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
-		96F2F86A251149B800F7A58B /* Wallpapers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpapers.swift; sourceTree = "<group>"; };
-		96F2F86D25114B2600F7A58B /* WallpapersResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersResponseMapper.swift; sourceTree = "<group>"; };
 		96F2F86F25115A5B00F7A58B /* WallpapersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersManager.swift; sourceTree = "<group>"; };
-		96F2F87125115BAD00F7A58B /* WallpapersManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersManagerDelegate.swift; sourceTree = "<group>"; };
 		96F2F87325115EC800F7A58B /* WallpapersManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersManagerCore.swift; sourceTree = "<group>"; };
 		96F2F87525115EFC00F7A58B /* GetWallpapersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWallpapersRequest.swift; sourceTree = "<group>"; };
 		96F2F8782511684C00F7A58B /* GetWallpapersRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetWallpapersRequestJSON.json; sourceTree = "<group>"; };
-		96F2F87A251169ED00F7A58B /* WallpapersManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersManagerMock.swift; sourceTree = "<group>"; };
 		96F2F87C25116E8100F7A58B /* WallpapersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersView.swift; sourceTree = "<group>"; };
 		96F2F87F25116FE500F7A58B /* WallpapersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCollectionView.swift; sourceTree = "<group>"; };
 		96F2F884251170F400F7A58B /* WallpaperCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCollectionCell.swift; sourceTree = "<group>"; };
@@ -893,14 +911,13 @@
 		960F029924DAC5C9008267FA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9656D3442590DC4C006755EC /* Wallpapers */,
 				96B43F56255D3E3D00537439 /* JournalArticleDetails */,
 				96B43F0F255BF4D000537439 /* Feedback */,
 				96B43F00255B41CD00537439 /* Journal */,
 				9631642A251A911D007791D3 /* LearnContent */,
 				96316415251A5686007791D3 /* LearnArticles */,
-				9609B8292511890F00457FD6 /* Wallpaper */,
 				96F2F85525102A3F00F7A58B /* LearnCategories */,
-				96F2F85425102A3600F7A58B /* Wallpapers */,
 				96B74C30250ED75300413D81 /* Direct */,
 				966F479424F7A5A50025FD5F /* Map */,
 				966F472724F695F00025FD5F /* Onboarding */,
@@ -1217,6 +1234,65 @@
 				963A442E24FCF3770018A8CA /* FindPlaceTableSection.swift */,
 				963A443024FCF3850018A8CA /* FindPlaceTableSectionItem.swift */,
 				963A443A24FEEF1B0018A8CA /* FPTableRadiusBundle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9656D3442590DC4C006755EC /* Wallpapers */ = {
+			isa = PBXGroup;
+			children = (
+				9656D3472590DC75006755EC /* Categories */,
+				9609B8292511890F00457FD6 /* Wallpaper */,
+				96F2F85425102A3600F7A58B /* Wallpapers */,
+			);
+			path = Wallpapers;
+			sourceTree = "<group>";
+		};
+		9656D3472590DC75006755EC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9656D3612590EFBC006755EC /* Models */,
+				9656D3502590EC60006755EC /* Views */,
+				9656D3482590DCD5006755EC /* WallpapersCategoriesViewController.swift */,
+				9656D34D2590EC31006755EC /* WallpapersCategoriesViewModel.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		9656D3502590EC60006755EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9656D35C2590EF70006755EC /* NewArrivalsCollectionView */,
+				9656D35A2590EF58006755EC /* CollectionView */,
+				9656D36B2590F94D006755EC /* WCCollectionHeader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9656D35A2590EF58006755EC /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				9656D3512590EC8F006755EC /* WCCollectionView.swift */,
+				9656D36E259102DD006755EC /* WCCollectionCell.swift */,
+				9656D3712591052C006755EC /* WCCollectionNewArrivalsCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		9656D35C2590EF70006755EC /* NewArrivalsCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				9656D35E2590EF80006755EC /* NewArrivalsCollectionView.swift */,
+				9656D3682590F10B006755EC /* NewArrivalsCollectionCell.swift */,
+			);
+			path = NewArrivalsCollectionView;
+			sourceTree = "<group>";
+		};
+		9656D3612590EFBC006755EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9656D3622590EFE0006755EC /* WCCollectionElement.swift */,
+				9656D3652590F03A006755EC /* WCCollectionSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1761,9 +1837,7 @@
 				96F2F86C25114B1000F7A58B /* Mappers */,
 				96F2F8672511458600F7A58B /* Models */,
 				96F2F86F25115A5B00F7A58B /* WallpapersManager.swift */,
-				96F2F87125115BAD00F7A58B /* WallpapersManagerDelegate.swift */,
 				96F2F87325115EC800F7A58B /* WallpapersManagerCore.swift */,
-				96F2F87A251169ED00F7A58B /* WallpapersManagerMock.swift */,
 			);
 			path = Wallpapers;
 			sourceTree = "<group>";
@@ -1780,7 +1854,8 @@
 			isa = PBXGroup;
 			children = (
 				96F2F8682511459E00F7A58B /* Wallpaper.swift */,
-				96F2F86A251149B800F7A58B /* Wallpapers.swift */,
+				9656D3382590A767006755EC /* WallpaperCategory.swift */,
+				9656D33F2590AD02006755EC /* WallpaperCategories.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1788,7 +1863,7 @@
 		96F2F86C25114B1000F7A58B /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
-				96F2F86D25114B2600F7A58B /* WallpapersResponseMapper.swift */,
+				9656D33C2590AC23006755EC /* GetWallpapersResponseMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -2026,7 +2101,6 @@
 				966F47A924F7BDFE0025FD5F /* OnboardingSlider.swift in Sources */,
 				96B74C32250ED76500413D81 /* DirectViewController.swift in Sources */,
 				9609101725543D9200E781A1 /* FPPreloaderAnimationView.swift in Sources */,
-				96F2F86B251149B800F7A58B /* Wallpapers.swift in Sources */,
 				96EB732424DD3139008A32BC /* SplashView.swift in Sources */,
 				96316419251A56F0007791D3 /* LearnArticlesViewModel.swift in Sources */,
 				96F2F85B25102A8F00F7A58B /* WallpapersViewController.swift in Sources */,
@@ -2063,8 +2137,10 @@
 				96CDB713257C1BA80048F008 /* DirectCollectionExploreCell.swift in Sources */,
 				960F02F824DAC5E3008267FA /* SignError.swift in Sources */,
 				96316438251A918D007791D3 /* LearnContentTableModel.swift in Sources */,
+				9656D36F259102DD006755EC /* WCCollectionCell.swift in Sources */,
 				960F032B24DAC686008267FA /* PaddingLabel.swift in Sources */,
 				9609B84B2517366D00457FD6 /* LearnCategory.swift in Sources */,
+				9656D3492590DCD5006755EC /* WallpapersCategoriesViewController.swift in Sources */,
 				9674468D2538864200E32205 /* GetPaygateConfigurationResponseMapper.swift in Sources */,
 				963A443724FE50E40018A8CA /* FPWhatItIsCell.swift in Sources */,
 				96B43FE425631AAF00537439 /* TagCloseButton.swift in Sources */,
@@ -2104,6 +2180,7 @@
 				96F2F87425115EC800F7A58B /* WallpapersManagerCore.swift in Sources */,
 				960910442555C81E00E781A1 /* SaveJournalArticleRequest.swift in Sources */,
 				96091052255AB36C00E781A1 /* GetJournalArticleDetailsResponseMapper.swift in Sources */,
+				9656D3692590F10B006755EC /* NewArrivalsCollectionCell.swift in Sources */,
 				96B43F11255BF50100537439 /* FeedbackViewController.swift in Sources */,
 				96CDB710257C19370048F008 /* DirectCollectionDotsCell.swift in Sources */,
 				96316423251A58B4007791D3 /* LearnArticlesCollectionTitleCell.swift in Sources */,
@@ -2123,7 +2200,9 @@
 				966F471E24F688F20025FD5F /* Session.swift in Sources */,
 				96B43F90255FBC5B00537439 /* FTableDescriptionCell.swift in Sources */,
 				963A441724FA4EC90018A8CA /* TripManagerMock.swift in Sources */,
+				9656D33D2590AC23006755EC /* GetWallpapersResponseMapper.swift in Sources */,
 				96B43EFD255B1A2900537439 /* ProductPrice.swift in Sources */,
+				9656D34E2590EC32006755EC /* WallpapersCategoriesViewModel.swift in Sources */,
 				9609B85225173C2F00457FD6 /* GetLearnCategoriesRequest.swift in Sources */,
 				966F478624F6DCBE0025FD5F /* PaygateView.swift in Sources */,
 				96B43F09255B428300537439 /* JournalView.swift in Sources */,
@@ -2132,7 +2211,6 @@
 				96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */,
 				960F032C24DAC686008267FA /* CircleView.swift in Sources */,
 				96B43FA12560464000537439 /* FeedbackSaveButton.swift in Sources */,
-				96F2F87B251169ED00F7A58B /* WallpapersManagerMock.swift in Sources */,
 				9609B85425173DB700457FD6 /* GetLearnContentRequest.swift in Sources */,
 				96091074255ADA5E00E781A1 /* ImageManagerMock.swift in Sources */,
 				963A442224FB91410018A8CA /* FindPlaceTableDelegate.swift in Sources */,
@@ -2140,6 +2218,8 @@
 				9631641F251A5832007791D3 /* LearnArticlesCollectionView.swift in Sources */,
 				960F032524DAC686008267FA /* PaginatedDataLoader.swift in Sources */,
 				960F02F724DAC5E3008267FA /* ApiError.swift in Sources */,
+				9656D3402590AD02006755EC /* WallpaperCategories.swift in Sources */,
+				9656D3392590A767006755EC /* WallpaperCategory.swift in Sources */,
 				963A442C24FCF2E50018A8CA /* FindPlaceTableView.swift in Sources */,
 				963A443124FCF3850018A8CA /* FindPlaceTableSectionItem.swift in Sources */,
 				963A443524FD57510018A8CA /* FPDeniedGeoPermissionCell.swift in Sources */,
@@ -2154,10 +2234,10 @@
 				960910302555BCB500E781A1 /* JournalTag.swift in Sources */,
 				963A443924FEE4BF0018A8CA /* FPRadiusCell.swift in Sources */,
 				9609B83025118C6100457FD6 /* WallpaperPreviewView.swift in Sources */,
-				96F2F86E25114B2600F7A58B /* WallpapersResponseMapper.swift in Sources */,
 				96744683253884A400E32205 /* GetPaygateConfigurationRequest.swift in Sources */,
 				960F031B24DAC686008267FA /* StringExtension.swift in Sources */,
 				966F478C24F6DCF80025FD5F /* PaygateViewController.swift in Sources */,
+				9656D3722591052C006755EC /* WCCollectionNewArrivalsCell.swift in Sources */,
 				9609B8232511735A00457FD6 /* WallpaperCollectionElement.swift in Sources */,
 				9631643C251A91D8007791D3 /* LearnContentTableImageCell.swift in Sources */,
 				960F031E24DAC686008267FA /* TextAttributes.swift in Sources */,
@@ -2166,12 +2246,12 @@
 				966C847E251954DC0094784C /* LearnCollectionView.swift in Sources */,
 				966F471224F66CE40025FD5F /* TripManagerCore.swift in Sources */,
 				966F472024F68A540025FD5F /* SessionManager.swift in Sources */,
-				96F2F87225115BAD00F7A58B /* WallpapersManagerDelegate.swift in Sources */,
 				96CDB716257C1F830048F008 /* DirectExploreModel.swift in Sources */,
 				9609B828251180AF00457FD6 /* WallpapersCollectionHeader.swift in Sources */,
 				96B43F18255BF53F00537439 /* FeedbackView.swift in Sources */,
 				9609101C2554684A00E781A1 /* CreateTripResult.swift in Sources */,
 				9609B85A2517427D00457FD6 /* LearnManagerCore.swift in Sources */,
+				9656D3522590EC8F006755EC /* WCCollectionView.swift in Sources */,
 				960F02FA24DAC5E3008267FA /* PaymentError.swift in Sources */,
 				963A442F24FCF3770018A8CA /* FindPlaceTableSection.swift in Sources */,
 				966F479C24F7B0600025FD5F /* OnboardingView.swift in Sources */,
@@ -2183,6 +2263,7 @@
 				9631640A25195C91007791D3 /* LearnCategoriesCollectionElement.swift in Sources */,
 				96744686253884C200E32205 /* PaygateConfiguration.swift in Sources */,
 				966F47AB24F7FC7A0025FD5F /* OnboardingSliderDelegate.swift in Sources */,
+				9656D36C2590F94D006755EC /* WCCollectionHeader.swift in Sources */,
 				96F2F8692511459E00F7A58B /* Wallpaper.swift in Sources */,
 				96316425251A5969007791D3 /* LearnArticlesCollectionArticleCell.swift in Sources */,
 				96EB730524DBFABD008A32BC /* Model.swift in Sources */,
@@ -2192,6 +2273,7 @@
 				96CDB70D257C127A0048F008 /* DirectCollectionSection.swift in Sources */,
 				966F47A024F7B1650025FD5F /* FindPlaceView.swift in Sources */,
 				96B74C3A250ED80100413D81 /* DirectCollectionView.swift in Sources */,
+				9656D3632590EFE0006755EC /* WCCollectionElement.swift in Sources */,
 				9631643E251A91E8007791D3 /* LearnContentTableTextCell.swift in Sources */,
 				960F032A24DAC686008267FA /* PaddingTextField.swift in Sources */,
 				96B43F5E255D3EB100537439 /* JADetailsView.swift in Sources */,
@@ -2226,9 +2308,11 @@
 				966F479624F7A5C10025FD5F /* MapViewController.swift in Sources */,
 				96316434251A916C007791D3 /* LearnContentTableView.swift in Sources */,
 				9609B82D25118A6900457FD6 /* WallpaperView.swift in Sources */,
+				9656D3662590F03A006755EC /* WCCollectionSection.swift in Sources */,
 				966F479A24F7AFCC0025FD5F /* MapView.swift in Sources */,
 				966F478724F6DCBE0025FD5F /* PaygateSpecialOfferView.swift in Sources */,
 				9631643A251A91CE007791D3 /* LearnContentTableTitleCell.swift in Sources */,
+				9656D35F2590EF80006755EC /* NewArrivalsCollectionView.swift in Sources */,
 				96091048255AAD0D00E781A1 /* DeleteJournalArticleRequest.swift in Sources */,
 				96091055255AB39E00E781A1 /* SaveJournalArticleResponseMapper.swift in Sources */,
 				9609107A255AE32E00E781A1 /* JournalManagerCore.swift in Sources */,

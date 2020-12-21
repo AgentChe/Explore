@@ -101,8 +101,11 @@
 "Direct.Join.Title" = "Join Reddit";
 "Direct.Journal.Title" = "Journal Trip";
 
-// MARK: Wallpapers
-"Wallpapers.Title" = "Fondos de pantalla";
+// MARK: WallpapersCategories
+"WallpapersCategories.Title" = "Wallpapers";
+"WallpapersCategories.NewArrivals" = "NEW ARRIVALS";
+"WallpapersCategories.Title" = "CATEGORIES";
+"WallpapersCategories.CountWallpapers" = "%i wallpapers";
 
 // MARK: Wallpaper
 "Wallpaper.Save" = "Guardar";

@@ -9,16 +9,14 @@
 import Alamofire
 
 struct GetWallpapersRequest: APIRequestBody {
-    private let userToken: String
-    private let hash: String?
+    private let userToken: String?
     
-    init(userToken: String, hash: String? = nil) {
+    init(userToken: String?) {
         self.userToken = userToken
-        self.hash = hash
     }
     
     var url: String {
-        GlobalDefinitions.domain + "/api/wallpapers/list"
+        GlobalDefinitions.domain + "/api/wallpapers_new/list"
     }
     
     var method: HTTPMethod {
@@ -31,8 +29,8 @@ struct GetWallpapersRequest: APIRequestBody {
             "anonymous_id": SDKStorage.shared.applicationAnonymousID
         ]
         
-        if let hash = self.hash {
-            params["wallpapers_hash"] = hash
+        if let userToken = self.userToken {
+            params["_user_token"] = userToken
         }
         
         return params

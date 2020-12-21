@@ -1,38 +1,64 @@
 {
-    "_code": 200,
+    "_code": null,
     "_msg": "OK",
     "_need_payment": false,
     "_data": {
-        "wallpapers": [
-            {
-                "sort": 0,
-                "id": 4,
-                "name": "Earth",
-                "thumb_image_url": "https://s.hi-news.ru/wp-content/uploads/2018/02/wormholecropped-750x422.jpg",
-                "image_url": "https://s9.stc.all.kpcdn.net/share/i/12/11482942/inx960x640.jpg",
-                "hash": "ccb75e6bd7c250af6fbb9e968b6de6b2"
-            },
-            {
-                "sort": 1,
-                "id": 5,
-                "name": "Space Around",
-                "thumb_image_url": "https://icdn.lenta.ru/images/2018/08/16/17/20180816173432817/detail_441e2453a70b2a23f725bde7483421ff.jpg",
-                "image_url": "https://lh3.googleusercontent.com/proxy/8NrCTG7TKyI2Pi7oNvwuvKoQcGh8Ph0NL-KqeY8HlyM8ob4L_h4s2PweLfgJtpfBD6LXHqI5c4bsG4nZhLTE-dSb8SYWBursiOuZ79taoBjHu-l0eK3z7Qv7BiVRAPKtvsP5X9XzP_s",
-                "hash": "9e171010a0a526513cda5d22ad3cdd36"
-            },
-            {
-                "sort": 2,
-                "id": 3,
-                "name": "Space Thing",
-                "thumb_image_url": "https://icdn.lenta.ru/images/2018/04/26/18/20180426182156588/detail_d1de8a06fd568521f2414bcfe5b37a9e.jpg",
-                "image_url": "https://cdn.sm-news.ru/wp-content/uploads/2020/05/09/4446-1.jpg",
-                "hash": "7710a8b4d9ed7d30aa14b9708ae72817"
+        "wallpapers": {
+            "content": [
+                {
+                    "id": 3,
+                    "name": "Abandoned",
+                    "image_url": "https://406515.selcdn.ru/APPS/EXPLORE_test/09/1608406376house.jpg",
+                    "paid": true,
+                    "wallpapers_count": 2,
+                    "wallpapers": [
+                        {
+                            "id": 2,
+                            "paid": true,
+                            "thumb_image_url": "https://406515.selcdn.ru/APPS/EXPLORE_test/00/16084088621608408862_thumb_1608408861design4.png",
+                            "image_url": "https://406515.selcdn.ru/APPS/EXPLORE_test/93/1608408862design4.png",
+                            "hash": "91226d1efdfe4c5e74d9e383393df72b"
+                        },
+                        {
+                            "id": 1,
+                            "paid": true,
+                            "thumb_image_url": "https://406515.selcdn.ru/APPS/EXPLORE_test/57/16084087851608408785_thumb_1608408785design4.png",
+                            "image_url": "https://406515.selcdn.ru/APPS/EXPLORE_test/89/1608408785design4.png",
+                            "hash": "51476deb84fc883b3c816b1e529cc988"
+                        }
+                    ],
+                    "hash": "0384a9e65df848e6144c4e60efb934d9"
+                },
+                {
+                    "id": 4,
+                    "name": "Creepy Nature",
+                    "image_url": "https://406515.selcdn.ru/APPS/EXPLORE_test/66/1608406444nature.jpg",
+                    "paid": false,
+                    "wallpapers_count": 2,
+                    "wallpapers": [
+                        {
+                            "id": 4,
+                            "paid": false,
+                            "thumb_image_url": "https://406515.selcdn.ru/APPS/EXPLORE_test/87/16084149671608414967_thumb_1608414967design2.png",
+                            "image_url": "https://406515.selcdn.ru/APPS/EXPLORE_test/78/1608414967design2.png",
+                            "hash": "120d0aee7be9c1840541479b5d39613f"
+                        },
+                        {
+                            "id": 3,
+                            "paid": true,
+                            "thumb_image_url": "https://406515.selcdn.ru/APPS/EXPLORE_test/99/16084141971608414197_thumb_1608414196design5.png",
+                            "image_url": "https://406515.selcdn.ru/APPS/EXPLORE_test/76/1608414196design5.png",
+                            "hash": "f16f48fa8f98c44fe802a2de67ab2d9c"
+                        }
+                    ],
+                    "hash": "361d4c809dd45ec62ef7522ed70a01ff"
+                }
+            ],
+            "featured": {
+                "3": 1,
+                "4": 1
             }
-        ],
-        "deleted_wallpapers_ids": [
-            1,
-            2
-        ],
-        "wallpapers_hash": "d7dbf564406fd7d3df1af1dc50b76e93"
+        },
+        "hash": "74eb603e11e8b4703b2c49b0d0d83985"
     }
 }
