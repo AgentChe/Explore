@@ -9,9 +9,9 @@
 import UIKit
 
 final class WCCollectionView: UICollectionView {
-    var didSelect: ((WCCollectionElement) -> Void)?
+    var didSelect: ((Int) -> Void)?
     
-    var sections = [WCCollectionSection]()
+    private var sections = [WCCollectionSection]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -21,6 +21,15 @@ final class WCCollectionView: UICollectionView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: API
+extension WCCollectionView {
+    func setup(sections: [WCCollectionSection]) {
+        self.sections = sections
+        
+        reloadData()
     }
 }
 
@@ -45,7 +54,10 @@ extension WCCollectionView: UICollectionViewDataSource {
         switch section {
         case .newArrivals(let newArrivals):
             let cell = dequeueReusableCell(withReuseIdentifier: String(describing: WCCollectionNewArrivalsCell.self), for: indexPath) as! WCCollectionNewArrivalsCell
-            cell.collectionView.section = newArrivals
+            cell.collectionView.setup(elements: newArrivals.elements)
+            cell.collectionView.didSelect = { [weak self] id in
+                self?.didSelect?(id.categoryId)
+            }
             return cell
         case .categories(let categories):
             let cell = dequeueReusableCell(withReuseIdentifier: String(describing: WCCollectionCell.self), for: indexPath) as! WCCollectionCell
@@ -60,10 +72,16 @@ extension WCCollectionView: UICollectionViewDataSource {
             let header =  dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
                                                            withReuseIdentifier: String(describing: WCCollectionHeader.self),
                                                            for: indexPath) as! WCCollectionHeader
-            header.titleLabel.attributedText = section.title
-                .attributed(with: TextAttributes()
-                                .textColor(UIColor.white)
-                                .font(Font.Poppins.regular(size: 24.scale)))
+            
+            switch sections[indexPath.section] {
+            case .newArrivals(let section), .categories(let section):
+                header.titleLabel.attributedText = section.title
+                    .attributed(with: TextAttributes()
+                                    .textColor(UIColor.white)
+                                    .font(Font.Poppins.regular(size: 24.scale)))
+            }
+            
+            return header
         default:
             fatalError("WallpapersCollectionView unexpected element kind")
         }
@@ -73,15 +91,26 @@ extension WCCollectionView: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension WCCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 128.scale, height: 171.scale)
+        switch sections[indexPath.section] {
+        case .newArrivals:
+            return CGSize(width: 343.scale, height: 171.scale)
+        case .categories:
+            return CGSize(width: 343.scale, height: 164.scale)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        CGSize(width: frame.size.width, height: 60)
+        CGSize(width: 375.scale, height: 60)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        switch sections[indexPath.section] {
+        case .categories(let section):
+            let id = section.elements[indexPath.row].categoryId
+            didSelect?(id)
+        case .newArrivals:
+            break
+        }
     }
 }
 
@@ -90,11 +119,12 @@ private extension WCCollectionView {
     func configure() {
         backgroundColor = UIColor.black
         
+        register(WCCollectionCell.self, forCellWithReuseIdentifier: String(describing: WCCollectionCell.self))
+        register(WCCollectionNewArrivalsCell.self, forCellWithReuseIdentifier: String(describing: WCCollectionNewArrivalsCell.self))
+        register(WCCollectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: WCCollectionHeader.self))
+        
         dataSource = self
         delegate = self
-        
-        register(WCCollectionCell.self, forCellWithReuseIdentifier: String(describing: WCCollectionCell.self))
-        register(.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: .self))
     }
 }
 

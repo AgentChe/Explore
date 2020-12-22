@@ -10,54 +10,24 @@ import RxSwift
 import RxCocoa
 
 final class WallpapersViewModel {
-    lazy var elements = createElements()
-    lazy var needPayment = createNeedPaymentSignal()
-    
     private let wallpapersManager = WallpapersManagerCore()
     
-    private let needPaymentTrigger = PublishRelay<Void>()
+    func section(for categoryId: Int) -> Driver<WallpaperCollectionSection> {
+        wallpapersManager
+            .rxGetWallpaperCategory(categoryId: categoryId, forceUpdate: false)
+            .compactMap(map(category:))
+            .asDriver(onErrorDriveWith: .empty())
+    }
 }
 
 // MARK: Private
-
 private extension WallpapersViewModel {
-    func createElements() -> Driver<[WallpaperCollectionElement]> {
-        let cached = Driver<Wallpapers?>
-            .deferred { [wallpapersManager] in
-                .just( wallpapersManager.getWallpapers())
-            }
+    func map(category: WallpaperCategory?) -> WallpaperCollectionSection? {
+        guard let category = category else {
+            return nil
+        }
         
-        let updated = wallpapersManager
-            .rxGetWallpapers(forceUpdate: true)
-            .do(onError: { [weak self] error in
-                if let paymentError = error as? PaymentError, paymentError == .needPayment {
-                    self?.needPaymentTrigger.accept(Void())
-                    
-                    return
-                }
-                
-                if let signError = error as? SignError, signError == .tokenNotFound {
-                    self?.needPaymentTrigger.accept(Void())
-                    
-                    return
-                }
-            })
-            .asDriver(onErrorJustReturn: nil)
-        
-        return Driver<Wallpapers?>
-            .merge(cached, updated)
-            .map { wallpapers -> [WallpaperCollectionElement] in
-                guard let list = wallpapers?.list else {
-                    return []
-                }
-                
-                return list
-                    .sorted(by: { $0.sort < $1.sort })
-                    .map { WallpaperCollectionElement(wallpaper: $0) }
-            }
-    }
-    
-    func createNeedPaymentSignal() -> Signal<Void> {
-        needPaymentTrigger.asSignal()
+        return WallpaperCollectionSection(title: category.name,
+                                          elements: category.wallpapers)
     }
 }

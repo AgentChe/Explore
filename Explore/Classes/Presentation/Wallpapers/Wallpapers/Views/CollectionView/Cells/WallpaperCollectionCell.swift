@@ -37,7 +37,6 @@ final class WallpaperCollectionCell: UICollectionViewCell {
 }
 
 // MARK: API
-
 extension WallpaperCollectionCell {
     func setup(thumbUrl: String) {
         if let url = URL(string: thumbUrl) {
@@ -47,7 +46,6 @@ extension WallpaperCollectionCell {
 }
 
 // MARK: Make constraints
-
 private extension WallpaperCollectionCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
@@ -61,7 +59,6 @@ private extension WallpaperCollectionCell {
 
 
 // MARK: Lazy initialization
-
 private extension WallpaperCollectionCell {
     func makeThumbImageView() -> UIImageView {
         let view = UIImageView()

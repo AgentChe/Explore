@@ -11,11 +11,7 @@ import UIKit
 final class NewArrivalsCollectionView: UICollectionView {
     var didSelect: ((WCCollectionElement) -> Void)?
     
-    var section = WCCollectionSection.Section(title: "", elements: []) {
-        didSet {
-            reloadData()
-        }
-    }
+    private var elements = [WCCollectionElement]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -28,31 +24,25 @@ final class NewArrivalsCollectionView: UICollectionView {
     }
 }
 
+// MARK: API
+extension NewArrivalsCollectionView {
+    func setup(elements: [WCCollectionElement]) {
+        self.elements = elements
+        
+        reloadData()
+    }
+}
+
 // MARK: UICollectionViewDataSource
 extension NewArrivalsCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.section.elements.count
+        elements.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: String(describing: NewArrivalsCollectionCell.self), for: indexPath) as! NewArrivalsCollectionCell
-        cell.setup(element: section.elements[indexPath.row])
+        cell.setup(element: elements[indexPath.row])
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let header =  dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                           withReuseIdentifier: String(describing: WCCollectionHeader.self),
-                                                           for: indexPath) as! WCCollectionHeader
-            header.titleLabel.attributedText = section.title
-                .attributed(with: TextAttributes()
-                                .textColor(UIColor.white)
-                                .font(Font.Poppins.regular(size: 24.scale)))
-        default:
-            fatalError("WallpapersCollectionView unexpected element kind")
-        }
     }
 }
 
@@ -62,12 +52,8 @@ extension NewArrivalsCollectionView: UICollectionViewDelegateFlowLayout {
         CGSize(width: 128.scale, height: 171.scale)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        CGSize(width: frame.size.width, height: 60)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        didSelect?(section.elements[indexPath.row])
+        didSelect?(elements[indexPath.row])
     }
 }
 
@@ -80,6 +66,5 @@ private extension NewArrivalsCollectionView {
         delegate = self
         
         register(NewArrivalsCollectionCell.self, forCellWithReuseIdentifier: String(describing: NewArrivalsCollectionCell.self))
-        register(WCCollectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: WCCollectionHeader.self))
     }
 }

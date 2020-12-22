@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 final class WallpapersCategoriesViewController: UIViewController {
-    lazy var mainView = WCCollectionView()
+    lazy var mainView = WallpapersCategoriesView()
     
     private let viewModel = WallpapersCategoriesViewModel()
     
@@ -19,11 +19,32 @@ final class WallpapersCategoriesViewController: UIViewController {
     override func loadView() {
         view = mainView
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel
+            .sections()
+            .drive(onNext: mainView.collectionView.setup(sections:))
+            .disposed(by: disposeBag)
+        
+        mainView
+            .collectionView.didSelect = goToWallpapers(categoryId:)
+    }
 }
 
 // MARK: Make
 extension WallpapersCategoriesViewController {
     static func make() -> WallpapersCategoriesViewController {
         WallpapersCategoriesViewController()
+    }
+}
+
+// MARK: Private
+private extension WallpapersCategoriesViewController {
+    func goToWallpapers(categoryId: Int) {
+        let vc = WallpapersViewController.make(categoryId: categoryId)
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

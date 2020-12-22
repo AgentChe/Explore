@@ -13,7 +13,7 @@ import RxCocoa
 final class WallpapersCollectionView: UICollectionView {
     fileprivate let didSelectWallpaper = PublishRelay<Wallpaper>()
     
-    private var elements = [WallpaperCollectionElement]()
+    private var section = WallpaperCollectionSection(title: "", elements: [])
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -31,24 +31,22 @@ final class WallpapersCollectionView: UICollectionView {
 }
 
 // MARK: API
-
 extension WallpapersCollectionView {
-    func setup(elements: [WallpaperCollectionElement]) {
-        self.elements = elements
+    func setup(section: WallpaperCollectionSection) {
+        self.section = section
         
         reloadData()
     }
 }
 
 // MARK: UICollectionViewDataSource
-
 extension WallpapersCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        elements.count
+        self.section.elements.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let wallpaper = elements[indexPath.row].wallpaper
+        let wallpaper = section.elements[indexPath.row]
         
         let cell = dequeueReusableCell(withReuseIdentifier: String(describing: WallpaperCollectionCell.self), for: indexPath) as! WallpaperCollectionCell
         cell.setup(thumbUrl: wallpaper.thumbUrl)
@@ -58,9 +56,13 @@ extension WallpapersCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            return dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                    withReuseIdentifier: String(describing: WallpapersCollectionHeader.self),
-                                                    for: indexPath)
+            let header = dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                          withReuseIdentifier: String(describing: WallpapersCollectionHeader.self),
+                                                          for: indexPath) as! WallpapersCollectionHeader
+            
+            header.titleLabel.text = section.title
+            
+            return header
         default:
             fatalError("WallpapersCollectionView unexpected element kind")
         }
@@ -68,7 +70,6 @@ extension WallpapersCollectionView: UICollectionViewDataSource {
 }
 
 // MARK: UICollectionViewDelegate
-
 extension WallpapersCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 105.scale, height: 194.scale)
@@ -79,13 +80,12 @@ extension WallpapersCollectionView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let wallpaper = elements[indexPath.row].wallpaper
+        let wallpaper = section.elements[indexPath.row]
         didSelectWallpaper.accept(wallpaper)
     }
 }
 
 // MARK: Rx
-
 extension Reactive where Base: WallpapersCollectionView {
     var didSelectWallpaper: Signal<Wallpaper> {
         base.didSelectWallpaper.asSignal()

@@ -44,12 +44,12 @@ extension NewArrivalsCollectionCell {
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white.withAlphaComponent(0.7))
                             .font(Font.Poppins.regular(size: 12.scale))
-                            .letterSpacing(-1.6.scale))
+                            .textAlignment(.center))
         
         nameLabel.attributedText = element.name
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white)
-                            .font(Font.Poppins.regular(size: 18.scale)))
+                            .font(Font.Poppins.regular(size: 17.scale)))
     }
 }
 
@@ -76,7 +76,8 @@ private extension NewArrivalsCollectionCell {
         ])
         
         NSLayoutConstraint.activate([
-            countLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            countLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            countLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             countLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -6.scale)
         ])
         

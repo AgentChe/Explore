@@ -26,7 +26,7 @@ final class WCCollectionHeader: UICollectionReusableView {
 private extension WCCollectionHeader {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18.scale),
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }

@@ -40,7 +40,6 @@ private extension WallpapersCollectionHeader {
         let view = UILabel()
         view.textColor = UIColor(red: 221 / 255, green: 221 / 255, blue: 221 / 255, alpha: 1)
         view.font = Font.SFProText.bold(size: 34.scale)
-        view.text = "Wallpapers.Title".localized
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

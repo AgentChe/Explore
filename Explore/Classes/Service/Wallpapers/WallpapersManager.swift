@@ -12,4 +12,6 @@ import RxCocoa
 protocol WallpapersManager: class {
     // MARK: API(Rx)
     func rxGetWallpaperCategories(forceUpdate: Bool) -> Single<WallpaperCategories>
+    func rxGetWallpapers(categoryId: Int, forceUpdate: Bool) -> Single<[Wallpaper]>
+    func rxGetWallpaperCategory(categoryId: Int, forceUpdate: Bool) -> Single<WallpaperCategory?>
 }

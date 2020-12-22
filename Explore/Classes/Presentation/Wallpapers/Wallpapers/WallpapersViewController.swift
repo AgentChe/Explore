@@ -10,13 +10,23 @@ import UIKit
 import RxSwift
 
 final class WallpapersViewController: UIViewController {
-    weak var delegate: WallpapersViewControllerDelegate?
-    
     var wallpapersView = WallpapersView()
     
     private let viewModel = WallpapersViewModel()
     
     private let disposeBag = DisposeBag()
+    
+    private let categoryId: Int
+    
+    private init(categoryId: Int) {
+        self.categoryId = categoryId
+        
+        super.init(nibName: nil, bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         super.loadView()
@@ -28,16 +38,9 @@ final class WallpapersViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel
-            .needPayment
-            .emit(onNext: { [weak self] in
-                self?.delegate?.wallpapersViewControllerNeedPayment()
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel
-            .elements
-            .drive(onNext: { [weak self] elements in
-                self?.wallpapersView.collectionView.setup(elements: elements)
+            .section(for: categoryId)
+            .drive(onNext: { [weak self] section in
+                self?.wallpapersView.collectionView.setup(section: section)
             })
             .disposed(by: disposeBag)
         
@@ -52,15 +55,13 @@ final class WallpapersViewController: UIViewController {
 }
 
 // MARK: Make
-
 extension WallpapersViewController {
-    static func make() -> WallpapersViewController {
-        WallpapersViewController()
+    static func make(categoryId: Int) -> WallpapersViewController {
+        WallpapersViewController(categoryId: categoryId)
     }
 }
 
 // MARK: Private
-
 private extension WallpapersViewController {
     func showWallpaper(_ wallpaper: Wallpaper) {
         let vc = WallpaperViewController.make(wallpaper: wallpaper)

@@ -26,6 +26,25 @@ extension WallpapersManagerCore {
             return .just(this.getCachedCategories())
         }
     }
+    
+    func rxGetWallpapers(categoryId: Int, forceUpdate: Bool) -> Single<[Wallpaper]> {
+        rxGetWallpaperCategories(forceUpdate: forceUpdate)
+            .map { categories -> [Wallpaper] in
+                categories
+                    .categories
+                    .first(where: { $0.id == categoryId })?
+                    .wallpapers ?? []
+            }
+    }
+    
+    func rxGetWallpaperCategory(categoryId: Int, forceUpdate: Bool) -> Single<WallpaperCategory?> {
+        rxGetWallpaperCategories(forceUpdate: forceUpdate)
+            .map { categories -> WallpaperCategory? in
+                categories
+                    .categories
+                    .first(where: { $0.id == categoryId })
+            }
+    }
 }
 
 // MARK: Private

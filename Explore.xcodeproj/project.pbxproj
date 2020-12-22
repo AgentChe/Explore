@@ -45,8 +45,6 @@
 		96091087255AFCD100E781A1 /* GetJournalTagsRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 96091086255AFCD100E781A1 /* GetJournalTagsRequestJSON.json */; };
 		9609108A255AFCDD00E781A1 /* GetJournalArticleDetailsRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 96091089255AFCDD00E781A1 /* GetJournalArticleDetailsRequestJSON.json */; };
 		9609108D255AFCEB00E781A1 /* SaveJournalArticleRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 9609108C255AFCEB00E781A1 /* SaveJournalArticleRequestJSON.json */; };
-		9609B8232511735A00457FD6 /* WallpaperCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B8222511735A00457FD6 /* WallpaperCollectionElement.swift */; };
-		9609B825251175E100457FD6 /* WallpapersViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B824251175E100457FD6 /* WallpapersViewControllerDelegate.swift */; };
 		9609B828251180AF00457FD6 /* WallpapersCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B827251180AF00457FD6 /* WallpapersCollectionHeader.swift */; };
 		9609B82B2511892000457FD6 /* WallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B82A2511892000457FD6 /* WallpaperViewController.swift */; };
 		9609B82D25118A6900457FD6 /* WallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609B82C25118A6900457FD6 /* WallpaperView.swift */; };
@@ -150,6 +148,8 @@
 		9656D36C2590F94D006755EC /* WCCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D36B2590F94D006755EC /* WCCollectionHeader.swift */; };
 		9656D36F259102DD006755EC /* WCCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D36E259102DD006755EC /* WCCollectionCell.swift */; };
 		9656D3722591052C006755EC /* WCCollectionNewArrivalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D3712591052C006755EC /* WCCollectionNewArrivalsCell.swift */; };
+		9656D4512591DE20006755EC /* WallpapersCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D4502591DE20006755EC /* WallpapersCategoriesView.swift */; };
+		9656D45525922E98006755EC /* WallpaperCollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D45425922E98006755EC /* WallpaperCollectionSection.swift */; };
 		966C84732517FCEC0094784C /* GetLearnCategoriesRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 966C84722517FCEC0094784C /* GetLearnCategoriesRequestJSON.json */; };
 		966C84752517FE920094784C /* GetLearnContentRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 966C84742517FE920094784C /* GetLearnContentRequestJSON.json */; };
 		966C847A2519540C0094784C /* LearnCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C84792519540C0094784C /* LearnCategoriesView.swift */; };
@@ -325,8 +325,6 @@
 		96091086255AFCD100E781A1 /* GetJournalTagsRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetJournalTagsRequestJSON.json; sourceTree = "<group>"; };
 		96091089255AFCDD00E781A1 /* GetJournalArticleDetailsRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetJournalArticleDetailsRequestJSON.json; sourceTree = "<group>"; };
 		9609108C255AFCEB00E781A1 /* SaveJournalArticleRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SaveJournalArticleRequestJSON.json; sourceTree = "<group>"; };
-		9609B8222511735A00457FD6 /* WallpaperCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCollectionElement.swift; sourceTree = "<group>"; };
-		9609B824251175E100457FD6 /* WallpapersViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewControllerDelegate.swift; sourceTree = "<group>"; };
 		9609B827251180AF00457FD6 /* WallpapersCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCollectionHeader.swift; sourceTree = "<group>"; };
 		9609B82A2511892000457FD6 /* WallpaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperViewController.swift; sourceTree = "<group>"; };
 		9609B82C25118A6900457FD6 /* WallpaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperView.swift; sourceTree = "<group>"; };
@@ -437,6 +435,8 @@
 		9656D36B2590F94D006755EC /* WCCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionHeader.swift; sourceTree = "<group>"; };
 		9656D36E259102DD006755EC /* WCCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionCell.swift; sourceTree = "<group>"; };
 		9656D3712591052C006755EC /* WCCollectionNewArrivalsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionNewArrivalsCell.swift; sourceTree = "<group>"; };
+		9656D4502591DE20006755EC /* WallpapersCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCategoriesView.swift; sourceTree = "<group>"; };
+		9656D45425922E98006755EC /* WallpaperCollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCollectionSection.swift; sourceTree = "<group>"; };
 		966C84722517FCEC0094784C /* GetLearnCategoriesRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetLearnCategoriesRequestJSON.json; sourceTree = "<group>"; };
 		966C84742517FE920094784C /* GetLearnContentRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetLearnContentRequestJSON.json; sourceTree = "<group>"; };
 		966C84792519540C0094784C /* LearnCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesView.swift; sourceTree = "<group>"; };
@@ -1255,6 +1255,7 @@
 				9656D3502590EC60006755EC /* Views */,
 				9656D3482590DCD5006755EC /* WallpapersCategoriesViewController.swift */,
 				9656D34D2590EC31006755EC /* WallpapersCategoriesViewModel.swift */,
+				9656D4502591DE20006755EC /* WallpapersCategoriesView.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1804,7 +1805,6 @@
 				96F2F85A25102A8F00F7A58B /* WallpapersViewController.swift */,
 				96F2F85C25102AB600F7A58B /* WallpapersViewModel.swift */,
 				96F2F87C25116E8100F7A58B /* WallpapersView.swift */,
-				9609B824251175E100457FD6 /* WallpapersViewControllerDelegate.swift */,
 			);
 			path = Wallpapers;
 			sourceTree = "<group>";
@@ -1901,7 +1901,7 @@
 		96F2F882251170C100F7A58B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9609B8222511735A00457FD6 /* WallpaperCollectionElement.swift */,
+				9656D45425922E98006755EC /* WallpaperCollectionSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2092,6 +2092,7 @@
 				960F031D24DAC686008267FA /* Scalable.swift in Sources */,
 				9631642C251A9132007791D3 /* LearnContentViewController.swift in Sources */,
 				9609102825559FD000E781A1 /* OnboardingAnimationView.swift in Sources */,
+				9656D45525922E98006755EC /* WallpaperCollectionSection.swift in Sources */,
 				96F2F85925102A5700F7A58B /* LearnCategoriesViewModel.swift in Sources */,
 				96B43F22255C7DD300537439 /* JournalEmptyView.swift in Sources */,
 				96F2F885251170F400F7A58B /* WallpaperCollectionCell.swift in Sources */,
@@ -2183,6 +2184,7 @@
 				9656D3692590F10B006755EC /* NewArrivalsCollectionCell.swift in Sources */,
 				96B43F11255BF50100537439 /* FeedbackViewController.swift in Sources */,
 				96CDB710257C19370048F008 /* DirectCollectionDotsCell.swift in Sources */,
+				9656D4512591DE20006755EC /* WallpapersCategoriesView.swift in Sources */,
 				96316423251A58B4007791D3 /* LearnArticlesCollectionTitleCell.swift in Sources */,
 				963A442824FCCC720018A8CA /* FPWhatLikeGetCell.swift in Sources */,
 				966F479124F7A3740025FD5F /* FindPlaceViewController.swift in Sources */,
@@ -2238,7 +2240,6 @@
 				960F031B24DAC686008267FA /* StringExtension.swift in Sources */,
 				966F478C24F6DCF80025FD5F /* PaygateViewController.swift in Sources */,
 				9656D3722591052C006755EC /* WCCollectionNewArrivalsCell.swift in Sources */,
-				9609B8232511735A00457FD6 /* WallpaperCollectionElement.swift in Sources */,
 				9631643C251A91D8007791D3 /* LearnContentTableImageCell.swift in Sources */,
 				960F031E24DAC686008267FA /* TextAttributes.swift in Sources */,
 				960910412555C74A00E781A1 /* GetJournalArticleDetailsRequest.swift in Sources */,
@@ -2299,7 +2300,6 @@
 				9609B84D2517367700457FD6 /* LearnArticle.swift in Sources */,
 				960F032624DAC686008267FA /* Toast.swift in Sources */,
 				9604B06824DB46F400649DA7 /* GeoLocationManager.swift in Sources */,
-				9609B825251175E100457FD6 /* WallpapersViewControllerDelegate.swift in Sources */,
 				9609B85C2517429400457FD6 /* LearnManagerMock.swift in Sources */,
 				963A440924F91B490018A8CA /* TripGoogleMapView.swift in Sources */,
 				96B43FAF256165D200537439 /* FPhotosSlider.swift in Sources */,
@@ -2479,7 +2479,7 @@
 				CODE_SIGN_ENTITLEMENTS = Explore/Randonauting.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = 82M89ZGHB7;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2487,7 +2487,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.15.3;
+				MARKETING_VERSION = 2.15.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore Development";
@@ -2505,7 +2505,7 @@
 				CODE_SIGN_ENTITLEMENTS = Explore/Randonauting.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = 82M89ZGHB7;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2513,7 +2513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.15.3;
+				MARKETING_VERSION = 2.15.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore AppStore";

@@ -55,6 +55,7 @@ private extension WCCollectionNewArrivalsCell {
         layout.minimumInteritemSpacing = 12.scale
         
         let view = NewArrivalsCollectionView(frame: .zero, collectionViewLayout: layout)
+        view.showsHorizontalScrollIndicator = false 
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view
