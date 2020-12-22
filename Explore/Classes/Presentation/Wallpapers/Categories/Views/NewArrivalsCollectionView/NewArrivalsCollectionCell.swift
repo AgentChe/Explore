@@ -12,6 +12,7 @@ final class NewArrivalsCollectionCell: UICollectionViewCell {
     lazy var imageView = makeImageView()
     lazy var countLabel = makeLabel()
     lazy var nameLabel = makeLabel()
+    lazy var lockImageView = makeLockImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,6 +51,8 @@ extension NewArrivalsCollectionCell {
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white)
                             .font(Font.Poppins.regular(size: 17.scale)))
+        
+        lockImageView.isHidden = !element.isLock
     }
 }
 
@@ -86,6 +89,11 @@ private extension NewArrivalsCollectionCell {
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            lockImageView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            lockImageView.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
+        ])
     }
 }
 
@@ -103,6 +111,15 @@ private extension NewArrivalsCollectionCell {
     
     func makeLabel() -> UILabel {
         let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
+    }
+    
+    func makeLockImageView() -> UIImageView {
+        let view = UIImageView()
+        view.image = UIImage(named: "Wallpapers.Lock")
+        view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

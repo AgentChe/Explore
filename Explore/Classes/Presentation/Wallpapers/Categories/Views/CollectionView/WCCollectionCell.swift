@@ -12,6 +12,7 @@ final class WCCollectionCell: UICollectionViewCell {
     lazy var imageView = makeImageView()
     lazy var countLabel = makeLabel()
     lazy var nameLabel = makeLabel()
+    lazy var lockImageView = makeLockImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,6 +52,8 @@ extension WCCollectionCell {
                             .textColor(UIColor.white)
                             .font(Font.Poppins.semibold(size: 18.scale))
                             .textAlignment(.center))
+        
+        lockImageView.isHidden = !element.isLock
     }
 }
 
@@ -87,6 +90,11 @@ private extension WCCollectionCell {
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            lockImageView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            lockImageView.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
+        ])
     }
 }
 
@@ -108,5 +116,13 @@ private extension WCCollectionCell {
         contentView.addSubview(view)
         return view
     }
+    
+    func makeLockImageView() -> UIImageView {
+        let view = UIImageView()
+        view.image = UIImage(named: "Wallpapers.Lock")
+        view.contentMode = .scaleAspectFit
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
+    }
 }
-

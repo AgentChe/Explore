@@ -10,5 +10,14 @@ struct WCCollectionElement {
     let categoryId: Int
     let name: String
     let imageUrl: String
-    let wallpapersCount: Int 
+    let wallpapersCount: Int
+    let isLock: Bool
+    
+    init(category: WallpaperCategory, activeSubscription: Bool) {
+        categoryId = category.id
+        name = category.name
+        imageUrl = category.imageUrl
+        wallpapersCount = category.wallpapersCount
+        isLock = !activeSubscription && category.paid
+    }
 }

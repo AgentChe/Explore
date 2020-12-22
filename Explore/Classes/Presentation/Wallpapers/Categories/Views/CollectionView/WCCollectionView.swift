@@ -9,7 +9,7 @@
 import UIKit
 
 final class WCCollectionView: UICollectionView {
-    var didSelect: ((Int) -> Void)?
+    var didSelect: ((WCCollectionElement) -> Void)?
     
     private var sections = [WCCollectionSection]()
     
@@ -55,8 +55,8 @@ extension WCCollectionView: UICollectionViewDataSource {
         case .newArrivals(let newArrivals):
             let cell = dequeueReusableCell(withReuseIdentifier: String(describing: WCCollectionNewArrivalsCell.self), for: indexPath) as! WCCollectionNewArrivalsCell
             cell.collectionView.setup(elements: newArrivals.elements)
-            cell.collectionView.didSelect = { [weak self] id in
-                self?.didSelect?(id.categoryId)
+            cell.collectionView.didSelect = { [weak self] element in
+                self?.didSelect?(element)
             }
             return cell
         case .categories(let categories):
@@ -106,11 +106,15 @@ extension WCCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch sections[indexPath.section] {
         case .categories(let section):
-            let id = section.elements[indexPath.row].categoryId
-            didSelect?(id)
+            let element = section.elements[indexPath.row]
+            didSelect?(element)
         case .newArrivals:
             break
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: 0, bottom: 35.scale, right: 0)
     }
 }
 

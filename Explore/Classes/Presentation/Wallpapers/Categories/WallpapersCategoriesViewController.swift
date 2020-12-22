@@ -29,7 +29,7 @@ final class WallpapersCategoriesViewController: UIViewController {
             .disposed(by: disposeBag)
         
         mainView
-            .collectionView.didSelect = goToWallpapers(categoryId:)
+            .collectionView.didSelect = tapped(element:)
     }
 }
 
@@ -42,9 +42,14 @@ extension WallpapersCategoriesViewController {
 
 // MARK: Private
 private extension WallpapersCategoriesViewController {
-    func goToWallpapers(categoryId: Int) {
-        let vc = WallpapersViewController.make(categoryId: categoryId)
-        
-        navigationController?.pushViewController(vc, animated: true)
+    func tapped(element: WCCollectionElement) {
+        switch element.isLock {
+        case true:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
+        case false:
+            let vc = WallpapersViewController.make(categoryId: element.categoryId)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
