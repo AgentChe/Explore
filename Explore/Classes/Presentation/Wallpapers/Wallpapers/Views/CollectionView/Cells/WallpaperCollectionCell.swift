@@ -11,6 +11,7 @@ import Kingfisher
 
 final class WallpaperCollectionCell: UICollectionViewCell {
     lazy var thumbImageView = makeThumbImageView()
+    lazy var lockImageView = makeLockImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,10 +39,12 @@ final class WallpaperCollectionCell: UICollectionViewCell {
 
 // MARK: API
 extension WallpaperCollectionCell {
-    func setup(thumbUrl: String) {
+    func setup(thumbUrl: String, isLock: Bool) {
         if let url = URL(string: thumbUrl) {
             thumbImageView.kf.setImage(with: url)
         }
+        
+        lockImageView.isHidden = !isLock
     }
 }
 
@@ -54,6 +57,11 @@ private extension WallpaperCollectionCell {
             thumbImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             thumbImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            lockImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            lockImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
     }
 }
 
@@ -64,6 +72,15 @@ private extension WallpaperCollectionCell {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true 
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
+    }
+    
+    func makeLockImageView() -> UIImageView {
+        let view = UIImageView()
+        view.image = UIImage(named: "Wallpapers.Lock")
+        view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

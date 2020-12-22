@@ -8,5 +8,5 @@
 
 struct WallpaperCollectionSection {
     let title: String
-    let elements: [Wallpaper]
+    let elements: [WallpaperCollectionElement]
 }

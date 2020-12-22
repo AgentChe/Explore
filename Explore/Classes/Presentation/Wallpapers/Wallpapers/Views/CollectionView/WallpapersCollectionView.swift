@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 final class WallpapersCollectionView: UICollectionView {
-    fileprivate let didSelectWallpaper = PublishRelay<Wallpaper>()
+    fileprivate let didSelectWallpaper = PublishRelay<WallpaperCollectionElement>()
     
     private var section = WallpaperCollectionSection(title: "", elements: [])
     
@@ -46,10 +46,10 @@ extension WallpapersCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let wallpaper = section.elements[indexPath.row]
+        let element = section.elements[indexPath.row]
         
         let cell = dequeueReusableCell(withReuseIdentifier: String(describing: WallpaperCollectionCell.self), for: indexPath) as! WallpaperCollectionCell
-        cell.setup(thumbUrl: wallpaper.thumbUrl)
+        cell.setup(thumbUrl: element.wallpaper.thumbUrl, isLock: element.isLock)
         return cell
     }
     
@@ -87,7 +87,7 @@ extension WallpapersCollectionView: UICollectionViewDelegateFlowLayout {
 
 // MARK: Rx
 extension Reactive where Base: WallpapersCollectionView {
-    var didSelectWallpaper: Signal<Wallpaper> {
+    var didSelectWallpaper: Signal<WallpaperCollectionElement> {
         base.didSelectWallpaper.asSignal()
     }
 }

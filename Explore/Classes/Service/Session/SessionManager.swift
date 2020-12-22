@@ -40,14 +40,12 @@ extension SessionManager {
         return true
     }
     
-    // TODO
     func getSession() -> Session? {
-//        guard let data = UserDefaults.standard.data(forKey: Constants.sessionKey) else {
-//            return nil
-//        }
-//
-//        return try? Session.parse(from: data)
-        Session(userToken: "123", activeSubscription: true, userId: 1)
+        guard let data = UserDefaults.standard.data(forKey: Constants.sessionKey) else {
+            return nil
+        }
+
+        return try? Session.parse(from: data)
     }
 }
 

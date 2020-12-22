@@ -47,9 +47,7 @@ final class WallpapersViewController: UIViewController {
         wallpapersView
             .collectionView.rx
             .didSelectWallpaper
-            .emit(onNext: { [weak self] wallpaper in
-                self?.showWallpaper(wallpaper)
-            })
+            .emit(onNext: (tapped(_:)))
             .disposed(by: disposeBag)
     }
 }
@@ -63,8 +61,16 @@ extension WallpapersViewController {
 
 // MARK: Private
 private extension WallpapersViewController {
-    func showWallpaper(_ wallpaper: Wallpaper) {
-        let vc = WallpaperViewController.make(wallpaper: wallpaper)
+    func tapped(_ element: WallpaperCollectionElement) {
+        let vc: UIViewController
+        
+        switch element.isLock {
+        case true:
+            vc = PaygateViewController.make()
+        case false:
+            vc = WallpaperViewController.make(wallpaper: element.wallpaper)
+        }
+        
         navigationController?.present(vc, animated: true)
     }
 }

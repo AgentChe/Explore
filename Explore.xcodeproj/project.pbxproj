@@ -150,6 +150,7 @@
 		9656D3722591052C006755EC /* WCCollectionNewArrivalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D3712591052C006755EC /* WCCollectionNewArrivalsCell.swift */; };
 		9656D4512591DE20006755EC /* WallpapersCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D4502591DE20006755EC /* WallpapersCategoriesView.swift */; };
 		9656D45525922E98006755EC /* WallpaperCollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D45425922E98006755EC /* WallpaperCollectionSection.swift */; };
+		9656D459259234F2006755EC /* WallpaperCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D458259234F2006755EC /* WallpaperCollectionElement.swift */; };
 		966C84732517FCEC0094784C /* GetLearnCategoriesRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 966C84722517FCEC0094784C /* GetLearnCategoriesRequestJSON.json */; };
 		966C84752517FE920094784C /* GetLearnContentRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 966C84742517FE920094784C /* GetLearnContentRequestJSON.json */; };
 		966C847A2519540C0094784C /* LearnCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C84792519540C0094784C /* LearnCategoriesView.swift */; };
@@ -437,6 +438,7 @@
 		9656D3712591052C006755EC /* WCCollectionNewArrivalsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionNewArrivalsCell.swift; sourceTree = "<group>"; };
 		9656D4502591DE20006755EC /* WallpapersCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCategoriesView.swift; sourceTree = "<group>"; };
 		9656D45425922E98006755EC /* WallpaperCollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCollectionSection.swift; sourceTree = "<group>"; };
+		9656D458259234F2006755EC /* WallpaperCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCollectionElement.swift; sourceTree = "<group>"; };
 		966C84722517FCEC0094784C /* GetLearnCategoriesRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetLearnCategoriesRequestJSON.json; sourceTree = "<group>"; };
 		966C84742517FE920094784C /* GetLearnContentRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetLearnContentRequestJSON.json; sourceTree = "<group>"; };
 		966C84792519540C0094784C /* LearnCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesView.swift; sourceTree = "<group>"; };
@@ -1902,6 +1904,7 @@
 			isa = PBXGroup;
 			children = (
 				9656D45425922E98006755EC /* WallpaperCollectionSection.swift */,
+				9656D458259234F2006755EC /* WallpaperCollectionElement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2111,6 +2114,7 @@
 				963A440724F902450018A8CA /* GoogleMapView.swift in Sources */,
 				96F2F84F25101FAF00F7A58B /* DirectCollectionCell.swift in Sources */,
 				963A440C24F930BA0018A8CA /* OpenMap.swift in Sources */,
+				9656D459259234F2006755EC /* WallpaperCollectionElement.swift in Sources */,
 				96B43F2A255C80D000537439 /* JournalTableCell.swift in Sources */,
 				966F472D24F6965B0025FD5F /* PaygateOption.swift in Sources */,
 				96316440251A948A007791D3 /* LearnContentTableViewDelegate.swift in Sources */,
