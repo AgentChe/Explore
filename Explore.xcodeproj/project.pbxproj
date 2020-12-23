@@ -151,6 +151,10 @@
 		9656D4512591DE20006755EC /* WallpapersCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D4502591DE20006755EC /* WallpapersCategoriesView.swift */; };
 		9656D45525922E98006755EC /* WallpaperCollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D45425922E98006755EC /* WallpaperCollectionSection.swift */; };
 		9656D459259234F2006755EC /* WallpaperCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D458259234F2006755EC /* WallpaperCollectionElement.swift */; };
+		9656D461259277C1006755EC /* WOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D460259277C1006755EC /* WOViewController.swift */; };
+		9656D46725927E42006755EC /* WOView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D46625927E42006755EC /* WOView.swift */; };
+		9656D46F25928EAC006755EC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D46E25928EAC006755EC /* UIColorExtension.swift */; };
+		9656D49325932665006755EC /* WOSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D49225932665006755EC /* WOSlider.swift */; };
 		966C84732517FCEC0094784C /* GetLearnCategoriesRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 966C84722517FCEC0094784C /* GetLearnCategoriesRequestJSON.json */; };
 		966C84752517FE920094784C /* GetLearnContentRequestJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 966C84742517FE920094784C /* GetLearnContentRequestJSON.json */; };
 		966C847A2519540C0094784C /* LearnCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C84792519540C0094784C /* LearnCategoriesView.swift */; };
@@ -439,6 +443,10 @@
 		9656D4502591DE20006755EC /* WallpapersCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCategoriesView.swift; sourceTree = "<group>"; };
 		9656D45425922E98006755EC /* WallpaperCollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCollectionSection.swift; sourceTree = "<group>"; };
 		9656D458259234F2006755EC /* WallpaperCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCollectionElement.swift; sourceTree = "<group>"; };
+		9656D460259277C1006755EC /* WOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WOViewController.swift; sourceTree = "<group>"; };
+		9656D46625927E42006755EC /* WOView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WOView.swift; sourceTree = "<group>"; };
+		9656D46E25928EAC006755EC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		9656D49225932665006755EC /* WOSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WOSlider.swift; sourceTree = "<group>"; };
 		966C84722517FCEC0094784C /* GetLearnCategoriesRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetLearnCategoriesRequestJSON.json; sourceTree = "<group>"; };
 		966C84742517FE920094784C /* GetLearnContentRequestJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetLearnContentRequestJSON.json; sourceTree = "<group>"; };
 		966C84792519540C0094784C /* LearnCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCategoriesView.swift; sourceTree = "<group>"; };
@@ -987,6 +995,7 @@
 				960F030424DAC686008267FA /* StringExtension.swift */,
 				960F030524DAC686008267FA /* DictionaryExtension.swift */,
 				9631644E251D46B1007791D3 /* UITapGestureExtension.swift */,
+				9656D46E25928EAC006755EC /* UIColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1243,6 +1252,7 @@
 		9656D3442590DC4C006755EC /* Wallpapers */ = {
 			isa = PBXGroup;
 			children = (
+				9656D45B25927794006755EC /* Onboarding */,
 				9656D3472590DC75006755EC /* Categories */,
 				9609B8292511890F00457FD6 /* Wallpaper */,
 				96F2F85425102A3600F7A58B /* Wallpapers */,
@@ -1298,6 +1308,24 @@
 				9656D3652590F03A006755EC /* WCCollectionSection.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9656D45B25927794006755EC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9656D49125932657006755EC /* Views */,
+				9656D460259277C1006755EC /* WOViewController.swift */,
+				9656D46625927E42006755EC /* WOView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		9656D49125932657006755EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9656D49225932665006755EC /* WOSlider.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		966C847B251954BC0094784C /* Views */ = {
@@ -2194,6 +2222,7 @@
 				966F479124F7A3740025FD5F /* FindPlaceViewController.swift in Sources */,
 				966F478F24F7A3480025FD5F /* OnboardingViewController.swift in Sources */,
 				96B43F5B255D3E9200537439 /* JADetailsViewModel.swift in Sources */,
+				9656D461259277C1006755EC /* WOViewController.swift in Sources */,
 				960F032024DAC686008267FA /* Fonts.swift in Sources */,
 				960F032724DAC686008267FA /* InterceptingEventsView.swift in Sources */,
 				9609B83225118C9400457FD6 /* WallpaperActionsView.swift in Sources */,
@@ -2210,6 +2239,7 @@
 				96B43EFD255B1A2900537439 /* ProductPrice.swift in Sources */,
 				9656D34E2590EC32006755EC /* WallpapersCategoriesViewModel.swift in Sources */,
 				9609B85225173C2F00457FD6 /* GetLearnCategoriesRequest.swift in Sources */,
+				9656D46725927E42006755EC /* WOView.swift in Sources */,
 				966F478624F6DCBE0025FD5F /* PaygateView.swift in Sources */,
 				96B43F09255B428300537439 /* JournalView.swift in Sources */,
 				966F476724F6A94B0025FD5F /* GetPaygateRequest.swift in Sources */,
@@ -2325,10 +2355,12 @@
 				96B43FB22561731800537439 /* FPhotoView.swift in Sources */,
 				96B43F83255F14FE00537439 /* FeedbackTableView.swift in Sources */,
 				963A442A24FCD5E20018A8CA /* FPCompleteCell.swift in Sources */,
+				9656D46F25928EAC006755EC /* UIColorExtension.swift in Sources */,
 				966F472F24F6966C0025FD5F /* PaygateMainOffer.swift in Sources */,
 				96F2F85725102A4E00F7A58B /* LearnCategoriesViewController.swift in Sources */,
 				96316430251A9144007791D3 /* LearnContentView.swift in Sources */,
 				9604B06D24DB490300649DA7 /* GLAuthorizationStatus.swift in Sources */,
+				9656D49325932665006755EC /* WOSlider.swift in Sources */,
 				9687B0182524B0A400B81DC8 /* AppStateManager.swift in Sources */,
 				96B74C34250ED7AF00413D81 /* DirectViewModel.swift in Sources */,
 				960F02FB24DAC5E3008267FA /* DataBaseError.swift in Sources */,
@@ -2483,7 +2515,7 @@
 				CODE_SIGN_ENTITLEMENTS = Explore/Randonauting.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = 82M89ZGHB7;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2491,7 +2523,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.15.5;
+				MARKETING_VERSION = 2.16.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore Development";
@@ -2509,7 +2541,7 @@
 				CODE_SIGN_ENTITLEMENTS = Explore/Randonauting.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = 82M89ZGHB7;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2517,7 +2549,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.15.5;
+				MARKETING_VERSION = 2.16.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore AppStore";

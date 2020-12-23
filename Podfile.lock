@@ -90,6 +90,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.1.1):
     - GoogleUtilities/Logger
+  - iCarousel (1.8.3)
   - Kingfisher (5.15.7):
     - Kingfisher/Core (= 5.15.7)
   - Kingfisher/Core (5.15.7)
@@ -125,6 +126,7 @@ PODS:
 DEPENDENCIES:
   - Cosmos
   - GoogleMaps
+  - iCarousel
   - Kingfisher
   - NotificationBannerSwift
   - RushSDK (from `https://github.com/AgentChe/rushSDK.git`)
@@ -148,6 +150,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleMaps
     - GoogleUtilities
+    - iCarousel
     - Kingfisher
     - MarqueeLabel
     - nanopb
@@ -186,6 +189,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 116c84c4bdeb76be2a7a46de51244368f9794eab
   GoogleMaps: b7f7fc569a9b354a3af0d9729dbec40957b7d41e
   GoogleUtilities: 3dc4ff0d5e4840e2fa8eef0889620e8c33d4218c
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
   MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
@@ -198,6 +202,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 51dfee27a73db5ef3c2950eee58a0d6b6f34ceeb
+PODFILE CHECKSUM: 97129eb30ee8d2d63c2a5ae52b54340eeb4aedf1
 
 COCOAPODS: 1.10.0.rc.1

@@ -103,9 +103,7 @@ private extension DirectViewController {
             
             navigationController?.pushViewController(learnVC, animated: true)
         case .wallpapers:
-            let wallpaperCategoriesVC = WallpapersCategoriesViewController.make()
-            
-            navigationController?.pushViewController(wallpaperCategoriesVC, animated: true)
+            showWallpapers()
         case .journal:
             let journalVC = JournalViewController.make()
             journalVC.delegate = self 
@@ -121,6 +119,19 @@ private extension DirectViewController {
     func showPaygate() {
         let vc = PaygateViewController.make()
         navigationController?.present(vc, animated: true)
+    }
+    
+    func showWallpapers() {
+        if WOViewController.wasViewed {
+            navigationController?.pushViewController(WallpapersCategoriesViewController.make(), animated: true)
+        } else {
+            let vc = WOViewController.make { [weak self] vc in
+                vc.dismiss(animated: true) {
+                    self?.navigationController?.pushViewController(WallpapersCategoriesViewController.make(), animated: true)
+                }
+            }
+            navigationController?.present(vc, animated: true)
+        }
     }
     
     func join() {

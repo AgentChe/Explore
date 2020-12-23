@@ -7,6 +7,7 @@ target 'Explore' do
   pod 'NotificationBannerSwift'
   pod 'Kingfisher'
   pod 'Cosmos'
+  pod 'iCarousel'
   
   pod 'GoogleMaps'
   

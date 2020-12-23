@@ -85,10 +85,9 @@ private extension DirectViewModel {
                         return .just(.wallpapers)
                     }
                     
-                    // TODO
-//                    if !configuration.activeSubscription && configuration.seePaygate {
-//                        return .just(.paygate)
-//                    }
+                    if !configuration.activeSubscription && configuration.seePaygate {
+                        return .just(.paygate)
+                    }
                     
                     return .just(.wallpapers)
                 case .journal:
