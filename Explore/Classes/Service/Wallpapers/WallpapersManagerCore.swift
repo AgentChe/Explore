@@ -67,9 +67,9 @@ private extension WallpapersManagerCore {
         return SDKStorage.shared
             .restApiTransport
             .callServerApi(requestBody: request)
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observe(on: ConcurrentDispatchQueueScheduler(qos: .background))
             .map { GetWallpapersResponseMapper.map(from: $0) }
-            .observeOn(MainScheduler.asyncInstance)
+            .observe(on: MainScheduler.asyncInstance)
             .do(onSuccess: { [weak self] categories in
                 self?.store(categories: categories)
             })

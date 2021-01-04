@@ -88,7 +88,7 @@ final class FindPlaceViewModel {
                             .map { success -> CreateTripResult in
                                 success ? .success : .failure
                             }
-                            .catchError { error in
+                            .catch { error in
                                 .just(ErrorChecker.needPayment(in: error) ? .needPayment : .failure)
                             }
                     }

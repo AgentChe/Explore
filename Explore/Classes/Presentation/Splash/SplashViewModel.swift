@@ -34,7 +34,7 @@ private extension SplashViewModel {
     func initiale() -> Completable {
         paygateConfigurationManager
             .rxRetrieveConfiguration()
-            .catchErrorJustReturn(nil)
+            .catchAndReturn(nil)
             .asCompletable()
     }
 }

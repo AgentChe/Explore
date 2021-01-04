@@ -41,7 +41,7 @@ private extension ImageManagerCore {
                 progress: ((Double) -> Void)? = nil) -> Single<Any> {
         Single<Any>.create { event in
             guard let imageData = image.jpegData(compressionQuality: 0.5) else {
-                event(.error(ApiError.serverNotAvailable))
+                event(.failure(ApiError.serverNotAvailable))
                 return Disposables.create()
             }
             
@@ -66,7 +66,7 @@ private extension ImageManagerCore {
                     case .success(let json):
                         event(.success(json))
                     case .failure(let error):
-                        event(.error(error))
+                        event(.failure(error))
                     }
                 }
             

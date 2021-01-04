@@ -43,9 +43,9 @@ extension JournalManagerCore {
                 
                 tagsSuquence
             )
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observe(on: ConcurrentDispatchQueueScheduler(qos: .background))
             .map { GetJournalArticleDetailsResponseMapper.map(from: $0, tags: $1) }
-            .observeOn(MainScheduler.asyncInstance)
+            .observe(on: MainScheduler.asyncInstance)
     }
     
     func rxCreate(tripId: Int,
@@ -78,9 +78,9 @@ extension JournalManagerCore {
                 
                 getCachedList(key: Constants.cachedTagsKey)
             )
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observe(on: ConcurrentDispatchQueueScheduler(qos: .background))
             .map { SaveJournalArticleResponseMapper.map(from: $0, tags: $1) }
-            .observeOn(MainScheduler.asyncInstance)
+            .observe(on: MainScheduler.asyncInstance)
             .do(onSuccess: { [weak self] createdArticleDetails in
                 guard let details = createdArticleDetails else {
                     return
@@ -125,8 +125,8 @@ private extension JournalManagerCore {
                 
                 return Disposables.create()
             }
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .observeOn(MainScheduler.asyncInstance)
+            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+            .observe(on: MainScheduler.asyncInstance)
     }
     
     func loadArticles() -> Single<[JournalArticle]> {
@@ -144,9 +144,9 @@ private extension JournalManagerCore {
                 
                 loadTags()
             )
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observe(on: ConcurrentDispatchQueueScheduler(qos: .background))
             .map { GetJournalListResponseMapper.map(from: $0, tags: $1) }
-            .observeOn(MainScheduler.asyncInstance)
+            .observe(on: MainScheduler.asyncInstance)
             .do(onSuccess: { [weak self] articles in
                 self?.store(articles: articles)
             })
@@ -174,9 +174,9 @@ private extension JournalManagerCore {
         return SDKStorage.shared
             .restApiTransport
             .callServerApi(requestBody: getTagsRequest)
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observe(on: ConcurrentDispatchQueueScheduler(qos: .background))
             .map { GetJournalTagsResponseMapper.map(from: $0) }
-            .observeOn(MainScheduler.asyncInstance)
+            .observe(on: MainScheduler.asyncInstance)
             .do(onSuccess: { [weak self] tags in
                 self?.store(tags: tags)
             })

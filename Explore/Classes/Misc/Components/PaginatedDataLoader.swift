@@ -35,7 +35,7 @@ final class PaginatedDataLoader<E> {
         func load(_ page: Int) -> Observable<Page<E>> {
             return observableFactory(page)
                 .trackActivity(activityIndicator)
-                .catchError { error in
+                .catch { error in
                     errorRelay.accept(error)
                     return .empty()
                 }

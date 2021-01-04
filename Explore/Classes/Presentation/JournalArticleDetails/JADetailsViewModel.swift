@@ -39,7 +39,7 @@ final class JADetailsViewModel {
                 return this.journalManager
                     .rxDelete(articleId: id)
                     .andThen(.just(true))
-                    .catchErrorJustReturn(false)
+                    .catchAndReturn(false)
             }
             .asDriver(onErrorJustReturn: false)
     }

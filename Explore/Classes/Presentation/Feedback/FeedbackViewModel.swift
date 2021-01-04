@@ -110,7 +110,7 @@ private extension FeedbackViewModel {
                 
                 return this.imageManager
                     .upload(image: image)
-                    .catchErrorJustReturn(nil)
+                    .catchAndReturn(nil)
             }
             .toArray()
             .map { $0.compactMap { $0 } }
