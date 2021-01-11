@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey(GlobalDefinitions.googleApiKey)
         PaygateConfigurationManagerCore().clearCache()
+        AppsFlyerAnalytics.shared.applicationDidFinishLaunchingWithOptions()
         
         return true
     }
@@ -50,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         AppStateManager.shared.applicationDidBecome()
+        AppsFlyerAnalytics.shared.applicationDidBecomeActive()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

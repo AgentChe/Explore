@@ -266,6 +266,7 @@
 		96CDB710257C19370048F008 /* DirectCollectionDotsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDB70F257C19370048F008 /* DirectCollectionDotsCell.swift */; };
 		96CDB713257C1BA80048F008 /* DirectCollectionExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDB712257C1BA80048F008 /* DirectCollectionExploreCell.swift */; };
 		96CDB716257C1F830048F008 /* DirectExploreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDB715257C1F830048F008 /* DirectExploreModel.swift */; };
+		96D389D825AC74E700EADC9A /* AppsFlyerAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D389D725AC74E700EADC9A /* AppsFlyerAnalytics.swift */; };
 		96EB730524DBFABD008A32BC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730424DBFABD008A32BC /* Model.swift */; };
 		96EB730724DBFDB7008A32BC /* GeoLocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */; };
 		96EB732224DD3103008A32BC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB732124DD3103008A32BC /* SplashViewController.swift */; };
@@ -560,6 +561,7 @@
 		96CDB70F257C19370048F008 /* DirectCollectionDotsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCollectionDotsCell.swift; sourceTree = "<group>"; };
 		96CDB712257C1BA80048F008 /* DirectCollectionExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCollectionExploreCell.swift; sourceTree = "<group>"; };
 		96CDB715257C1F830048F008 /* DirectExploreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectExploreModel.swift; sourceTree = "<group>"; };
+		96D389D725AC74E700EADC9A /* AppsFlyerAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsFlyerAnalytics.swift; sourceTree = "<group>"; };
 		96EB730424DBFABD008A32BC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96EB730624DBFDB7008A32BC /* GeoLocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationUtils.swift; sourceTree = "<group>"; };
 		96EB732124DD3103008A32BC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -978,6 +980,7 @@
 		960F030024DAC686008267FA /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				96D389D625AC74DB00EADC9A /* Analytics */,
 				960F02FD24DAC63E008267FA /* GlobalDefinitions */,
 				960F030124DAC686008267FA /* Extension */,
 				960F030624DAC686008267FA /* Utils */,
@@ -1818,6 +1821,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		96D389D625AC74DB00EADC9A /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				96D389D725AC74E700EADC9A /* AppsFlyerAnalytics.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		96EB731F24DD308F008A32BC /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -2241,6 +2252,7 @@
 				9609B85225173C2F00457FD6 /* GetLearnCategoriesRequest.swift in Sources */,
 				9656D46725927E42006755EC /* WOView.swift in Sources */,
 				966F478624F6DCBE0025FD5F /* PaygateView.swift in Sources */,
+				96D389D825AC74E700EADC9A /* AppsFlyerAnalytics.swift in Sources */,
 				96B43F09255B428300537439 /* JournalView.swift in Sources */,
 				966F476724F6A94B0025FD5F /* GetPaygateRequest.swift in Sources */,
 				9609107D255AF76E00E781A1 /* BridgeArticleDetails.swift in Sources */,
@@ -2515,7 +2527,7 @@
 				CODE_SIGN_ENTITLEMENTS = Explore/Randonauting.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = 82M89ZGHB7;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2523,7 +2535,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.17.1;
+				MARKETING_VERSION = 2.18.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore Development";
@@ -2541,7 +2553,7 @@
 				CODE_SIGN_ENTITLEMENTS = Explore/Randonauting.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = 82M89ZGHB7;
 				INFOPLIST_FILE = Explore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2549,7 +2561,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.17.1;
+				MARKETING_VERSION = 2.18.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.explore;
 				PRODUCT_NAME = Randonauting;
 				PROVISIONING_PROFILE_SPECIFIER = "Explore AppStore";

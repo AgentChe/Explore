@@ -3,6 +3,7 @@ platform :ios, '12.0'
 target 'Explore' do
   use_frameworks!
   pod 'RushSDK', :git => "https://github.com/AgentChe/rushSDK.git"
+  pod 'AppsFlyerFramework'
   
   pod 'NotificationBannerSwift'
   pod 'Kingfisher'
